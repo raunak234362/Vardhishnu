@@ -1,0 +1,129 @@
+{
+  "header": {
+    "contact": {
+      "phone": "+91 9405143627",
+      "email": "contact@vardhishnu.org"
+    },
+    "socials": [
+      { "platform": "Twitter", "url": "https://twitter.com/vardhishnu" },
+      { "platform": "Instagram", "url": "https://instagram.com/vardhishnu" },
+      { "platform": "Facebook", "url": "https://facebook.com/vardhishnu" },
+      { "platform": "YouTube", "url": "https://youtube.com/vardhishnu" }
+    ],
+    "navLinks": [
+      { "label": "Who we are", "url": "/who-we-are" },
+      { "label": "Why Children", "url": "/why-children" },
+      { "label": "Our Programs", "url": "/our-programs" },
+      { "label": "Our Impact", "url": "/impact" },
+      { "label": "Resources", "url": "/resources" }
+    ],
+    "cta": "Donate Now"
+  },
+  "hero": {
+    "slides": [
+      {
+        "headline": "Empowering Children,",
+        "subheadline": "Transforming Communities",
+        "background": "/assets/hero/1.png",
+        "cta": "Watch Their Stories"
+      },
+      {
+        "headline": "Nurturing grassroots leadership,",
+        "subheadline": "Creating lasting change",
+        "background": "/assets/hero/2.png",
+        "cta": "Watch Their Stories"
+      },
+      {
+        "headline": "Safe Spaces,",
+        "subheadline": "Thriving Futures",
+        "background": "/assets/hero/3.png",
+        "cta": "Watch Their Stories"
+      }
+    ]
+  },
+  "about": {
+    "title": "Who we are",
+    "description": "Vardhishnu is a non-profit organization working toward protecting and empowering children from vulnerable backgrounds, particularly those involved in or at risk of child labor. We believe every child deserves a safe space to learn, grow, and thrive.",
+    "cta": "About Us",
+    "images": [
+      "https://res.cloudinary.com/dummy/about-1.jpg",
+      "https://res.cloudinary.com/dummy/about-2.jpg"
+    ]
+  },
+  "programs": {
+    "title": "Our Programs",
+    "items": [
+      {
+        "name": "Anandghar",
+        "description": "Learning centers that provide a bridge to formal education for street-living and waste-picking children.",
+        "image": "https://res.cloudinary.com/dummy/program-anandghar.jpg",
+        "link": "/programs/anandghar"
+      },
+      {
+        "name": "Anandghar Fellowship",
+        "description": "Empowering youth to become leaders and educators within their own communities.",
+        "image": "https://res.cloudinary.com/dummy/program-fellowship.jpg",
+        "link": "/programs/fellowship"
+      },
+      {
+        "name": "Community Collectives",
+        "description": "Creating strong support networks within communities to ensure long-term child safety and development.",
+        "image": "https://res.cloudinary.com/dummy/program-collectives.jpg",
+        "link": "/programs/collectives"
+      }
+    ]
+  },
+  "impact": {
+    "title": "From safe spaces to thriving futures - our impact in action",
+    "metrics": [
+      { "value": "70+", "label": "Spaces of Learning & Support Created" },
+      { "value": "7000+", "label": "Overall Children Impacted" },
+      { "value": "300+", "label": "Children in Vardhishnu's project areas" },
+      {
+        "value": "7000",
+        "label": "Children in partner organisations' project areas"
+      },
+      { "value": "3000+", "label": "Children enrolled in schools" },
+      { "value": "2500+", "label": "Children freed from child labor" },
+      { "value": "33", "label": "Organisations Incubated" }
+    ]
+  },
+  "partners": [
+    { "name": "ACUMEN", "logo": "src/assets/Acumen.svg" },
+    {
+      "name": "Azim Premji Foundation",
+      "logo": "src/assets/AzimPremJiFoundation.svg"
+    }
+  ],
+  "footer": {
+    "about": "Work with local community for better future of their children",
+    "address": "Vardhishnu, Jalgaon, Maharashtra, India",
+    "contact": {
+      "phone": "+91 9405143627",
+      "email": "contact@vardhishnu.org"
+    }
+  },
+  "team": {
+    "Our Advisors": [
+      {
+        "name": "Sunil Chavan",
+        "role": "Advisor",
+        "bio": "Mr. Sunil Chavan, Fondly Known As Sunil Kaka, Holds An M.Sc. In Statistics And An MBA In Marketing. After Spending 17 Years In The IT Sector, He Founded His Own Company In 1996, Which He Successfully Exited In 2012 To Dedicate Himself To The Social Sector. He Currently Serves As Director At Dr. M. L. Dhawale Trust, Palghar, And Is Also A Director At Bharat Rural Livelihood Foundation (BRLF). In Addition, He Is A Visiting Faculty Member At Shiv Nadar University, Where He Shares His Rich Experience With Young Leaders. Mr. Chavan Has Been Associated With Vardhishnu As A Member Of The Advisory Board Since 2016. A Seasoned Entrepreneur With Deep Expertise In Finance And Economics, He Provides Vardhishnu With Invaluable Strategic Guidance And Financial Counsel, Helping Strengthen The Organization’s Vision And Long-Term Sustainability."
+      },
+      {
+        "name": "Nikunj Jhaveri",
+        "role": "Advisor",
+        "bio": "Bio for Nikunj Jhaveri will go here. A dedicated professional supporting growth and strategic planning for social outcomes."
+      },
+      {
+        "name": "Shubhada",
+        "role": "Advisor",
+        "bio": "Bio for Shubhada will go here. Bringing deep knowledge in pedagogical practices and child development to our initiatives."
+      }
+    ],
+    "Our Founders": [],
+    "Team Anandghar": [],
+    "Team Community Collectives": [],
+    "Administration": []
+  }
+}

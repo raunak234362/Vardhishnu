@@ -1,0 +1,60 @@
+import { motion } from "framer-motion";
+
+const WhoWeAreHero = () => {
+  return (
+    <section className="py-24 bg-white overflow-hidden">
+      <div className="container-custom">
+        <div className="flex flex-col lg:flex-row items-center gap-16">
+          {/* Text Content */}
+          <div className="w-full lg:w-1/2 space-y-8">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+            >
+              <span className="text-dark/40 font-medium tracking-wide uppercase text-sm">
+                Who we are
+              </span>
+              <h1 className="text-4xl md:text-6xl font-black text-dark mt-4 leading-tight tracking-tighter">
+                Creating hope, impacting lives globally
+              </h1>
+              <p className="text-lg md:text-xl text-dark/70 leading-relaxed mt-6 max-w-xl">
+                We work to make quality education accessible to every
+                child—empowering them with knowledge, skills, and opportunities
+                for a brighter future.
+              </p>
+            </motion.div>
+
+            {/* Smaller Landscape Image Placeholder */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.95 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              className="relative w-full aspect-video rounded-3xl bg-gray-100 overflow-hidden shadow-xl"
+            >
+              <div className="w-full h-full flex items-center justify-center text-gray-400 italic">
+                Landscape Image Placeholder
+              </div>
+            </motion.div>
+          </div>
+
+          {/* Large Main Image Placeholder */}
+          <div className="w-full lg:w-1/2">
+            <motion.div
+              initial={{ opacity: 0, x: 50 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8 }}
+              className="relative w-full aspect-square md:aspect-4/5 rounded-[3rem] bg-gray-100 overflow-hidden shadow-2xl border-8 border-white"
+            >
+              <div className="w-full h-full flex items-center justify-center text-gray-400 italic">
+                Portrait/Square Image Placeholder
+              </div>
+            </motion.div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default WhoWeAreHero;
