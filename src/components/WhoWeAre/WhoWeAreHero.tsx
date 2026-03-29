@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { getImageUrl } from "../../utils/imageUrl";
 
 const WhoWeAreHero = () => {
   return (
@@ -12,10 +13,10 @@ const WhoWeAreHero = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
             >
-              <span className="text-dark/40 font-medium tracking-wide uppercase text-sm">
+              <span className="text-dark/40 font-medium tracking-wide uppercase text-md">
                 Who we are
               </span>
-              <h1 className="text-4xl md:text-6xl font-black text-dark mt-4 leading-tight tracking-tighter">
+              <h1 className="text-4xl md:text-6xl font-semibold text-dark mt-4 leading-tight tracking-tighter">
                 Creating hope, impacting lives globally
               </h1>
               <p className="text-lg md:text-xl text-dark/70 leading-relaxed mt-6 max-w-xl">
@@ -32,9 +33,7 @@ const WhoWeAreHero = () => {
               transition={{ duration: 0.8, delay: 0.2 }}
               className="relative w-full aspect-video rounded-3xl bg-gray-100 overflow-hidden shadow-xl"
             >
-              <div className="w-full h-full flex items-center justify-center text-gray-400 italic">
-                Landscape Image Placeholder
-              </div>
+              <img src={getImageUrl("v1774765442/15_wwlmn7.jpg")} alt="" />
             </motion.div>
           </div>
 
@@ -44,11 +43,9 @@ const WhoWeAreHero = () => {
               initial={{ opacity: 0, x: 50 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8 }}
-              className="relative w-full aspect-square md:aspect-4/5 rounded-[3rem] bg-gray-100 overflow-hidden shadow-2xl border-8 border-white"
+              className="relative w-full h-[80vh] rounded-[3rem] overflow-hidden shadow-2xl"
             >
-              <div className="w-full h-full flex items-center justify-center text-gray-400 italic">
-                Portrait/Square Image Placeholder
-              </div>
+             <img src={getImageUrl("v1774765444/18_to8rpy.jpg")} alt="" className="w-full h-full object-cover"/>
             </motion.div>
           </div>
         </div>

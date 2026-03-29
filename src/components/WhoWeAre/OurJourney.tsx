@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { getImageUrl } from "../../utils/imageUrl";
 
 const OurJourney = () => {
   return (
@@ -14,9 +15,7 @@ const OurJourney = () => {
               viewport={{ once: true }}
               className="relative w-[85%] aspect-square rounded-4xl bg-gray-200 overflow-hidden border-8 border-white shadow-xl z-10"
             >
-              <div className="w-full h-full flex items-center justify-center text-gray-400 italic">
-                Back Image Space
-              </div>
+            <img src={getImageUrl("v1774777352/Pasted_image_uq8vhz.png")} alt="" />
             </motion.div>
 
             {/* Overlapping Bottom Front Image Placeholder */}
@@ -27,9 +26,7 @@ const OurJourney = () => {
               transition={{ delay: 0.2 }}
               className="absolute -bottom-10 right-0 lg:-right-10 w-[60%] aspect-3/4 rounded-4xl bg-gray-300 overflow-hidden border-8 border-white shadow-2xl z-20"
             >
-              <div className="w-full h-full flex items-center justify-center text-gray-500 italic">
-                Front Image Space
-              </div>
+              <img src={getImageUrl("v1774777319/Pasted_image_uvedgk.png")} alt="" />
             </motion.div>
           </div>
 
