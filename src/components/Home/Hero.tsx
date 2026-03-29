@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { Play, ChevronLeft, ChevronRight } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import data from "../../data/data.json";
+import { getImageUrl } from "../../utils/imageUrl";
 
 const Hero = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -57,7 +58,7 @@ const Hero = () => {
           className="absolute inset-0 z-0"
         >
           <img
-            src={slides[currentSlide].background}
+            src={getImageUrl(slides[currentSlide].background)}
             alt={slides[currentSlide].headline}
             className="w-full h-full object-cover"
           />
@@ -97,7 +98,7 @@ const Hero = () => {
       </div>
 
       {/* Slide Navigation */}
-      <div className="absolute bottom-10 right-10 z-20 flex gap-4">
+      {/* <div className="absolute bottom-10 right-10 z-20 flex gap-4">
         <button
           onClick={() => paginate(-1)}
           className="p-3 rounded-full border border-white/20 bg-white/5 hover:bg-white/20 transition-all text-white backdrop-blur-sm"
@@ -111,7 +112,7 @@ const Hero = () => {
         >
           <ChevronRight size={24} aria-label="Next Slide" />
         </button>
-      </div>
+      </div> */}
 
       {/* Progress Indicators */}
       <div className="absolute bottom-10 left-10 z-20 flex gap-3">

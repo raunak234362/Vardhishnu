@@ -1,5 +1,6 @@
 import { MapPin } from "lucide-react";
 import { motion } from "framer-motion";
+import { getImageUrl } from "../../utils/imageUrl";
 
 const OurPresence = () => {
   const interventionAreas = ["Jalgaon", "Chopda", "Amalner"];
@@ -33,30 +34,10 @@ const OurPresence = () => {
             viewport={{ once: true }}
             className="w-full lg:w-3/5"
           >
-            <div className="bg-white rounded-3xl p-8 shadow-2xl border border-black/5 aspect-4/3 flex flex-col relative group">
-              <div className="w-full h-full rounded-2xl bg-gray-50 flex items-center justify-center text-gray-400 font-medium italic overflow-hidden">
-                <div className="absolute inset-0 bg-[#f8f9fa] flex items-center justify-center text-dark/20 text-2xl font-black uppercase tracking-widest text-center px-10">
-                  Interactive Map Area Placeholder
-                </div>
-              </div>
-
-              {/* Fake Legend as seen in mockup */}
-              <div className="absolute bottom-10 right-10 bg-white/80 backdrop-blur-md p-4 rounded-xl border border-black/5 text-sm space-y-2 shadow-lg">
-                <div className="flex items-center gap-2">
-                  <div className="w-3 h-3 rounded-full bg-primary" />
-                  <span className="font-bold text-dark italic">
-                    Vardhishnu Intervention Area
-                  </span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <div className="w-3 h-3 rounded-full bg-dark/20 flex items-center justify-center">
-                    <div className="w-1.5 h-1.5 rounded-full bg-dark" />
-                  </div>
-                  <span className="font-bold italic text-dark/70">
-                    Partner Organizations
-                  </span>
-                </div>
-              </div>
+            <div className="">
+              
+                <img src={getImageUrl("v1774774560/Map_rhitgi.png")} alt="map" />
+              
             </div>
           </motion.div>
 
@@ -66,7 +47,7 @@ const OurPresence = () => {
             <motion.div
               initial={{ opacity: 0, x: 30 }}
               whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
+              viewport={{ once: true }} 
               className="space-y-6"
             >
               <div className="flex items-center gap-3">

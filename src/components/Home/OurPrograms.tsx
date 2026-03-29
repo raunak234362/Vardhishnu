@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import data from "../../data/data.json";
+import { getImageUrl } from "../../utils/imageUrl";
 
 const OurPrograms = () => {
   return (
@@ -17,42 +18,29 @@ const OurPrograms = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.2 }}
-              className="group relative h-[50vh] overflow-hidden rounded-[2.5rem] bg-gray-100 shadow-xl"
+              className="group relative h-[70vh] overflow-hidden rounded-[2.5rem] bg-gray-100 shadow-xl"
             >
-              {/* Background Image Space */}
+              {/* Background Image */}
               <div className="absolute inset-0 z-0">
-                {/* Fallback space for user added image */}
-                <div className="w-full h-full flex items-center justify-center text-gray-400 italic bg-black/10">
-                  {program.name} Image Space
-                </div>
+                <img
+                  src={getImageUrl(program.image)}
+                  alt={program.name}
+                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                />
                 {/* Overlay */}
                 <div className="absolute inset-0 bg-linear-to-t from-black via-black/40 to-transparent" />
               </div>
 
               {/* Content */}
               <div className="absolute inset-0 z-10 p-10 flex flex-col justify-end transition-transform duration-500 group-hover:translate-y-[-10px]">
-                <h3 className="text-primary text-2xl font-bold mb-3">
+                <h3 className="text-primary text-3xl font-bold mb-3">
                   {program.name}
                 </h3>
-                <p className="text-white/90 text-sm leading-relaxed mb-6">
+                <p className="text-white/90 text-lg font-semibold leading-relaxed mb-6">
                   {program.description}
                 </p>
-                <button className="self-start text-primary font-bold hover:underline flex items-center gap-2 group-hover:gap-3 transition-all">
+                <button className="self-end text-primary font-bold hover:underline flex items-center text-right gap-2 group-hover:gap-3 text-lg transition-all">
                   Read More
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="20"
-                    height="20"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  >
-                    <path d="M5 12h14" />
-                    <path d="m12 5 7 7-7 7" />
-                  </svg>
                 </button>
               </div>
             </motion.div>

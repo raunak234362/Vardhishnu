@@ -25,15 +25,27 @@ const Navbar = () => {
 
         <div className="hidden lg:flex items-center gap-8">
           <div className="flex items-center gap-8 pr-8 border-r border-white/20">
-            {data.header.navLinks.map((link) => (
-              <Link
-                key={link.label}
-                to={link.url}
-                className={`nav-link text-white/80! hover:text-primary! transition-colors font-medium whitespace-nowrap`}
-              >
-                {link.label}
-              </Link>
-            ))}
+            {data.header.navLinks.map((link) => {
+              const isActive = location.pathname === link.url;
+              return (
+                <Link
+                  key={link.label}
+                  to={link.url}
+                  className={`relative group nav-link transition-colors font-medium whitespace-nowrap pb-1 ${
+                    isActive
+                      ? "text-primary! font-semibold"
+                      : "text-white/80! hover:text-primary!"
+                  }`}
+                >
+                  {link.label}
+                  <span
+                    className={`absolute -bottom-0.5 left-0 h-0.5 bg-primary transition-all duration-300 ${
+                      isActive ? "w-8" : "w-0 group-hover:w-8"
+                    }`}
+                  />
+                </Link>
+              );
+            })}
           </div>
           <div className="flex items-center gap-4">
             <button className="btn-primary">
