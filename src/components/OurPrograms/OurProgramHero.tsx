@@ -18,7 +18,7 @@ const OurProgramHero = () => {
           transition={{ duration: 0.8 }}
           className="space-y-4"
         >
-          <h1 className="text-white text-4xl md:text-6xl font-black tracking-tight drop-shadow-lg">
+          <h1 className="text-white text-4xl md:text-6xl tracking-tight drop-shadow-lg">
             Our Programs
           </h1>
 

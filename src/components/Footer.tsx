@@ -15,9 +15,9 @@ const Footer = () => {
     <footer className="bg-white pt-24">
       {/* Newsletter Section */}
       <div className="container-custom mb-24">
-        <div className="bg-[#f8f9fa] rounded-[2.5rem] p-12 md:p-16 flex flex-col lg:flex-row items-center justify-between gap-10 shadow-sm border border-black/5">
+        <div className="bg-[#f8f9fa] rounded-lg p-12 md:p-16 flex flex-col lg:flex-row items-center justify-between gap-10 shadow-sm border border-black/5">
           <div className="max-w-md">
-            <h3 className="text-4xl font-black mb-4 text-dark tracking-tighter">
+            <h3 className="text-3xl mb-4 text-dark tracking-tighter">
               Stay Updated With Us
             </h3>
             <p className="text-dark/50 text-xl">
@@ -28,9 +28,9 @@ const Footer = () => {
             <input
               type="email"
               placeholder="Your Email"
-              className="flex-1 px-8 py-5 rounded-2xl bg-white border-none shadow-inner text-lg outline-none focus:ring-2 focus:ring-primary/20 transition-all"
+              className="flex-1 px-8 py-3 rounded-lg bg-white border border-gray-200 shadow-inner text-lg outline-none focus:ring-2 focus:ring-primary/20 transition-all"
             />
-            <button className="bg-primary hover:bg-primary/90 text-white px-10 py-5 rounded-2xl font-bold text-lg shadow-lg transition-all hover:-translate-y-1">
+            <button className="bg-primary hover:bg-primary/90 text-white px-10 py-5 rounded-lg font-bold text-lg shadow-lg transition-all hover:-translate-y-1">
               Subscribe
             </button>
           </div>

@@ -6,7 +6,7 @@ const OurPrograms = () => {
   return (
     <section className="py-24 bg-white">
       <div className="container-custom">
-        <h2 className="text-4xl md:text-5xl font-black mb-16 text-dark tracking-tight">
+        <h2 className="text-4xl md:text-5xl mb-16 text-dark tracking-tight">
           {data.programs.title}
         </h2>
 

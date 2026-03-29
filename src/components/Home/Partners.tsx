@@ -5,7 +5,7 @@ const Partners = () => {
   return (
     <section className="py-20 bg-white">
       <div className="container-custom">
-        <h2 className="text-3xl md:text-4xl font-black mb-12 text-dark tracking-tight text-center md:text-left">
+        <h2 className="text-3xl md:text-4xl mb-12 text-dark tracking-tight text-center md:text-left">
           Accredited & Supported By
         </h2>
 
