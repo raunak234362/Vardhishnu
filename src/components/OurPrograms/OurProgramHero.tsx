@@ -7,7 +7,7 @@ const OurProgramHero = () => {
       {/* Background Image / Placeholder */}
       <div className="absolute inset-0 z-0">
         <div className="absolute inset-0 bg-black/60 z-10" />
-        <img src="https://res.cloudinary.com/di7aduhjv/image/upload/v1774764824/Copy_of_IMG_3802_cqccdv.jpg" alt="" className="w-full h-full object-cover" />
+        <img src={getImageUrl("v1774764824/Copy_of_IMG_3802_cqccdv.jpg")} alt="" className="w-full h-full object-cover" />
       </div>
 
       <div className="container-custom relative z-20 text-center px-6">

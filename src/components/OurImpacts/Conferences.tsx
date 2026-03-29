@@ -16,7 +16,7 @@ const Conferences = () => {
     <section className="py-24 bg-white relative">
       <div className="container-custom px-6 lg:px-20">
         <div className="mb-12 text-left">
-          <h2 className="text-4xl font-black text-dark tracking-tighter inline-block relative border-b-4 border-primary pb-2 rounded-sm mb-6">
+          <h2 className="text-4xl  text-dark tracking-tighter inline-block relative border-b-4 border-primary pb-2 rounded-sm mb-6">
             Conferences
           </h2>
           <p className="text-dark/50 font-medium text-sm leading-relaxed max-w-2xl">

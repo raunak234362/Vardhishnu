@@ -7,7 +7,7 @@ const Felicitations = () => {
     <section className="py-24 bg-gray-50/50">
       <div className="container-custom px-6 lg:px-20">
         <div className="mb-20 text-left">
-          <h2 className="text-4xl font-black text-dark tracking-tighter inline-block relative border-b-4 border-primary pb-2 rounded-sm">
+          <h2 className="text-4xl text-dark tracking-tighter inline-block relative border-b-4 border-primary pb-2 rounded-sm">
             Felicitations
           </h2>
         </div>
