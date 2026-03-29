@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { Heart } from "lucide-react";
 import { Link } from "react-router-dom";
+import { getImageUrl } from "../../utils/imageUrl";
 
 const ProgramList = () => {
   const programs = [
@@ -14,7 +15,7 @@ const ProgramList = () => {
         "Hygiene & Physical well-being",
       ],
       link: "/programs/anandghar",
-      image: "/assets/programs/anandghar.jpg",
+      image: "https://res.cloudinary.com/di7aduhjv/image/upload/v1774770398/Hero1_lrgfwj.png",
     },
     {
       title: "Anandghar Fellowship",
@@ -26,7 +27,7 @@ const ProgramList = () => {
         "Hygiene & Physical well-being",
       ],
       link: "/programs/anandghar-fellowship",
-      image: "/assets/programs/fellowship.jpg",
+      image: "https://res.cloudinary.com/di7aduhjv/image/upload/v1774764829/Vardhishnu_9_uldfse.jpg",
     },
     {
       title: "Community Collectives",
@@ -38,7 +39,7 @@ const ProgramList = () => {
         "Hygiene & Physical well-being",
       ],
       link: "/programs/community-collectives",
-      image: "/assets/programs/collectives.jpg",
+      image: "https://res.cloudinary.com/di7aduhjv/image/upload/v1774764831/Vardhishnu_ssnb6c.jpg",
     },
   ];
 
@@ -46,7 +47,7 @@ const ProgramList = () => {
     <section className="py-24 bg-white">
       <div className="container-custom">
         <div className="mb-20 text-left">
-          <h2 className="text-4xl font-black text-dark tracking-tighter inline-block relative">
+          <h2 className="text-4xl text-dark tracking-tighter inline-block relative">
             Programs
             <div className="absolute -bottom-3 left-0 w-1/2 h-1 bg-primary rounded-full transition-all duration-300 group-hover:w-full" />
           </h2>
@@ -65,9 +66,11 @@ const ProgramList = () => {
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-0 overflow-hidden">
                 {/* Image Section */}
                 <div className="relative h-[300px] lg:h-full overflow-hidden">
-                  <div className="absolute inset-0 bg-gray-100 flex items-center justify-center text-gray-400 italic p-12 text-center text-sm">
-                    {program.title} Program Image Space
-                  </div>
+                  <img
+                    src={getImageUrl(program.image)}
+                    alt={program.title}
+                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                  />
                   {/* Overlay effect on hover */}
                   <div className="absolute inset-0 bg-primary/0 group-hover:bg-primary/5 transition-colors duration-500" />
                 </div>
@@ -75,7 +78,7 @@ const ProgramList = () => {
                 {/* Content Section */}
                 <div className="p-10 lg:p-16 flex flex-col justify-center space-y-8">
                   <div>
-                    <h3 className="text-3xl md:text-4xl font-black text-dark tracking-tighter mb-4 group-hover:text-primary transition-colors duration-300">
+                    <h3 className="text-3xl md:text-4xl text-dark tracking-tighter mb-4 group-hover:text-primary transition-colors duration-300">
                       {program.title}
                     </h3>
                     <p className="text-dark/60 font-medium leading-relaxed max-w-xl">
@@ -98,7 +101,7 @@ const ProgramList = () => {
                   <div className="pt-4">
                     <Link
                       to={program.link}
-                      className="inline-block text-primary font-black text-lg tracking-tight border-b-2 border-primary/20 hover:border-primary transition-all duration-300 transform hover:translate-x-1"
+                      className="inline-block text-primary text-lg tracking-tight border-b-2 border-primary/20 hover:border-primary transition-all duration-300 transform hover:translate-x-1"
                     >
                       Read More
                     </Link>

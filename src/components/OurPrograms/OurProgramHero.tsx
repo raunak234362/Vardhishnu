@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { getImageUrl } from "../../utils/imageUrl";
 
 const OurProgramHero = () => {
   return (
@@ -6,9 +7,7 @@ const OurProgramHero = () => {
       {/* Background Image / Placeholder */}
       <div className="absolute inset-0 z-0">
         <div className="absolute inset-0 bg-black/60 z-10" />
-        <div className="w-full h-full bg-gray-800 flex items-center justify-center text-white/20 text-4xl font-bold italic">
-          Programs Hero Image Space (Cheering Kids & Adults)
-        </div>
+        <img src="https://res.cloudinary.com/di7aduhjv/image/upload/v1774764824/Copy_of_IMG_3802_cqccdv.jpg" alt="" className="w-full h-full object-cover" />
       </div>
 
       <div className="container-custom relative z-20 text-center px-6">

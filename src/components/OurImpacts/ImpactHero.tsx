@@ -1,12 +1,13 @@
 import { motion } from "framer-motion";
+import { getImageUrl } from "../../utils/imageUrl";
 
 const ImpactHero = () => {
   const images = [
-    "/assets/impact/1.jpg",
-    "/assets/impact/2.jpg",
-    "/assets/impact/3.jpg",
-    "/assets/impact/4.jpg",
-    "/assets/impact/5.jpg",
+    "https://res.cloudinary.com/di7aduhjv/image/upload/v1774764825/Copy_of_DSCN2562_ckry92.jpg",
+    "https://res.cloudinary.com/di7aduhjv/image/upload/v1774765440/2._Home_Page_2_vahlkz.jpg",
+    "https://res.cloudinary.com/di7aduhjv/image/upload/v1774765433/_DSC6957_paziba.jpg",
+    "https://res.cloudinary.com/di7aduhjv/image/upload/v1774764820/Copy_of_IMG_3697_pajplc.jpg",
+    "https://res.cloudinary.com/di7aduhjv/image/upload/v1774764824/Copy_of_IMG_3782_gkurvp.jpg",
   ];
 
   return (
@@ -17,7 +18,7 @@ const ImpactHero = () => {
           animate={{ opacity: 1, y: 0 }}
           className="max-w-5xl mx-auto space-y-8 mb-16 px-4"
         >
-          <h1 className="text-4xl md:text-6xl font-medium text-dark leading-tight tracking-tight">
+          <h1 className="text-4xl md:text-6xl text-dark leading-tight tracking-tight">
             This is the impact{" "}
             <span
               className="text-primary italic px-2 text-5xl md:text-7xl align-middle"
@@ -41,7 +42,7 @@ const ImpactHero = () => {
           <div className="absolute inset-0 bg-primary/10 rounded-[100%] scale-x-150 translate-y-32 z-0" />
 
           <div className="relative z-10 flex flex-wrap justify-center items-center gap-4 md:gap-8 px-4">
-            {images.map((_, index) => (
+            {images.map((img, index) => (
               <motion.div
                 key={index}
                 initial={{ opacity: 0, scale: 0.8, y: 30 }}
@@ -53,9 +54,11 @@ const ImpactHero = () => {
                   transform: `rotate(${index % 2 === 0 ? -2 : 2}deg)`,
                 }}
               >
-                <div className="absolute inset-0 bg-gray-100 flex items-center justify-center text-gray-400 italic text-[10px] p-4 text-center">
-                  Impact Photo {index + 1}
-                </div>
+                <img
+                  src={getImageUrl(img)}
+                  alt={`Impact Photo ${index + 1}`}
+                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                />
                 <div className="absolute inset-0 bg-primary/5 group-hover:bg-transparent transition-colors duration-500" />
               </motion.div>
             ))}

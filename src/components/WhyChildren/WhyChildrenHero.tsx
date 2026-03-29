@@ -45,7 +45,7 @@ const WhyChildrenHero = () => {
             className="relative rounded-[3rem] overflow-hidden aspect-square border-8 border-white shadow-2xl z-10"
           >
             <img 
-              src={getImageUrl(image)} 
+              src="https://res.cloudinary.com/di7aduhjv/image/upload/v1774764831/Vardhishnu_4_xag2oq.jpg" 
               alt="Landfill Child Documentary" 
               className="w-full h-full object-cover"
             />
