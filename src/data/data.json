@@ -89,11 +89,68 @@
     ]
   },
   "partners": [
-    { "name": "ACUMEN", "logo": "src/assets/Acumen.svg" },
+    { "name": "ACUMEN", "logo": "v1774764883/3._Acumen_gx4vvd.png" },
     {
       "name": "Azim Premji Foundation",
-      "logo": "src/assets/AzimPremJiFoundation.svg"
+      "logo": "v1774764881/2_Azim_Premji_Foundation_yxq4xa.png"
+    },
+    {
+      "name": "Bhavarlal Kantabai Jain Trust",
+      "logo": "v1774764884/10._Bhavarlal_Kantabai_Jain_Trust_qcajp1.jpg"
+    },
+    {
+      "name": "Jain Irrigation",
+      "logo": "v1774764881/9._Jain_Irrigation_ensgt9.jpg"
+    },
+    {
+      "name": "Gratitude Network",
+      "logo": "v1774764880/4_Gratitude_Network_ebpqg3.png"
+    },
+    {
+      "name": "Jain Irrigation",
+      "logo": "v1774764881/9._Jain_Irrigation_ensgt9.jpg"
+    },
+    {
+      "name": "Change Engine",
+      "logo": "v1774764879/5.1_Change_Engine_p1lwmz.webp"
+    },
+    {
+      "name": "MolyGraph",
+      "logo": "v1774764878/14_wpeur3.png"
+    },
+    {
+      "name": "Esmech 4C",
+      "logo": "v1774764878/15._Esmech_4C_negativ_kr8lly.tiff"
+    },
+    {
+      "name": "Palakniti",
+      "logo": "v1774764882/13_jtpiqk.jpg"
+    },
+    {
+      "name": "UnLtd India",
+      "logo": "v1774764883/6_UnLtd_India5_pqqmbq.png"
+    },
+    {
+      "name": "Vega Chemical",
+      "logo": "v1774764884/12_Vega_Chemicals_rlf1qs.jpg"
+    },
+    {
+      "name": "Nirman",
+      "logo": "v1774764885/7_Nirman_efsyox.jpg"
+    },
+    {
+      "name": "TFIx",
+      "logo": "v1774764886/5_TFIx_logo_ap0qad.png"
+    },
+    {
+      "name": "Systems Plus",
+      "logo": "v1774764887/8_Systems_Plus_phby1a.png"
+    },
+    {
+      "name": "Wipro",
+      "logo": "v1774764884/1_Wipro_aobbu1.png"
     }
+    
   ],
   "footer": {
     "about": "Work with local community for better future of their children",
