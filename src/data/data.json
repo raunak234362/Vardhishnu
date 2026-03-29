@@ -182,5 +182,28 @@
     "Team Anandghar": [],
     "Team Community Collectives": [],
     "Administration": []
+  },
+  "whychildren": {
+    "title": "Why Children",
+    "introduction": "According to the United Nations Convention on the Rights of the Child (UNCRC), which India ratified in 1992, every child is entitled to fundamental rights that must be respected and upheld by both governments and citizens.",
+    "rights": [
+      {
+        "title": "Right to Survival",
+        "content": "which ensures a child’s right to be born, and to access food, shelter, clothing, healthcare, and live a life with dignity;"
+      },
+      {
+        "title": "Right to Protection",
+        "content": "which safeguards children from all forms of violence, neglect, abuse—both physical and sexual—as well as protection from harmful substances like drugs;"
+      },
+      {
+        "title": "Right to Participation",
+        "content": "which recognizes children’s freedom to express their views, access information, form associations, and take part in decisions that affect them directly;"
+      },
+      {
+        "title": "Right to Development",
+        "content": "which guarantees access to education, opportunities to learn, relax, play, and develop emotionally, mentally, and physically."
+      }
+    ],
+    "image": "v1774845012/landfill-child_pasted_image.png"
   }
 }

@@ -1,8 +1,9 @@
 import { motion } from "framer-motion";
+import { img } from "framer-motion/client";
 
 const Supporters = () => {
   const supporters = [
-    { name: "Wipro", logo: "/assets/supporters/wipro.png" },
+    { name: "Wipro", img: "/assets/supporters/wipro.png" },
     { name: "UnLtd India", logo: "/assets/supporters/unltd.png" },
     {
       name: "Bhanwarlal & Kantabai Jain Foundation",
@@ -28,7 +29,7 @@ const Supporters = () => {
     <section className="py-24 bg-white">
       <div className="container-custom">
         <div className="mb-20 text-left">
-          <h2 className="text-4xl font-black text-dark tracking-tighter inline-block relative">
+          <h2 className="text-4xl text-dark tracking-tighter inline-block relative">
             Supported & Accredited By
             <div className="absolute -bottom-3 left-0 w-1/3 h-1 bg-primary rounded-full" />
           </h2>

@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { getImageUrl } from "../../utils/imageUrl";
 
 const WhatWeDo = () => {
   return (
@@ -14,7 +15,7 @@ const WhatWeDo = () => {
               className="w-full lg:w-1/2 space-y-6"
             >
               <div className="relative inline-block mb-4">
-                <h2 className="text-4xl font-black text-dark tracking-tighter">
+                <h2 className="text-4xl text-dark tracking-tighter">
                   What We Do
                 </h2>
                 <div className="absolute -bottom-2 left-0 w-2/3 h-1 bg-primary rounded-full transition-all duration-300" />
@@ -35,9 +36,7 @@ const WhatWeDo = () => {
               className="w-full lg:w-1/2"
             >
               <div className="aspect-video lg:aspect-4/3 rounded-3xl bg-gray-100 overflow-hidden shadow-xl">
-                <div className="w-full h-full flex items-center justify-center text-gray-400 italic">
-                  Smiling Boy Image Space
-                </div>
+               <img src={getImageUrl("v1774764803/8_Our_story_vgsnnk.jpg")} alt="" />
               </div>
             </motion.div>
           </div>
@@ -55,9 +54,7 @@ const WhatWeDo = () => {
               className="w-full lg:w-1/2"
             >
               <div className="aspect-video lg:aspect-4/3 rounded-3xl bg-gray-100 overflow-hidden shadow-xl">
-                <div className="w-full h-full flex items-center justify-center text-gray-400 italic">
-                  Girl Looking Up Image Space
-                </div>
+              <img src={getImageUrl("v1774764792/503506027_2982689175234089_6150840370846881877_n_fu8rvs.jpg")} alt="" />
               </div>
             </motion.div>
 

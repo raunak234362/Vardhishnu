@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { getImageUrl } from "../../utils/imageUrl";
 
 const Philosophy = () => {
   return (
@@ -7,9 +8,7 @@ const Philosophy = () => {
         <div className="relative rounded-[3rem] overflow-hidden aspect-16/6 md:aspect-16/5 bg-gray-100 shadow-2xl group min-h-[500px] flex items-center justify-center">
           {/* Background Image Space */}
           <div className="absolute inset-0 bg-dark/10 group-hover:bg-dark/20 transition-all duration-700">
-            <div className="w-full h-full flex items-center justify-center text-gray-400 italic font-black text-4xl uppercase tracking-[1em] opacity-10">
-              Philosophy Background Image Space
-            </div>
+           <img src={getImageUrl("v1774764808/DSCN2397_gfciqt.jpg")} alt="" />
           </div>
 
           <div className="container absolute inset-0 flex items-center justify-center lg:justify-start px-8 lg:px-16">
@@ -17,10 +16,10 @@ const Philosophy = () => {
               initial={{ opacity: 0, y: 50, scale: 0.95 }}
               whileInView={{ opacity: 1, y: 0, scale: 1 }}
               viewport={{ once: true }}
-              className="bg-white p-8 md:p-14 lg:p-16 rounded-[2.5rem] shadow-2xl relative z-10 max-w-4xl border border-black/5"
+              className="bg-white p-8 md:p-14 lg:p-16 rounded-lg shadow-2xl relative z-10 max-w-4xl border border-black/5"
             >
               <div className="relative inline-block mb-8">
-                <h2 className="text-4xl md:text-5xl font-black text-dark tracking-tighter">
+                <h2 className="text-4xl md:text-5xl text-dark tracking-tighter">
                   Our Guiding Philosophy
                 </h2>
                 <div className="absolute -bottom-3 left-0 w-2/3 h-1.5 bg-primary rounded-full transition-all duration-300 hover:w-full" />
