@@ -1,7 +1,7 @@
 import { Heart, Menu } from "lucide-react";
 import { Link, useLocation } from "react-router-dom";
 import data from "../data/data.json";
-import Logo from "../assets/Logo_Vardhishnu.jpg";
+import Logo from "../assets/logo.svg";
 
 const Navbar = () => {
   const location = useLocation();
@@ -11,7 +11,7 @@ const Navbar = () => {
     <nav
       className={`z-50 w-full transition-all duration-300 ${
         isHomePage
-          ? "bg-black/20 backdrop-blur-sm border-b border-white/5"
+          ? "bg-black/5  backdrop-blur-sm"
           : "relative bg-black shadow-lg"
       }`}
     >
@@ -48,9 +48,9 @@ const Navbar = () => {
             })}
           </div>
           <div className="flex items-center gap-4">
-            <button className="btn-primary">
-              <Heart size={18} fill="currentColor" />
-              <span>{data.header.cta}</span>
+            <button className="flex items-center gap-2">
+              <Heart size={18} className="text-primary" />
+              <span className="text-primary">{data.header.cta}</span>
             </button>
           </div>
         </div>

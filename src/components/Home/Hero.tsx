@@ -17,7 +17,6 @@ const Hero = () => {
     return () => clearInterval(timer);
   }, [slides.length]);
 
-
   const variants = {
     enter: (direction: number) => ({
       x: direction > 0 ? "100%" : "-100%",
@@ -56,7 +55,7 @@ const Hero = () => {
             alt={slides[currentSlide].headline}
             className="w-full h-full object-cover"
           />
-          <div className="absolute inset-0 bg-dark/50"></div>
+          <div className="absolute inset-0 bg-linear-to-t from-black/10 via-black/30 to-black/90"></div>
         </motion.div>
       </AnimatePresence>
 
