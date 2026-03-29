@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Play, ChevronLeft, ChevronRight } from "lucide-react";
+import { Play } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import data from "../../data/data.json";
 import { getImageUrl } from "../../utils/imageUrl";
@@ -17,12 +17,6 @@ const Hero = () => {
     return () => clearInterval(timer);
   }, [slides.length]);
 
-  const paginate = (newDirection: number) => {
-    setDirection(newDirection);
-    setCurrentSlide(
-      (prev) => (prev + newDirection + slides.length) % slides.length,
-    );
-  };
 
   const variants = {
     enter: (direction: number) => ({
