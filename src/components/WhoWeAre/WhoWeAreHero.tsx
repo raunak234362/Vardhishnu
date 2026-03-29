@@ -16,7 +16,7 @@ const WhoWeAreHero = () => {
               <span className="text-dark/40 font-medium tracking-wide uppercase text-md">
                 Who we are
               </span>
-              <h1 className="text-4xl md:text-6xl font-semibold text-dark mt-4 leading-tight tracking-tighter">
+              <h1 className="text-4xl md:text-6xl text-dark mt-4 leading-tight tracking-tighter">
                 Creating hope, impacting lives globally
               </h1>
               <p className="text-lg md:text-xl text-dark/70 leading-relaxed mt-6 max-w-xl">

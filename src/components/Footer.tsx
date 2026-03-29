@@ -15,7 +15,7 @@ const Footer = () => {
     <footer className="bg-white pt-24">
       {/* Newsletter Section */}
       <div className="container-custom mb-24">
-        <div className="bg-[#f8f9fa] rounded-lg p-12 md:p-16 flex flex-col lg:flex-row items-center justify-between gap-10 shadow-sm border border-black/5">
+        <div className="bg-[#f8f9fa] rounded-lg p-12 md:p-16 flex flex-col lg:flex-row items-center justify-between gap-10 shadow-sm border border-black/20">
           <div className="max-w-md">
             <h3 className="text-3xl mb-4 text-dark tracking-tighter">
               Stay Updated With Us
@@ -67,7 +67,7 @@ const Footer = () => {
 
           {/* Quick Links 1 */}
           <div className="lg:col-span-2 space-y-8">
-            <h4 className="text-2xl font-black text-dark tracking-tight">
+            <h4 className="text-2xl text-dark tracking-tight">
               Menu
             </h4>
             <ul className="space-y-4 text-lg text-dark/60 font-medium">
@@ -101,7 +101,7 @@ const Footer = () => {
 
           {/* Quick Links 2 */}
           <div className="lg:col-span-2 space-y-8">
-            <h4 className="text-2xl font-black text-dark tracking-tight">
+            <h4 className="text-2xl text-dark tracking-tight">
               About us
             </h4>
             <ul className="space-y-4 text-lg text-dark/60 font-medium">
@@ -130,7 +130,7 @@ const Footer = () => {
 
           {/* Contact Info */}
           <div className="lg:col-span-3 space-y-8">
-            <h4 className="text-2xl font-black text-dark tracking-tight">
+            <h4 className="text-2xl text-dark tracking-tight">
               Contacts Info
             </h4>
             <div className="space-y-6">
@@ -139,7 +139,7 @@ const Footer = () => {
                   <Phone size={20} />
                 </div>
                 <div>
-                  <div className="text-dark font-black">Call us</div>
+                  <div className="text-dark font-semibold">Call us</div>
                   <a
                     href={`tel:${data.footer.contact.phone}`}
                     className="text-dark/60 font-medium hover:text-primary"
@@ -153,7 +153,7 @@ const Footer = () => {
                   <Mail size={20} />
                 </div>
                 <div>
-                  <div className="text-dark font-black">Mail Us</div>
+                  <div className="text-dark font-semibold ">Mail Us</div>
                   <a
                     href={`mailto:${data.footer.contact.email}`}
                     className="text-dark/60 font-medium hover:text-primary"
@@ -167,7 +167,7 @@ const Footer = () => {
                   <MapPin size={20} />
                 </div>
                 <div>
-                  <div className="text-dark font-black">Visit Us</div>
+                  <div className="text-dark font-semibold">Visit Us</div>
                   <p className="text-dark/60 font-medium leading-tight">
                     {data.footer.address}
                   </p>

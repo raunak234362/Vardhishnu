@@ -39,7 +39,7 @@ const OurJourney = () => {
               className="space-y-8"
             >
               <div className="relative inline-block">
-                <h2 className="text-4xl md:text-5xl font-black text-dark tracking-tighter">
+                <h2 className="text-4xl md:text-5xl text-dark tracking-tighter">
                   Our Journey
                 </h2>
                 <div className="absolute -bottom-2 left-0 w-2/3 h-1.5 bg-primary rounded-full transition-all duration-300 hover:w-full" />

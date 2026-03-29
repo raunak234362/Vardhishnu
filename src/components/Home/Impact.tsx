@@ -24,7 +24,7 @@ const Impact = () => {
             </svg>
           </div>
 
-          <h2 className="text-3xl md:text-5xl font-black text-dark mb-10 max-w-4xl relative z-10 leading-tight tracking-tighter">
+          <h2 className="text-3xl md:text-5xl text-dark mb-10 max-w-4xl relative z-10 leading-tight tracking-tighter">
             {title}
           </h2>
           <div className="w-16 h-1.5 bg-primary rounded-full relative z-10" />

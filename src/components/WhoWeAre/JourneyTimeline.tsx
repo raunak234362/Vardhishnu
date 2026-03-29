@@ -6,7 +6,7 @@ const JourneyTimeline = () => {
       <div className="max-w-7xl mx-auto px-6">
         {/* Heading */}
         <div className="mb-32">
-          <h2 className="text-4xl font-black text-dark tracking-tighter inline-block relative border-b-4 border-primary pb-2 rounded-sm">
+          <h2 className="text-4xl text-dark tracking-tighter inline-block relative border-b-4 border-primary pb-2 rounded-sm">
             Our Journey
           </h2>
           <p className="mt-4 text-dark/40 font-bold text-sm tracking-widest uppercase">

@@ -20,7 +20,7 @@ const OurPresence = () => {
     <section className="py-24 bg-[#fcfcfc]">
       <div className="container-custom">
         <div className="mb-12">
-          <h2 className="text-4xl font-black text-dark tracking-tighter inline-block relative">
+          <h2 className="text-4xl text-dark tracking-tighter inline-block relative">
             Our Presence
             <div className="absolute -bottom-3 left-0 w-1/2 h-1.5 bg-primary rounded-full transition-all duration-500 hover:w-full" />
           </h2>
@@ -54,7 +54,7 @@ const OurPresence = () => {
                 <div className="w-10 h-10 rounded-full bg-primary flex items-center justify-center text-white shadow-lg">
                   <MapPin size={20} />
                 </div>
-                <h3 className="text-2xl font-black text-dark italic">
+                <h3 className="text-2xl text-dark italic">
                   Vardhishnu Intervention Area
                 </h3>
               </div>
@@ -82,7 +82,7 @@ const OurPresence = () => {
                 <div className="w-10 h-10 rounded-full bg-primary flex items-center justify-center text-white shadow-lg">
                   <MapPin size={20} />
                 </div>
-                <h3 className="text-2xl font-black text-dark italic">
+                <h3 className="text-2xl text-dark italic">
                   Partner Organizations
                 </h3>
               </div>
