@@ -1,0 +1,154 @@
+{
+  "awards": [
+    {
+      "name": "Seva Samarpan Puraskar",
+      "by": "by Hivra Ashram, Buldhana",
+      "year": "2015"
+    },
+    {
+      "name": "Samaj Shikshak Puraskar",
+      "by": "by AASHA Foundation, Jalgaon",
+      "year": "2017"
+    },
+    {
+      "name": "Unsung Heroes",
+      "by": "by Maharaja Sayajirao University, Baroda",
+      "year": "2018"
+    },
+    {
+      "name": "Uttung Bharai Puraskar'",
+      "by": "by Bharari Foundation, Jalgaon",
+      "year": "2018"
+    },
+    {
+      "name": "Yuva Gaurav Puraskar",
+      "by": "by Rotaract Club, Jalgaon",
+      "year": "2018"
+    },
+    {
+      "name": "Prerana Gaurav Puraskar",
+      "by": "by Kimaya Foundation, Chopada",
+      "year": "2019"
+    },
+    {
+      "name": "Bahinabai Sanman Puraskar",
+      "by": "by Bharari Foundation, Jalgaon",
+      "year": "2019"
+    },
+    {
+      "name": "Seva Maharathi Puraskar",
+      "by": "by Life is Beautiful Foundation, Jalgaon",
+      "year": "2019"
+    },
+    {
+      "name": "Yuva Prerana Puraskar",
+      "by": "by Deepstambh Foundation, Jalgaon",
+      "year": "2019"
+    },
+    {
+      "name": "Khandesh Ratna",
+      "by": "by Shri. Unmesh Patil, Hon. Member of Parliament, Chalisgaon",
+      "year": "2019"
+    },
+    {
+      "name": "Young Changemaker",
+      "by": "Global Giving Award, 2022 by Crowdera, Mumbai",
+      "year": "2023"
+    },
+    {
+      "name": "Tarun Tejankit",
+      "by": "by Daily Loksatta, Mumbai",
+      "year": "2023"
+    },
+    {
+      "name": "Suryadatta Excellence Award",
+      "by": "Suryadatta Education Foundation and Daily Lokmat",
+      "year": "2024"
+    },
+    {
+      "name": "Alfa Award",
+      "by": "by Alfa Communications, Mumbai",
+      "year": "2024"
+    },
+    {
+      "name": "Global Maharashtra",
+      "by": "by Lokshahi Maharashtra News Channel, Mumbai",
+      "year": "2025"
+    },
+    {
+      "name": "Ashwini Japtiwale Smruti Sanjivan Puraskar",
+      "by": "Ashwini Japtiwale Smruti Sanjivan Puraskar",
+      "year": "2025"
+    },
+    {
+      "name": "Arun Thakur Smruti Puraskar",
+      "by": "by Avishkar Shikshan Sanstha, Nashik",
+      "year": "2026"
+    }
+  ],
+  "felicitations": [
+    "Felicitation by Rotary Club of Jalgaon West in 2017",
+    "Felicitation by Malhar Foundation at Jalgaon, March 2018.",
+    "Felicitation by Indian Redcross Society, Jalgaon on the occasion of World Environment Day, 2018",
+    "Felicitation by Rotary Club of Jalgaon Stars, 2019",
+    "Felicitation by Jain Group of Companies, 2020",
+    "Felicitation by Daily Deshdoot, 2022",
+    "Felicitation by Akashwani Kendra, Jalgaon 2023",
+    "Felicitation by Plastivision, Jalgaon 2019 & 2023"
+  ],
+  "conferences": [
+    {
+      "date": "17",
+      "month": "November, 2015",
+      "location": "Pune, Maharashtra, India",
+      "title": "National Conference on Social Innovations",
+      "org": "organized by Pune International Center"
+    },
+    {
+      "date": "16",
+      "month": "January 2016",
+      "location": "Hubali, Karnataka, India",
+      "title": "Sandbox Samvidha",
+      "org": "organised by Deshpande Foundation"
+    },
+    {
+      "date": "17 - 18",
+      "month": "February, 2018",
+      "location": "Pune, Maharashtra, India",
+      "title": "Vicharvedh",
+      "org": "organised by Vicharvedh"
+    },
+    {
+      "date": "2 - 6",
+      "month": "December 2018",
+      "location": "Paris, France",
+      "title": "Youth Global Forum - 2018",
+      "org": "organised by Youth Times Initiative"
+    },
+    {
+      "date": "30 Jan, 2018 - 04 Feb, 2019",
+      "location": "Mumbai, Maharashtra, India",
+      "title": "National Conference on Narrative Practices",
+      "org": "by Ummeed International Center"
+    },
+    {
+      "date": "27 - 29",
+      "month": "April, 2023",
+      "location": "Mumbai, Maharashtra, India",
+      "title": "SELebrating Inclusion Summit",
+      "org": "by Ummeed International Center & Apni Shala"
+    },
+    {
+      "date": "09 - 11",
+      "month": "March, 2026",
+      "location": "Bangkok, Thailand",
+      "title": "17th Poverty and Social Protection Conference",
+      "org": "by Tomorrow People Organisation"
+    }
+  ],
+  "featured_in": [
+    { "name": "YOURSTORY", "logo": "yourstory" },
+    { "name": "the better india", "logo": "better-india" },
+    { "name": "THE LOGICAL INDIAN", "logo": "logical-indian" }
+  ]
+}
