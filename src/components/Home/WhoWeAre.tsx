@@ -70,7 +70,7 @@ const WhoWeAre = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
             >
-              <h2 className="text-4xl md:text-5xl font-semibold mb-6 text-dark tracking-tight">
+              <h2 className="text-4xl md:text-5xl mb-6 text-dark tracking-tight">
                 {data.about.title}
               </h2>
               <div className="space-y-6 text-lg text-dark/70 leading-relaxed mb-8">

@@ -20,7 +20,7 @@ const WhatWeDo = () => {
                 </h2>
                 <div className="absolute -bottom-2 left-0 w-2/3 h-1 bg-primary rounded-full transition-all duration-300" />
               </div>
-              <p className="text-lg text-dark/70 leading-relaxed max-w-xl font-medium">
+              <p className="text-xl text-dark/70 leading-relaxed max-w-xl font-medium">
                 Our core focus areas include education, child protection, and
                 community empowerment. We enable children to transition from
                 streets and exploitative labour into safe learning spaces and
@@ -33,7 +33,7 @@ const WhatWeDo = () => {
               initial={{ opacity: 0, x: 50 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              className="w-full lg:w-1/2"
+              className="w-full lg:w-xl"
             >
               <div className="aspect-video lg:aspect-4/3 rounded-3xl bg-gray-100 overflow-hidden shadow-xl">
                <img src={getImageUrl("v1774764803/8_Our_story_vgsnnk.jpg")} alt="" />
@@ -44,17 +44,17 @@ const WhatWeDo = () => {
       </section>
 
       {/* Through our programs Section */}
-      <section className="py-24 overflow-hidden">
+      <section className="py-10 overflow-hidden">
         <div className="container-custom">
           <div className="flex flex-col-reverse lg:flex-row items-center gap-16">
             <motion.div
               initial={{ opacity: 0, x: -50 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              className="w-full lg:w-1/2"
+              className="w-full lg:w-2xl"
             >
-              <div className="aspect-video lg:aspect-4/3 rounded-3xl bg-gray-100 overflow-hidden shadow-xl">
-              <img src={getImageUrl("v1774764792/503506027_2982689175234089_6150840370846881877_n_fu8rvs.jpg")} alt="" />
+              <div className="rounded-3xl bg-gray-100 overflow-hidden shadow-xl">
+              <img src={getImageUrl("v1774764792/503506027_2982689175234089_6150840370846881877_n_fu8rvs.jpg")} alt="" className="object-contain scale-1.5"/>
               </div>
             </motion.div>
 

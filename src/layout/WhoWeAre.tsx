@@ -11,9 +11,9 @@ const WhoWeAre = () => {
     <>
       <WhoWeAreHero />
       <OurJourney />
-      <JourneyTimeline />
       <WhatWeDo />
       <Philosophy />
+      <JourneyTimeline />
       <OurTeam />
       <Supporters />
     </>

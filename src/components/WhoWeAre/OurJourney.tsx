@@ -7,26 +7,34 @@ const OurJourney = () => {
       <div className="container-custom">
         <div className="flex flex-col lg:flex-row items-center gap-20">
           {/* Overlapping Images Column */}
-          <div className="w-full lg:w-1/2 relative min-h-[500px] flex items-center justify-center lg:justify-start">
-            {/* Top Back Image Placeholder */}
+          <div className="w-full lg:w-1/2 relative min-h-[500px] flex items-start justify-end pr-10">
+            {/* Top Right Back Image */}
             <motion.div
-              initial={{ opacity: 0, scale: 0.9 }}
-              whileInView={{ opacity: 1, scale: 1 }}
+              initial={{ opacity: 0, scale: 0.9, x: 20 }}
+              whileInView={{ opacity: 1, scale: 1, x: 0 }}
               viewport={{ once: true }}
-              className="relative w-[85%] aspect-square rounded-4xl bg-gray-200 overflow-hidden border-8 border-white shadow-xl z-10"
+              className="relative w-[85%] aspect-square rounded-[2.5rem] bg-gray-200 overflow-hidden shadow-2xl z-10"
             >
-            <img src={getImageUrl("v1774777352/Pasted_image_uq8vhz.png")} alt="" />
+              <img
+                src={getImageUrl("v1774777352/Pasted_image_uq8vhz.png")}
+                alt="Woman and child"
+                className="w-full h-full object-cover"
+              />
             </motion.div>
 
-            {/* Overlapping Bottom Front Image Placeholder */}
+            {/* Overlapping Bottom Left Front Image */}
             <motion.div
-              initial={{ opacity: 0, y: 50, x: -20 }}
-              whileInView={{ opacity: 1, y: 0, x: -20 }}
+              initial={{ opacity: 0, y: 50, x: -30 }}
+              whileInView={{ opacity: 1, y: 0, x: -30 }}
               viewport={{ once: true }}
               transition={{ delay: 0.2 }}
-              className="absolute -bottom-10 right-0 lg:-right-10 w-[60%] aspect-3/4 rounded-4xl bg-gray-300 overflow-hidden border-8 border-white shadow-2xl z-20"
+              className="absolute -bottom-10 left-0 lg:-left-6 w-[50%] aspect-square rounded-[2.5rem] bg-gray-300 overflow-hidden shadow-2xl z-20 "
             >
-              <img src={getImageUrl("v1774777319/Pasted_image_uvedgk.png")} alt="" />
+              <img
+                src={getImageUrl("v1774777319/Pasted_image_uvedgk.png")}
+                alt="Group with children"
+                className="w-full h-full object-cover"
+              />
             </motion.div>
           </div>
 
