@@ -2,6 +2,7 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import data from "../../data/data.json";
 import { getImageUrl } from "../../utils/imageUrl";
+import LazyImage from "../common/LazyImage";  
 
 const OurTeam = () => {
   const tabs = Object.keys(data.team);
@@ -88,10 +89,11 @@ const TeamCard = ({ member }: { member: any }) => {
       >
         {/* Front Side */}
         <div className="absolute inset-0 backface-hidden rounded-[2.5rem] bg-gray-100 overflow-hidden shadow-2xl border-4 border-white group">
-          <img
+          <LazyImage
             src={getImageUrl(member.image)}
             alt={member.name}
             className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+            containerClassName="w-full h-full"
           />
           {/* Overlay Info */}
           <div className="absolute inset-x-0 bottom-0 p-8 bg-linear-to-t from-black/80 via-black/40 to-transparent pt-20">

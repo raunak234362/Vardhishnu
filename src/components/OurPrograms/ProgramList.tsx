@@ -14,7 +14,7 @@ const ProgramList = () => {
         "School Enrolment & sustenance",
         "Hygiene & Physical well-being",
       ],
-      link: "/programs/anandghar",
+      link: "/our-programs/anandghar-approach",
       image: "https://res.cloudinary.com/di7aduhjv/image/upload/v1774770398/Hero1_lrgfwj.png",
     },
     {

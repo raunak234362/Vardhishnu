@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import data from "../../data/data.json";
 import { getImageUrl } from "../../utils/imageUrl";
+import LazyImage from "../common/LazyImage";
 
 const OurPrograms = () => {
   return (
@@ -22,10 +23,11 @@ const OurPrograms = () => {
             >
               {/* Background Image */}
               <div className="absolute inset-0 z-0">
-                <img
+                <LazyImage
                   src={getImageUrl(program.image)}
                   alt={program.name}
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                  containerClassName="w-full h-full"
                 />
                 {/* Overlay */}
                 <div className="absolute inset-0 bg-linear-to-t from-black via-black/40 to-transparent" />

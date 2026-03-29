@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import data from "../../data/data.json";
 import { getImageUrl } from "../../utils/imageUrl";
+import LazyImage from "../common/LazyImage";
 
 const Partners = () => {
   // Duplicate partners for seamless marquee effect
@@ -32,15 +33,16 @@ const Partners = () => {
               key={`${partner.name}-${index}`}
               className="shrink-0 flex items-center justify-center w-40 md:w-80 h-28 p-4 hover:scale-110 transition-transform duration-300 cursor-pointer"
             >
-              <img
+              <LazyImage
                 src={getImageUrl(partner.logo)}
                 alt={partner.name}
-                className="max-w-full max-h-full object-contain pointer-events-none"
+                className="h-16 w-auto object-contain transition-all duration-300"
+                containerClassName="inline-block"
               />
             </div>
           ))}
         </motion.div>
-        
+
         {/* Gradient Fades for cleaner edge transitions */}
         <div className="absolute inset-y-0 left-0 w-32 bg-linear-to-r from-white to-transparent z-10 pointer-events-none" />
         <div className="absolute inset-y-0 right-0 w-32 bg-linear-to-l from-white to-transparent z-10 pointer-events-none" />

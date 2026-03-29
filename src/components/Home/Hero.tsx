@@ -1,8 +1,9 @@
 import { useState, useEffect } from "react";
-import { Play } from "lucide-react";
+import { Play, ChevronLeft, ChevronRight } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import data from "../../data/data.json";
 import { getImageUrl } from "../../utils/imageUrl";
+import LazyImage from "../common/LazyImage";
 
 const Hero = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -50,10 +51,11 @@ const Hero = () => {
           }}
           className="absolute inset-0 z-0"
         >
-          <img
+          <LazyImage
             src={getImageUrl(slides[currentSlide].background)}
             alt={slides[currentSlide].headline}
             className="w-full h-full object-cover"
+            containerClassName="w-full h-full"
           />
           <div className="absolute inset-0 bg-linear-to-t from-black/10 via-black/30 to-black/90"></div>
         </motion.div>

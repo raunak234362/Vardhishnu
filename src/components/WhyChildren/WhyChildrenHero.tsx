@@ -42,10 +42,10 @@ const WhyChildrenHero = () => {
             initial={{ opacity: 0, scale: 0.9 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
-            className="relative rounded-[3rem] overflow-hidden aspect-square border-8 border-white shadow-2xl z-10"
+            className="relative rounded-[3rem] overflow-hidden aspect-square shadow-2xl z-10"
           >
             <img 
-              src={getImageUrl(image)} 
+              src={getImageUrl("v1774764831/Vardhishnu_4_xag2oq.jpg")} 
               alt="Landfill Child Documentary" 
               className="w-full h-full object-cover"
             />

@@ -5,6 +5,7 @@ import WhyChildren from "../layout/WhyChildren";
 import OurPrograms from "../layout/OurPrograms";
 import OurImpacts from "../layout/OurImpacts";
 import Resources from "../layout/Resources";
+import AnandgharApproach from "../components/OurPrograms/anandghar/AnandgharApproach";
 
 const routes = [
   {
@@ -26,6 +27,10 @@ const routes = [
       {
         path: "/our-programs",
         element: <OurPrograms />,
+      },
+      {
+        path: "/our-programs/anandghar-approach",
+        element: <AnandgharApproach />,
       },
       {
         path: "/our-impacts",
