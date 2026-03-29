@@ -5,5 +5,5 @@ export const getImageUrl = (path: string): string => {
     return path;
   }
 
-  return `https://res.cloudinary.com/di7aduhjv/image/upload/${path}`;
+  return `${import.meta.env.VITE_CLOUDINARY_URL}${path}`;
 };

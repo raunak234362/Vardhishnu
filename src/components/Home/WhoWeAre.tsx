@@ -14,7 +14,7 @@ const WhoWeAre = () => {
               initial={{ opacity: 0, x: -50 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              className="relative w-[80%] aspect-4/5 rounded-4xl bg-gray-100 overflow-hidden border-4 border-white shadow-2xl z-10"
+              className="rounded-4xl bg-gray-100 overflow-hidden border-4 border-white shadow-2xl z-10"
             >
               <div className="w-full h-full flex items-center justify-center text-gray-400 font-medium italic">
                 <img
@@ -22,7 +22,7 @@ const WhoWeAre = () => {
                     "v1774764793/504814787_2982689451900728_4503794757455454996_n_v8c686.jpg",
                   )}
                   alt="Who We Are - Vardhishnu"
-                  className="w-full h-full object-right"
+                  className="w-[30vw] h-[60vh] object-cover object-right"
                 />
               </div>
 
