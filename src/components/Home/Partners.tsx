@@ -1,45 +1,49 @@
 import { motion } from "framer-motion";
 import data from "../../data/data.json";
+import { getImageUrl } from "../../utils/imageUrl";
 
 const Partners = () => {
+  // Duplicate partners for seamless marquee effect
+  const marqueeItems = [...data.partners, ...data.partners];
+
   return (
-    <section className="py-20 bg-white">
+    <section className="py-20 bg-white overflow-hidden">
       <div className="container-custom">
-        <h2 className="text-3xl md:text-4xl font-black mb-12 text-dark tracking-tight text-center md:text-left">
+        <h2 className="text-3xl md:text-4xl font-black mb-16 text-dark tracking-tight text-center md:text-left">
           Accredited & Supported By
         </h2>
+      </div>
 
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
-          {data.partners.map((partner, index) => (
-            <motion.div
-              key={partner.name}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: index * 0.1 }}
-              className="h-32 rounded-2xl bg-[#f8f9fa] border border-black/5 flex items-center justify-center p-6 grayscale hover:grayscale-0 transition-all duration-500 group"
+      <div className="relative flex overflow-hidden">
+        {/* Logo Marquee Container */}
+        <motion.div
+          className="flex items-center gap-16 md:gap-24 whitespace-nowrap"
+          animate={{
+            x: ["0%", "-50%"],
+          }}
+          transition={{
+            duration: 40, // Adjust speed
+            ease: "linear",
+            repeat: Infinity,
+          }}
+        >
+          {marqueeItems.map((partner, index) => (
+            <div
+              key={`${partner.name}-${index}`}
+              className="shrink-0 flex items-center justify-center w-40 md:w-80 h-28 p-4 hover:scale-110 transition-transform duration-300 cursor-pointer"
             >
-              {/* Logo Placeholder */}
-              <div className="flex flex-col items-center gap-2">
-                <div className="w-full h-full text-center flex items-center justify-center font-bold text-dark/30 group-hover:text-primary transition-colors italic">
-                  {partner.name} Logo
-                </div>
-              </div>
-            </motion.div>
-          ))}
-          {/* Third and Fourth Placeholder as in mockup or for symmetry */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.3 }}
-            className="h-32 rounded-2xl bg-[#f8f9fa] border border-black/5 flex items-center justify-center p-6 grayscale hover:grayscale-0 transition-all duration-500 group"
-          >
-            <div className="w-full h-full text-center flex items-center justify-center font-bold text-dark/30 group-hover:text-primary transition-colors italic">
-              Third Partner Logo
+              <img
+                src={getImageUrl(partner.logo)}
+                alt={partner.name}
+                className="max-w-full max-h-full object-contain pointer-events-none"
+              />
             </div>
-          </motion.div>
-        </div>
+          ))}
+        </motion.div>
+        
+        {/* Gradient Fades for cleaner edge transitions */}
+        <div className="absolute inset-y-0 left-0 w-32 bg-linear-to-r from-white to-transparent z-10 pointer-events-none" />
+        <div className="absolute inset-y-0 right-0 w-32 bg-linear-to-l from-white to-transparent z-10 pointer-events-none" />
       </div>
     </section>
   );
