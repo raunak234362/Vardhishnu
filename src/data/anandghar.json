@@ -10,5 +10,88 @@
       "These centers serve as a vital bridge between children, their families, schools, and society. They provide both formal and informal education, along with essential life skills, to children from marginalized and economically disadvantaged backgrounds. Our goal is to prepare them to join mainstream schools, thrive academically, and build a future of dignity and opportunity."
     ],
     "sideImage": "v1774765447/25_wekfwc.jpg"
+  },
+  "whatWeDo": {
+    "title": "What We Do",
+    "items": [
+      {
+        "title": "Open doors to education",
+        "description": "We help children read, write, and build strong numerical skills so they can confidently join and stay in mainstream schools."
+      },
+      {
+        "title": "Build life skills",
+        "description": "Expression, cooperation, leadership, and self-confidence are at the heart of our sessions."
+      },
+      {
+        "title": "Break cycles of child labor",
+        "description": "We work closely with families and schools to ensure children leave exploitative work behind."
+      },
+      {
+        "title": "Promote health and well-being",
+        "description": "From hygiene awareness to overcoming substance abuse, we care for the whole child."
+      },
+      {
+        "title": "Empower Communities",
+        "description": "We work hand-in-hand with parents, families, and community members to understand child rights, break the cycle of child labor and child marriage—ensuring every child grows up safe, educated, and free to dream."
+      }
+    ],
+    "footer": "The Anandghar program is a holistic model of child development which is completely aligned to the United Nations Convention on the Rights of the Child."
+  },
+  "holisticModel": {
+    "title": "A Holistic Model for Child Development",
+    "description": "The Anandghar program is a holistic model of child development rooted in the values of the United Nations Convention on the Rights of the Child. We believe that when children are given dignity, love, and opportunity, they can rewrite their own futures."
+  },
+  "ourModel": {
+    "title": "Our Model",
+    "steps": [
+      {
+        "id": "Step 1",
+        "items": [
+          "Identify children through denominator study",
+          "Build rapport",
+          "Enroll the child in Anandghar"
+        ]
+      },
+      {
+        "id": "Step 2",
+        "items": [
+          "Collect baseline data",
+          "Divide in 3 groups as per reading & Writing Comprehension",
+          "Assign educator",
+          "Nurture child to respective threshold level"
+        ]
+      },
+      {
+        "id": "Step 3",
+        "items": [
+          "Community Engagement",
+          "Enroll the child in mainstream school",
+          "Periodic monitoring and follow-ups",
+          "Children leave their profession, becomes part of the school as well as Anandghar"
+        ]
+      }
+    ]
+  },
+  "values": {
+    "title": "Our Values",
+    "items": [
+      { "name": "Love", "icon": "heart" },
+      { "name": "Compassion", "icon": "hand-heart" },
+      { "name": "Dignity", "icon": "award" },
+      { "name": "Respect", "icon": "users" }
+    ]
+  },
+  "gallery": {
+    "title": "Anandghar is all about",
+    "images": [
+      { "label": "Safe Spaces to Share, Connect & Reflect", "image": "v1774765447/25_wekfwc.jpg" },
+      { "label": "Activity based joyful learning", "image": "v1774765447/25_wekfwc.jpg" },
+      { "label": "Inculcating Life-skills", "image": "v1774765447/25_wekfwc.jpg" },
+      { "label": "Health & Physical well-being", "image": "v1774765447/25_wekfwc.jpg" },
+      { "label": "Nutritional food", "image": "v1774765447/25_wekfwc.jpg" },
+      { "label": "Dignified Life", "image": "v1774765447/25_wekfwc.jpg" },
+      { "label": "Community Engagement", "image": "v1774765447/25_wekfwc.jpg" },
+      { "label": "School Enrollment & Sustenance", "image": "v1774765447/25_wekfwc.jpg" }
+    ]
   }
 }

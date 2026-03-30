@@ -1,12 +1,35 @@
-import { motion } from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
 import { getImageUrl } from "../../../utils/imageUrl";
 import data from "../../../data/anandghar.json";
 import LazyImage from "../../common/LazyImage";
+import * as icons from "lucide-react";
+import { useRef } from "react";
 
 const AnandgharApproach = () => {
+  const modelRef = useRef<HTMLDivElement>(null);
+  const { scrollYProgress } = useScroll({
+    target: modelRef,
+    offset: ["start center", "end center"],
+  });
+
+  const xPosition = useTransform(
+    scrollYProgress,
+    [0, 0.5, 1],
+    ["0%", "100%", "200%"],
+  );
+
+  // Opacity for step labels
+  const step1Opacity = useTransform(scrollYProgress, [0, 0.2], [1, 0.5]);
+  const step2Opacity = useTransform(
+    scrollYProgress,
+    [0.3, 0.5, 0.7],
+    [0.5, 1, 0.5],
+  );
+  const step3Opacity = useTransform(scrollYProgress, [0.8, 1], [0.5, 1]);
+
   return (
     <section className="bg-white">
-      {/* Hero Header with handwritten overlay */}
+      {/* ... Hero and other sections ... */}
       <div className="relative h-[65vh] w-full overflow-hidden">
         <LazyImage
           src={getImageUrl(data.hero.image)}
@@ -69,6 +92,262 @@ const AnandgharApproach = () => {
               />
             </div>
           </motion.div>
+        </div>
+      </div>
+
+      {/* What We Do Section */}
+      <div className="container-custom py-24">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="max-w-4xl"
+        >
+          <h2 className="text-4xl md:text-5xl font-black text-dark mb-16">
+            {data.whatWeDo.title}
+          </h2>
+
+          <div className="space-y-10 mb-16">
+            {data.whatWeDo.items.map((item, index) => (
+              <div key={index} className="flex items-start gap-6">
+                <div className="mt-2.5 w-3 h-3 rounded-full bg-primary shrink-0" />
+                <p className="text-xl text-dark/80 leading-relaxed font-semibold">
+                  <span className="text-dark font-bold">{item.title}:</span>{" "}
+                  {item.description}
+                </p>
+              </div>
+            ))}
+          </div>
+
+          <p className="text-xl text-dark/60 italic font-medium">
+            {data.whatWeDo.footer}
+          </p>
+        </motion.div>
+      </div>
+
+      {/* Holistic Model Section */}
+      <div className="container-custom py-24">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+        >
+          <div className="relative inline-block mb-10">
+            <h2 className="text-4xl md:text-5xl font-black text-dark tracking-tight">
+              {data.holisticModel.title}
+            </h2>
+            <div className="absolute -bottom-3 left-0 w-1/3 h-1.5 bg-primary rounded-full" />
+          </div>
+          <p className="text-2xl text-dark/80 leading-relaxed font-semibold max-w-5xl">
+            {data.holisticModel.description}
+          </p>
+        </motion.div>
+      </div>
+
+      {/* Our Model Section */}
+      <div className="container-custom py-24" ref={modelRef}>
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+        >
+          <div className="relative inline-block mb-10">
+            <h2 className="text-4xl md:text-5xl font-black text-dark tracking-tight">
+              {data.ourModel.title}
+            </h2>
+            <div className="absolute -bottom-3 left-0 w-1/2 h-1.5 bg-primary rounded-full" />
+          </div>
+
+          {/* Progress Bar Header */}
+          <div className="bg-gray-100 rounded-full h-14 w-full mb-16 flex items-center px-2 relative overflow-hidden shadow-inner font-bold text-dark/70 text-base md:text-xl">
+            {/* Moving Green Bar */}
+            <motion.div
+              style={{ x: xPosition }}
+              className="absolute left-2 top-2 bottom-2 w-[calc(33.33%-1rem)] bg-primary rounded-full z-10"
+            />
+
+            <div className="flex-1 flex items-center justify-center relative z-20 transition-colors duration-500">
+              <motion.span
+                style={{
+                  opacity: step1Opacity,
+                  color: useTransform(
+                    step1Opacity,
+                    [0.5, 1],
+                    ["#1a1a1a", "#ffffff"],
+                  ),
+                }}
+              >
+                Step 1
+              </motion.span>
+            </div>
+            <div className="w-8 flex justify-center text-dark/30 z-20 font-bold">
+              &gt;
+            </div>
+            <div className="flex-1 flex items-center justify-center relative z-20 transition-colors duration-500">
+              <motion.span
+                style={{
+                  opacity: step2Opacity,
+                  color: useTransform(
+                    step2Opacity,
+                    [0.8, 1],
+                    ["#1a1a1a", "#ffffff"],
+                  ),
+                }}
+              >
+                Step 2
+              </motion.span>
+            </div>
+            <div className="w-8 flex justify-center text-dark/30 z-20 font-bold">
+              &gt;
+            </div>
+            <div className="flex-1 flex items-center justify-center relative z-20 transition-colors duration-500">
+              <motion.span
+                style={{
+                  opacity: step3Opacity,
+                  color: useTransform(
+                    step3Opacity,
+                    [0.8, 1],
+                    ["#1a1a1a", "#ffffff"],
+                  ),
+                }}
+              >
+                Step 3
+              </motion.span>
+            </div>
+          </div>
+
+          {/* Model Steps Cards */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {data.ourModel.steps.map((step, idx) => (
+              <motion.div
+                key={idx}
+                style={{
+                  scale: useTransform(
+                    scrollYProgress,
+                    [idx * 0.33, idx * 0.33 + 0.15, idx * 0.33 + 0.33],
+                    [0.95, 1.05, 0.95],
+                  ),
+                  borderColor: useTransform(
+                    scrollYProgress,
+                    [idx * 0.33, idx * 0.33 + 0.15, idx * 0.33 + 0.33],
+                    ["#f3f4f6", "#a6ce39", "#f3f4f6"],
+                  ),
+                }}
+                className={`p-10 rounded-4xl h-full bg-white border-2 border-gray-100 shadow-sm transition-shadow duration-500 hover:shadow-md`}
+              >
+                <div className="mb-6 flex items-center gap-3">
+                  <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary font-bold text-lg">
+                    {idx + 1}
+                  </div>
+                  <h3 className="text-xl font-bold text-dark">{step.id}</h3>
+                </div>
+                <ul className="space-y-6">
+                  {step.items.map((item, i) => (
+                    <li
+                      key={i}
+                      className="text-lg text-dark/80 leading-snug font-semibold flex items-start gap-2"
+                    >
+                      <div className="mt-2 w-1.5 h-1.5 rounded-full bg-primary shrink-0" />
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </motion.div>
+            ))}
+          </div>
+        </motion.div>
+      </div>
+
+      {/* Our Values Section */}
+      <div className="container-custom py-24">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+        >
+          <div className="relative inline-block mb-16">
+            <h2 className="text-4xl md:text-5xl font-black text-dark tracking-tight">
+              {data.values.title}
+            </h2>
+            <div className="absolute -bottom-3 left-0 w-1/2 h-1.5 bg-primary rounded-full" />
+          </div>
+
+          <div className="bg-white rounded-[4rem] border-2 border-gray-100 shadow-[0_20px_50px_rgba(0,0,0,0.05)] p-4 md:p-8 flex flex-wrap items-center justify-around gap-8 md:gap-4 max-w-5xl mx-auto">
+            {data.values.items.map((value, idx) => {
+              const iconName = value.icon
+                .split("-")
+                .map((s) => s.charAt(0).toUpperCase() + s.slice(1))
+                .join("") as keyof typeof icons;
+              const Icon = (icons[iconName] as any) || icons.Heart;
+
+              const colors = [
+                "bg-orange-50 text-orange-600",
+                "bg-amber-50 text-amber-600",
+                "bg-purple-50 text-purple-600",
+                "bg-green-50 text-green-600",
+              ];
+              return (
+                <div key={idx} className="flex items-center gap-4 group">
+                  <div
+                    className={`p-4 rounded-2xl rotate-45 group-hover:rotate-0 transition-transform duration-500 shadow-sm ${
+                      colors[idx % colors.length]
+                    }`}
+                  >
+                    <div className="-rotate-45 group-hover:rotate-0 transition-transform duration-500">
+                      <Icon size={28} strokeWidth={2.5} />
+                    </div>
+                  </div>
+                  <span className="text-3xl font-black text-dark tracking-tighter">
+                    {value.name}
+                  </span>
+                  {idx < data.values.items.length - 1 && (
+                    <div className="hidden lg:block h-12 w-px bg-gray-200 ml-4" />
+                  )}
+                </div>
+              );
+            })}
+          </div>
+        </motion.div>
+      </div>
+
+      {/* Gallery Section */}
+      <div className="bg-dark/5 py-24 mt-24">
+        <div className="container-custom">
+          <div className="mb-16">
+            <h2 className="text-3xl font-bold text-dark inline-block relative">
+              {data.gallery.title}
+              <div className="absolute -bottom-2 left-0 w-full h-0.5 bg-primary" />
+            </h2>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {data.gallery.images.map((item, idx) => (
+              <motion.div
+                key={idx}
+                initial={{ opacity: 0, scale: 0.9 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ delay: idx * 0.1 }}
+                className={`relative overflow-hidden rounded-3xl group ${
+                  idx === 0
+                    ? "lg:row-span-2 lg:col-span-1 h-[600px] lg:h-full"
+                    : "h-[300px]"
+                } ${idx === 5 ? "lg:row-span-2 lg:h-full" : ""}`}
+              >
+                <LazyImage
+                  src={getImageUrl(item.image)}
+                  alt={item.label}
+                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                  containerClassName="w-full h-full"
+                />
+                <div className="absolute inset-0 bg-linear-to-t from-black/70 via-transparent to-transparent flex items-end p-8">
+                  <p className="text-primary font-handwritten text-3xl md:text-3xl leading-none drop-shadow-lg">
+                    {item.label}
+                  </p>
+                </div>
+              </motion.div>
+            ))}
+          </div>
         </div>
       </div>
     </section>
