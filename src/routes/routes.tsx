@@ -7,6 +7,7 @@ import OurImpacts from "../layout/OurImpacts";
 import Resources from "../layout/Resources";
 import AnandgharApproach from "../components/OurPrograms/anandghar/AnandgharApproach";
 import AnandgharFellowship from "../components/OurPrograms/felloship/AnandgharFellowship";
+import CommunityCollectives from "../components/OurPrograms/Community Collectives/Communitycollectives";
 
 const routes = [
   {
@@ -36,6 +37,10 @@ const routes = [
       {
         path: "/our-programs/anandghar-fellowship",
         element: <AnandgharFellowship />,
+      },
+      {
+        path: "/our-programs/community-collectives",
+        element: <CommunityCollectives />,
       },
       {
         path: "/our-impacts",

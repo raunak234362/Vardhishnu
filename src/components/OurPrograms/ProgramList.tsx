@@ -38,7 +38,7 @@ const ProgramList = () => {
         "School Enrolment & sustenance",
         "Hygiene & Physical well-being",
       ],
-      link: "/programs/community-collectives",
+      link: "/our-programs/community-collectives",
       image: "https://res.cloudinary.com/di7aduhjv/image/upload/v1774764831/Vardhishnu_ssnb6c.jpg",
     },
   ];

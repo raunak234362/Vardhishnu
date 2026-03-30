@@ -1,6 +1,4 @@
 import { motion, AnimatePresence } from "framer-motion";
-import { getImageUrl } from "../../../utils/imageUrl";
-import LazyImage from "../../common/LazyImage";
 import { Check, ChevronDown } from "lucide-react";
 import { useState, useRef, useEffect } from "react";
 
