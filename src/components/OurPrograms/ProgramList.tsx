@@ -26,7 +26,7 @@ const ProgramList = () => {
         "School Enrolment & sustenance",
         "Hygiene & Physical well-being",
       ],
-      link: "/programs/anandghar-fellowship",
+      link: "/our-programs/anandghar-fellowship",
       image: "https://res.cloudinary.com/di7aduhjv/image/upload/v1774764829/Vardhishnu_9_uldfse.jpg",
     },
     {

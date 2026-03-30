@@ -6,6 +6,7 @@ import OurPrograms from "../layout/OurPrograms";
 import OurImpacts from "../layout/OurImpacts";
 import Resources from "../layout/Resources";
 import AnandgharApproach from "../components/OurPrograms/anandghar/AnandgharApproach";
+import AnandgharFellowship from "../components/OurPrograms/felloship/AnandgharFellowship";
 
 const routes = [
   {
@@ -31,6 +32,10 @@ const routes = [
       {
         path: "/our-programs/anandghar-approach",
         element: <AnandgharApproach />,
+      },
+      {
+        path: "/our-programs/anandghar-fellowship",
+        element: <AnandgharFellowship />,
       },
       {
         path: "/our-impacts",
