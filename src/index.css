@@ -8,6 +8,17 @@
   --color-primary-dark: #8eaf30;
   --color-dark: #1a1a1a;
   --color-gray-soft: #f5f5f5;
+
+  --animate-shimmer: shimmer 2s infinite linear;
+
+  @keyframes shimmer {
+    from {
+      transform: translateX(-100%);
+    }
+    to {
+      transform: translateX(100%);
+    }
+  }
 }
 
 @layer base {
@@ -44,15 +55,5 @@
 
   .skeleton {
     @apply bg-gray-200 overflow-hidden relative after:absolute after:inset-0 after:-translate-x-full after:bg-gradient-to-r after:from-transparent after:via-white/20 after:to-transparent after:animate-shimmer;
-  }
-
-  @keyframes shimmer {
-    100% {
-      transform: translateX(100%);
-    }
-  }
-
-  .animate-shimmer {
-    animation: shimmer 2s infinite linear;
   }
 }

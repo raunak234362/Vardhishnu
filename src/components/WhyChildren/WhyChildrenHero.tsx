@@ -3,7 +3,7 @@ import appData from "../../data/data.json";
 import { getImageUrl } from "../../utils/imageUrl";
 
 const WhyChildrenHero = () => {
-  const { title, introduction, rights, image } = appData.whychildren;
+  const { title, introduction, rights } = appData.whychildren;
 
   return (
     <section className="py-24 bg-white">
