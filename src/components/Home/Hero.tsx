@@ -14,7 +14,7 @@ const Hero = () => {
     const timer = setInterval(() => {
       setDirection(1);
       setCurrentSlide((prev) => (prev + 1) % slides.length);
-    }, 6000);
+    }, 3000);
     return () => clearInterval(timer);
   }, [slides.length]);
 
