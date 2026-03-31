@@ -15,7 +15,7 @@ const WhoWeAre = () => {
               initial={{ opacity: 0, x: -50 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              className="rounded-4xl bg-gray-100 overflow-hidden border-4 border-white shadow-2xl z-10"
+              className="rounded-xl bg-gray-100 overflow-hidden border-4 border-white shadow-2xl z-10"
             >
               <div className="w-full h-full flex items-center justify-center text-gray-400 font-medium italic">
                 <LazyImage
@@ -54,7 +54,7 @@ const WhoWeAre = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.3 }}
-              className="absolute -bottom-[12%] -right-4 w-[30%] aspect-3/4 rounded-4xl overflow-hidden shadow-2xl z-20 bg-gray-200"
+              className="absolute -bottom-[12%] -right-4 w-[30%] aspect-3/4 rounded-xl overflow-hidden shadow-2xl z-20 bg-gray-200"
             >
               <LazyImage
                 src={getImageUrl("v1774765447/25_wekfwc.jpg")}

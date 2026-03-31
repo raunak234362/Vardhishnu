@@ -15,7 +15,8 @@ const ProgramList = () => {
         "Hygiene & Physical well-being",
       ],
       link: "/our-programs/anandghar-approach",
-      image: "https://res.cloudinary.com/di7aduhjv/image/upload/v1774770398/Hero1_lrgfwj.png",
+      image:
+        "https://res.cloudinary.com/di7aduhjv/image/upload/v1774770398/Hero1_lrgfwj.png",
     },
     {
       title: "Anandghar Fellowship",
@@ -27,7 +28,8 @@ const ProgramList = () => {
         "Hygiene & Physical well-being",
       ],
       link: "/our-programs/anandghar-fellowship",
-      image: "https://res.cloudinary.com/di7aduhjv/image/upload/v1774764829/Vardhishnu_9_uldfse.jpg",
+      image:
+        "https://res.cloudinary.com/di7aduhjv/image/upload/v1774764829/Vardhishnu_9_uldfse.jpg",
     },
     {
       title: "Community Collectives",
@@ -39,7 +41,8 @@ const ProgramList = () => {
         "Hygiene & Physical well-being",
       ],
       link: "/our-programs/community-collectives",
-      image: "https://res.cloudinary.com/di7aduhjv/image/upload/v1774764831/Vardhishnu_ssnb6c.jpg",
+      image:
+        "https://res.cloudinary.com/di7aduhjv/image/upload/v1774764831/Vardhishnu_ssnb6c.jpg",
     },
   ];
 
@@ -61,7 +64,7 @@ const ProgramList = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.1 }}
-              className="group bg-white rounded-[2.5rem] border border-black/5 hover:border-primary/20 hover:shadow-2xl hover:shadow-primary/5 transition-all duration-500 overflow-hidden"
+              className="group bg-white rounded-xl border border-black/5 hover:border-primary/20 hover:shadow-2xl hover:shadow-primary/5 transition-all duration-500 overflow-hidden"
             >
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-0 overflow-hidden">
                 {/* Image Section */}

@@ -1,4 +1,3 @@
-import { motion } from "framer-motion";
 import {
   Users,
   RefreshCw,
@@ -7,57 +6,20 @@ import {
   MapPin,
   ExternalLink,
   Repeat,
+  X,
 } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
 import { useEffect, useState } from "react";
+import { getImageUrl } from "../../../utils/imageUrl";
+import communityData from "../../../data/community_collectives.json";
 
 const CommunityCollectives = () => {
   const [activeTab, setActiveTab] = useState("Current Cohort");
+  const [selectedMember, setSelectedMember] = useState<any>(null);
 
-  const cohorts = [
-    {
-      name: "Jeenu Pawar",
-      org: "Majal Foundation",
-      location: "Bhopal, Madhya Pradesh",
-      focus: "Empowering Phase - Pardhi communities through education",
-      link: "#",
-    },
-    {
-      name: "Sheshraj Shisodiya",
-      org: "Lahar Foundation",
-      location: "Bhopal, Madhya Pradesh",
-      focus: "Empowering Phase - Pardhi communities through education",
-      link: "#",
-    },
-    {
-      name: "Akram",
-      org: "Kala Samvad Foundation",
-      location: "Harda, Madhya Pradesh",
-      focus: "Empowering Phase - Pardhi communities through education",
-      link: "#",
-    },
-    {
-      name: "Ohab Ansari",
-      org: "Samavesh Trust",
-      location: "Mehsana, Gujarat",
-      focus:
-        "Taking education and dignity to every doorstep of Mir, Banjara & Fakir Community",
-      link: "#",
-    },
-    {
-      name: "Priti & Anil",
-      org: "Samaj Uttan Seva Samiti",
-      location: "Bhopal, Madhya Pradesh",
-      focus: "Empowering nomadic lives through identity and education",
-      link: "#",
-    },
-    {
-      name: "Mehruddin",
-      org: "The Project Smile",
-      location: "Bihar",
-      focus: "Smiles of learning, earning, and living well.",
-      link: "#",
-    },
-  ];
+  const currentCohort =
+    communityData.cohorts[activeTab as keyof typeof communityData.cohorts] ||
+    [];
   // Scroll to top on mount
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -92,27 +54,26 @@ const CommunityCollectives = () => {
 
       <div className="py-24 max-w-[1400px] mx-auto px-10 lg:px-20">
         {/* Intro Section - Nurturing Grassroots */}
-        <div className="flex flex-col lg:flex-row items-center gap-16 lg:gap-24 mb-24 lg:mb-32">
+        <div className="flex flex-col lg:flex-row items-center gap-16 lg:gap-24 mb-32 lg:mb-48">
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            className="w-full lg:w-1/2 space-y-8"
+            className="w-full lg:w-1/2 space-y-10"
           >
-            <h2 className="text-4xl md:text-5xl lg:text-6xl text-dark tracking-tight leading-tight">
+            <h2 className="text-5xl md:text-6xl lg:text-5xl text-dark tracking-tight leading-[1.1]">
               Community Collectives <br />
-              <span className="text-dark/80">
-                Nurturing Grassroots <br /> Changemakers
-              </span>
+              Nurturing Grassroots <br />
+              Changemakers
             </h2>
 
-            <p className="text-xl text-dark/70 leading-relaxed">
+            <p className="text-xl text-dark/70 leading-relaxed max-w-xl">
               Join our one-year incubation program empowering grassroots leaders
               to create lasting change in their communities through education
               and mentorship.
             </p>
 
-            <button className="btn-primary px-10 py-4 text-xl rounded-xl shadow-xl shadow-primary/20">
+            <button className="bg-primary hover:bg-primary/90 text-white px-10 py-5 text-xl font-semibold rounded-xl shadow-xl shadow-primary/20 transition-all hover:-translate-y-1">
               Register Interest
             </button>
           </motion.div>
@@ -123,26 +84,52 @@ const CommunityCollectives = () => {
             viewport={{ once: true }}
             className="w-full lg:w-1/2"
           >
-            <div className="aspect-[1.2/1] rounded-[3rem] bg-gray-100 overflow-hidden shadow-2xl border-4 border-white">
-              {/* Image Placeholder */}
+            <div className="rounded-2xl overflow-hidden shadow-2xl">
+              <img
+                src={getImageUrl("v1774764806/3._Home_k41tzn.jpg")}
+                alt="Community Group"
+                className="w-full h-full object-cover scale-[1.1]"
+              />
             </div>
           </motion.div>
         </div>
 
         {/* What we do Section */}
-        <div className="flex flex-col lg:flex-row-reverse items-start gap-16 lg:gap-24 mb-24 lg:mb-32 relative">
+        <div className="flex flex-col lg:flex-row items-center gap-16 lg:gap-24 mb-32 lg:mb-48">
+          {/* Overlapping Images on the left */}
+          <motion.div
+            initial={{ opacity: 0, x: -50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            className="w-full lg:w-1/2 relative min-h-[650px]"
+          >
+            {/* Background Image - Top Right */}
+            <div className="absolute top-0 right-4 w-[65%] aspect-4/5 rounded-2xl overflow-hidden shadow-2xl z-0">
+              <img
+                src={getImageUrl("v1774764800/IMG_0715_z4vkar.jpg")}
+                alt="Community Workshop"
+                className="w-full h-full object-cover"
+              />
+            </div>
+            {/* Foreground Image - Bottom Left */}
+            <div className="absolute top-48 lg:top-56 left-4 w-[65%] aspect-4/5 rounded-2xl overflow-hidden shadow-2xl z-10 transition-transform hover:scale-[1.02] duration-500">
+              <img
+                src={getImageUrl("v1774764799/17_dpe7on.jpg")}
+                alt="Planning Session"
+                className="w-full h-full object-cover"
+              />
+            </div>
+          </motion.div>
+
           <motion.div
             initial={{ opacity: 0, x: 50 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            className="w-full lg:w-1/2 lg:pt-12"
+            className="w-full lg:w-1/2 space-y-10"
           >
-            <div className="relative inline-block mb-10">
-              <h2 className="text-4xl md:text-5xl text-dark tracking-tight">
-                What we do?
-              </h2>
-              <div className="absolute -bottom-3 left-0 w-1/3 h-1.5 bg-primary rounded-full" />
-            </div>
+            <h2 className="text-5xl md:text-6xl text-dark tracking-tight">
+              What we do?
+            </h2>
 
             <div className="space-y-8 text-xl text-dark/70 leading-relaxed">
               <p>
@@ -160,23 +147,6 @@ const CommunityCollectives = () => {
                 journey, strengthen their work, and achieve meaningful outcomes
                 efficiently and sustainably.
               </p>
-            </div>
-          </motion.div>
-
-          {/* Overlapping Images on the left */}
-          <motion.div
-            initial={{ opacity: 0, x: -50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            className="w-full lg:w-1/2 relative"
-          >
-            {/* First Image - Relative to define space */}
-            <div className="relative w-4/5 aspect-[4/5] rounded-[3rem] bg-gray-100 shadow-2xl border-4 border-white z-10 overflow-hidden">
-              {/* Foreground placeholder */}
-            </div>
-            {/* Second Image - Absolute to overlap and push background */}
-            <div className="absolute top-12 left-12 w-4/5 aspect-[4/5] rounded-[3rem] bg-gray-200 shadow-xl border-4 border-white -z-10 overflow-hidden transform translate-x-12 translate-y-12">
-              {/* Background placeholder */}
             </div>
           </motion.div>
         </div>
@@ -207,7 +177,7 @@ const CommunityCollectives = () => {
               initial={{ opacity: 0, scale: 0.95 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
-              className="bg-white border border-primary rounded-lg p-10 space-y-8 flex flex-col items-start shadow-sm hover:bg-primary/5 transition-all duration-300"
+              className="bg-white border border-primary rounded-4xl p-10 space-y-8 flex flex-col items-start shadow-sm hover:bg-primary/5 transition-all duration-300"
             >
               <div className="w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center text-primary">
                 <Users size={32} />
@@ -231,7 +201,7 @@ const CommunityCollectives = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.1 }}
-              className="bg-white border border-primary rounded-lg p-10 space-y-8 flex flex-col items-start shadow-sm hover:bg-primary/5 transition-all duration-300"
+              className="bg-white border border-primary rounded-4xl p-10 space-y-8 flex flex-col items-start shadow-sm hover:bg-primary/5 transition-all duration-300"
             >
               <div className="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center text-primary">
                 <RefreshCw size={28} />
@@ -260,7 +230,7 @@ const CommunityCollectives = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.2 }}
-              className="bg-white border border-primary rounded-lg p-10 space-y-8 flex flex-col items-start shadow-sm hover:bg-primary/5 transition-all duration-300"
+              className="bg-white border border-primary rounded-4xl p-10 space-y-8 flex flex-col items-start shadow-sm hover:bg-primary/5 transition-all duration-300"
             >
               <div className="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center text-primary">
                 <ShieldCheck size={28} />
@@ -307,7 +277,7 @@ const CommunityCollectives = () => {
                 initial={{ opacity: 0, scale: 0.95 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
-                className="bg-white border border-gray-100 rounded-[2.5rem] p-10 shadow-sm hover:shadow-xl transition-all duration-500"
+                className="bg-white border border-gray-100 rounded-4xl p-10 shadow-sm hover:shadow-xl transition-all duration-500"
               >
                 <div className="w-12 h-12 bg-pink-100 text-pink-600 rounded-xl flex items-center justify-center text-2xl mb-8">
                   1
@@ -353,7 +323,7 @@ const CommunityCollectives = () => {
                 initial={{ opacity: 0, scale: 0.95 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
-                className="bg-white border border-gray-100 rounded-[2.5rem] p-10 shadow-sm hover:shadow-xl transition-all duration-500"
+                className="bg-white border border-gray-100 rounded-4xl p-10 shadow-sm hover:shadow-xl transition-all duration-500"
               >
                 <div className="w-12 h-12 bg-orange-100 text-orange-600 rounded-xl flex items-center justify-center text-2xl mb-8">
                   4
@@ -378,7 +348,7 @@ const CommunityCollectives = () => {
                 initial={{ opacity: 0, scale: 0.95 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
-                className="bg-white border border-gray-100 rounded-[2.5rem] p-10 shadow-sm hover:shadow-xl transition-all duration-500"
+                className="bg-white border border-gray-100 rounded-4xl p-10 shadow-sm hover:shadow-xl transition-all duration-500"
               >
                 <div className="w-12 h-12 bg-indigo-100 text-indigo-600 rounded-xl flex items-center justify-center text-2xl mb-8">
                   2
@@ -399,7 +369,7 @@ const CommunityCollectives = () => {
                 initial={{ opacity: 0, scale: 0.95 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
-                className="bg-white border border-gray-100 rounded-[2.5rem] p-10 shadow-sm hover:shadow-xl transition-all duration-500"
+                className="bg-white border border-gray-100 rounded-4xl p-10 shadow-sm hover:shadow-xl transition-all duration-500"
               >
                 <div className="w-12 h-12 bg-green-100 text-green-600 rounded-xl flex items-center justify-center text-2xl mb-8">
                   3
@@ -420,7 +390,7 @@ const CommunityCollectives = () => {
                 initial={{ opacity: 0, scale: 0.95 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
-                className="bg-white border border-gray-100 rounded-[2.5rem] p-10 shadow-sm hover:shadow-xl transition-all duration-500"
+                className="bg-white border border-gray-100 rounded-4xl p-10 shadow-sm hover:shadow-xl transition-all duration-500"
               >
                 <div className="w-12 h-12 bg-blue-100 text-blue-600 rounded-xl flex items-center justify-center text-2xl mb-8">
                   5
@@ -609,7 +579,7 @@ const CommunityCollectives = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
             {/* Geographic Spread - Precision Polar Area Chart */}
-            <div className="bg-white rounded-[2.5rem] p-10 border border-gray-100 shadow-xl flex flex-col items-center">
+            <div className="bg-white rounded-4xl p-10 border border-gray-100 shadow-xl flex flex-col items-center">
               <h3 className="text-2xl text-dark mb-10 w-full text-center tracking-tight">
                 Geographic Spread
               </h3>
@@ -737,7 +707,7 @@ const CommunityCollectives = () => {
             </div>
 
             {/* Gender Spread - Polar Area Chart */}
-            <div className="bg-white rounded-[2rem] p-10 border border-gray-100 shadow-xl flex flex-col items-center">
+            <div className="bg-white rounded-4xl p-10 border border-gray-100 shadow-xl flex flex-col items-center">
               <h3 className="text-2xl text-dark mb-10 w-full text-center">
                 Gender - Entrepreneurs
               </h3>
@@ -839,7 +809,7 @@ const CommunityCollectives = () => {
             initial={{ opacity: 0, scale: 0.95 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
-            className="bg-gray-50 rounded-[3rem] p-12 lg:p-20 text-center space-y-8"
+            className="bg-gray-50 rounded-4xl p-12 lg:p-20 text-center space-y-8"
           >
             <h2 className="text-3xl md:text-4xl font-semibold text-dark leading-tight">
               Applications for the 2026 Cohort Are Now Closed
@@ -885,8 +855,8 @@ const CommunityCollectives = () => {
                   onClick={() => setActiveTab(tab)}
                   className={`px-8 py-3 rounded-full text-lg transition-all whitespace-nowrap ${
                     activeTab === tab
-                      ? "bg-[#A3CE31] text-white font-medium shadow-md"
-                      : "text-black hover:bg-gray-100"
+                      ? "bg-primary text-white font-medium shadow-md"
+                      : "text-dark hover:bg-gray-100"
                   }`}
                 >
                   {tab}
@@ -898,25 +868,32 @@ const CommunityCollectives = () => {
           {/* Badge Indicator on a line */}
           <div className="relative flex justify-center mb-16">
             <div className="absolute inset-x-0 top-1/2 h-px bg-gray-100" />
-            <div className="relative px-12 py-3.5 border border-gray-200 rounded-full text-black font-semibold tracking-wide bg-white shadow-sm text-2xl">
+            <div className="relative px-12 py-3.5 border border-gray-200 rounded-full text-dark font-semibold tracking-wide bg-white shadow-sm text-2xl">
               {activeTab}
             </div>
           </div>
 
           {/* Cohort Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-24">
-            {cohorts.map((member, i) => (
+            {currentCohort.map((member, i) => (
               <motion.div
                 key={i}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.05 }}
-                className="bg-white border border-gray-100 rounded-[2.5rem] overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500 group flex flex-col"
+                className="bg-white border border-gray-100 rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500 group flex flex-col cursor-pointer"
+                onClick={() => setSelectedMember(member)}
               >
                 {/* Image Placeholder */}
                 <div className="aspect-[4/3] bg-gray-100 relative overflow-hidden group-hover:bg-gray-200 transition-colors">
-                  {/* Space for LazyImage */}
+                  {member.image && (
+                    <img
+                      src={getImageUrl(member.image)}
+                      alt={member.name}
+                      className="w-full h-full object-cover group-hover:scale-[1.1] transition-transform duration-700"
+                    />
+                  )}
                 </div>
 
                 <div className="p-10 space-y-6 flex-grow flex flex-col">
@@ -962,7 +939,7 @@ const CommunityCollectives = () => {
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="bg-gray-50 rounded-[3rem] p-12 lg:p-16 flex flex-col lg:flex-row items-center justify-between gap-10 border border-white shadow-sm"
+            className="bg-white rounded-4xl p-12 md:p-20 flex flex-col lg:flex-row items-center justify-between gap-10 border border-gray-200 shadow-sm"
           >
             <div className="space-y-3 text-center lg:text-left">
               <h2 className="text-3xl md:text-4xl font-bold text-dark">
@@ -979,13 +956,92 @@ const CommunityCollectives = () => {
                 placeholder="Your Email"
                 className="px-8 py-4 rounded-xl border border-gray-100 bg-white w-full sm:w-[350px] outline-none focus:ring-4 focus:ring-primary/10 transition-all text-lg shadow-inner"
               />
-              <button className="bg-[#A3CE31] hover:bg-[#8eb829] text-white px-12 py-4 rounded-xl font-bold text-xl transition-all shadow-xl shadow-primary/10">
+              <button className="bg-primary hover:bg-primary/90 text-white px-12 py-4 rounded-xl font-bold text-xl transition-all shadow-xl shadow-primary/10">
                 Subscribe
               </button>
             </div>
           </motion.div>
         </div>
       </div>
+
+      {/* Member Details Modal */}
+      <AnimatePresence>
+        {selectedMember && (
+          <div className="fixed inset-0 z-100 flex items-center justify-center p-4 md:p-10">
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              onClick={() => setSelectedMember(null)}
+              className="absolute inset-0 bg-black/60 backdrop-blur-sm"
+            />
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9, y: 20 }}
+              animate={{ opacity: 1, scale: 1, y: 0 }}
+              exit={{ opacity: 0, scale: 0.9, y: 20 }}
+              className="relative bg-white w-full max-w-4xl max-h-[90vh] rounded-[2.5rem] overflow-hidden shadow-2xl flex flex-col"
+            >
+              {/* Close Button */}
+              <button
+                onClick={() => setSelectedMember(null)}
+                className="absolute top-8 right-8 p-2 rounded-full hover:bg-gray-100 transition-colors z-20"
+              >
+                <X size={28} className="text-dark/60" />
+              </button>
+
+              <div className="overflow-y-auto p-8 md:p-12">
+                {/* Header Info */}
+                <div className="flex flex-col md:flex-row gap-10 items-start mb-10">
+                  <div className="w-40 h-40 rounded-3xl overflow-hidden shadow-lg shrink-0">
+                    <img
+                      src={getImageUrl(selectedMember.image)}
+                      alt={selectedMember.name}
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                  <div className="space-y-4 grow pt-2">
+                    <div>
+                      <h2 className="text-3xl font-bold text-dark">
+                        {selectedMember.name}
+                      </h2>
+                      <p className="text-xl text-dark/60 font-medium">
+                        {selectedMember.org}
+                      </p>
+                    </div>
+
+                    <div className="space-y-3 pt-2">
+                      <div className="flex items-center gap-3 text-dark/70">
+                        <MapPin size={20} className="text-primary" />
+                        <span className="text-lg">
+                          {selectedMember.location}
+                        </span>
+                      </div>
+                      <div className="flex items-center gap-3 text-dark/70">
+                        <Repeat size={20} className="text-orange-500" />
+                        <span className="text-lg">{selectedMember.focus}</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                {/* About Content */}
+                <div className="space-y-6">
+                  <h3 className="text-2xl font-bold text-dark border-b border-gray-100 pb-4">
+                    About
+                  </h3>
+                  <div className="text-lg text-dark/70 leading-relaxed space-y-4">
+                    {selectedMember.about
+                      ?.split("\n")
+                      .map((para: string, i: number) => (
+                        <p key={i}>{para}</p>
+                      ))}
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+          </div>
+        )}
+      </AnimatePresence>
     </section>
   );
 };

@@ -12,25 +12,25 @@ import Logo from "../assets/Logo_Vardhishnu.jpg";
 
 const Footer = () => {
   return (
-    <footer className="bg-white pt-24">
+    <footer className="bg-white pt-24 font-sans">
       {/* Newsletter Section */}
-      <div className="container-custom mb-24">
-        <div className="bg-[#f8f9fa] rounded-lg p-12 md:p-16 flex flex-col lg:flex-row items-center justify-between gap-10 shadow-sm border border-black/20">
+      <div className="container-custom mb-32">
+        <div className="bg-white rounded-4xl p-12 md:p-20 flex flex-col lg:row-span-1 lg:flex-row items-center justify-between gap-10 border border-gray-200 shadow-sm">
           <div className="max-w-md">
-            <h3 className="text-3xl mb-4 text-dark tracking-tighter">
+            <h3 className="text-4xl font-bold mb-3 text-dark tracking-tight">
               Stay Updated With Us
             </h3>
-            <p className="text-dark/50 text-xl">
+            <p className="text-gray-500 text-xl font-medium">
               Get updates, stories to support our mission
             </p>
           </div>
-          <div className="w-full lg:w-auto flex flex-col sm:flex-row gap-4 flex-1 lg:max-w-xl">
+          <div className="w-full lg:w-auto flex flex-col sm:flex-row gap-4 flex-1 lg:max-w-2xl">
             <input
               type="email"
               placeholder="Your Email"
-              className="flex-1 px-8 py-3 rounded-lg bg-white border border-gray-200 shadow-inner text-lg outline-none focus:ring-2 focus:ring-primary/20 transition-all"
+              className="flex-1 px-8 py-5 rounded-xl bg-white border border-gray-100 shadow-sm text-lg outline-none focus:ring-2 focus:ring-primary/10 transition-all placeholder:text-gray-300"
             />
-            <button className="bg-primary hover:bg-primary/90 text-white px-10 py-5 rounded-lg font-bold text-lg shadow-lg transition-all hover:-translate-y-1">
+            <button className="bg-primary hover:bg-primary-dark text-white px-12 py-5 rounded-xl font-bold text-xl shadow-lg shadow-primary/20 transition-all hover:-translate-y-1">
               Subscribe
             </button>
           </div>
@@ -38,39 +38,39 @@ const Footer = () => {
       </div>
 
       {/* Main Footer Content */}
-      <div className="container-custom pb-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-16">
+      <div className="container-custom pb-20">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-16 lg:gap-8">
           {/* Organization Info */}
-          <div className="lg:col-span-5 space-y-8">
+          <div className="lg:col-span-4 space-y-10">
             <div className="flex items-center gap-3">
-              <img src={Logo} alt="Vardhishnu Logo" className="w-20" />
+              <img src={Logo} alt="Vardhishnu Logo" className="w-24" />
             </div>
-            <p className="text-dark/70 text-lg leading-relaxed max-w-lg">
+            <p className="text-gray-500 text-lg leading-relaxed max-w-sm">
               Vardhishnu - Social Research & Development Society is a Jalgaon
               based not-for-profit organisation trying to provide a safe, secure
               and happy childhood to street children specially child waste
               pickers, child labors as well as children from economically
               disadvantaged background.
             </p>
-            <div className="flex gap-5">
+            <div className="flex gap-4">
               {[Twitter, Instagram, Facebook, Youtube].map((Icon, i) => (
                 <a
                   key={i}
                   href="#"
-                  className="w-12 h-12 rounded-full border border-dark/10 flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-all transform hover:-translate-y-1"
+                  className="w-10 h-10 rounded-full border border-gray-100 flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-all transform hover:-translate-y-1"
                 >
-                  <Icon size={20} />
+                  <Icon size={18} />
                 </a>
               ))}
             </div>
           </div>
 
           {/* Quick Links 1 */}
-          <div className="lg:col-span-2 space-y-8">
-            <h4 className="text-2xl text-dark tracking-tight">
+          <div className="lg:col-span-2 space-y-8 lg:pl-4">
+            <h4 className="text-2xl font-bold text-dark tracking-tight">
               Menu
             </h4>
-            <ul className="space-y-4 text-lg text-dark/60 font-medium">
+            <ul className="space-y-5 text-lg text-gray-500 font-medium">
               <li>
                 <a href="#" className="hover:text-primary transition-colors">
                   Who we are
@@ -92,7 +92,10 @@ const Footer = () => {
                 </a>
               </li>
               <li>
-                <a href="#" className="text-primary font-bold hover:underline">
+                <a
+                  href="#"
+                  className="text-primary font-bold hover:underline transition-all"
+                >
                   Donate Now
                 </a>
               </li>
@@ -101,10 +104,10 @@ const Footer = () => {
 
           {/* Quick Links 2 */}
           <div className="lg:col-span-2 space-y-8">
-            <h4 className="text-2xl text-dark tracking-tight">
+            <h4 className="text-2xl font-bold text-dark tracking-tight">
               About us
             </h4>
-            <ul className="space-y-4 text-lg text-dark/60 font-medium">
+            <ul className="space-y-5 text-lg text-gray-500 font-medium">
               <li>
                 <a href="#" className="hover:text-primary transition-colors">
                   How it work?
@@ -129,46 +132,46 @@ const Footer = () => {
           </div>
 
           {/* Contact Info */}
-          <div className="lg:col-span-3 space-y-8">
-            <h4 className="text-2xl text-dark tracking-tight">
+          <div className="lg:col-span-4 space-y-8">
+            <h4 className="text-2xl font-bold text-dark tracking-tight">
               Contacts Info
             </h4>
-            <div className="space-y-6">
-              <div className="flex gap-4">
-                <div className="w-12 h-12 rounded-full bg-primary/10 flex shrink-0 items-center justify-center text-primary shadow-sm">
+            <div className="space-y-8">
+              <div className="flex gap-5 items-center">
+                <div className="w-12 h-12 rounded-full bg-primary/5 flex shrink-0 items-center justify-center text-primary border border-primary/10">
                   <Phone size={20} />
                 </div>
-                <div>
-                  <div className="text-dark font-semibold">Call us</div>
+                <div className="space-y-1">
+                  <div className="text-dark font-bold text-lg">Call us</div>
                   <a
                     href={`tel:${data.footer.contact.phone}`}
-                    className="text-dark/60 font-medium hover:text-primary"
+                    className="text-gray-500 font-medium hover:text-primary transition-colors"
                   >
                     {data.footer.contact.phone}
                   </a>
                 </div>
               </div>
-              <div className="flex gap-4">
-                <div className="w-12 h-12 rounded-full bg-primary/10 flex shrink-0 items-center justify-center text-primary shadow-sm">
+              <div className="flex gap-5 items-center">
+                <div className="w-12 h-12 rounded-full bg-primary/5 flex shrink-0 items-center justify-center text-primary border border-primary/10">
                   <Mail size={20} />
                 </div>
-                <div>
-                  <div className="text-dark font-semibold ">Mail Us</div>
+                <div className="space-y-1">
+                  <div className="text-dark font-bold text-lg">Mail Us</div>
                   <a
                     href={`mailto:${data.footer.contact.email}`}
-                    className="text-dark/60 font-medium hover:text-primary"
+                    className="text-gray-500 font-medium hover:text-primary transition-colors"
                   >
                     {data.footer.contact.email}
                   </a>
                 </div>
               </div>
-              <div className="flex gap-4">
-                <div className="w-12 h-12 rounded-full bg-primary/10 flex shrink-0 items-center justify-center text-primary shadow-sm">
+              <div className="flex gap-5 items-center">
+                <div className="w-12 h-12 rounded-full bg-primary/5 flex shrink-0 items-center justify-center text-primary border border-primary/10">
                   <MapPin size={20} />
                 </div>
-                <div>
-                  <div className="text-dark font-semibold">Visit Us</div>
-                  <p className="text-dark/60 font-medium leading-tight">
+                <div className="space-y-1">
+                  <div className="text-dark font-bold text-lg">Visit Us</div>
+                  <p className="text-gray-500 font-medium leading-snug">
                     {data.footer.address}
                   </p>
                 </div>
@@ -179,8 +182,8 @@ const Footer = () => {
       </div>
 
       {/* Bottom Bar */}
-      <div className="bg-black py-8">
-        <div className="container-custom text-center text-white/50 text-lg font-medium">
+      <div className="bg-black py-10">
+        <div className="container-custom text-center text-white/40 text-lg font-medium">
           Vardhishnu © 2025 All Rights Reserved.
         </div>
       </div>

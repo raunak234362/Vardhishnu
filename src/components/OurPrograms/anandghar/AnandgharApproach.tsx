@@ -83,7 +83,7 @@ const AnandgharApproach = () => {
             viewport={{ once: true }}
             className="w-full lg:w-2/5 lg:-mt-48 relative z-20"
           >
-            <div className="aspect-3/4 rounded-[3rem] overflow-hidden shadow-2xl border-4 border-white">
+            <div className="aspect-3/4 rounded-xl overflow-hidden shadow-2xl border-4 border-white">
               <LazyImage
                 src={getImageUrl(data.approach.sideImage)}
                 alt="Our approach image"
@@ -310,38 +310,40 @@ const AnandgharApproach = () => {
         </motion.div>
       </div>
 
-      {/* Gallery Section */}
-      <div className="bg-dark/5 py-24 mt-24">
+      <div className="relative py-24 px-4 sm:px-0 mt-24">
+        {/* Background blob element */}
+        <div className="absolute top-0 right-0 w-3/4 h-[80%] bg-primary/5 rounded-bl-[100px] sm:rounded-bl-[300px] -z-10" />
+
         <div className="container-custom">
-          <div className="mb-16">
-            <h2 className="text-3xl font-bold text-dark inline-block relative">
+          <div className="mb-20">
+            <h2 className="text-3xl md:text-5xl font-black text-dark inline-block relative">
               {data.gallery.title}
-              <div className="absolute -bottom-2 left-0 w-full h-0.5 bg-primary" />
+              <div className="absolute -bottom-4 left-0 w-2/3 h-1.5 bg-primary rounded-full" />
             </h2>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
             {data.gallery.images.map((item, idx) => (
               <motion.div
                 key={idx}
-                initial={{ opacity: 0, scale: 0.9 }}
-                whileInView={{ opacity: 1, scale: 1 }}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ delay: idx * 0.1 }}
-                className={`relative overflow-hidden rounded-3xl group ${
-                  idx === 0
-                    ? "lg:row-span-2 lg:col-span-1 h-[600px] lg:h-full"
-                    : "h-[300px]"
-                } ${idx === 5 ? "lg:row-span-2 lg:h-full" : ""}`}
+                transition={{ delay: idx * 0.1, duration: 0.6 }}
+                className={`relative overflow-hidden rounded-xl group shadow-2xl ${
+                  idx === 0 || idx === 5
+                    ? "h-[600px] md:h-[800px] md:row-span-2"
+                    : "h-[300px] md:h-[380px]"
+                }`}
               >
                 <LazyImage
                   src={getImageUrl(item.image)}
                   alt={item.label}
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                  className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
                   containerClassName="w-full h-full"
                 />
-                <div className="absolute inset-0 bg-linear-to-t from-black/70 via-transparent to-transparent flex items-end p-8">
-                  <p className="text-primary font-handwritten text-3xl md:text-3xl leading-none drop-shadow-lg">
+                <div className="absolute inset-0 bg-linear-to-t from-black/90 via-black/20 to-transparent flex items-end p-8 sm:p-12">
+                  <p className="text-primary font-handwritten text-4xl md:text-5xl leading-tight drop-shadow-2xl max-w-sm transition-transform duration-500 group-hover:-translate-y-2">
                     {item.label}
                   </p>
                 </div>
