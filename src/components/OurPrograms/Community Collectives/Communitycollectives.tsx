@@ -875,10 +875,22 @@ const CommunityCollectives = () => {
           </div>
 
           {/* Badge Indicator on a line */}
-          <div className="relative flex justify-center mb-16">
+          <div className="relative flex justify-center mb-16 px-4">
             <div className="absolute inset-x-0 top-1/2 h-px bg-gray-100" />
-            <div className="relative px-12 py-3.5 border border-gray-200 rounded-full text-dark font-semibold tracking-wide bg-white shadow-sm text-2xl">
-              {activeTab}
+            <div className="relative px-10 py-3 bg-[#4d4d4d] text-white font-medium tracking-wide rounded-md shadow-sm text-xl lg:text-2xl whitespace-nowrap">
+              {activeTab === "Current Cohort" ? (
+                "Current Cohort"
+              ) : (
+                <>
+                  Cohort -{" "}
+                  {(() => {
+                    const year = activeTab;
+                    const startYear = parseInt(year.split("-")[0]);
+                    return startYear - 2020 + 1;
+                  })()}{" "}
+                  {activeTab}
+                </>
+              )}
             </div>
           </div>
 
@@ -933,7 +945,7 @@ const CommunityCollectives = () => {
                   </div>
 
                   <div className="mt-auto pt-6 border-t border-gray-50">
-                    <button className="flex items-center gap-2 font-bold text-lg hover:gap-3 transition-all">
+                    <button className="flex items-center gap-2 font-bold text-lg hover:gap-3 transition-all text-primary/80">
                       <ExternalLink size={20} />
                       <span>Learn more</span>
                     </button>
@@ -976,74 +988,85 @@ const CommunityCollectives = () => {
       {/* Member Details Modal */}
       <AnimatePresence>
         {selectedMember && (
-          <div className="fixed inset-0 z-100 flex items-center justify-center p-4 md:p-10">
+          <div className="fixed inset-0 z-100 flex items-center justify-center p-4">
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               onClick={() => setSelectedMember(null)}
-              className="absolute inset-0 bg-black/60 backdrop-blur-sm"
+              className="absolute inset-0 bg-black/60 backdrop-blur-md"
             />
             <motion.div
-              initial={{ opacity: 0, scale: 0.9, y: 20 }}
+              initial={{ opacity: 0, scale: 0.9, y: 30 }}
               animate={{ opacity: 1, scale: 1, y: 0 }}
-              exit={{ opacity: 0, scale: 0.9, y: 20 }}
-              className="relative bg-white w-full max-w-4xl max-h-[90vh] rounded-[2.5rem] overflow-hidden shadow-2xl flex flex-col"
+              exit={{ opacity: 0, scale: 0.9, y: 30 }}
+              className="relative bg-white w-full max-w-3xl max-h-[90vh] rounded-[2rem] overflow-hidden shadow-2xl flex flex-col"
             >
-              {/* Close Button */}
+              {/* Close Button - Circled like in Figma */}
               <button
                 onClick={() => setSelectedMember(null)}
-                className="absolute top-8 right-8 p-2 rounded-full hover:bg-gray-100 transition-colors z-20"
+                className="absolute top-6 right-6 p-1 rounded-full border-2 border-dark/20 hover:border-dark hover:bg-gray-100 transition-all z-20 group"
               >
-                <X size={28} className="text-dark/60" />
+                <X size={20} className="text-dark/40 group-hover:text-dark transition-colors" />
               </button>
 
-              <div className="overflow-y-auto p-8 md:p-12">
-                {/* Header Info */}
-                <div className="flex flex-col md:flex-row gap-10 items-start mb-10">
-                  <div className="w-40 h-40 rounded-3xl overflow-hidden shadow-lg shrink-0">
-                    <img
-                      src={getImageUrl(selectedMember.image)}
-                      alt={selectedMember.name}
-                      className="w-full h-full object-cover"
-                    />
-                  </div>
-                  <div className="space-y-4 grow pt-2">
-                    <div>
-                      <h2 className="text-3xl font-bold text-dark">
-                        {selectedMember.name}
-                      </h2>
-                      <p className="text-xl text-dark/60 font-medium">
-                        {selectedMember.org}
-                      </p>
+              <div className="overflow-y-auto no-scrollbar">
+                <div className="p-8 md:p-12">
+                  {/* Header Info */}
+                  <div className="flex flex-col sm:flex-row gap-8 items-start mb-12">
+                    <div className="w-44 h-44 rounded-2xl overflow-hidden shadow-xl shrink-0 border-4 border-gray-50">
+                      <img
+                        src={getImageUrl(selectedMember.image)}
+                        alt={selectedMember.name}
+                        className="w-full h-full object-cover"
+                      />
                     </div>
-
-                    <div className="space-y-3 pt-2">
-                      <div className="flex items-center gap-3 text-dark/70">
-                        <MapPin size={20} className="text-primary" />
-                        <span className="text-lg">
-                          {selectedMember.location}
-                        </span>
+                    <div className="space-y-5 grow pt-2">
+                      <div>
+                        <h2 className="text-4xl font-bold text-dark tracking-tight">
+                          {selectedMember.name}
+                        </h2>
+                        <p className="text-2xl text-dark/60 font-medium">
+                          {selectedMember.org}
+                        </p>
                       </div>
-                      <div className="flex items-center gap-3 text-dark/70">
-                        <Repeat size={20} className="text-orange-500" />
-                        <span className="text-lg">{selectedMember.focus}</span>
+
+                      <div className="space-y-4 pt-2">
+                        <div className="flex items-center gap-3 text-dark/70 font-semibold">
+                          <div className="p-1.5 bg-primary/10 rounded-lg text-primary">
+                            <MapPin size={20} />
+                          </div>
+                          <span className="text-lg">
+                            {selectedMember.location}
+                          </span>
+                        </div>
+                        <div className="flex items-start gap-3 text-dark/70 font-semibold">
+                          <div className="mt-1 p-1.5 bg-orange-50 rounded-lg text-orange-500 shrink-0">
+                            <Repeat size={20} />
+                          </div>
+                          <span className="text-lg leading-snug">
+                            {selectedMember.focus}
+                          </span>
+                        </div>
                       </div>
                     </div>
                   </div>
-                </div>
 
-                {/* About Content */}
-                <div className="space-y-6">
-                  <h3 className="text-2xl font-bold text-dark border-b border-gray-100 pb-4">
-                    About
-                  </h3>
-                  <div className="text-lg text-dark/70 leading-relaxed space-y-4">
-                    {selectedMember.about
-                      ?.split("\n")
-                      .map((para: string, i: number) => (
-                        <p key={i}>{para}</p>
-                      ))}
+                  {/* About Content */}
+                  <div className="space-y-6">
+                    <div className="relative inline-block">
+                      <h3 className="text-2xl font-bold text-dark">
+                        About
+                      </h3>
+                      <div className="absolute -bottom-2 left-0 w-full h-1 bg-primary/20 rounded-full" />
+                    </div>
+                    <div className="text-lg text-dark/80 leading-relaxed font-medium space-y-4 pt-2">
+                      {selectedMember.about
+                        ?.split("\n")
+                        .map((para: string, i: number) => (
+                          <p key={i}>{para}</p>
+                        ))}
+                    </div>
                   </div>
                 </div>
               </div>

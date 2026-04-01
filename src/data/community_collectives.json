@@ -4,7 +4,7 @@
       {
         "name": "Jeenu Pawar",
         "org": "Majal Foundation",
-        "location": "Bhopal, Madhya Pradesh",
+        "location": "Bhopal, Madyapradesh",
         "focus": "Empowering Phase - Pardhi communities through education",
         "link": "#",
         "image": "v1711910000/jeenu_pawar.jpg",
@@ -13,20 +13,20 @@
       {
         "name": "Sheshraj Shisodiya",
         "org": "Lahar Foundation",
-        "location": "Bhopal, Madhya Pradesh",
+        "location": "Bhopal, Madyapradesh",
         "focus": "Empowering Phase - Pardhi communities through education",
         "link": "#",
         "image": "v1711910000/sheshraj.jpg",
-        "about": "Sheshraj Shisodiya is a dedicated leader working with the Lahar Foundation in Bhopal. His focus is on providing high-quality education and building strong community support systems for children from marginalized nomadic backgrounds. Through Lahar Foundation, he has established several community learning centers that serve as safe havens for children to explore their potential and dream of a brighter future beyond their current circumstances."
+        "about": "Lahar is a youth-led collective from the Pardhi community that works to strengthen access to education and address identity-related challenges. Through creative and participatory methods—such as theatre, sports, libraries, and community meetings—Lahar engages children and youth to spark awareness and interest in education. The collective also tackles critical issues including child marriage, access to panchayat and judicial rights, and mental health. Lahar believes that true empowerment comes when the community itself recognizes its identity and stands up for its rights."
       },
       {
         "name": "Akram",
         "org": "Kala Samvad Foundation",
-        "location": "Harda, Madhya Pradesh",
-        "focus": "Empowering Phase - Pardhi communities through education",
+        "location": "Harda, MP",
+        "focus": "Nurturing values through art and dialogue",
         "link": "#",
         "image": "v1711910000/akram.jpg",
-        "about": "Akram leads the Kala Samvad Foundation with a unique approach that integrates arts and dialogue into the educational experience of children. Working primarily in the Harda region, he focuses on the Pardhi community, helping children find their voices and express themselves through various creative mediums while ensuring they receive the foundational education needed to navigate the modern world with dignity and confidence."
+        "about": "Kala Samvad Foundation works to foster values and drive positive social change through art and dialogue. Believing that every child and young person carries unique creativity, the foundation creates open and creative spaces—through dance, music, theatre, literature, and other art forms—where children and youth can express themselves and build confidence. Its workshops, cultural events, and dialogue programs aim to strengthen values of love, peace, equality, and fraternity, while connecting art with everyday life to inspire social awareness and transformation."
       },
       {
         "name": "Ohab Ansari",
@@ -35,16 +35,16 @@
         "focus": "Taking education and dignity to every doorstep of Mir, Banjara & Fakir Community",
         "link": "#",
         "image": "v1711910000/ohab.jpg",
-        "about": "Ohab Ansari and the Samavesh Trust are pioneers in door-to-door education for highly marginalized nomadic communities in Mehsana. His mission is to bring dignity to the doorsteps of the Mir, Banjara, and Fakir communities. By breaking down the barriers to traditional schooling, he ensures that even the most mobile populations have access to learning, healthcare, and basic rights, transforming lives one household at a time."
+        "about": "Since 2018, Samavesh is working with four major nomadic tribes—Mir, Fakir, Banjara, and Od—living in temporary settlements across villages and slums in Gujarat. These communities face deep challenges, relying on begging and daily wage labor, with little access to education, healthcare, or basic services.\n\nThe initiative engages 312 families across six villages and three towns in Mehsana, Sabarkantha, and Banaskantha districts. Its focus is on expanding access to education, building awareness of rights, and fostering dignity and social inclusion for nomadic communities. They believe that true inclusion and transformation can only be achieved when education and dignity reach the most marginalized."
       },
       {
         "name": "Priti & Anil",
         "org": "Samaj Uttan Seva Samiti",
-        "location": "Bhopal, Madhya Pradesh",
+        "location": "Bhopal, UP",
         "focus": "Empowering nomadic lives through identity and education",
         "link": "#",
         "image": "v1711910000/priti_anil.jpg",
-        "about": "Priti and Anil work as a dynamic duo through the Samaj Uttan Seva Samiti to tackle the dual challenges of identity and education for nomadic tribes in Bhopal. They recognize that without formal identity documents, children are often denied access to government schools and benefits. Their work bridges this gap by helping families secure their legal identities while simultaneously running community centers that prepare children for formal schooling."
+        "about": "Registered in 2013, Samaj Uttan Seva Samiti works with Denotified and Nomadic Tribes (DNTs and NTs), among the most marginalized communities deprived of stable housing, education, and basic services. Its core focus is connecting children to mainstream education while also helping families secure legal identity documents and access government welfare schemes. Emerging from within the community itself, the organization fosters youth leadership—among both women and men—so they can advocate for their rights and drive change from within."
       },
       {
         "name": "Mehruddin",
@@ -53,13 +53,261 @@
         "focus": "Smiles of learning, earning, and living well.",
         "link": "#",
         "image": "v1711910000/mehruddin.jpg",
-        "about": "Mehruddin's 'The Project Smile' in Bihar is a holistic initiative that addresses the spectrum of learning, earning, and living well. He believes that education alone is not enough if families are struggling with basic survival. His project combines community-based education for children with skill development and livelihood support for parents, creating a sustainable model of community development that keeps children in school and out of labor."
+        "about": "Project Smile works to ensure that children from economically disadvantaged families are not deprived of education by providing free learning support and study materials. Alongside this, the project empowers educated yet unemployed youth through skill development programs—run in collaboration with partners like Sanjhe Sapne and School for Programming—that build employable skills and connect them to job opportunities. In the area of health, Project Smile facilitates affordable diagnostic services and raises awareness about government welfare schemes, helping families access their rightful entitlements.\n\nIts vision is simple yet powerful: every child educated, every youth employed, and every family healthy and aware."
+      },
+      {
+        "name": "Dashrath",
+        "org": "Samvedan Kendra",
+        "location": "Goa",
+        "focus": "Nurturing dreams of Katkari children, one learning space at a time",
+        "link": "#",
+        "image": "v1711910000/dashrath.jpg",
+        "about": "Sanvedan Kendra works with the Katkari nomadic tribe in Goa, one of the most marginalized communities in the region. The organization focuses on ensuring that Katkari children not only attend school but also thrive—through daily remedial classes in settlements, individualized support within schools, and residential learning camps that offer safe, inspiring spaces for growth. These efforts are helping improve learning outcomes, build confidence, and nurture aspirations—laying the foundation for lasting community transformation."
+      },
+      {
+        "name": "Phoolchand",
+        "org": "JUGNI initiative",
+        "location": "Chattisgarh",
+        "focus": "Lighting up dreams of tribal girls in Chhattisgarh.",
+        "link": "#",
+        "image": "v1711910000/phoolchand.jpg",
+        "about": "JUGNI works with tribal adolescent girls (ages 13–18) in remote areas of Chhattisgarh, where distance, household responsibilities, and gender inequality often push them out of school. Through its learning center—a vibrant space that serves as both a library and a hub for tailored programs—JUGNI helps girls reconnect with education while building awareness of their rights, leadership, and life skills. The initiative empowers every girl to pursue her studies, nurture her dreams, and step forward with confidence and dignity."
+      },
+      {
+        "name": "Nirmala Jhala",
+        "org": "Bharwad pastoralist",
+        "location": "Jalgaon, Maharashtra",
+        "focus": "Education that travels with the pastoralists",
+        "link": "#",
+        "image": "v1711910000/nirmala_jhala.jpg",
+        "about": "Nirmala works with the Bharwad pastoralist families in the Jalgaon district of Maharashtra—communities displaced from Gujarat at the time of Independence and still living lives of constant movement. For them, even basic needs like food, shelter, and education are daily struggles. Through her initiative, Nirmala strives to bring education into their everyday lives—not just as a means of learning, but as a pathway to dignity, stability, and hope for a better future."
       }
     ],
-    "2024-25": [],
-    "2023-24": [],
-    "2022-23": [],
-    "2021-22": [],
-    "2020-21": []
+    "2024-25": [
+      {
+        "name": "Mukund Kale",
+        "org": "Spark Social Education and Welfare Society",
+        "location": "Katraj, Pune, Maharashtra.",
+        "focus": "Igniting Change and Community Action in Vadar Community",
+        "link": "#",
+        "image": "v1711910000/mukund_kale.jpg",
+        "about": "Established in 2016, Spark Foundation has been working to support underprivileged and aspiring students in rural areas by providing clothes, school uniforms, books, notebooks, and bags. Beyond education, the organization undertakes tree plantation drives on Gram Panchayat land, maintaining them consistently for two to three years to promote environmental sustainability.\n\nDuring periods of drought, Spark addressed the drinking water shortage in a local school by collaboratively installing a borewell with the help of villagers—an example of their strong participatory approach.\n\nThe organization also focuses on student motivation, career guidance, and higher education support, organizing regular discussions, showing motivational videos, and assisting students with college admissions and financial aid in cities like Pune and Mumbai. Recently, Spark has initiated a learning space for children from the Vadar community, emphasizing education and environmental awareness to foster holistic growth and equal opportunities.\n\nWeb: https://www.linkedin.com/company/spark-social-education-and-welfare-society/posts/?feedView=all\n\nWeb Status : Functional but not consistent in efforts"
+      },
+      {
+        "name": "Mirtunjay Bharadwaj",
+        "org": "Ramaamani Bhagvatsing Foundation,",
+        "location": "Begusarai, Bihar",
+        "focus": "Connecting children from slums and marginalized communities to mainstream society",
+        "link": "#",
+        "image": "v1711910000/mirtunjay.jpg",
+        "about": "Ramaamani Bhagvatsing Foundation, based in Begusarai, Bihar, works with community participation across sectors such as education, environment, road safety, sports, and healthcare. Its primary focus is on connecting children from slums and marginalized communities to mainstream society through a community-supported school, ensuring access to education and equal opportunities for growth.\n\nWeb: https://www.linkedin.com/in/mirtunjay-02725a2b8/\n\nWeb Status : Functional but not consistent in efforts"
+      },
+      {
+        "name": "Sanchit",
+        "org": "Shiksha Initiative",
+        "location": "Mangaon, Raigad, Maharashtra",
+        "focus": "Building bridges between Urdu and Marathi",
+        "link": "#",
+        "image": "v1711910000/sanchit.jpg",
+        "about": "The Shiksha Initiative focuses on enhancing early literacy by building the capacity of Anganwadi workers in Chhattisgarh to adopt an emergent literacy approach for teaching scripts to young children. The initiative develops contextual teaching and learning materials—including shared reading resources and read-aloud books—to make learning engaging and effective. By strengthening foundational literacy at the grassroots, the initiative aims to create a replicable model adaptable to Anganwadis across diverse regions of India.\n\nWeb: https://www.linkedin.com/in/sanchit-patne-3502ba185/?originalSubdomain=in\n\nWeb Status : NOT FUNCTIONAL - Working with different orgs"
+      },
+      {
+        "name": "Sarswati & Deepak",
+        "org": "STEP Foundation",
+        "location": "Nashik, Maharashtra",
+        "focus": "Creating change, inculcating constitutional values",
+        "link": "#",
+        "image": "v1711910000/sarswati_deepak.jpg",
+        "about": "The STEP Foundation works for social change across urban, rural, and tribal areas of Nashik district, addressing issues related to education, health, environment, women's empowerment, youth, and farmers. The organization has conducted health awareness programs through street plays in over 70 government ashram schools, organized competitions to promote social values and artistic expression, and held workshops on waste management and constitutional awareness. STEP also runs 'Nai Talim' sessions to foster constitutional and human values among children and operates a vocational training center for women and a community library for youth, women, and children.\n\nWeb: https://www.linkedin.com/in/step-foundation-nashik-a87175320/\n\nWeb Status : Functional and consistent"
+      },
+      {
+        "name": "Vijay Kumar Paswan",
+        "org": "Aatmvishwas Foundation",
+        "location": "Aam Gachhi, Araria, Bihar",
+        "focus": "Lighting up learning in Musahar communities",
+        "link": "#",
+        "image": "v1711910000/vijay_kumar.jpg",
+        "about": "Aatmvishwas Foundation has been working in the areas of education and youth development for the past two years. The organization runs a Community Learning Center for children from the Musahar community, providing both basic and social education. Alongside this, Aatmvishwas works with youth to build self-confidence, create awareness of new opportunities, and nurture social leadership qualities.\n\nWeb: https://aatmvishwasfoundation.in/\n\nWeb Status : Functional and consistent"
+      },
+      {
+        "name": "Smita & Khushashri",
+        "org": "Sakshardhm",
+        "location": "Mapusa, Goa.",
+        "focus": "From selling on Goa's beaches to dreaming beyond the waves",
+        "link": "#",
+        "image": "v1711910000/smita_khushashri.jpg",
+        "about": "The organization works with children of laborers and migrant workers in Mapusa, Goa, who often drop out of schools in their home states due to frequent migration. Once out of school, returning becomes difficult because of financial constraints, language barriers, and social discrimination.\nTo address this, the organization creates child-friendly and inclusive learning spaces that keep children engaged through joyful, activity-based learning. These spaces help children rebuild confidence, nurture curiosity, and gradually reintegrate into the formal education system — giving them a fair chance at a brighter future.\n\nWeb Status : Not functional currently as works with migrant community"
+      },
+      {
+        "name": "Shubhangi & Vikas",
+        "org": "Mahamanav Baba Amte Bahuuddeshiya Samajik Vikas Seva Sanstha",
+        "location": "Shrigonda, Ahmednagar",
+        "focus": "From struggle to self-reliance, with compassion",
+        "link": "#",
+        "image": "v1711910000/shubhangi_vikas.jpg",
+        "about": "Mahamanav Baba Amte Samajik Vikas Seva Sanstha, established in 2008 in Shrigonda, Ahmednagar, is a non-profit organization committed to community upliftment and social progress. Inspired by the values of transformative social leaders, the organization works to break the cycle of poverty by providing holistic support and quality education to marginalized children, especially from nomadic tribes.\nBy promoting inclusivity, skill development, and emotional well-being, the organization nurtures environments where every child can learn and grow. It also serves as a catalyst for community engagement—fostering empathy, awareness, and collective responsibility toward building a more compassionate society.\n\nWeb : https://aatmvishwasfoundation.in/\n\nWeb Status : Not functional currently as works with migrant community"
+      }
+    ],
+    "2023-24": [
+      {
+        "name": "Laxmi Rathore",
+        "org": "Majal Foundation",
+        "location": "Bhopal, Madhya Pradesh",
+        "focus": "Empowering Phase - Pardhi communities through education",
+        "link": "#",
+        "image": "v1711910000/female_placeholder.jpg",
+        "about": "Laxmi Rathore is a dedicated community leader focused on the Pardhi community in Bhopal. Her work through Majal Foundation creates safe learning spaces where children can thrive and families are supported in their educational journey."
+      },
+      {
+        "name": "Shalini Rajawat",
+        "org": "Samavesh Trust",
+        "location": "Gwalior, Madhya Pradesh",
+        "focus": "Nomadic rights and educational access",
+        "link": "#",
+        "image": "v1711910000/female_placeholder.jpg",
+        "about": "Shalini Rajawat works tirelessly to ensure that nomadic children in Gwalior have access to formal education. She advocates for their rights and works with local authorities to simplify admission processes."
+      },
+      {
+        "name": "Pradeep Kumar",
+        "org": "Kala Samvad",
+        "location": "Harda, Madhya Pradesh",
+        "focus": "Art as a medium for community learning",
+        "link": "#",
+        "image": "v1711910000/male_placeholder.jpg",
+        "about": "Pradeep Kumar uses creative arts to engage children from marginalized backgrounds. His workshops foster creativity and critical thinking, making learning an enjoyable experience for the community."
+      },
+      {
+        "name": "Sushant Mishra",
+        "org": "Lahar Foundation",
+        "location": "Rewa, Madhya Pradesh",
+        "focus": "Holistic development in rural areas",
+        "link": "#",
+        "image": "v1711910000/male_placeholder.jpg",
+        "about": "Sushant Mishra leads educational initiatives in rural Rewa, focusing on holistic growth. His centers provide not just academic support but also life skills training for young adolescents."
+      },
+      {
+        "name": "Pratibha Singh",
+        "org": "Udaan Initiatives",
+        "location": "Varanasi, Uttar Pradesh",
+        "focus": "Education for street-dwelling children",
+        "link": "#",
+        "image": "v1711910000/female_placeholder.jpg",
+        "about": "Pratibha Singh runs mobile learning centers for children living on the streets of Varanasi. Her mission is to bring the classroom to them and eventually transition them into formal schools."
+      },
+      {
+        "name": "Sumit Yadav",
+        "org": "Project Smile",
+        "location": "Ranchi, Jharkhand",
+        "focus": "Livelihood and education integration",
+        "link": "#",
+        "image": "v1711910000/male_placeholder.jpg",
+        "about": "Sumit Yadav works at the intersection of parent livelihood and child education. By supporting families' economic stability, he ensures that children can remain in center-based learning environments."
+      }
+    ],
+    "2022-23": [
+      {
+        "name": "Rohan Deshmukh",
+        "org": "Gramin Seva",
+        "location": "Amravati, Maharashtra",
+        "focus": "Rural education reform",
+        "link": "#",
+        "image": "v1711910000/male_placeholder.jpg",
+        "about": "Rohan Deshmukh has spent the last year working with rural schools to improve teaching quality and student engagement in the Amravati district."
+      },
+      {
+        "name": "Sneha Patil",
+        "org": "Vikas Sanstha",
+        "location": "Pune, Maharashtra",
+        "focus": "Slum education and hygiene",
+        "link": "#",
+        "image": "v1711910000/female_placeholder.jpg",
+        "about": "Sneha Patil focuses on improving hygiene awareness alongside education in Pune's underprivileged urban areas."
+      },
+      {
+        "name": "Vikram Singh",
+        "org": "Srijan Foundation",
+        "location": "Jaipur, Rajasthan",
+        "focus": "Revitalizing traditional learning for modern contexts",
+        "link": "#",
+        "image": "v1711910000/male_placeholder.jpg",
+        "about": "Vikram Singh works with traditional artisan communities to ensure their children receive a balanced education that respects their heritage."
+      },
+      {
+        "name": "Kavita Reddy",
+        "org": "Prerna Trust",
+        "location": "Hyderabad, Telangana",
+        "focus": "Empowering girls through digital literacy",
+        "link": "#",
+        "image": "v1711910000/female_placeholder.jpg",
+        "about": "Kavita Reddy runs digital literacy bootcamps for girls in Hyderabad, preparing them for future career opportunities."
+      },
+      {
+        "name": "Amit Sharma",
+        "org": "Naya Savera",
+        "location": "Indore, Madhya Pradesh",
+        "focus": "Early childhood education",
+        "link": "#",
+        "image": "v1711910000/male_placeholder.jpg",
+        "about": "Amit Sharma's focus is on the critical early years of learning, establishing pre-schools that serve low-income families."
+      }
+    ],
+    "2021-22": [
+      {
+        "name": "Siddharth Jain",
+        "org": "Global Vision",
+        "location": "Mumbai, Maharashtra",
+        "focus": "Tech-enabled learning in low-resource settings",
+        "link": "#",
+        "image": "v1711910000/male_placeholder.jpg",
+        "about": "Siddharth Jain implemented technology solutions to help children in Mumbai's outskirts continue learning during challenging times."
+      },
+      {
+        "name": "Meera Iyer",
+        "org": "Sankalp Foundation",
+        "location": "Bangalore, Karnataka",
+        "focus": "Inclusive education for all",
+        "link": "#",
+        "image": "v1711910000/female_placeholder.jpg",
+        "about": "Meera Iyer's work ensures that children with diverse learning needs are included in mainstream community learning centers."
+      },
+      {
+        "name": "Rahul Bose",
+        "org": "Anand Path",
+        "location": "Kolkata, West Bengal",
+        "focus": "Creative expression and education",
+        "link": "#",
+        "image": "v1711910000/male_placeholder.jpg",
+        "about": "Rahul Bose uses theatre and music as tools for engagement and education with street children in Kolkata."
+      },
+      {
+        "name": "Divya Gupta",
+        "org": "Nav Jagriti",
+        "location": "Lucknow, Uttar Pradesh",
+        "focus": "Vocational training for youth",
+        "link": "#",
+        "image": "v1711910000/female_placeholder.jpg",
+        "about": "Divya Gupta bridges the gap between basic education and vocational skills for adolescents in Lucknow."
+      },
+      {
+        "name": "Suresh Prabhu",
+        "org": "Deepak Sewa",
+        "location": "Panaji, Goa",
+        "focus": "Environmental education",
+        "link": "#",
+        "image": "v1711910000/male_placeholder.jpg",
+        "about": "Suresh Prabhu integrates environmental awareness into the local curriculum for children from coastal communities."
+      }
+    ],
+    "2020-21": [
+      {
+        "name": "Maya Venkat",
+        "org": "Adhyayan Foundation",
+        "location": "Chennai, Tamil Nadu",
+        "focus": "Community-led literacy programs",
+        "link": "#",
+        "image": "v1711910000/female_placeholder.jpg",
+        "about": "Maya Venkat pioneered community-led literacy programs that empowered local volunteers to teach children in their own neighborhoods."
+      }
+    ]
   }
 }

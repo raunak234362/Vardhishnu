@@ -3,9 +3,11 @@ import { Check, ChevronDown } from "lucide-react";
 import { useState, useRef, useEffect } from "react";
 import LazyImage from "../../common/LazyImage";
 import { getImageUrl } from "../../../utils/imageUrl";
+import { MapPin, X } from "lucide-react";
 
 const AnandgharFellowship = () => {
   const [activeTab, setActiveTab] = useState<"current" | "alumni">("current");
+  const [selectedFellow, setSelectedFellow] = useState<any | null>(null);
   const [openFaq, setOpenFaq] = useState<number | null>(null);
   const scrollRef = useRef<HTMLDivElement>(null);
 
@@ -586,7 +588,8 @@ const AnandgharFellowship = () => {
                     initial={{ opacity: 0, y: 30 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: idx * 0.1, duration: 0.6 }}
-                    className="w-[380px] flex-shrink-0 bg-white rounded-xl overflow-hidden shadow-2xl shadow-dark/5 border border-gray-50 flex flex-col group hover:-translate-y-2 transition-all duration-500"
+                    className="w-[380px] flex-shrink-0 bg-white rounded-xl overflow-hidden shadow-2xl shadow-dark/5 border border-gray-50 flex flex-col group hover:-translate-y-2 transition-all duration-500 cursor-pointer"
+                    onClick={() => setSelectedFellow(fellow)}
                   >
                     <div className="aspect-5/4 overflow-hidden">
                       <LazyImage
@@ -623,6 +626,90 @@ const AnandgharFellowship = () => {
             </div>
           </div>
         </div>
+
+        {/* Member Details Modal */}
+        <AnimatePresence>
+          {selectedFellow && (
+            <div className="fixed inset-0 z-100 flex items-center justify-center p-4">
+              <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                onClick={() => setSelectedFellow(null)}
+                className="absolute inset-0 bg-black/60 backdrop-blur-md"
+              />
+              <motion.div
+                initial={{ opacity: 0, scale: 0.9, y: 30 }}
+                animate={{ opacity: 1, scale: 1, y: 0 }}
+                exit={{ opacity: 0, scale: 0.9, y: 30 }}
+                className="relative bg-white w-full max-w-3xl max-h-[90vh] rounded-[2rem] overflow-hidden shadow-2xl flex flex-col"
+              >
+                {/* Close Button - Circled */}
+                <button
+                  onClick={() => setSelectedFellow(null)}
+                  className="absolute top-6 right-6 p-1 rounded-full border-2 border-dark/20 hover:border-dark hover:bg-gray-100 transition-all z-20 group"
+                >
+                  <X size={20} className="text-dark/40 group-hover:text-dark transition-colors" />
+                </button>
+
+                <div className="overflow-y-auto no-scrollbar">
+                  <div className="p-8 md:p-12">
+                    {/* Header Info */}
+                    <div className="flex flex-col sm:flex-row gap-8 items-start mb-12">
+                      <div className="w-44 h-44 rounded-2xl overflow-hidden shadow-xl shrink-0 border-4 border-gray-50">
+                        <img
+                          src={selectedFellow.image}
+                          alt={selectedFellow.name}
+                          className="w-full h-full object-cover"
+                        />
+                      </div>
+                      <div className="space-y-5 grow pt-2">
+                        <div>
+                          <h2 className="text-4xl font-bold text-dark tracking-tight">
+                            {selectedFellow.name}
+                          </h2>
+                          <p className="text-2xl text-dark/60 font-medium">
+                            {selectedFellow.role}
+                          </p>
+                        </div>
+
+                        <div className="space-y-4 pt-2">
+                          <div className="flex items-center gap-3 text-dark/70 font-semibold">
+                            <div className="p-1.5 bg-primary/10 rounded-lg text-primary">
+                              <MapPin size={20} />
+                            </div>
+                            <span className="text-lg">
+                              Vardhishnu Center
+                            </span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* About Content - Optional if we had it */}
+                    {selectedFellow.about && (
+                      <div className="space-y-6">
+                        <div className="relative inline-block">
+                          <h3 className="text-2xl font-bold text-dark">
+                            About
+                          </h3>
+                          <div className="absolute -bottom-2 left-0 w-full h-1 bg-primary/20 rounded-full" />
+                        </div>
+                        <div className="text-lg text-dark/80 leading-relaxed font-medium space-y-4 pt-2">
+                          {selectedFellow.about
+                            ?.split("\n")
+                            .map((para: string, i: number) => (
+                              <p key={i}>{para}</p>
+                            ))}
+                        </div>
+                      </div>
+                    )}
+                  </div>
+                </div>
+              </motion.div>
+            </div>
+          )}
+        </AnimatePresence>
 
         {/* FAQ Section */}
         <div className="max-w-7xl mx-auto px-10 lg:px-0 mb-40">
