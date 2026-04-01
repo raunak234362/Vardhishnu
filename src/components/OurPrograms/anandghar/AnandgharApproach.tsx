@@ -1,9 +1,55 @@
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion, useScroll, useTransform, MotionValue } from "framer-motion";
 import { getImageUrl } from "../../../utils/imageUrl";
 import data from "../../../data/anandghar.json";
 import LazyImage from "../../common/LazyImage";
 import * as icons from "lucide-react";
 import { useRef } from "react";
+
+const StepCard = ({
+  step,
+  idx,
+  scrollYProgress,
+}: {
+  step: { id: string; items: string[] };
+  idx: number;
+  scrollYProgress: MotionValue<number>;
+}) => {
+  const scale = useTransform(
+    scrollYProgress,
+    [idx * 0.33, idx * 0.33 + 0.15, idx * 0.33 + 0.33],
+    [0.95, 1.05, 0.95],
+  );
+  const borderColor = useTransform(
+    scrollYProgress,
+    [idx * 0.33, idx * 0.33 + 0.15, idx * 0.33 + 0.33],
+    ["#f3f4f6", "#a6ce39", "#f3f4f6"],
+  );
+
+  return (
+    <motion.div
+      style={{ scale, borderColor }}
+      className="p-10 rounded-4xl h-full bg-white border-2 border-gray-100 shadow-sm transition-shadow duration-500 hover:shadow-md"
+    >
+      <div className="mb-6 flex items-center gap-3">
+        <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary font-bold text-lg">
+          {idx + 1}
+        </div>
+        <h3 className="text-xl font-bold text-dark">{step.id}</h3>
+      </div>
+      <ul className="space-y-6">
+        {step.items.map((item, i) => (
+          <li
+            key={i}
+            className="text-lg text-dark/80 leading-snug font-semibold flex items-start gap-2"
+          >
+            <div className="mt-2 w-1.5 h-1.5 rounded-full bg-primary shrink-0" />
+            {item}
+          </li>
+        ))}
+      </ul>
+    </motion.div>
+  );
+};
 
 const AnandgharApproach = () => {
   const modelRef = useRef<HTMLDivElement>(null);
@@ -219,40 +265,12 @@ const AnandgharApproach = () => {
           {/* Model Steps Cards */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {data.ourModel.steps.map((step, idx) => (
-              <motion.div
+              <StepCard
                 key={idx}
-                style={{
-                  scale: useTransform(
-                    scrollYProgress,
-                    [idx * 0.33, idx * 0.33 + 0.15, idx * 0.33 + 0.33],
-                    [0.95, 1.05, 0.95],
-                  ),
-                  borderColor: useTransform(
-                    scrollYProgress,
-                    [idx * 0.33, idx * 0.33 + 0.15, idx * 0.33 + 0.33],
-                    ["#f3f4f6", "#a6ce39", "#f3f4f6"],
-                  ),
-                }}
-                className={`p-10 rounded-4xl h-full bg-white border-2 border-gray-100 shadow-sm transition-shadow duration-500 hover:shadow-md`}
-              >
-                <div className="mb-6 flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary font-bold text-lg">
-                    {idx + 1}
-                  </div>
-                  <h3 className="text-xl font-bold text-dark">{step.id}</h3>
-                </div>
-                <ul className="space-y-6">
-                  {step.items.map((item, i) => (
-                    <li
-                      key={i}
-                      className="text-lg text-dark/80 leading-snug font-semibold flex items-start gap-2"
-                    >
-                      <div className="mt-2 w-1.5 h-1.5 rounded-full bg-primary shrink-0" />
-                      {item}
-                    </li>
-                  ))}
-                </ul>
-              </motion.div>
+                step={step}
+                idx={idx}
+                scrollYProgress={scrollYProgress}
+              />
             ))}
           </div>
         </motion.div>
@@ -278,7 +296,7 @@ const AnandgharApproach = () => {
                 .split("-")
                 .map((s) => s.charAt(0).toUpperCase() + s.slice(1))
                 .join("") as keyof typeof icons;
-              const Icon = (icons[iconName] as any) || icons.Heart;
+              const Icon = (icons as unknown as Record<string, React.ElementType>)[iconName] || icons.Heart;
 
               const colors = [
                 "bg-orange-50 text-orange-600",

@@ -2,7 +2,7 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import data from "../../data/data.json";
 import { getImageUrl } from "../../utils/imageUrl";
-import LazyImage from "../common/LazyImage";  
+import LazyImage from "../common/LazyImage";
 
 const OurTeam = () => {
   const tabs = Object.keys(data.team);
@@ -71,7 +71,14 @@ const OurTeam = () => {
   );
 };
 
-const TeamCard = ({ member }: { member: any }) => {
+interface TeamMember {
+  name: string;
+  role: string;
+  image: string;
+  bio: string;
+}
+
+const TeamCard = ({ member }: { member: TeamMember }) => {
   const [isFlipped, setIsFlipped] = useState(false);
 
   return (

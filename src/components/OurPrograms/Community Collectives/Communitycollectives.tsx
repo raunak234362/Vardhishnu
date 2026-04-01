@@ -13,9 +13,18 @@ import { useEffect, useState } from "react";
 import { getImageUrl } from "../../../utils/imageUrl";
 import communityData from "../../../data/community_collectives.json";
 
+interface Member {
+  name: string;
+  org: string;
+  image: string;
+  location: string;
+  focus: string;
+  about?: string;
+}
+
 const CommunityCollectives = () => {
   const [activeTab, setActiveTab] = useState("Current Cohort");
-  const [selectedMember, setSelectedMember] = useState<any>(null);
+  const [selectedMember, setSelectedMember] = useState<Member | null>(null);
 
   const currentCohort =
     communityData.cohorts[activeTab as keyof typeof communityData.cohorts] ||
@@ -875,7 +884,7 @@ const CommunityCollectives = () => {
 
           {/* Cohort Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-24">
-            {currentCohort.map((member, i) => (
+            {currentCohort.map((member: Member, i: number) => (
               <motion.div
                 key={i}
                 initial={{ opacity: 0, y: 20 }}
