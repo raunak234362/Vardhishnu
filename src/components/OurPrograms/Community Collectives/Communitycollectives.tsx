@@ -868,6 +868,7 @@ const CommunityCollectives = () => {
                       : "text-dark hover:bg-gray-100"
                   }`}
                 >
+                  
                   {tab}
                 </button>
               ))}
