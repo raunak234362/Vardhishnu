@@ -6,6 +6,7 @@ import {
   Instagram,
   Facebook,
   Youtube,
+  PhoneIcon,
 } from "lucide-react";
 import data from "../data/data.json";
 import Logo from "../assets/Logo_Vardhishnu.jpg";
@@ -94,7 +95,7 @@ const Footer = () => {
               <li>
                 <a
                   href="#"
-                  className="text-primary font-bold hover:underline transition-all"
+                  className="text-primary hover:underline transition-all"
                 >
                   Donate Now
                 </a>
@@ -138,8 +139,8 @@ const Footer = () => {
             </h4>
             <div className="space-y-8">
               <div className="flex gap-5 items-center">
-                <div className="w-12 h-12 rounded-full bg-primary/5 flex shrink-0 items-center justify-center text-primary border border-primary/10">
-                  <Phone size={20} />
+                <div className="w-12 h-12 rounded-full bg-primary flex shrink-0 items-center justify-center text-primary border border-primary/10">
+                  <PhoneIcon size={20} className="text-white"/>
                 </div>
                 <div className="space-y-1">
                   <div className="text-dark font-bold text-lg">Call us</div>
@@ -152,8 +153,8 @@ const Footer = () => {
                 </div>
               </div>
               <div className="flex gap-5 items-center">
-                <div className="w-12 h-12 rounded-full bg-primary/5 flex shrink-0 items-center justify-center text-primary border border-primary/10">
-                  <Mail size={20} />
+                <div className="w-12 h-12 rounded-full bg-primary flex shrink-0 items-center justify-center text-primary border border-primary/10">
+                  <Mail size={20} className="text-white"/>
                 </div>
                 <div className="space-y-1">
                   <div className="text-dark font-bold text-lg">Mail Us</div>
@@ -166,8 +167,8 @@ const Footer = () => {
                 </div>
               </div>
               <div className="flex gap-5 items-center">
-                <div className="w-12 h-12 rounded-full bg-primary/5 flex shrink-0 items-center justify-center text-primary border border-primary/10">
-                  <MapPin size={20} />
+                <div className="w-12 h-12 rounded-full bg-primary flex shrink-0 items-center justify-center text-primary border border-primary/10">
+                  <MapPin size={20} className="text-white"/>
                 </div>
                 <div className="space-y-1">
                   <div className="text-dark font-bold text-lg">Visit Us</div>

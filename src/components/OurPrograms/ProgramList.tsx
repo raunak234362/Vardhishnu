@@ -95,7 +95,7 @@ const ProgramList = () => {
                         key={idx}
                         className="flex items-center gap-3 text-dark/80 font-bold tracking-tight"
                       >
-                        <Heart className="w-5 h-5 text-primary fill-primary" />
+                        <Heart className="w-5 h-5 text-red-500 fill-red-500" />
                         <span>{point}</span>
                       </li>
                     ))}

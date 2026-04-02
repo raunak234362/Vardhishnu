@@ -6,7 +6,7 @@ const WhyChildrenHero = () => {
   const { title, introduction, rights } = appData.whychildren;
 
   return (
-    <section className="py-24 bg-white">
+    <section className="bg-white">
       <div className="container-custom">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
           <motion.div

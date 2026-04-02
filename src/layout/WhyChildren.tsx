@@ -4,7 +4,7 @@ import Commitment from "../components/WhyChildren/Commitment";
 
 const WhyChildren = () => {
   return (
-    <main className="bg-white pt-20">
+    <main className="bg-white pt-20 space-y-10">
       <WhyChildrenHero />
       <Stats />
       <Commitment />
