@@ -51,10 +51,11 @@ const OurPresence = () => {
               className="space-y-6"
             >
               <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-full bg-primary flex items-center justify-center text-white shadow-lg">
-                  <MapPin size={20} />
+                <div className="relative text-[#1A3C00] w-fit">
+                  <MapPin size={32} fill="currentColor" />
+                  <div className="absolute top-[7.5px] left-1/2 -translate-x-1/2 w-2.5 h-2.5 bg-white rounded-full" />
                 </div>
-                <h3 className="text-2xl text-dark italic">
+                <h3 className="text-2xl text-dark">
                   Vardhishnu Intervention Area
                 </h3>
               </div>
@@ -79,17 +80,18 @@ const OurPresence = () => {
               className="space-y-6"
             >
               <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-full bg-primary flex items-center justify-center text-white shadow-lg">
-                  <MapPin size={20} />
+                <div className="relative text-[#1A3C00] w-fit">
+                  <MapPin size={32} fill="currentColor" />
+                  <div className="absolute top-[7.5px] left-1/2 -translate-x-1/2 w-2.5 h-2.5 bg-white rounded-full" />
                 </div>
-                <h3 className="text-2xl text-dark italic">
+                <h3 className="text-2xl text-dark ">
                   Partner Organizations
                 </h3>
               </div>
               <div className="pl-14 space-y-6">
                 {partnerOrgs.map((org) => (
                   <div key={org.state}>
-                    <span className="font-bold text-dark text-lg">
+                    <span className="text-dark text-lg">
                       {org.state} :{" "}
                     </span>
                     <span className="text-dark/40 text-lg font-medium">

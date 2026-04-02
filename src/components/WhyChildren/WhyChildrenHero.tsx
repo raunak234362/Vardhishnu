@@ -28,7 +28,7 @@ const WhyChildrenHero = () => {
               <ul className="space-y-4">
                 {rights.map((right, index) => (
                   <li key={index}>
-                    <strong className="text-dark font-black tracking-tight">
+                    <strong className="text-dark tracking-tight">
                       {right.title}
                     </strong>
                     , {right.content}

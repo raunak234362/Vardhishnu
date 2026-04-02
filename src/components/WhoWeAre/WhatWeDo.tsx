@@ -18,9 +18,9 @@ const WhatWeDo = () => {
                 <h2 className="text-4xl text-dark tracking-tighter">
                   What We Do
                 </h2>
-                <div className="absolute -bottom-2 left-0 w-2/3 h-1 bg-primary rounded-full transition-all duration-300" />
+                <div className="absolute -bottom-7 left-0 w-2/3 h-1.5 bg-primary rounded-full transition-all duration-300" />
               </div>
-              <p className="text-xl text-dark/70 leading-relaxed max-w-xl font-medium">
+              <p className="text-xl text-dark leading-relaxed max-w-xl mt-10 ">
                 Our core focus areas include education, child protection, and
                 community empowerment. We enable children to transition from
                 streets and exploitative labour into safe learning spaces and
@@ -68,9 +68,9 @@ const WhatWeDo = () => {
                 <h2 className="text-4xl text-dark tracking-tighter">
                   Through our programs, we
                 </h2>
-                <div className="absolute -bottom-2 left-0 w-2/3 h-1 bg-primary rounded-full transition-all duration-300" />
+                <div className="absolute -bottom-7 left-0 w-2/3 h-1.5 bg-primary rounded-full transition-all duration-300" />
               </div>
-              <ul className="space-y-4 pt-4">
+              <ul className="space-y-4 mt-10">
                 {[
                   "Run Community Learning Centers for out-of-school children to prepare them for mainstream education.",
                   "Rehabilitate and reintegrate child waste pickers and child labourers into society with dignity and care.",
@@ -79,7 +79,7 @@ const WhatWeDo = () => {
                 ].map((item, i) => (
                   <li
                     key={i}
-                    className="flex items-start gap-3 text-lg text-dark/70 font-medium"
+                    className="flex items-start gap-3 text-xl text-dark"
                   >
                     <div className="h-2 w-2 rounded-full bg-primary mt-2.5 shrink-0" />
                     <span>{item}</span>

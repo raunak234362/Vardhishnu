@@ -13,14 +13,16 @@ const OurTeam = () => {
     <section className="py-24 bg-white">
       <div className="container-custom">
         <div className="mb-12">
-          <h2 className="text-4xl text-dark tracking-tighter inline-block relative">
-            Our Team
-            <div className="absolute -bottom-3 left-0 w-2/3 h-1 bg-primary rounded-full transition-all duration-300 hover:w-full" />
-          </h2>
+          <div className="relative inline-block mb-14">
+            <h2 className="text-4xl md:text-5xl text-dark tracking-tighter">
+              Our Team
+            </h2>
+            <div className="absolute -bottom-7 left-0 w-2/3 h-1.5 bg-primary rounded-full transition-all duration-300" />
+          </div>
         </div>
 
         {/* Tabs */}
-        <div className="flex flex-wrap gap-8 md:gap-12 mb-16 border-b border-black/5 pb-4 overflow-x-auto no-scrollbar whitespace-nowrap">
+        <div className="flex flex-wrap gap-8 md:gap-12 mb-16 border-b border-black/5 pb-4 overflow-x-auto hide-scrollbar whitespace-nowrap">
           {tabs.map((tab) => (
             <button
               key={tab}
@@ -104,11 +106,11 @@ const TeamCard = ({ member }: { member: TeamMember }) => {
           />
           {/* Overlay Info */}
           <div className="absolute inset-x-0 bottom-0 p-8 bg-linear-to-t from-black/80 via-black/40 to-transparent pt-20">
-            <h3 className="text-2xl font-black text-primary italic leading-none">
+            <h3 className="text-2xl font-black text-primary leading-none">
               {member.name}
             </h3>
-            <p className="text-white font-bold mt-2">{member.role}</p>
-            <div className="mt-4 flex items-center gap-2 text-white/60 text-sm font-semibold uppercase tracking-wider">
+            <p className="text-white mt-2">{member.role}</p>
+            <div className="mt-4 flex items-center gap-2 text-white/70 text-sm uppercase tracking-wider">
               <span>Click to read bio</span>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -129,26 +131,26 @@ const TeamCard = ({ member }: { member: TeamMember }) => {
 
         {/* Back Side (The Bio) */}
         <div
-          className="absolute inset-0 backface-hidden rounded-[2.5rem] bg-dark text-white p-10 flex flex-col justify-center shadow-2xl"
+          className="absolute inset-0 backface-hidden rounded-[2.5rem] bg-white text-dark p-10 flex flex-col justify-center shadow-2xl border-4 border-gray-50"
           style={{ transform: "rotateY(180deg)" }}
         >
-          <div className="space-y-6 h-full overflow-y-auto no-scrollbar py-4">
+          <div className="space-y-6 h-full overflow-y-auto hide-scrollbar py-4">
             <div>
-              <h3 className="text-3xl font-black text-primary italic leading-none">
+              <h3 className="text-3xl font-black text-primary leading-none">
                 {member.name}
               </h3>
-              <p className="text-primary-dark font-bold mt-2 uppercase tracking-widest text-sm">
+              <p className="text-primary-dark mt-2 uppercase tracking-widest text-sm">
                 {member.role}
               </p>
             </div>
 
             <div className="w-12 h-1 bg-primary rounded-full" />
 
-            <p className="text-lg text-white/90 leading-relaxed font-medium">
+            <p className="text-lg text-dark/70 leading-relaxed">
               {member.bio}
             </p>
 
-            <button className="mt-auto text-primary text-sm font-bold uppercase tracking-widest flex items-center gap-2 hover:gap-3 transition-all pt-4">
+            <button className="mt-auto text-primary text-sm uppercase tracking-widest flex items-center gap-2 hover:gap-3 transition-all pt-4">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="16"

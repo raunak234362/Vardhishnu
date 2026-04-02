@@ -8,17 +8,17 @@ const Commitment = () => {
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="max-w-5xl mx-auto text-center space-y-12"
+          className="space-y-12 text-left"
         >
-          <div className="space-y-8">
-            <h2 className="text-3xl md:text-5xl text-dark leading-[1.15] tracking-tight">
+          <div className="space-y-8 max-w-4xl">
+            <h2 className="text-3xl md:text-6xl text-dark leading-[1.1] tracking-tighter">
               At Vardhishnu, we believe that every{" "}
               <span className="text-primary italic">child</span> deserves a
               safe, secure, and happy childhood, regardless of the
               socio-economic conditions they are born into.
             </h2>
 
-            <h2 className="text-3xl md:text-5xl text-dark leading-[1.15] tracking-tight">
+            <h2 className="text-3xl md:text-6xl text-dark leading-[1.1] tracking-tighter">
               We are <span className="text-primary italic">committed</span> to
               giving every child a fair chance to stand up, take control of
               their life, and live with dignity.
@@ -29,7 +29,7 @@ const Commitment = () => {
             <motion.div
               animate={{ scale: [1, 1.1, 1] }}
               transition={{ duration: 3, repeat: Infinity }}
-              className="w-16 h-1 bg-primary mx-auto rounded-full"
+              className="w-16 h-1 bg-primary rounded-full transition-all duration-300"
             />
           </div>
 

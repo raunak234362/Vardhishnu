@@ -19,7 +19,7 @@ const WhoWeAreHero = () => {
               <h1 className="text-4xl md:text-6xl text-dark mt-4 leading-tight tracking-tighter">
                 Creating hope, impacting lives globally
               </h1>
-              <p className="text-lg md:text-xl text-dark/70 leading-relaxed mt-6 max-w-xl">
+              <p className="text-xl md:text-xl text-dark leading-relaxed mt-6 max-w-xl">
                 We work to make quality education accessible to every
                 child—empowering them with knowledge, skills, and opportunities
                 for a brighter future.

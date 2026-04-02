@@ -47,13 +47,13 @@ const OurJourney = () => {
               className="space-y-8"
             >
               <div className="relative inline-block">
-                <h2 className="text-4xl md:text-5xl text-dark tracking-tighter">
+                <h2 className="text-4xl md:text-5xl text-dark tracking-tighter ">
                   Our Journey
                 </h2>
-                <div className="absolute -bottom-2 left-0 w-2/3 h-1.5 bg-primary rounded-full transition-all duration-300 hover:w-full" />
+                <div className="absolute -bottom-7 left-0 w-2/3 h-1.5 bg-primary rounded-full transition-all duration-300 hover:w-full mt-4" />
               </div>
 
-              <div className="space-y-6 text-lg text-dark/70 leading-relaxed font-medium">
+              <div className="space-y-6 mt-10 text-xl text-dark leading-relaxed ">
                 <p>
                   Founded in the heart of Jalgaon, Maharashtra, Vardhishnu is
                   more than just a non-profit. We are a movement of hope—a

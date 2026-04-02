@@ -15,9 +15,9 @@ const Footer = () => {
     <footer className="bg-white pt-24 font-sans">
       {/* Newsletter Section */}
       <div className="container-custom mb-32">
-        <div className="bg-white rounded-4xl p-12 md:p-20 flex flex-col lg:row-span-1 lg:flex-row items-center justify-between gap-10 border border-gray-200 shadow-sm">
+        <div className="bg-gray-100 rounded-xl p-16 md:p-20 flex flex-col lg:row-span-1 lg:flex-row items-center justify-between gap-8 shadow-sm">
           <div className="max-w-md">
-            <h3 className="text-4xl font-bold mb-3 text-dark tracking-tight">
+            <h3 className="text-4xl font-semibold mb-3 text-dark tracking-tight">
               Stay Updated With Us
             </h3>
             <p className="text-gray-500 text-xl font-medium">
@@ -28,9 +28,9 @@ const Footer = () => {
             <input
               type="email"
               placeholder="Your Email"
-              className="flex-1 px-8 py-5 rounded-xl bg-white border border-gray-100 shadow-sm text-lg outline-none focus:ring-2 focus:ring-primary/10 transition-all placeholder:text-gray-300"
+              className="flex-1 px-8 py-4 rounded-xl bg-white border border-gray-100 shadow-sm text-lg outline-none focus:ring-2 focus:ring-primary/10 transition-all placeholder:text-gray-300"
             />
-            <button className="bg-primary hover:bg-primary-dark text-white px-12 py-5 rounded-xl font-bold text-xl shadow-lg shadow-primary/20 transition-all hover:-translate-y-1">
+            <button className="bg-primary hover:bg-primary-dark text-white px-20 py-4 rounded-xl font-semibold text-xl shadow-lg shadow-primary/20 transition-all hover:-translate-y-1">
               Subscribe
             </button>
           </div>

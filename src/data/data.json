@@ -56,19 +56,19 @@
       {
         "name": "Anandghar",
         "description": "Community learning centers for children from vulnerable backgrounds to connect, share and reflect.",
-        "image": "v1774770398/Hero1_lrgfwj.png",
+        "image": "q_auto,f_auto/v1774764807/2._Home_vlsogu.jpg",
         "link": "/programs/anandghar"
       },
       {
         "name": "Anandghar Fellowship",
         "description": "Two year teaching fellowship where fellows are placed in community learning center where they work closely with children, parents, community and the schools.",
-        "image": "v1774764829/Vardhishnu_9_uldfse.jpg",
+        "image": "q_auto,f_auto/v1774764806/4._Home_td2lvq.jpg",
         "link": "/our-programs/anandghar-fellowship"
       },
       {
         "name": "Community Collectives",
         "description": "One year unique support program for grass-root initiaitves with limited or no exposure of changing developmental landscape",
-        "image": "v1774764831/Vardhishnu_ssnb6c.jpg",
+        "image": "q_auto,f_auto/v1774764806/3._Home_k41tzn.jpg",
         "link": "/our-programs/community-collectives"
       }
     ]
@@ -169,20 +169,82 @@
         "bio": "Mr. Sunil Chavan, Fondly Known As Sunil Kaka, Holds An M.Sc. In Statistics And An MBA In Marketing. After Spending 17 Years In The IT Sector, He Founded His Own Company In 1996, Which He Successfully Exited In 2012 To Dedicate Himself To The Social Sector. He Currently Serves As Director At Dr. M. L. Dhawale Trust, Palghar, And Is Also A Director At Bharat Rural Livelihood Foundation (BRLF). In Addition, He Is A Visiting Faculty Member At Shiv Nadar University, Where He Shares His Rich Experience With Young Leaders. Mr. Chavan Has Been Associated With Vardhishnu As A Member Of The Advisory Board Since 2016. A Seasoned Entrepreneur With Deep Expertise In Finance And Economics, He Provides Vardhishnu With Invaluable Strategic Guidance And Financial Counsel, Helping Strengthen The Organization’s Vision And Long-Term Sustainability."
       },
       {
-        "image": "v1774764808/DSCN2397_gfciqt.jpg",   
+        "image": "https://res.cloudinary.com/di7aduhjv/image/upload/q_auto/f_auto/v1774764843/Nikunj_Jhaveri__Our_Advisor_vtu4mp.jpg",
         "name": "Nikunj Jhaveri",
         "role": "Advisor",
-        "bio": "Bio for Nikunj Jhaveri will go here. A dedicated professional supporting growth and strategic planning for social outcomes."
+        "bio": "Mr. Nikunj Jhaveri Founded Systems Plus In 1987, A Company Specializing In IT Services. Alongside Leading Systems Plus, He Also Successfully Served As The Chief Information Officer For PepsiCo Asia Pacific In An Outsourced Capacity, Bringing Global Corporate Experience To His Work. He Serves On The Boards Of Several Non-Profit Organizations, Including PRIDE, VOICE, And The Indian Women's Football Association, Reflecting His Deep Commitment To The Social Sector. Mr. Jhaveri Has Been Associated With Vardhishnu As A Member Of The Advisory Board Since June 2022. He Plays A Key Role In Supporting The Organization’s Growth By Guiding Scale-Up Efforts, Strengthening Fundraising Strategies, And Enabling Meaningful Collaborations."
       },
       {
-        "image": "v1774764808/DSCN2397_gfciqt.jpg",   
-        "name": "Shubhada",
+        "image": "https://res.cloudinary.com/di7aduhjv/image/upload/q_auto/f_auto/v1774764844/Shubhada_Joshi_mhstyr.jpg",
+        "name": "Shubhada Joshi",
         "role": "Advisor",
-        "bio": "Bio for Shubhada will go here. Bringing deep knowledge in pedagogical practices and child development to our initiatives."
+        "bio": "An Architect By Education, Smt. Shubhada Has Dedicated Her Life To Providing Quality Education To Underprivileged Children In Pune. For Over 25 Years, She Has Been Closely Associated With Khelghar, An Initiative Of Palakneeti Pariwar, Where She Has Worked Tirelessly To Create Meaningful Learning Spaces For Children. She Graciously Accepted Vardhishnu's Invitation To Serve On The Advisory Committee, Bringing With Her Deep Expertise And Long-Standing Experience In The Education Sector. Her Insights Play A Vital Role In Helping Us Design Thoughtful Curricula And Create Engaging, Child-Centric Content That Enriches The Learning Journeys Of The Children We Work With."
+      },
+      {
+        "image": "https://res.cloudinary.com/di7aduhjv/image/upload/q_auto/f_auto/v1774764844/Isabel_Rodrigues_-_Our_Advisors_j7gcgf.jpg",
+        "name": "Isabel Rodrigues",
+        "role": "Advisor",
+        "bio": "Isabel Is A Marketing & Communications Executive In The Higher Education Sector, Helping Colleges And Universities Improve Enrollment, Brand Visibility, And Technology Adoption. In The Past Year, She Has Consulted 300+ Universities Across 50 Countries, Driving An Average 10% Increase In ROI. She Is A Board Member Of AND, A Europe-Based Humanitarian NGO Working Across 40+ Countries In Collaboration With The EU, UNDP, And Foreign Affairs Departments. Isabel Holds Qualifications In Business Administration, Economic Diplomacy, And International Relations, And Is Deeply Interested In Global Governance, Entrepreneurship, And Sustainable Development. Currently Based In Oslo, Norway, She Continues To Study And Write On Economic Development And Human Behavior."
       }
     ],
-    "Our Founders": [],
-    "Team Anandghar": [],
+    "Our Founders": [
+      {
+        "image": "https://res.cloudinary.com/di7aduhjv/image/upload/q_auto/f_auto/v1774764842/Adwait_Dandwate_India_fkatez.png",
+        "name": "Adwait Dandwate",
+        "role": "Founder - Executive Director",
+        "bio": "Adwait Founded Vardhishnu In 2013 With A Vision That Every Child Deserves Dignity, Opportunity, And A Safe Space To Grow. With Over A Decade Of Experience In The Development Sector, He Brings Deep Insight Into Communities And Sustainable Change. He Holds A Master's In Sociology From The University Of Pune And Completed A Leadership Accelerator Program At IIM Bangalore. As Executive Director, He Leads Strategy, Partnerships, Fundraising, And Organizational Growth, While Representing Vardhishnu On National And Global Platforms. His Leadership Is Shaped By Fellowships From Samajik Kritadnyata Nidhi, Janarth, Wipro Foundation, Acumen India, And The Gratitude Network."
+      },
+      {
+        "image": "https://res.cloudinary.com/di7aduhjv/image/upload/q_auto/f_auto/v1774764843/Pranali_ezjmea.jpg",
+        "name": "Pranali Sisodiya",
+        "role": "Founder - Director",
+        "bio": "Pranali Sisodiya Holds An M.Sc. In Anthropology From The University Of Pune And A B.Sc. In Biotechnology From North Maharashtra University. She Brings With Her Rich Grassroots Experience, Having Worked With SEARCH, Gadchiroli, And MKCL Knowledge, Pune. Pranali Rejoined Vardhishnu As A Director In January 2019, Where She Leads The On-Ground Implementation Of The Anandghar Initiative. Her Work Spans Curriculum And Content Development, As Well As Monitoring And Evaluation, Ensuring That Learning Spaces Remain Meaningful, Child-Centric, And Impactful. She Is Currently A Wipro Seeding Program Fellow. Deeply Connected To The Communities She Works With, Pranali Finds Her Greatest Joy In Spending Quality Time With Children And Shaping Learning Environments Where They Can Thrive."
+      }
+    ],
+    "Team Anandghar": [
+      {
+        "image": "https://res.cloudinary.com/di7aduhjv/image/upload/q_auto,f_auto,a_-90/v1774765561/Khyati_Momaya_xjnk2b.jpg",
+        "name": "Khyati Momaya",
+        "role": "Program Co-Lead",
+        "bio": "Khyati Holds A Master's Degree In Education From Azim Premji University. She Brings Over Five Years Of Experience From Vidya Integrated Development For Youth & Adults, A Mumbai-Based Non-Profit, Where She Worked As A Program Manager. At Vardhishnu, Khyati Serves As Program Co-Lead, Working Closely With The Fellow-Educators To Support Effective On-Ground Implementation. She Also Plays A Key Role In Designing Systems And Processes That Ensure The Smooth And Efficient Functioning Of The Anandghar Program."
+      },
+      {
+        "image": "https://res.cloudinary.com/di7aduhjv/image/upload/q_auto/f_auto/v1774764835/Abhishekh_q3mb0q.jpg",
+        "name": "Abhishek Sananse",
+        "role": "Program Manager",
+        "bio": "Abhishek Worked With Vardhishnu As A Volunteer And Fellow-Educator For Almost 3 Years Before Joining Azim Premji University To Pursue M.A In Education. Post His Masters Degree He Has Joined Us Back And Is Currently Taking Care Of Curriculum Building Along With Anandghar Fellowship"
+      },
+      {
+        "image": "",
+        "name": "Rubi Rama Praveen",
+        "role": "Knowledge Partner",
+        "bio": ""
+      },
+      {
+        "image": "",
+        "name": "Bajrang Pawara",
+        "role": "City Lead",
+        "bio": ""
+      },
+      {
+        "image": "",
+        "name": "Bajrang Sonawane",
+        "role": "City Coordinator",
+        "bio": ""
+      },
+      {
+        "image": "",
+        "name": "Prathamesh Gojarekar",
+        "role": "Center Lead",
+        "bio": ""
+      },
+      {
+        "image": "",
+        "name": "Monali Gendekar",
+        "role": "Library Coordinator",
+        "bio": ""
+      }
+    ],
     "Team Community Collectives": [],
     "Administration": []
   },
