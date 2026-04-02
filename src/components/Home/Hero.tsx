@@ -71,14 +71,14 @@ const Hero = () => {
             transition={{ duration: 0.5, ease: "easeOut" }}
             className="flex flex-col justify-center items-center gap-5 pt-64"
           >
-            <h1 className="text-3xl md:text-5xl font-normal mb-2 tracking-tighter">
+            <h1 className="text-3xl md:text-5xl font-normal mb-1 tracking-tighter">
               {slides[currentSlide].headline}
             </h1>
-            <h2 className="text-3xl md:text-9xl font-handwritten text-primary mb-8 drop-shadow-lg">
+            <h2 className="text-3xl md:text-[140px] font-bold font-handwritten text-primary mb-8 drop-shadow-lg">
               {slides[currentSlide].subheadline}
             </h2>
             <div className="flex flex-wrap gap-4">
-              <button className="bg-black rounded-full px-10 py-5 text-xl group shadow-2xl flex items-center gap-3">
+              <button className="bg-black rounded-full px-8 py-4 text-lg group shadow-2xl flex items-center gap-3">
                 <Play
                   size={24}
                   className="group-hover:scale-110 transition-transform fill-current"

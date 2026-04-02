@@ -36,7 +36,7 @@ const Partners = () => {
               <LazyImage
                 src={getImageUrl(partner.logo)}
                 alt={partner.name}
-                className="h-16 w-auto object-contain transition-all duration-300"
+                className="h-36 w-auto object-contain transition-all duration-300"
                 containerClassName="inline-block"
               />
             </div>

@@ -20,10 +20,7 @@ const ImpactHero = () => {
         >
           <h1 className="text-4xl md:text-6xl text-dark leading-tight tracking-tight">
             This is the impact{" "}
-            <span
-              className="text-primary italic px-2 text-5xl md:text-7xl align-middle"
-              style={{ fontFamily: "'Dancing Script', cursive" }}
-            >
+            <span className="text-primary italic px-2 text-5xl md:text-7xl align-middle font-handwritten">
               you
             </span>{" "}
             helped us achieve in 2024-25

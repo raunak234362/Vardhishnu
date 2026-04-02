@@ -25,8 +25,7 @@ const ResourcesHero = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.3, duration: 1 }}
-            className="text-primary text-4xl md:text-6xl font-medium italic drop-shadow-2xl"
-            style={{ fontFamily: "'Dancing Script', cursive" }}
+            className="text-primary text-4xl md:text-6xl font-medium italic drop-shadow-2xl font-handwritten"
           >
             From Care to Change
           </motion.p>

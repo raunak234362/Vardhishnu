@@ -1,27 +1,26 @@
 import { motion } from "framer-motion";
 import data from "../../data/data.json";
+import HomePageWave from "../../assets/HomePageWave.svg";
 
 const Impact = () => {
   const { title, metrics } = data.impact;
 
   return (
     <section className="relative pt-16">
-      {/* Wave/Card Header Overlapping Section */}
       <div className="container-custom relative z-20">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="bg-white rounded-[2.5rem] p-12 md:p-16 shadow-2xl overflow-hidden relative"
+          className="bg-white rounded-lg p-12 md:p-28 shadow-xl overflow-hidden relative"
         >
           {/* Decorative Wave Pattern (CSS approximation) */}
-          <div className="absolute inset-x-0 bottom-0 pointer-events-none opacity-5">
-            <svg viewBox="0 0 1440 320" xmlns="http://www.w3.org/2000/svg">
-              <path
-                fill="#000"
-                d="M0,160L48,176C96,192,192,224,288,229.3C384,235,480,213,576,192C672,171,768,149,864,154.7C960,160,1056,192,1152,192C1248,192,1344,160,1392,144L1440,128V320H1392C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320H0Z"
-              ></path>
-            </svg>
+          <div className="absolute inset-0 pointer-events-none z-0 mix-blend-multiply">
+            <img
+              src={HomePageWave}
+              alt=""
+              className="w-full h-full object-cover object-right scale-[1.05]"
+            />
           </div>
 
           <h2 className="text-3xl md:text-5xl text-dark mb-10 max-w-4xl relative z-10 leading-tight tracking-tighter">

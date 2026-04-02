@@ -1,6 +1,5 @@
 import {
   Mail,
-  Phone,
   MapPin,
   Twitter,
   Instagram,
@@ -140,7 +139,7 @@ const Footer = () => {
             <div className="space-y-8">
               <div className="flex gap-5 items-center">
                 <div className="w-12 h-12 rounded-full bg-primary flex shrink-0 items-center justify-center text-primary border border-primary/10">
-                  <PhoneIcon size={20} className="text-white"/>
+                  <PhoneIcon size={20} className="text-white" />
                 </div>
                 <div className="space-y-1">
                   <div className="text-dark font-bold text-lg">Call us</div>
@@ -154,7 +153,7 @@ const Footer = () => {
               </div>
               <div className="flex gap-5 items-center">
                 <div className="w-12 h-12 rounded-full bg-primary flex shrink-0 items-center justify-center text-primary border border-primary/10">
-                  <Mail size={20} className="text-white"/>
+                  <Mail size={20} className="text-white" />
                 </div>
                 <div className="space-y-1">
                   <div className="text-dark font-bold text-lg">Mail Us</div>
@@ -168,7 +167,7 @@ const Footer = () => {
               </div>
               <div className="flex gap-5 items-center">
                 <div className="w-12 h-12 rounded-full bg-primary flex shrink-0 items-center justify-center text-primary border border-primary/10">
-                  <MapPin size={20} className="text-white"/>
+                  <MapPin size={20} className="text-white" />
                 </div>
                 <div className="space-y-1">
                   <div className="text-dark font-bold text-lg">Visit Us</div>
