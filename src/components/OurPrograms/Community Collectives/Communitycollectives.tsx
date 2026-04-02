@@ -16,7 +16,7 @@ import communityData from "../../../data/community_collectives.json";
 interface Member {
   name: string;
   org: string;
-  image: string;
+  image: string | string[];
   location: string;
   focus: string;
   about?: string;
@@ -186,14 +186,17 @@ const CommunityCollectives = () => {
               initial={{ opacity: 0, scale: 0.95 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
-              className="bg-white border border-primary rounded-4xl p-10 space-y-8 flex flex-col items-start shadow-sm hover:bg-primary/5 transition-all duration-300"
+              className="bg-white border border-primary rounded-lg p-10 space-y-8 flex flex-col items-start shadow-sm hover:shadow-md transition-all duration-300"
             >
-              <div className="w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center text-primary">
-                <Users size={32} />
+              <div className=" mb-2">
+                <Users size={40} />
               </div>
-              <h3 className="text-2xl text-dark leading-tight">
-                We invite applications from
-              </h3>
+              <div className="space-y-4">
+                <h3 className="text-2xl text-dark leading-tight">
+                  We invite applications from
+                </h3>
+                <div className="w-14 h-1 bg-primary" />
+              </div>
               <ul className="space-y-4 text-lg text-dark/70 list-disc pl-5">
                 <li>
                   Individuals, initiatives, or organisations working with—or
@@ -210,14 +213,17 @@ const CommunityCollectives = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.1 }}
-              className="bg-white border border-primary rounded-4xl p-10 space-y-8 flex flex-col items-start shadow-sm hover:bg-primary/5 transition-all duration-300"
+              className="bg-white border border-primary rounded-lg p-10 space-y-8 flex flex-col items-start shadow-sm hover:shadow-md transition-all duration-300"
             >
-              <div className="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center text-primary">
-                <RefreshCw size={28} />
+              <div className=" mb-2">
+                <RefreshCw size={36} />
               </div>
-              <h3 className="text-2xl text-dark leading-tight">
-                Eligibility & Expectations
-              </h3>
+              <div className="space-y-4">
+                <h3 className="text-2xl text-dark leading-tight">
+                  Eligibility & Expectations
+                </h3>
+                <div className="w-14 h-1 bg-primary" />
+              </div>
               <ul className="space-y-4 text-lg text-dark/70 list-disc pl-5">
                 <li>
                   Willingness to work with children at least 2 days a week
@@ -239,16 +245,19 @@ const CommunityCollectives = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.2 }}
-              className="bg-white border border-primary rounded-4xl p-10 space-y-8 flex flex-col items-start shadow-sm hover:bg-primary/5 transition-all duration-300"
+              className="bg-white border border-primary rounded-lg p-10 space-y-8 flex flex-col items-start shadow-sm hover:shadow-md transition-all duration-300"
             >
-              <div className="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center text-primary">
-                <ShieldCheck size={28} />
+              <div className=" mb-2">
+                <ShieldCheck size={36} />
               </div>
-              <h3 className="text-2xl text-dark leading-tight">
-                For Ideation-Stage Applicants
-              </h3>
               <div className="space-y-4">
-                <p className="text-lg text-dark/70 italic">
+                <h3 className="text-2xl text-dark leading-tight">
+                  For Ideation-Stage Applicants
+                </h3>
+                <div className="w-14 h-1 bg-primary" />
+              </div>
+              <div className="space-y-4">
+                <p className="text-lg text-dark/70 ">
                   If you're at an early stage or still ideating:
                 </p>
                 <ul className="space-y-4 text-lg text-dark/70 list-disc pl-5">
@@ -532,11 +541,10 @@ const CommunityCollectives = () => {
                 className="relative pl-16 pb-20 last:pb-0"
               >
                 <div
-                  className={`absolute left-0 w-10 h-10 lg:w-12 lg:h-12 rounded-full border-4 border-white shadow-md flex items-center justify-center z-10 transition-colors duration-500 ${
-                    step.status === "checked"
+                  className={`absolute left-0 w-10 h-10 lg:w-12 lg:h-12 rounded-full border-4 border-white shadow-md flex items-center justify-center z-10 transition-colors duration-500 ${step.status === "checked"
                       ? "bg-primary text-white"
                       : "bg-gray-300 text-white"
-                  }`}
+                    }`}
                 >
                   {step.status === "checked" ? (
                     <Check size={24} strokeWidth={3} />
@@ -862,13 +870,12 @@ const CommunityCollectives = () => {
                 <button
                   key={tab}
                   onClick={() => setActiveTab(tab)}
-                  className={`px-8 py-3 rounded-full text-lg transition-all whitespace-nowrap ${
-                    activeTab === tab
+                  className={`px-8 py-3 rounded-full text-lg transition-all whitespace-nowrap ${activeTab === tab
                       ? "bg-primary text-white font-medium shadow-md"
                       : "text-dark hover:bg-gray-100"
-                  }`}
+                    }`}
                 >
-                  
+
                   {tab}
                 </button>
               ))}
@@ -910,11 +917,26 @@ const CommunityCollectives = () => {
                 {/* Image Placeholder */}
                 <div className="aspect-[4/3] bg-gray-100 relative overflow-hidden group-hover:bg-gray-200 transition-colors">
                   {member.image && (
-                    <img
-                      src={getImageUrl(member.image)}
-                      alt={member.name}
-                      className="w-full h-full object-cover group-hover:scale-[1.1] transition-transform duration-700"
-                    />
+                    <>
+                      {Array.isArray(member.image) ? (
+                        <div className="flex h-full w-full">
+                          {member.image.map((img, idx) => (
+                            <img
+                              key={idx}
+                              src={getImageUrl(img)}
+                              alt={`${member.name} ${idx + 1}`}
+                              className="w-1/2 h-full object-cover group-hover:scale-[1.1] transition-transform duration-700"
+                            />
+                          ))}
+                        </div>
+                      ) : (
+                        <img
+                          src={getImageUrl(member.image)}
+                          alt={member.name}
+                          className="w-full h-full object-cover group-hover:scale-[1.1] transition-transform duration-700"
+                        />
+                      )}
+                    </>
                   )}
                 </div>
 
@@ -1015,12 +1037,25 @@ const CommunityCollectives = () => {
                 <div className="p-8 md:p-12">
                   {/* Header Info */}
                   <div className="flex flex-col sm:flex-row gap-8 items-start mb-12">
-                    <div className="w-44 h-44 rounded-2xl overflow-hidden shadow-xl shrink-0 border-4 border-gray-50">
-                      <img
-                        src={getImageUrl(selectedMember.image)}
-                        alt={selectedMember.name}
-                        className="w-full h-full object-cover"
-                      />
+                    <div className="w-44 h-44 rounded-2xl overflow-hidden shadow-xl shrink-0 border-4 border-gray-50 bg-gray-50">
+                      {Array.isArray(selectedMember.image) ? (
+                        <div className="flex h-full w-full">
+                          {selectedMember.image.map((img, idx) => (
+                            <img
+                              key={idx}
+                              src={getImageUrl(img)}
+                              alt={`${selectedMember.name} ${idx + 1}`}
+                              className="w-1/2 h-full object-cover"
+                            />
+                          ))}
+                        </div>
+                      ) : (
+                        <img
+                          src={getImageUrl(selectedMember.image)}
+                          alt={selectedMember.name}
+                          className="w-full h-full object-cover"
+                        />
+                      )}
                     </div>
                     <div className="space-y-5 grow pt-2">
                       <div>
