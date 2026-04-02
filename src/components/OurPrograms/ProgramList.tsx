@@ -16,7 +16,7 @@ const ProgramList = () => {
       ],
       link: "/our-programs/anandghar-approach",
       image:
-        "https://res.cloudinary.com/di7aduhjv/image/upload/v1774770398/Hero1_lrgfwj.png",
+        "https://res.cloudinary.com/di7aduhjv/image/upload/q_auto/f_auto/v1774764807/2._Home_vlsogu.jpg",
     },
     {
       title: "Anandghar Fellowship",
@@ -29,7 +29,7 @@ const ProgramList = () => {
       ],
       link: "/our-programs/anandghar-fellowship",
       image:
-        "https://res.cloudinary.com/di7aduhjv/image/upload/v1774764829/Vardhishnu_9_uldfse.jpg",
+        "https://res.cloudinary.com/di7aduhjv/image/upload/q_auto/f_auto/v1774764806/4._Home_td2lvq.jpg",
     },
     {
       title: "Community Collectives",
@@ -42,7 +42,7 @@ const ProgramList = () => {
       ],
       link: "/our-programs/community-collectives",
       image:
-        "https://res.cloudinary.com/di7aduhjv/image/upload/v1774764831/Vardhishnu_ssnb6c.jpg",
+        "https://res.cloudinary.com/di7aduhjv/image/upload/q_auto/f_auto/v1774764806/3._Home_k41tzn.jpg",
     },
   ];
 
@@ -95,7 +95,7 @@ const ProgramList = () => {
                         key={idx}
                         className="flex items-center gap-3 text-dark/80 font-bold tracking-tight"
                       >
-                        <Heart className="w-5 h-5 text-primary fill-primary" />
+                        <Heart className="w-5 h-5 text-red-500 fill-red-500" />
                         <span>{point}</span>
                       </li>
                     ))}

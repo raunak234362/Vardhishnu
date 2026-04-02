@@ -44,11 +44,11 @@ const Impact = () => {
                 transition={{ delay: index * 0.1 }}
                 className="flex flex-col items-center md:items-start text-center md:text-left"
               >
-                <div className="text-5xl md:text-6xl font-black text-white mb-2 tabular-nums">
+                <div className="text-5xl md:text-6xl font-semibold text-white mb-2 tabular-nums">
                   {metric.value}
                 </div>
-                <div className="w-12 h-1 bg-white/40 mb-4" />
-                <p className="text-white font-bold text-lg leading-snug">
+                <div className="w-12 h-1 bg-black mb-4" />
+                <p className="text-white text-lg leading-snug">
                   {metric.label}
                 </p>
               </motion.div>

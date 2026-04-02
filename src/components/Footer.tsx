@@ -6,6 +6,7 @@ import {
   Instagram,
   Facebook,
   Youtube,
+  PhoneIcon,
 } from "lucide-react";
 import data from "../data/data.json";
 import Logo from "../assets/Logo_Vardhishnu.jpg";
@@ -15,9 +16,9 @@ const Footer = () => {
     <footer className="bg-white pt-24 font-sans">
       {/* Newsletter Section */}
       <div className="container-custom mb-32">
-        <div className="bg-white rounded-4xl p-12 md:p-20 flex flex-col lg:row-span-1 lg:flex-row items-center justify-between gap-10 border border-gray-200 shadow-sm">
+        <div className="bg-gray-100 rounded-xl p-16 md:p-20 flex flex-col lg:row-span-1 lg:flex-row items-center justify-between gap-8 shadow-sm">
           <div className="max-w-md">
-            <h3 className="text-4xl font-bold mb-3 text-dark tracking-tight">
+            <h3 className="text-4xl font-semibold mb-3 text-dark tracking-tight">
               Stay Updated With Us
             </h3>
             <p className="text-gray-500 text-xl font-medium">
@@ -28,9 +29,9 @@ const Footer = () => {
             <input
               type="email"
               placeholder="Your Email"
-              className="flex-1 px-8 py-5 rounded-xl bg-white border border-gray-100 shadow-sm text-lg outline-none focus:ring-2 focus:ring-primary/10 transition-all placeholder:text-gray-300"
+              className="flex-1 px-8 py-4 rounded-xl bg-white border border-gray-100 shadow-sm text-lg outline-none focus:ring-2 focus:ring-primary/10 transition-all placeholder:text-gray-300"
             />
-            <button className="bg-primary hover:bg-primary-dark text-white px-12 py-5 rounded-xl font-bold text-xl shadow-lg shadow-primary/20 transition-all hover:-translate-y-1">
+            <button className="bg-primary hover:bg-primary-dark text-white px-20 py-4 rounded-xl font-semibold text-xl shadow-lg shadow-primary/20 transition-all hover:-translate-y-1">
               Subscribe
             </button>
           </div>
@@ -94,7 +95,7 @@ const Footer = () => {
               <li>
                 <a
                   href="#"
-                  className="text-primary font-bold hover:underline transition-all"
+                  className="text-primary hover:underline transition-all"
                 >
                   Donate Now
                 </a>
@@ -138,8 +139,8 @@ const Footer = () => {
             </h4>
             <div className="space-y-8">
               <div className="flex gap-5 items-center">
-                <div className="w-12 h-12 rounded-full bg-primary/5 flex shrink-0 items-center justify-center text-primary border border-primary/10">
-                  <Phone size={20} />
+                <div className="w-12 h-12 rounded-full bg-primary flex shrink-0 items-center justify-center text-primary border border-primary/10">
+                  <PhoneIcon size={20} className="text-white"/>
                 </div>
                 <div className="space-y-1">
                   <div className="text-dark font-bold text-lg">Call us</div>
@@ -152,8 +153,8 @@ const Footer = () => {
                 </div>
               </div>
               <div className="flex gap-5 items-center">
-                <div className="w-12 h-12 rounded-full bg-primary/5 flex shrink-0 items-center justify-center text-primary border border-primary/10">
-                  <Mail size={20} />
+                <div className="w-12 h-12 rounded-full bg-primary flex shrink-0 items-center justify-center text-primary border border-primary/10">
+                  <Mail size={20} className="text-white"/>
                 </div>
                 <div className="space-y-1">
                   <div className="text-dark font-bold text-lg">Mail Us</div>
@@ -166,8 +167,8 @@ const Footer = () => {
                 </div>
               </div>
               <div className="flex gap-5 items-center">
-                <div className="w-12 h-12 rounded-full bg-primary/5 flex shrink-0 items-center justify-center text-primary border border-primary/10">
-                  <MapPin size={20} />
+                <div className="w-12 h-12 rounded-full bg-primary flex shrink-0 items-center justify-center text-primary border border-primary/10">
+                  <MapPin size={20} className="text-white"/>
                 </div>
                 <div className="space-y-1">
                   <div className="text-dark font-bold text-lg">Visit Us</div>

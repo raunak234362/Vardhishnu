@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 import data from "../../data/data.json";
 import { getImageUrl } from "../../utils/imageUrl";
 import LazyImage from "../common/LazyImage";
@@ -41,9 +42,12 @@ const OurPrograms = () => {
                 <p className="text-white/90 text-lg font-semibold leading-relaxed mb-6">
                   {program.description}
                 </p>
-                <button className="self-end text-primary font-bold hover:underline flex items-center text-right gap-2 group-hover:gap-3 text-lg transition-all">
+                <Link
+                  to={program.link}
+                  className="self-end text-primary font-bold hover:underline flex items-center text-right gap-2 group-hover:gap-3 text-lg transition-all"
+                >
                   Read More
-                </button>
+                </Link>
               </div>
             </motion.div>
           ))}

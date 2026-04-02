@@ -58,10 +58,10 @@ const OverallImpact = () => {
               transition={{ delay: index * 0.05 }}
               className={`p-10 rounded-[2.5rem] border-2 border-dashed min-h-[220px] flex flex-col justify-center gap-4 transition-all duration-300 group ${item.color}`}
             >
-              <h3 className="text-4xl md:text-5xl text-dark tracking-tight leading-none group-hover:scale-105 transition-transform duration-300">
+              <h3 className="text-4xl md:text-5xl tracking-tight leading-none group-hover:scale-105 transition-transform duration-300">
                 {item.label}
               </h3>
-              <p className="text-dark/40 font-bold text-lg leading-snug">
+              <p className="text-dark/40 text-lg leading-snug">
                 {item.sub}
               </p>
             </motion.div>

@@ -61,7 +61,7 @@ const Hero = () => {
         </motion.div>
       </AnimatePresence>
 
-      <div className=" mx-auto z-10 text-white">
+      <div className="container-custom mx-auto z-10 text-white">
         <AnimatePresence mode="wait">
           <motion.div
             key={currentSlide}
