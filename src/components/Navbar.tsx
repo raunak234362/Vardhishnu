@@ -31,7 +31,7 @@ const Navbar = () => {
     <nav
       className={`z-50 w-full transition-all duration-300 ${
         isHomePage
-          ? "bg-black/5  backdrop-blur-sm"
+          ? "bg-black/5 "
           : "relative bg-black shadow-lg"
       }`}
     >

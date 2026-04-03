@@ -28,7 +28,7 @@ const OurProgramHero = () => {
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ delay: 0.3, duration: 1 }}
-            className="text-primary text-3xl md:text-6xl font-medium italic leading-[1.2]! max-w-5xl mx-auto drop-shadow-2xl font-handwritten"
+            className="text-primary text-3xl md:text-[140px] font-medium italic leading-[1.2]! max-w-5xl mx-auto drop-shadow-2xl font-handwritten"
           >
             Creating lasting impact through education, health, and community
             programs

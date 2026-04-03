@@ -47,7 +47,7 @@ const Hero = () => {
           exit="exit"
           transition={{
             x: { type: "spring", stiffness: 300, damping: 30 },
-            opacity: { duration: 0.2 },
+            opacity: { duration: 0.5 },
           }}
           className="absolute inset-0 z-0"
         >
@@ -78,12 +78,12 @@ const Hero = () => {
               {slides[currentSlide].subheadline}
             </h2>
             <div className="flex flex-wrap gap-4">
-              <button className="bg-black rounded-full px-8 py-4 text-lg group shadow-2xl flex items-center gap-3">
+              <button className="bg-black rounded-full px-8 py-4 text-[16px] group shadow-2xl flex items-center gap-3">
                 <Play
                   size={24}
                   className="group-hover:scale-110 transition-transform fill-current"
                 />
-                <span className="font-bold uppercase tracking-wider">
+                <span className="font-bold tracking-wider">
                   {slides[currentSlide].cta}
                 </span>
               </button>
