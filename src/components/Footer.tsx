@@ -184,7 +184,7 @@ const Footer = () => {
       {/* Bottom Bar */}
       <div className="bg-black py-10">
         <div className="container-custom text-center text-white/40 text-lg font-medium">
-          Vardhishnu © 2025 All Rights Reserved.
+          Vardhishnu © 2026 All Rights Reserved.
         </div>
       </div>
     </footer>
