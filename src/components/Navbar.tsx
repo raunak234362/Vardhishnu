@@ -97,7 +97,7 @@ const Navbar = () => {
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: "100%" }}
             transition={{ type: "spring", damping: 25, stiffness: 200 }}
-            className="fixed inset-0 z-100 bg-black/90 backdrop-blur-xl lg:hidden flex flex-col pt-24 "
+            className="fixed inset-0 z-100 bg-black/80 backdrop-blur-xl lg:hidden flex flex-col pt-24 "
           >
             <button 
               className="absolute top-8 right-8 p-2 text-white/60 hover:text-white"
