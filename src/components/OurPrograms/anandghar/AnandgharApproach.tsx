@@ -28,21 +28,15 @@ const StepCard = ({
   return (
     <motion.div
       style={{ scale, borderColor }}
-      className="p-10 rounded-4xl h-full bg-white border-2 border-gray-100 shadow-sm transition-shadow duration-500 hover:shadow-md"
+      className="p-8 rounded-2xl h-full bg-gray-50/50 border-2 border-transparent transition-all duration-500 hover:bg-white hover:shadow-xl hover:border-primary/20"
     >
-      <div className="mb-6 flex items-center gap-3">
-        <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary text-lg">
-          {idx + 1}
-        </div>
-        <h3 className="text-xl text-dark">{step.id}</h3>
-      </div>
-      <ul className="space-y-6">
+      <ul className="space-y-4">
         {step.items.map((item, i) => (
           <li
             key={i}
-            className="text-lg text-dark/80 leading-snug flex items-start gap-2"
+            className="text-base text-dark/80 leading-relaxed flex items-start gap-3"
           >
-            <div className="mt-2 w-1.5 h-1.5 rounded-full bg-primary shrink-0" />
+            <div className="mt-2.5 w-1 h-1 rounded-full bg-primary/40 shrink-0" />
             {item}
           </li>
         ))}
@@ -182,7 +176,7 @@ const AnandgharApproach = () => {
             <h2 className="text-4xl md:text-5xl text-dark tracking-tight">
               {data.holisticModel.title}
             </h2>
-            <div className="absolute -bottom-3 left-0 w-1/3 h-1.5 bg-primary rounded-full" />
+            {/* <div className="absolute -bottom-3 left-0 w-1/3 h-1.5 bg-primary rounded-full" /> */}
           </div>
           <p className="text-2xl text-dark/80 leading-relaxed max-w-5xl">
             {data.holisticModel.description}
@@ -201,64 +195,41 @@ const AnandgharApproach = () => {
             <h2 className="text-4xl md:text-5xl text-dark tracking-tight">
               {data.ourModel.title}
             </h2>
-            <div className="absolute -bottom-3 left-0 w-1/2 h-1.5 bg-primary rounded-full" />
+            <div className="absolute -bottom-6 left-0 w-1/2 h-1.5 bg-primary rounded-full" />
           </div>
 
-          {/* Progress Bar Header */}
-          <div className="bg-gray-100 rounded-full h-14 w-full mb-16 flex items-center px-2 relative overflow-hidden shadow-inner  text-dark/70 text-base md:text-xl">
-            {/* Moving Green Bar */}
-            <motion.div
-              style={{ x: xPosition }}
-              className="absolute left-2 top-2 bottom-2 w-[calc(33.33%-1rem)] bg-primary rounded-full z-10"
-            />
+          {/* Progress Indicator Container */}
+          <div className="max-w-4xl mx-auto mb-16 px-4">
+            {/* Step Labels Above the Bar */}
+            <div className="flex mb-4 text-sm md:text-base font-medium tracking-wide">
+              {["Step 1", "Step 2", "Step 3"].map((label, i) => {
+                const opacities = [step1Opacity, step2Opacity, step3Opacity];
+                return (
+                  <div key={i} className="flex-1 text-center">
+                    <motion.span 
+                      style={{ 
+                        opacity: opacities[i],
+                        color: useTransform(opacities[i], [0.5, 1], ["#9ca3af", "#84cc16"]) 
+                      }}
+                    >
+                      {label}
+                    </motion.span>
+                  </div>
+                );
+              })}
+            </div>
 
-            <div className="flex-1 flex items-center justify-center relative z-20 transition-colors duration-500">
-              <motion.span
-                style={{
-                  opacity: step1Opacity,
-                  color: useTransform(
-                    step1Opacity,
-                    [0.5, 1],
-                    ["#1a1a1a", "#ffffff"],
-                  ),
-                }}
-              >
-                Step 1
-              </motion.span>
-            </div>
-            <div className="w-8 flex justify-center text-dark/30 z-20">
-              &gt;
-            </div>
-            <div className="flex-1 flex items-center justify-center relative z-20 transition-colors duration-500">
-              <motion.span
-                style={{
-                  opacity: step2Opacity,
-                  color: useTransform(
-                    step2Opacity,
-                    [0.8, 1],
-                    ["#1a1a1a", "#ffffff"],
-                  ),
-                }}
-              >
-                Step 2
-              </motion.span>
-            </div>
-            <div className="w-8 flex justify-center text-dark/30 z-20">
-              &gt;
-            </div>
-            <div className="flex-1 flex items-center justify-center relative z-20 transition-colors duration-500">
-              <motion.span
-                style={{
-                  opacity: step3Opacity,
-                  color: useTransform(
-                    step3Opacity,
-                    [0.8, 1],
-                    ["#1a1a1a", "#ffffff"],
-                  ),
-                }}
-              >
-                Step 3
-              </motion.span>
+            {/* Segmented Progress Bar */}
+            <div className="relative h-2 w-full bg-gray-100 rounded-full flex items-center overflow-hidden">
+              <div className="flex-1 h-full border-r border-white bg-gray-200/50" />
+              <div className="flex-1 h-full border-r border-white bg-gray-200/50" />
+              <div className="flex-1 h-full bg-gray-200/50" />
+              
+              {/* Moving Green Highlight */}
+              <motion.div
+                style={{ x: xPosition, width: "33.333%" }}
+                className="absolute inset-y-0 left-0 bg-primary rounded-full shadow-[0_0_15px_rgba(132,204,22,0.3)]"
+              />
             </div>
           </div>
 
@@ -287,7 +258,7 @@ const AnandgharApproach = () => {
             <h2 className="text-4xl md:text-5xl text-dark tracking-tight">
               {data.values.title}
             </h2>
-            <div className="absolute -bottom-3 left-0 w-1/2 h-1.5 bg-primary rounded-full" />
+            <div className="absolute -bottom-6 left-0 w-1/2 h-1.5 bg-primary rounded-full" />
           </div>
 
           <div className="bg-white rounded-[4rem] border-2 border-gray-100 shadow-[0_20px_50px_rgba(0,0,0,0.05)] p-4 md:p-8 flex flex-wrap items-center justify-around gap-8 md:gap-4 max-w-5xl mx-auto">
@@ -328,15 +299,15 @@ const AnandgharApproach = () => {
         </motion.div>
       </div>
 
-      <div className="relative py-24 px-4 sm:px-0 mt-24">
-        {/* Background blob element */}
-        <div className="absolute top-0 right-0 w-3/4 h-[80%] bg-primary/5 rounded-bl-[100px] sm:rounded-bl-[300px] -z-10" />
-
-        <div className="container-custom">
+      <div className="container-custom py-24 px-4 sm:px-0 mt-24 relative overflow-hidden">
+        {/* Design Background Section */}
+        <div className="absolute inset-0 bg-primary/10 rounded-[4rem] -z-10" />
+        
+        <div className="p-8 md:p-16">
           <div className="mb-20">
             <h2 className="text-3xl md:text-5xl text-dark inline-block relative">
               {data.gallery.title}
-              <div className="absolute -bottom-4 left-0 w-2/3 h-1.5 bg-primary rounded-full" />
+              <div className="absolute -bottom-6 left-0 w-2/3 h-1.5 bg-primary rounded-full" />
             </h2>
           </div>
 

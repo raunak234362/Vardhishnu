@@ -19,7 +19,7 @@ const Conferences = () => {
           <h2 className="text-4xl  text-dark tracking-tighter inline-block relative border-b-4 border-primary pb-2 rounded-sm mb-6">
             Conferences
           </h2>
-          <p className="text-dark/50 font-medium text-sm leading-relaxed max-w-2xl">
+          <p className="text-dark/50 text-xl leading-relaxed">
             We have proudly presented about our work in following conferences:
           </p>
         </div>
@@ -42,15 +42,15 @@ const Conferences = () => {
                     style={{ borderColor: colors[index % colors.length] }}
                   />
                   <div className="flex items-baseline gap-2">
-                    <span className="text-4xl font-black text-dark tracking-tighter">
+                    <span className="text-3xl text-dark tracking-tighter">
                       {conf.date}
                     </span>
                     <div className="flex flex-col">
-                      <span className="text-sm font-bold text-dark/60 leading-tight">
+                      <span className="text-lg text-dark/60 leading-tight">
                         {conf.month}
                       </span>
                       <span
-                        className="text-[10px] font-black uppercase tracking-wider"
+                        className="text-md uppercase tracking-wider"
                         style={{ color: colors[index % colors.length] }}
                       >
                         {conf.location}
@@ -65,10 +65,10 @@ const Conferences = () => {
                 {/* Title Section */}
                 <div className="flex-1 text-left md:text-right">
                   <p
-                    className="text-sm md:text-base font-bold leading-relaxed max-w-3xl md:ml-auto"
+                    className="text-sm md:text-base leading-relaxed max-w-3xl md:ml-auto"
                     style={{ color: colors[index % colors.length] }}
                   >
-                    <span className="font-black italic">‘{conf.title}’</span>{" "}
+                    <span className="">‘{conf.title}’</span>{" "}
                     {conf.org}
                   </p>
                 </div>

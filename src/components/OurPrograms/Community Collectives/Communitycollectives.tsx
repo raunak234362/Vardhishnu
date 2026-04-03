@@ -59,12 +59,12 @@ const CommunityCollectives = () => {
       <div className="relative h-[65vh] w-full overflow-hidden">
         {/* Placeholder for Hero Image */}
         <div className="absolute inset-0 bg-gray-100">
-           <LazyImage
-            src={getImageUrl("v1774770398/Hero1_lrgfwj.png", "q_auto,f_auto")} 
-            alt="Community Collectives Hero"
-            className="w-full h-full object-cover"
-            containerClassName="w-full h-full"
-          /> 
+            <LazyImage
+              src="https://res.cloudinary.com/di7aduhjv/image/upload/q_auto/f_auto/v1775153922/community_collection.jpg_rri4dw.jpg"
+              alt="Community Collectives Hero"
+              className="w-full h-full object-cover"
+              containerClassName="w-full h-full"
+            />
         </div>
         <div className="absolute inset-0 bg-black/10 flex items-center justify-center lg:items-end lg:justify-start lg:p-20">
           <motion.h1
@@ -526,11 +526,11 @@ const CommunityCollectives = () => {
           <h2 className="text-4xl md:text-5xl text-dark tracking-tight">
             Selection Process
           </h2>
-          <div className="absolute -bottom-3 left-0 w-1/3 h-1.5 bg-primary rounded-full" />
+          <div className="absolute -bottom-6 left-0 w-1/3 h-1.5 bg-primary rounded-full" />
         </div>
 
         <div className="space-y-0 relative">
-          <div className="absolute left-4 top-0 bottom-0 w-0.5 bg-gray-100 lg:left-6" />
+          <div className="absolute left-4 top-0 bottom-0  bg-gray-100 lg:left-6" />
           {[
             {
               title: "Application Form",
@@ -570,7 +570,7 @@ const CommunityCollectives = () => {
               </div>
               <div className="space-y-4">
                 <h3 className="text-2xl md:text-3xl text-dark">{step.title}</h3>
-                <p className="text-lg md:text-xl text-dark/70 leading-relaxed max-w-4xl">
+                <p className="text-lg md:text-xl text-dark/70 leading-relaxed">
                   {step.text}
                 </p>
               </div>
@@ -585,7 +585,7 @@ const CommunityCollectives = () => {
           <h2 className="text-3xl md:text-5xl text-dark tracking-tight">
             Collective Impact
           </h2>
-          <div className="absolute -bottom-3 left-0 w-1/2 h-1 bg-primary rounded-full" />
+          <div className="absolute -bottom-6 left-0 w-1/2 h-1 bg-primary rounded-full" />
         </div>
 
         <div className="grid grid-cols-2 md:grid-cols-5 gap-8 mb-24 text-center px-4">

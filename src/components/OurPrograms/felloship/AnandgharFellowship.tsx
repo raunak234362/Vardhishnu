@@ -404,7 +404,7 @@ const AnandgharFellowship = () => {
             <h2 className="text-3xl md:text-5xl text-dark tracking-tight">
               Our Selection Process
             </h2>
-            <div className="absolute -bottom-3 left-0 w-1/2 h-1 bg-primary rounded-full" />
+            <div className="absolute -bottom-6 left-0 w-1/2 h-1 bg-primary rounded-full" />
           </div>
 
           <div className="flex flex-col">
