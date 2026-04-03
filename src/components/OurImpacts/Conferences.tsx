@@ -16,10 +16,11 @@ const Conferences = () => {
     <section className="py-24 bg-white relative">
       <div className="container-custom px-6 lg:px-20">
         <div className="mb-12 text-left">
-          <h2 className="text-4xl  text-dark tracking-tighter inline-block relative border-b-4 border-primary pb-2 rounded-sm mb-6">
+          <h2 className="text-4xl md:text-5xl text-dark tracking-tighter inline-block relative mb-6">
             Conferences
+            <div className="absolute -bottom-6 left-0 w-1/3 h-1.5 bg-primary rounded-full" />
           </h2>
-          <p className="text-dark/50 text-xl leading-relaxed">
+          <p className="text-dark/50 text-xl leading-relaxed ">
             We have proudly presented about our work in following conferences:
           </p>
         </div>

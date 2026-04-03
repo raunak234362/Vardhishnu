@@ -6,9 +6,10 @@ const MediaFeatures = () => {
   return (
     <section className="py-24 bg-white text-center">
       <div className="container-custom px-6 lg:px-20">
-        <div className="mb-16 text-left">
-          <h2 className="text-4xl text-dark tracking-tighter inline-block relative border-b-4 border-primary pb-2 rounded-sm mb-4">
+        <div className="mb-20 text-left">
+          <h2 className="text-4xl md:text-5xl text-dark tracking-tighter inline-block relative">
             As Featured In
+            <div className="absolute -bottom-6 left-0 w-1/3 h-1.5 bg-primary rounded-full" />
           </h2>
         </div>
 
@@ -25,7 +26,7 @@ const MediaFeatures = () => {
               <LazyImage
                 src={media.logo}
                 alt={media.name}
-                className="max-w-[180px] md:max-w-[240px] h-auto object-contain grayscale hover:grayscale-0 transition-all opacity-60 hover:opacity-100"
+                className="max-w-[180px] md:max-w-[240px] h-auto object-contain transition-all opacity-80 hover:opacity-100"
                 containerClassName="w-full flex items-center justify-center"
               />
             </motion.div>
