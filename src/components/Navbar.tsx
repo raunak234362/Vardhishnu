@@ -1,11 +1,31 @@
-import { Heart, Menu } from "lucide-react";
+import { useState, useEffect } from "react";
+import { Heart, Menu, X } from "lucide-react";
 import { Link, useLocation } from "react-router-dom";
+import { motion, AnimatePresence } from "framer-motion";
 import data from "../data/data.json";
 import Logo from "../assets/logo.svg";
 
 const Navbar = () => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
   const location = useLocation();
   const isHomePage = location.pathname === "/";
+
+  // Prevent body scroll when menu is open
+  useEffect(() => {
+    if (isMenuOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "unset";
+    }
+    return () => {
+      document.body.style.overflow = "unset";
+    };
+  }, [isMenuOpen]);
+
+  // Close menu on navigation
+  useEffect(() => {
+    setIsMenuOpen(false);
+  }, [location.pathname]);
 
   return (
     <nav
@@ -60,11 +80,64 @@ const Navbar = () => {
             <Heart size={18} fill="currentColor" />
             <span>{data.header.cta}</span>
           </button>
-          <button className="p-2 text-white">
+          <button 
+            className="p-2 text-white"
+            onClick={() => setIsMenuOpen(true)}
+          >
             <Menu size={24} />
           </button>
         </div>
       </div>
+
+      {/* Mobile Menu Overlay */}
+      <AnimatePresence>
+        {isMenuOpen && (
+          <motion.div
+            initial={{ opacity: 0, x: "100%" }}
+            animate={{ opacity: 1, x: 0 }}
+            exit={{ opacity: 0, x: "100%" }}
+            transition={{ type: "spring", damping: 25, stiffness: 200 }}
+            className="fixed inset-0 z-100 bg-black backdrop-blur-xl lg:hidden flex flex-col pt-24 px-8"
+          >
+            <button 
+              className="absolute top-8 right-8 p-2 text-white/60 hover:text-white"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              <X size={32} />
+            </button>
+
+            <div className="flex flex-col gap-8">
+              {data.header.navLinks.map((link, index) => {
+                const isActive = location.pathname === link.url;
+                return (
+                  <motion.div
+                    key={link.label}
+                    initial={{ opacity: 0, x: 20 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ delay: index * 0.05 }}
+                  >
+                    <Link
+                      to={link.url}
+                      className={`text-3xl font-medium tracking-tight font-handwritten ${
+                        isActive ? "text-primary" : "text-white/80"
+                      }`}
+                    >
+                      {link.label}
+                    </Link>
+                  </motion.div>
+                );
+              })}
+            </div>
+
+            <div className="mt-auto pb-20">
+              <button className="w-full btn-primary h-16 text-xl">
+                <Heart size={24} fill="currentColor" />
+                <span>{data.header.cta}</span>
+              </button>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </nav>
   );
 };
