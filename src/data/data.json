@@ -106,10 +106,7 @@
       "name": "Gratitude Network",
       "logo": "v1774764880/4_Gratitude_Network_ebpqg3.png"
     },
-    {
-      "name": "Jain Irrigation",
-      "logo": "v1774764881/9._Jain_Irrigation_ensgt9.jpg"
-    },
+   
     {
       "name": "Change Engine",
       "logo": "v1774764879/5.1_Change_Engine_p1lwmz.webp"
@@ -120,7 +117,7 @@
     },
     {
       "name": "Esmech 4C",
-      "logo": "v1774764878/15._Esmech_4C_negativ_kr8lly.tiff"
+      "logo": "q_auto/f_auto/v1774764878/15._Esmech_4C_negativ_kr8lly.tiff"
     },
     {
       "name": "Palakniti",
@@ -215,38 +212,82 @@
         "bio": "Abhishek Worked With Vardhishnu As A Volunteer And Fellow-Educator For Almost 3 Years Before Joining Azim Premji University To Pursue M.A In Education. Post His Masters Degree He Has Joined Us Back And Is Currently Taking Care Of Curriculum Building Along With Anandghar Fellowship"
       },
       {
-        "image": "",
+        "image": "q_auto/f_auto/v1775153923/ruby_rama.jpg_iqff7h.jpg",
         "name": "Rubi Rama Praveen",
         "role": "Knowledge Partner",
         "bio": ""
       },
       {
-        "image": "",
+        "image": "q_auto/f_auto/v1775153924/bajrang_pawara.jpg_qs44tr.jpg",
         "name": "Bajrang Pawara",
         "role": "City Lead",
         "bio": ""
       },
       {
-        "image": "",
-        "name": "Bajrang Sonawane",
+        "image": "q_auto/f_auto/v1774764850/Subham_Shirsale_2023-25_gmzn54.jpg",
+        "name": "Shubham Sonawane",
         "role": "City Coordinator",
         "bio": ""
       },
       {
-        "image": "",
-        "name": "Prathamesh Gojarekar",
+        "image": "q_auto/f_auto/v1774765804/Prathmesh_Gojarekar_-_Fellow-Educator_ibqjfy.jpg",
+        "name": "Prathamesh Godarekar",
         "role": "Center Lead",
         "bio": ""
       },
       {
-        "image": "",
+        "image": "q_auto/f_auto/v1775153924/Monali_Gendekar2.jpg_fwbi5w.jpg",
         "name": "Monali Gendekar",
         "role": "Library Coordinator",
         "bio": ""
       }
     ],
-    "Team Community Collectives": [],
-    "Administration": []
+    "Team Community Collectives": [
+      {
+        "image": "q_auto/f_auto/v1774764843/Vineet_Patil_-_Program_Director_Anandghar_Community_Collectives_ebonnp.jpg",
+        "name": "Vineet Patil",
+        "role": "Program Director",
+        "bio": "Vineet Is An Engineer By Qualification Who Began His Career In The Corporate Sector Before Transitioning Into The Development Space. Driven By A Deep Commitment To Social Change, He Founded Ninavi Mitra, An Initiative That Created Learning Spaces For So-Called \"Failed\" Students, Supported Women's Empowerment, And Worked With Youth Affected By Addiction. At Vardhishnu, Vineet Plays A Key Role In Strengthening The Community Collectives Program. Along With Designing Strategies, Workshops, And Coordination Frameworks, He Serves As A Coach And Facilitator For Cohort Members, Supporting Grassroots Leaders As They Build Sustainable, Community-Led Change."
+      },
+      {
+        "image": "q_auto/f_auto/v1774764840/Pradeep_nqlrjr.jpg",
+        "name": "Pradeep Gujar",
+        "role": "Program - Incubation Year",
+        "bio": "Pradeep Holds A Master's Degree In Science From Pune University. He Transitioned From The Biotechnology Sector To The Development Space Through The Chief Minister Fellowship, Maharashtra, Bringing A Systems-Oriented Approach To Grassroots Work. He Spent Three Years Working In A Core Tribal Region Of Nandurbar District, Supporting Holistic Village Development And Building Strong Partnerships For Sustainable, Community-Led Initiatives. As Program Manager – Community Collectives At Vardhishnu, Pradeep Works Closely With Cohort Members To Strengthen Both Organizational And Programmatic Capacities. He Travels Extensively To Support Partners On The Ground, Ensuring Hands-On Guidance And Effective Implementation."
+      },
+      {
+        "image": "q_auto/f_auto/v1774764838/Aditi_ojxdfy.jpg",
+        "name": "Aditi Baitule",
+        "role": "Program Manager - Alumini Support",
+        "bio": ""
+      },
+      {
+        "image": "q_auto/f_auto/v1774764836/Shrikant_Pawar_g63roi.jpg",
+        "name": "Shrikant Pawar",
+        "role": "Program Associate - Recruitments & Selections",
+        "bio": ""
+      }
+    ],
+    "Administration": [
+      {
+        "image": "q_auto/f_auto/v1774764839/Vinod_Chaudhari_scendr.jpg",
+        "name": "Vinod Chaudhari",
+        "role": "Accounts and Administration",
+        "bio": ""
+      },
+      {
+        "image": "q_auto/f_auto/v1774764837/Shahid_wtk4nw.jpg",
+        "name": "Shahid Sheikh",
+        "role": "Communication Associate",
+        "bio": ""
+      },
+      {
+        "image": "q_auto/f_auto/v1774764834/Suvarna_Didwani_ipewlu.png",
+        "name": "Suvarna Didwani",
+        "role": "Office Maintenance",
+        "bio": ""
+      }
+    ]
   },
   "whychildren": {
     "title": "Why Children",

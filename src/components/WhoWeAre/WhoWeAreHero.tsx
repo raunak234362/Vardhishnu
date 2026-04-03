@@ -13,7 +13,7 @@ const WhoWeAreHero = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
             >
-              <span className="text-dark/40 font-medium tracking-wide uppercase text-md">
+              <span className="text-dark/40 font-medium tracking-wide uppercase text-lg">
                 Who we are
               </span>
               <h1 className="text-4xl md:text-6xl text-dark mt-4 leading-tight tracking-tighter">

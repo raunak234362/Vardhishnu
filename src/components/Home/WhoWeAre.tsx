@@ -72,10 +72,13 @@ const WhoWeAre = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
             >
-              <h2 className="text-4xl md:text-5xl mb-6 text-dark tracking-tight">
-                {data.about.title}
-              </h2>
-              <div className="space-y-6 text-lg text-dark/70 leading-relaxed mb-8">
+              <div className="relative inline-block mb-12">
+                <h2 className="text-4xl md:text-5xl text-dark tracking-tight">
+                  {data.about.title}
+                </h2>
+                <div className="absolute -bottom-4 left-0 w-1/3 h-1.5 bg-primary rounded-full" />
+              </div>
+              <div className="space-y-6 text-lg text-dark leading-relaxed mb-8">
                 <p>{data.about.description}</p>
                 <p>
                   Our journey began with a simple but powerful question: What
@@ -86,7 +89,7 @@ const WhoWeAre = () => {
                 </button>
               </div>
 
-              <button className="bg-primary hover:bg-primary/90 text-white px-10 py-4 rounded-xl font-bold transition-all shadow-lg hover:shadow-primary/20 transform hover:-translate-y-1">
+              <button className="bg-primary hover:bg-primary/90 text-white px-10 py-4 rounded-lg font-bold transition-all shadow-lg hover:shadow-primary/20 transform hover:-translate-y-1">
                 {data.about.cta}
               </button>
             </motion.div>

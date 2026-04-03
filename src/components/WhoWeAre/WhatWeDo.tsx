@@ -15,7 +15,7 @@ const WhatWeDo = () => {
               className="w-full lg:w-1/2 space-y-6"
             >
               <div className="relative inline-block mb-4">
-                <h2 className="text-4xl text-dark tracking-tighter">
+                <h2 className="text-4xl text-dark font-medium tracking-tighter">
                   What We Do
                 </h2>
                 <div className="absolute -bottom-7 left-0 w-2/3 h-1.5 bg-primary rounded-full transition-all duration-300" />
@@ -65,7 +65,7 @@ const WhatWeDo = () => {
               className="w-full lg:w-1/2 space-y-6"
             >
               <div className="relative inline-block mb-4">
-                <h2 className="text-4xl text-dark tracking-tighter">
+                <h2 className="text-4xl text-dark font-medium tracking-tighter">
                   Through our programs, we
                 </h2>
                 <div className="absolute -bottom-7 left-0 w-2/3 h-1.5 bg-primary rounded-full transition-all duration-300" />

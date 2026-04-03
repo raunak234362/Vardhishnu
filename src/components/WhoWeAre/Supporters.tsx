@@ -40,12 +40,12 @@ const Supporters = () => {
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.05 }}
-              className="w-full h-32 flex items-center justify-center p-6 grayscale hover:grayscale-0 hover:bg-gray-50/50 rounded-2xl transition-all duration-300 group"
+              className="w-full h-44 flex items-center justify-center p-4 hover:bg-gray-50/50 rounded-2xl transition-all duration-300 group"
             >
               <img
                 src={item.logo.startsWith('http') ? item.logo : getImageUrl(item.logo)}
                 alt={item.name}
-                className="max-w-full max-h-full object-contain transition-all duration-500 group-hover:scale-110"
+                className="max-w-[85%] max-h-[85%] object-contain transition-all duration-500 group-hover:scale-110"
               />
             </motion.div>
           ))}

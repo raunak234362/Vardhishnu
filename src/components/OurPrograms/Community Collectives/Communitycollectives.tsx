@@ -12,6 +12,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { useEffect, useState } from "react";
 import { getImageUrl } from "../../../utils/imageUrl";
 import communityData from "../../../data/community_collectives.json";
+import LazyImage from "../../common/LazyImage";
 
 interface Member {
   name: string;
@@ -58,14 +59,12 @@ const CommunityCollectives = () => {
       <div className="relative h-[65vh] w-full overflow-hidden">
         {/* Placeholder for Hero Image */}
         <div className="absolute inset-0 bg-gray-100">
-          {/* Placeholder for Hero Image
            <LazyImage
-            src={getImageUrl("v1774770398/Hero1_lrgfwj.png")} 
+            src={getImageUrl("v1774770398/Hero1_lrgfwj.png", "q_auto,f_auto")} 
             alt="Community Collectives Hero"
             className="w-full h-full object-cover"
             containerClassName="w-full h-full"
           /> 
-          */}
         </div>
         <div className="absolute inset-0 bg-black/10 flex items-center justify-center lg:items-end lg:justify-start lg:p-20">
           <motion.h1
@@ -113,8 +112,8 @@ const CommunityCollectives = () => {
             className="w-full lg:w-1/2"
           >
             <div className="rounded-2xl overflow-hidden shadow-2xl">
-              <img
-                src={getImageUrl("v1774764806/3._Home_k41tzn.jpg")}
+              <LazyImage
+                src={getImageUrl("v1774764806/3._Home_k41tzn.jpg", "q_auto,f_auto")}
                 alt="Community Group"
                 className="w-full h-full object-cover scale-[1.1]"
               />
@@ -131,15 +130,15 @@ const CommunityCollectives = () => {
             className="w-full lg:w-1/2 relative min-h-[650px]"
           >
             <div className="absolute top-0 right-4 w-[65%] aspect-4/5 rounded-2xl overflow-hidden shadow-2xl z-0">
-              <img
-                src={getImageUrl("v1774764800/IMG_0715_z4vkar.jpg")}
+              <LazyImage
+                src={getImageUrl("v1774764800/IMG_0715_z4vkar.jpg", "q_auto,f_auto")}
                 alt="Community Workshop"
                 className="w-full h-full object-cover"
               />
             </div>
             <div className="absolute top-48 lg:top-56 left-4 w-[65%] aspect-4/5 rounded-2xl overflow-hidden shadow-2xl z-10 transition-transform hover:scale-[1.02] duration-500">
-              <img
-                src={getImageUrl("v1774764799/17_dpe7on.jpg")}
+              <LazyImage
+                src={getImageUrl("v1774764799/17_dpe7on.jpg", "q_auto,f_auto")}
                 alt="Planning Session"
                 className="w-full h-full object-cover"
               />
@@ -891,7 +890,7 @@ const CommunityCollectives = () => {
                     {Array.isArray(member.image) ? (
                       <div className="flex h-full w-full">
                         {member.image.map((img, idx) => (
-                          <img
+                          <LazyImage
                             key={idx}
                             src={getImageUrl(img)}
                             alt={`${member.name} ${idx + 1}`}
@@ -900,7 +899,7 @@ const CommunityCollectives = () => {
                         ))}
                       </div>
                     ) : (
-                      <img
+                      <LazyImage
                         src={getImageUrl(member.image)}
                         alt={member.name}
                         className="w-full h-full object-cover group-hover:scale-[1.1] transition-transform duration-700"
@@ -981,7 +980,7 @@ const CommunityCollectives = () => {
                       {Array.isArray(selectedMember.image) ? (
                         <div className="flex h-full w-full">
                           {selectedMember.image.map((img, idx) => (
-                            <img
+                            <LazyImage
                               key={idx}
                               src={getImageUrl(img)}
                               alt={`${selectedMember.name} ${idx + 1}`}
@@ -990,7 +989,7 @@ const CommunityCollectives = () => {
                           ))}
                         </div>
                       ) : (
-                        <img
+                        <LazyImage
                           src={getImageUrl(selectedMember.image)}
                           alt={selectedMember.name}
                           className="w-full h-full object-cover"

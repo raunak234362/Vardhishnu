@@ -7,7 +7,15 @@ import LazyImage from "../common/LazyImage";
 const OurTeam = () => {
   const tabs = Object.keys(data.team);
   const [activeTab, setActiveTab] = useState(tabs[0]);
+  const [scrollIndex, setScrollIndex] = useState(0);
   const teamMembers = data.team;
+
+  const handleScroll = (e: React.UIEvent<HTMLDivElement>) => {
+    const scrollLeft = e.currentTarget.scrollLeft;
+    const itemWidth = 400 + 32; // width + gap
+    const index = Math.round(scrollLeft / itemWidth);
+    setScrollIndex(index);
+  };
 
   return (
     <section className="py-24 bg-white">
@@ -22,51 +30,61 @@ const OurTeam = () => {
         </div>
 
         {/* Tabs */}
-        <div className="flex flex-wrap gap-8 md:gap-12 mb-16 border-b border-black/5 pb-4 overflow-x-auto hide-scrollbar whitespace-nowrap">
+        <div className="flex gap-8 md:gap-12 mb-16 border-b border-black/5 pb-4 overflow-x-auto hide-scrollbar whitespace-nowrap">
           {tabs.map((tab) => (
             <button
               key={tab}
-              onClick={() => setActiveTab(tab)}
-              className={`text-xl font-bold transition-all relative pb-2 ${
-                activeTab === tab
-                  ? "text-primary"
-                  : "text-dark/40 hover:text-dark/70"
+              onClick={() => {
+                setActiveTab(tab);
+                setScrollIndex(0);
+              }}
+              className={`text-xl font-normal transition-all relative pb-2 ${
+                activeTab === tab ? "text-primary" : "text-dark"
               }`}
             >
               {tab}
-              {activeTab === tab && (
-                <motion.div
-                  layoutId="activeTab"
-                  className="absolute bottom-0 left-0 right-0 h-1 bg-primary rounded-full"
-                />
-              )}
             </button>
           ))}
         </div>
 
-        {/* Members Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 pb-20">
+        {/* Members Horizontal Scroll Container */}
+        <div className="relative pb-24 group px-4 lg:px-0">
           <AnimatePresence mode="wait">
             <motion.div
               key={activeTab}
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -20 }}
-              transition={{ duration: 0.1 }}
-              className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 col-span-full"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.3 }}
+              onScroll={handleScroll}
+              className="flex gap-8 overflow-x-auto snap-x snap-mandatory hide-scrollbar overscroll-x-contain pb-12 cursor-grab active:cursor-grabbing"
+              style={{ scrollbarWidth: "none" }}
             >
-              {teamMembers[activeTab as keyof typeof teamMembers]?.length >
-              0 ? (
-                teamMembers[activeTab as keyof typeof teamMembers].map(
-                  (member) => <TeamCard key={member.name} member={member} />,
-                )
+              {teamMembers[activeTab as keyof typeof teamMembers]?.length > 0 ? (
+                teamMembers[activeTab as keyof typeof teamMembers].map((member) => (
+                  <div key={member.name} className="shrink-0 w-[85vw] md:w-[400px] snap-start">
+                    <TeamCard member={member} />
+                  </div>
+                ))
               ) : (
-                <div className="col-span-full py-20 text-center text-dark/30 italic font-medium">
+                <div className="w-full py-20 text-center text-dark/30 italic font-medium">
                   Team details coming soon for {activeTab}...
                 </div>
               )}
             </motion.div>
           </AnimatePresence>
+
+          {/* Scroll Progress Indicator (Green lines) */}
+          <div className="flex justify-center gap-3 mt-4">
+            {teamMembers[activeTab as keyof typeof teamMembers]?.map((_, idx) => (
+              <div
+                key={idx}
+                className={`h-1 rounded-full transition-all duration-300 ${
+                  idx === scrollIndex ? "w-12 bg-primary" : "w-12 bg-gray-200"
+                }`}
+              />
+            ))}
+          </div>
         </div>
       </div>
     </section>
@@ -105,11 +123,11 @@ const TeamCard = ({ member }: { member: TeamMember }) => {
             containerClassName="w-full h-full"
           />
           {/* Overlay Info */}
-          <div className="absolute inset-x-0 bottom-0 p-8 bg-linear-to-t from-black/80 via-black/40 to-transparent pt-20">
-            <h3 className="text-2xl font-black text-primary leading-none">
+          <div className="absolute inset-x-0 bottom-0 p-8">
+            <h3 className="text-2xl font-medium text-primary leading-none">
               {member.name}
             </h3>
-            <p className="text-white mt-2">{member.role}</p>
+            <p className="text-black mt-2">{member.role}</p>
             <div className="mt-4 flex items-center gap-2 text-white/70 text-sm uppercase tracking-wider">
               <span>Click to read bio</span>
               <svg
@@ -136,10 +154,10 @@ const TeamCard = ({ member }: { member: TeamMember }) => {
         >
           <div className="space-y-6 h-full overflow-y-auto hide-scrollbar py-4">
             <div>
-              <h3 className="text-3xl font-black text-primary leading-none">
+              <h3 className="text-3xl font-medium text-primary leading-none">
                 {member.name}
               </h3>
-              <p className="text-primary-dark mt-2 uppercase tracking-widest text-sm">
+              <p className="text-black mt-2 uppercase tracking-widest text-sm">
                 {member.role}
               </p>
             </div>
