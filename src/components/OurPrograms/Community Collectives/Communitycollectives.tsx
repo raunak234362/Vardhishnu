@@ -125,22 +125,22 @@ const CommunityCollectives = () => {
 
         {/* What we do */}
         <div className="flex flex-col lg:flex-row items-center gap-16 lg:gap-24">
-          <motion.div
+        <motion.div
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             className="w-full lg:w-1/2 relative min-h-[650px]"
           >
             <div className="absolute top-0 right-4 w-[65%] aspect-4/5 rounded-2xl overflow-hidden shadow-2xl z-0">
-              <LazyImage
-                src={getImageUrl("v1774764800/IMG_0715_z4vkar.jpg", "q_auto,f_auto")}
+              <img
+                src={getImageUrl("v1774764800/IMG_0715_z4vkar.jpg")}
                 alt="Community Workshop"
                 className="w-full h-full object-cover"
               />
             </div>
             <div className="absolute top-48 lg:top-56 left-4 w-[65%] aspect-4/5 rounded-2xl overflow-hidden shadow-2xl z-10 transition-transform hover:scale-[1.02] duration-500">
-              <LazyImage
-                src={getImageUrl("v1774764799/17_dpe7on.jpg", "q_auto,f_auto")}
+              <img
+                src={getImageUrl("v1774764799/17_dpe7on.jpg")}
                 alt="Planning Session"
                 className="w-full h-full object-cover"
               />

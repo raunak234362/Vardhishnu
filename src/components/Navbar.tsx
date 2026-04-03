@@ -35,7 +35,7 @@ const Navbar = () => {
           : "relative bg-black shadow-lg"
       }`}
     >
-      <div className="container-custom py-4 flex justify-between items-center">
+      <div className="container-custom py-3 flex justify-between items-center">
         <Link to="/" className="flex items-center gap-2">
           {/* Logo container */}
           <div className="text-2xl font-black text-white tracking-tighter">
@@ -97,7 +97,7 @@ const Navbar = () => {
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: "100%" }}
             transition={{ type: "spring", damping: 25, stiffness: 200 }}
-            className="fixed inset-0 z-100 bg-black backdrop-blur-xl lg:hidden flex flex-col pt-24 px-8"
+            className="fixed inset-0 z-100 bg-black/90 backdrop-blur-xl lg:hidden flex flex-col pt-24 "
           >
             <button 
               className="absolute top-8 right-8 p-2 text-white/60 hover:text-white"
@@ -106,7 +106,7 @@ const Navbar = () => {
               <X size={32} />
             </button>
 
-            <div className="flex flex-col gap-8">
+            <div className="flex flex-col gap-8 bg-black/70">
               {data.header.navLinks.map((link, index) => {
                 const isActive = location.pathname === link.url;
                 return (
@@ -118,7 +118,7 @@ const Navbar = () => {
                   >
                     <Link
                       to={link.url}
-                      className={`text-3xl font-medium tracking-tight font-handwritten ${
+                      className={`text-xl md:text-3xl font-medium tracking-tight font-sans ${
                         isActive ? "text-primary" : "text-white/80"
                       }`}
                     >
