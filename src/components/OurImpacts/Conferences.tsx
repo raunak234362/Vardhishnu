@@ -24,57 +24,64 @@ const Conferences = () => {
           </p>
         </div>
 
-        <div className="space-y-4">
-          {impactData.conferences.map((conf, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, x: -20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: index * 0.05 }}
-              className="p-8 md:p-10 bg-white border border-gray-100 rounded-xl hover:shadow-lg transition-all duration-300"
-            >
-              <div className="flex flex-col md:flex-row items-start md:items-center gap-8 md:gap-12">
-                {/* Status Dot & Date Section */}
-                <div className="flex items-center gap-6 shrink-0 md:min-w-[280px]">
-                  <div
-                    className="w-4 h-4 rounded-full border-4 bg-white"
-                    style={{ borderColor: colors[index % colors.length] }}
-                  />
-                  <div className="flex items-baseline gap-2">
-                    <span className="text-3xl text-dark tracking-tighter">
-                      {conf.date}
-                    </span>
-                    <div className="flex flex-col">
-                      <span className="text-lg text-dark/60 leading-tight">
-                        {conf.month}
+        <div className="space-y-6">
+          {impactData.conferences.map((conf, index) => {
+            const color = colors[index % colors.length];
+            return (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 15 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.05 }}
+                className="p-6 md:p-8 bg-white border border-gray-100 rounded-sm hover:shadow-sm transition-all duration-300"
+              >
+                <div className="flex flex-col md:flex-row items-start md:items-center gap-6 md:gap-12">
+                  {/* Left Side: Date Info */}
+                  <div className="flex items-center gap-5 shrink-0">
+                    {/* Status Ring */}
+                    <div 
+                      className="w-4 h-4 rounded-full border-2 bg-transparent shrink-0" 
+                      style={{ borderColor: color }}
+                    />
+                    
+                    {/* Date Block */}
+                    <div className="flex items-center gap-4">
+                      <span className="text-4xl text-dark tracking-tighter whitespace-nowrap">
+                        {conf.date}
                       </span>
-                      <span
-                        className="text-md uppercase tracking-wider"
-                        style={{ color: colors[index % colors.length] }}
-                      >
-                        {conf.location}
-                      </span>
+                      <div className="flex flex-col text-sm md:text-base">
+                        {conf.month && (
+                          <span className="text-dark/50 font-medium">
+                            {conf.month}
+                          </span>
+                        )}
+                        <span 
+                          className="font-medium"
+                          style={{ color }}
+                        >
+                          {conf.location}
+                        </span>
+                      </div>
                     </div>
                   </div>
-                </div>
 
-                {/* Vertical Divider for Desktop */}
-                <div className="hidden md:block h-12 w-[2px] bg-gray-100" />
-
-                {/* Title Section */}
-                <div className="flex-1 text-left md:text-right">
-                  <p
-                    className="text-sm md:text-base leading-relaxed max-w-3xl md:ml-auto"
-                    style={{ color: colors[index % colors.length] }}
-                  >
-                    <span className="">‘{conf.title}’</span>{" "}
-                    {conf.org}
-                  </p>
+                  {/* Right Side: Conference Content */}
+                  <div className="flex-1">
+                    <p 
+                      className="text-lg md:text-xl leading-relaxed"
+                      style={{ color }}
+                    >
+                      <span>‘{conf.title}’</span>
+                      <span className="opacity-80 ml-2">
+                        {conf.org}
+                      </span>
+                    </p>
+                  </div>
                 </div>
-              </div>
-            </motion.div>
-          ))}
+              </motion.div>
+            );
+          })}
         </div>
       </div>
     </section>

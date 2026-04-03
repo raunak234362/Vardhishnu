@@ -66,7 +66,9 @@ const CommunityCollectives = () => {
               containerClassName="w-full h-full"
             />
         </div>
-        <div className="absolute inset-0 bg-black/10 flex items-center justify-center lg:items-end lg:justify-start lg:p-20">
+        <div className="absolute inset-0 bg-black/10 z-10" />
+        <div className="absolute inset-0 bg-linear-to-t from-black/80 via-black/30 to-transparent z-10" />
+        <div className="absolute inset-0 flex items-center justify-center lg:items-end lg:justify-start lg:p-20 z-20">
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}

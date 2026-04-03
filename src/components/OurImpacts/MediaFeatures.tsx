@@ -1,5 +1,6 @@
 import impactData from "../../data/impact.json";
 import { motion } from "framer-motion";
+import LazyImage from "../common/LazyImage";
 
 const MediaFeatures = () => {
   return (
@@ -11,7 +12,7 @@ const MediaFeatures = () => {
           </h2>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-16 items-center justify-items-center opacity-70 group-hover:opacity-100 transition-opacity">
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-12 md:gap-24 items-center justify-items-center">
           {impactData.featured_in.map((media, index) => (
             <motion.div
               key={media.name}
@@ -19,11 +20,14 @@ const MediaFeatures = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.1 }}
-              className="w-full flex items-center justify-center p-8 border border-black/5 rounded-4xl bg-gray-50/50 hover:bg-white hover:border-primary/20 hover:shadow-2xl hover:scale-105 transition-all duration-300 h-32"
+              className="w-full flex items-center justify-center p-4"
             >
-              <div className="text-2xl text-dark tracking-tighter uppercase grayscale hover:grayscale-0 transition-all opacity-40 hover:opacity-100">
-                {media.name}
-              </div>
+              <LazyImage
+                src={media.logo}
+                alt={media.name}
+                className="max-w-[180px] md:max-w-[240px] h-auto object-contain grayscale hover:grayscale-0 transition-all opacity-60 hover:opacity-100"
+                containerClassName="w-full flex items-center justify-center"
+              />
             </motion.div>
           ))}
         </div>
