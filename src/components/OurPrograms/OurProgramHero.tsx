@@ -1,16 +1,15 @@
 import { motion } from "framer-motion";
-import { getImageUrl } from "../../utils/imageUrl";
 
 const OurProgramHero = () => {
   return (
     <section className="relative h-[80vh] min-h-[600px] flex items-center justify-center overflow-hidden">
       {/* Background Image / Placeholder */}
       <div className="absolute inset-0 z-0">
-        <div className="absolute inset-0 bg-black/60 z-10" />
+        <div className="absolute inset-0 bg-black/50 z-10" />
         <img
-          src={getImageUrl("v1774764824/Copy_of_IMG_3802_cqccdv.jpg")}
-          alt=""
-          className="w-full h-full object-cover"
+          src="https://res.cloudinary.com/di7aduhjv/image/upload/q_auto/f_auto/v1774764802/10_Photo_a9ufru.jpg"
+          alt="Our Programs Hero"
+          className="w-full h-full object-cover object-top grayscale blur-xs brightness-90 contrast-125 bg-blur-xl"
         />
       </div>
 

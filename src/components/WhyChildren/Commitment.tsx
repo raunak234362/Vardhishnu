@@ -33,7 +33,7 @@ const Commitment = () => {
             />
           </div> */}
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-16 md:gap-32 pt-10 text-left relative">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-16 md:gap-32 pt-20 text-left relative">
             {/* Vision */}
             <motion.div
               initial={{ opacity: 0, x: -30 }}

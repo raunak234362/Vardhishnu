@@ -199,10 +199,10 @@ const AnandgharFellowship = () => {
             className="w-full lg:w-3/5"
           >
             <div className="relative inline-block mb-10">
-              <h2 className="text-4xl md:text-5xl text-dark tracking-tight">
+              <h2 className="text-4xl md:text-5xl tracking-tight">
                 Our Approach
               </h2>
-              <div className="absolute -bottom-3 left-0 w-1/2 h-1.5 bg-primary rounded-full" />
+              {/* <div className="absolute -bottom-3 left-0 w-1/2 h-1.5 bg-primary rounded-full" /> */}
             </div>
 
             <div className="space-y-8">
@@ -665,7 +665,7 @@ const AnandgharFellowship = () => {
                       </div>
                       <div className="space-y-5 grow pt-2">
                         <div>
-                          <h2 className="text-4xl font-bold text-dark tracking-tight">
+                          <h2 className="text-4xl text-dark tracking-tight">
                             {selectedFellow.name}
                           </h2>
                           <p className="text-2xl text-dark/60 font-medium">

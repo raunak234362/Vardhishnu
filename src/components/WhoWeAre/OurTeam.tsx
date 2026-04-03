@@ -1,37 +1,47 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import data from "../../data/data.json";
 import { getImageUrl } from "../../utils/imageUrl";
 import LazyImage from "../common/LazyImage";
 
 const OurTeam = () => {
-  const tabs = Object.keys(data.team);
-  const [activeTab, setActiveTab] = useState(tabs[0]);
+  const scrollRef = useRef<HTMLDivElement>(null);
+  const teamData = data.team;
+  const categories = Object.keys(teamData);
+  const [activeTab, setActiveTab] = useState(categories[0]);
   const [scrollIndex, setScrollIndex] = useState(0);
-  const teamMembers = data.team;
 
   const handleScroll = (e: React.UIEvent<HTMLDivElement>) => {
     const scrollLeft = e.currentTarget.scrollLeft;
-    const itemWidth = 400 + 32; // width + gap
+    const itemWidth = 400 + 32;
     const index = Math.round(scrollLeft / itemWidth);
     setScrollIndex(index);
   };
+
+  const handleWheel = (e: React.WheelEvent<HTMLDivElement>) => {
+    if (e.deltaY !== 0) {
+      e.currentTarget.scrollLeft += e.deltaY;
+    }
+  };
+
+  const members = teamData[activeTab as keyof typeof teamData] || [];
+  const shouldScroll = members.length > 3;
 
   return (
     <section className="py-24 bg-white">
       <div className="container-custom">
         <div className="mb-12">
-          <div className="relative inline-block mb-14">
-            <h2 className="text-4xl md:text-5xl text-dark tracking-tighter">
+          <div className="relative inline-block mb-10">
+            <h2 className="text-4xl md:text-5xl text-dark tracking-tighter font-medium">
               Our Team
             </h2>
-            <div className="absolute -bottom-7 left-0 w-2/3 h-1.5 bg-primary rounded-full transition-all duration-300" />
+            <div className="absolute -bottom-4 left-0 w-24 h-1.5 bg-primary rounded-full transition-all duration-300" />
           </div>
         </div>
 
-        {/* Tabs */}
-        <div className="flex gap-8 md:gap-12 mb-16 border-b border-black/5 pb-4 overflow-x-auto hide-scrollbar whitespace-nowrap">
-          {tabs.map((tab) => (
+        {/* Tab Selection */}
+        <div className="flex gap-8 md:gap-12 mb-16 pb-4 overflow-x-auto hide-scrollbar whitespace-nowrap">
+          {categories.map((tab) => (
             <button
               key={tab}
               onClick={() => {
@@ -47,44 +57,52 @@ const OurTeam = () => {
           ))}
         </div>
 
-        {/* Members Horizontal Scroll Container */}
-        <div className="relative pb-24 group px-4 lg:px-0">
-          <AnimatePresence mode="wait">
-            <motion.div
-              key={activeTab}
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              transition={{ duration: 0.3 }}
-              onScroll={handleScroll}
-              className="flex gap-8 overflow-x-auto snap-x snap-mandatory hide-scrollbar overscroll-x-contain pb-12 cursor-grab active:cursor-grabbing"
-              style={{ scrollbarWidth: "none" }}
-            >
-              {teamMembers[activeTab as keyof typeof teamMembers]?.length > 0 ? (
-                teamMembers[activeTab as keyof typeof teamMembers].map((member) => (
-                  <div key={member.name} className="shrink-0 w-[85vw] md:w-[400px] snap-start">
-                    <TeamCard member={member} />
+        {/* Horizontal Members Section - Only for active tab */}
+        <div className="relative group">
+          <div 
+            ref={scrollRef}
+            onScroll={handleScroll}
+            onWheel={handleWheel}
+            className="flex gap-8 overflow-x-auto snap-x snap-mandatory hide-scrollbar overscroll-x-contain pb-12 cursor-grab active:cursor-grabbing"
+            style={{ scrollbarWidth: "none" }}
+          >
+            <AnimatePresence mode="wait">
+              <motion.div
+                key={activeTab}
+                initial={{ opacity: 0, x: 20 }}
+                animate={{ opacity: 1, x: 0 }}
+                exit={{ opacity: 0, x: -20 }}
+                transition={{ duration: 0.3 }}
+                className="flex gap-8"
+              >
+                {members.length > 0 ? (
+                  members.map((member, idx) => (
+                    <div key={`${activeTab}-${idx}`} className="shrink-0 w-[85vw] md:w-[400px] snap-start">
+                      <TeamCard member={member} />
+                    </div>
+                  ))
+                ) : (
+                  <div className="w-full py-20 text-center text-dark/30 italic font-medium">
+                    Team details coming soon for {activeTab}...
                   </div>
-                ))
-              ) : (
-                <div className="w-full py-20 text-center text-dark/30 italic font-medium">
-                  Team details coming soon for {activeTab}...
-                </div>
-              )}
-            </motion.div>
-          </AnimatePresence>
-
-          {/* Scroll Progress Indicator (Green lines) */}
-          <div className="flex justify-center gap-3 mt-4">
-            {teamMembers[activeTab as keyof typeof teamMembers]?.map((_, idx) => (
-              <div
-                key={idx}
-                className={`h-1 rounded-full transition-all duration-300 ${
-                  idx === scrollIndex ? "w-12 bg-primary" : "w-12 bg-gray-200"
-                }`}
-              />
-            ))}
+                )}
+              </motion.div>
+            </AnimatePresence>
           </div>
+
+          {/* Scroll Indicator - Dynamic based on number of members */}
+          {shouldScroll && (
+            <div className="flex justify-center gap-3 mt-4">
+              {members.map((_, idx) => (
+                <div
+                  key={idx}
+                  className={`h-1 rounded-full transition-all duration-300 ${
+                    idx === scrollIndex ? "w-12 bg-primary" : "w-12 bg-gray-200"
+                  }`}
+                />
+              ))}
+            </div>
+          )}
         </div>
       </div>
     </section>
@@ -123,11 +141,11 @@ const TeamCard = ({ member }: { member: TeamMember }) => {
             containerClassName="w-full h-full"
           />
           {/* Overlay Info */}
-          <div className="absolute inset-x-0 bottom-0 p-8">
+          <div className="absolute inset-x-0 bottom-0 p-8 bg-linear-to-t from-black/80 via-black/40 to-transparent">
             <h3 className="text-2xl font-medium text-primary leading-none">
               {member.name}
             </h3>
-            <p className="text-black mt-2">{member.role}</p>
+            <p className="text-white mt-2">{member.role}</p>
             <div className="mt-4 flex items-center gap-2 text-white/70 text-sm uppercase tracking-wider">
               <span>Click to read bio</span>
               <svg

@@ -31,16 +31,16 @@ const StepCard = ({
       className="p-10 rounded-4xl h-full bg-white border-2 border-gray-100 shadow-sm transition-shadow duration-500 hover:shadow-md"
     >
       <div className="mb-6 flex items-center gap-3">
-        <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary font-bold text-lg">
+        <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary text-lg">
           {idx + 1}
         </div>
-        <h3 className="text-xl font-bold text-dark">{step.id}</h3>
+        <h3 className="text-xl text-dark">{step.id}</h3>
       </div>
       <ul className="space-y-6">
         {step.items.map((item, i) => (
           <li
             key={i}
-            className="text-lg text-dark/80 leading-snug font-semibold flex items-start gap-2"
+            className="text-lg text-dark/80 leading-snug flex items-start gap-2"
           >
             <div className="mt-2 w-1.5 h-1.5 rounded-full bg-primary shrink-0" />
             {item}
@@ -96,25 +96,25 @@ const AnandgharApproach = () => {
       </div>
 
       <div className="container-custom py-24">
-        <div className="flex flex-col lg:flex-row items-start gap-16 lg:gap-24 relative">
+        <div className="flex flex-col lg:flex-row items-start gap-16 lg:gap-10 relative">
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            className="w-full lg:w-3/5"
+            className="w-full"
           >
             <div className="relative inline-block mb-10">
-              <h2 className="text-4xl md:text-5xl font-black text-dark tracking-tight">
+              <h2 className="text-4xl md:text-5xl text-dark tracking-tight">
                 {data.approach.title}
               </h2>
-              <div className="absolute -bottom-3 left-0 w-1/2 h-1.5 bg-primary rounded-full" />
+              {/* <div className="absolute -bottom-3 left-0 w-1/2 h-1.5 bg-primary rounded-full" /> */}
             </div>
 
             <div className="space-y-8">
               {data.approach.content.map((paragraph, index) => (
                 <p
                   key={index}
-                  className="text-xl text-dark/80 leading-relaxed font-semibold max-w-2xl"
+                  className="text-xl text-dark/80 leading-relaxed max-w-4xl"
                 >
                   {paragraph}
                 </p>
@@ -127,9 +127,9 @@ const AnandgharApproach = () => {
             initial={{ opacity: 0, x: 50 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            className="w-full lg:w-2/5 lg:-mt-48 relative z-20"
+            className="w-full lg:w-[40%] lg:-mt-48 relative z-20"
           >
-            <div className="aspect-3/4 rounded-xl overflow-hidden shadow-2xl border-4 border-white">
+            <div className="aspect-3/4 rounded-xl overflow-hidden shadow-2xl">
               <LazyImage
                 src={getImageUrl(data.approach.sideImage)}
                 alt="Our approach image"
@@ -142,14 +142,14 @@ const AnandgharApproach = () => {
       </div>
 
       {/* What We Do Section */}
-      <div className="container-custom py-24">
+      <div className="container-custom py-2">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="max-w-4xl"
+          className=""
         >
-          <h2 className="text-4xl md:text-5xl font-black text-dark mb-16">
+          <h2 className="text-4xl md:text-5xl text-dark mb-16">
             {data.whatWeDo.title}
           </h2>
 
@@ -157,15 +157,15 @@ const AnandgharApproach = () => {
             {data.whatWeDo.items.map((item, index) => (
               <div key={index} className="flex items-start gap-6">
                 <div className="mt-2.5 w-3 h-3 rounded-full bg-primary shrink-0" />
-                <p className="text-xl text-dark/80 leading-relaxed font-semibold">
-                  <span className="text-dark font-bold">{item.title}:</span>{" "}
+                <p className="text-xl text-dark/80 leading-relaxed">
+                  <span className="text-dark">{item.title}:</span>{" "}
                   {item.description}
                 </p>
               </div>
             ))}
           </div>
 
-          <p className="text-xl text-dark/60 italic font-medium">
+          <p className="text-xl text-dark/60 italic">
             {data.whatWeDo.footer}
           </p>
         </motion.div>
@@ -179,12 +179,12 @@ const AnandgharApproach = () => {
           viewport={{ once: true }}
         >
           <div className="relative inline-block mb-10">
-            <h2 className="text-4xl md:text-5xl font-black text-dark tracking-tight">
+            <h2 className="text-4xl md:text-5xl text-dark tracking-tight">
               {data.holisticModel.title}
             </h2>
             <div className="absolute -bottom-3 left-0 w-1/3 h-1.5 bg-primary rounded-full" />
           </div>
-          <p className="text-2xl text-dark/80 leading-relaxed font-semibold max-w-5xl">
+          <p className="text-2xl text-dark/80 leading-relaxed max-w-5xl">
             {data.holisticModel.description}
           </p>
         </motion.div>
@@ -198,14 +198,14 @@ const AnandgharApproach = () => {
           viewport={{ once: true }}
         >
           <div className="relative inline-block mb-10">
-            <h2 className="text-4xl md:text-5xl font-black text-dark tracking-tight">
+            <h2 className="text-4xl md:text-5xl text-dark tracking-tight">
               {data.ourModel.title}
             </h2>
             <div className="absolute -bottom-3 left-0 w-1/2 h-1.5 bg-primary rounded-full" />
           </div>
 
           {/* Progress Bar Header */}
-          <div className="bg-gray-100 rounded-full h-14 w-full mb-16 flex items-center px-2 relative overflow-hidden shadow-inner font-bold text-dark/70 text-base md:text-xl">
+          <div className="bg-gray-100 rounded-full h-14 w-full mb-16 flex items-center px-2 relative overflow-hidden shadow-inner  text-dark/70 text-base md:text-xl">
             {/* Moving Green Bar */}
             <motion.div
               style={{ x: xPosition }}
@@ -226,7 +226,7 @@ const AnandgharApproach = () => {
                 Step 1
               </motion.span>
             </div>
-            <div className="w-8 flex justify-center text-dark/30 z-20 font-bold">
+            <div className="w-8 flex justify-center text-dark/30 z-20">
               &gt;
             </div>
             <div className="flex-1 flex items-center justify-center relative z-20 transition-colors duration-500">
@@ -243,7 +243,7 @@ const AnandgharApproach = () => {
                 Step 2
               </motion.span>
             </div>
-            <div className="w-8 flex justify-center text-dark/30 z-20 font-bold">
+            <div className="w-8 flex justify-center text-dark/30 z-20">
               &gt;
             </div>
             <div className="flex-1 flex items-center justify-center relative z-20 transition-colors duration-500">
@@ -284,7 +284,7 @@ const AnandgharApproach = () => {
           viewport={{ once: true }}
         >
           <div className="relative inline-block mb-16">
-            <h2 className="text-4xl md:text-5xl font-black text-dark tracking-tight">
+            <h2 className="text-4xl md:text-5xl text-dark tracking-tight">
               {data.values.title}
             </h2>
             <div className="absolute -bottom-3 left-0 w-1/2 h-1.5 bg-primary rounded-full" />
@@ -315,7 +315,7 @@ const AnandgharApproach = () => {
                       <Icon size={28} strokeWidth={2.5} />
                     </div>
                   </div>
-                  <span className="text-3xl font-black text-dark tracking-tighter">
+                  <span className="text-3xl text-dark tracking-tighter">
                     {value.name}
                   </span>
                   {idx < data.values.items.length - 1 && (
@@ -334,7 +334,7 @@ const AnandgharApproach = () => {
 
         <div className="container-custom">
           <div className="mb-20">
-            <h2 className="text-3xl md:text-5xl font-black text-dark inline-block relative">
+            <h2 className="text-3xl md:text-5xl text-dark inline-block relative">
               {data.gallery.title}
               <div className="absolute -bottom-4 left-0 w-2/3 h-1.5 bg-primary rounded-full" />
             </h2>
