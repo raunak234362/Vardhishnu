@@ -64,7 +64,7 @@ const Conferences = () => {
               >
                 <div className="flex flex-col lg:flex-row items-start lg:items-center gap-8 lg:gap-16">
                   {/* Left Side: Ring & Dates */}
-                  <div className="flex items-center gap-6 shrink-0">
+                  <div className="flex items-center gap-6 shrink-0 lg:w-[450px]">
                     <div 
                       className="w-3 h-3 rounded-full border-2 bg-transparent shrink-0" 
                       style={{ borderColor: color }}
@@ -98,7 +98,7 @@ const Conferences = () => {
                   </div>
 
                   {/* Right Side: Content */}
-                  <div className="flex-1 lg:pl-12">
+                  <div className="flex-1 lg:pl-24">
                     <p 
                       className="text-base md:text-lg leading-relaxed font-medium"
                       style={{ color }}

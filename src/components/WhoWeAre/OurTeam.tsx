@@ -1,5 +1,6 @@
 import { useState, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 import data from "../../data/data.json";
 import { getImageUrl } from "../../utils/imageUrl";
 import LazyImage from "../common/LazyImage";
@@ -24,6 +25,16 @@ const OurTeam = () => {
     }
   };
 
+  const scroll = (direction: "left" | "right") => {
+    if (scrollRef.current) {
+      const itemWidth = 400 + 32;
+      scrollRef.current.scrollBy({
+        left: direction === "left" ? -itemWidth : itemWidth,
+        behavior: "smooth",
+      });
+    }
+  };
+
   const members = teamData[activeTab as keyof typeof teamData] || [];
   const shouldScroll = members.length > 3;
 
@@ -31,11 +42,11 @@ const OurTeam = () => {
     <section className="py-24 bg-white">
       <div className="container-custom">
         <div className="mb-12">
-          <div className="relative inline-block mb-2">
+          <div className="relative inline-block mb-10">
             <h2 className="text-[32px] text-dark tracking-tighter font-medium">
               Our Team
             </h2>
-            <div className="absolute -bottom-4 left-0 w-24 h-1.5 bg-primary rounded-full transition-all duration-300" />
+            <div className="absolute -bottom-6 left-0 w-1/3 h-1.5 bg-primary rounded-full transition-all duration-300" />
           </div>
         </div>
 
@@ -59,6 +70,24 @@ const OurTeam = () => {
 
         {/* Horizontal Members Section - Only for active tab */}
         <div className="relative group">
+          {/* Navigation Arrows */}
+          <div className="absolute top-[45%] -left-6 md:-left-8 -translate-y-1/2 z-20 hidden lg:block">
+            <button
+              onClick={() => scroll("left")}
+              className="w-14 h-14 rounded-full bg-white shadow-xl flex items-center justify-center hover:bg-gray-50 transition-all border border-gray-100 group/btn active:scale-95"
+            >
+              <ChevronLeft className="w-8 h-8 text-black" />
+            </button>
+          </div>
+          <div className="absolute top-[45%] -right-6 md:-right-8 -translate-y-1/2 z-20 hidden lg:block">
+            <button
+              onClick={() => scroll("right")}
+              className="w-14 h-14 rounded-full bg-white shadow-xl flex items-center justify-center hover:bg-gray-50 transition-all border border-gray-100 group/btn active:scale-95"
+            >
+              <ChevronRight className="w-8 h-8 text-black" />
+            </button>
+          </div>
+
           <div
             ref={scrollRef}
             onScroll={handleScroll}

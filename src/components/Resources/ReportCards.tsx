@@ -24,8 +24,9 @@ const ReportCards = () => {
     <section className="py-24 bg-white relative">
       <div className="container-custom px-6 lg:px-20">
         <div className="mb-20 text-left">
-          <h2 className="text-[40px] text-dark tracking-tighter inline-block relative border-b-4 border-primary pb-2 rounded-sm mb-4">
+          <h2 className="text-[32px] font-semibold text-dark tracking-tighter inline-block relative">
             Explore all our resources
+            <div className="absolute -bottom-6 left-0 w-1/3 h-1.5 bg-primary rounded-full" />
           </h2>
         </div>
 

@@ -18,7 +18,7 @@ const ImpactHero = () => {
           animate={{ opacity: 1, y: 0 }}
           className="max-w-6xl mx-auto space-y-8 mb-16 px-4"
         >
-          <h1 className="text-[40px] text-dark leading-tight tracking-tight">
+          <h1 className="text-[32px] text-dark font-outfit font-semibold leading-tight tracking-tight">
             This is the impact{" "}
             <span className="text-primary italic px-2 text-[40px] align-middle font-handwritten">
               YOU
@@ -28,7 +28,7 @@ const ImpactHero = () => {
 
           <div className="w-full h-1 bg-primary/40 rounded-full max-w-4xl mx-auto" />
 
-          <p className="text-dark/50 text-[16px] font-medium max-w-2xl mx-auto leading-relaxed">
+          <p className="text-dark/50 text-[20px] font-outfit font-medium max-w-2xl mx-auto leading-relaxed">
             We've been able to make a positive impact on the lives of so many
             children, all thanks to your unwavering support.
           </p>

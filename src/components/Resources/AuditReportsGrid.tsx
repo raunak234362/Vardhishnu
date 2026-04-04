@@ -19,8 +19,9 @@ const AuditReportsGrid = () => {
     <section className="py-20 bg-white">
       <div className="container-custom px-6">
         <div className="mb-16">
-          <h2 className="text-[36px] font-bold text-dark tracking-tighter inline-block relative border-b-4 border-primary pb-2 rounded-md">
+          <h2 className="text-[32px] font-semibold text-dark tracking-tighter inline-block relative">
             Audit Reports
+            <div className="absolute -bottom-6 left-0 w-1/3 h-1.5 bg-primary rounded-full" />
           </h2>
         </div>
 

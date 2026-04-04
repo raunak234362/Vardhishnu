@@ -73,7 +73,7 @@ const CommunityCollectives = () => {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-primary font-handwritten text-7xl md:text-9xl lg:text-[10rem] drop-shadow-2xl"
+            className="text-primary font-handwritten font-semibold text-7xl md:text-9xl lg:text-[10rem] drop-shadow-2xl"
           >
             Community Collectives
           </motion.h1>
@@ -90,13 +90,13 @@ const CommunityCollectives = () => {
             viewport={{ once: true }}
             className="w-full lg:w-1/2 space-y-10"
           >
-            <h2 className="text-[32px] p-4 text-dark tracking-tight leading-[1.1]">
+            <h2 className="text-[32px] text-dark font-semibold tracking-tight leading-[1.1]">
               Community Collectives <br />
               Nurturing Grassroots <br />
               Changemakers
             </h2>
 
-            <p className="text-xl text-dark/70 leading-relaxed max-w-xl">
+            <p className="text-[20px] text-dark font-outfit leading-relaxed max-w-xl">
               Join our one-year incubation program empowering grassroots leaders
               to create lasting change in their communities through education
               and mentorship.
@@ -153,11 +153,11 @@ const CommunityCollectives = () => {
             viewport={{ once: true }}
             className="w-full lg:w-1/2 space-y-10"
           >
-            <h2 className="text-[32px] text-dark tracking-tight">
+            <h2 className="text-[32px] font-semibold text-dark tracking-tight">
               What we do?
             </h2>
 
-            <div className="space-y-8 text-[16px] leading-relaxed">
+            <div className="space-y-8 text-[20px] font-outfit leading-relaxed">
               <p>
                 Community Collectives is a one-year incubation program designed
                 to share our experience in building community learning spaces.
@@ -187,12 +187,12 @@ const CommunityCollectives = () => {
           className="mb-12"
         >
           <div className="relative inline-block mb-10 mt-40">
-            <h2 className="text-[32px] p-4 text-dark tracking-tight">
+            <h2 className="text-[32px] font-semibold  text-dark tracking-tight">
               Who can Apply?
             </h2>
-            <div className="absolute -bottom-3 left-0 w-2/3 h-1.5 bg-primary rounded-full" />
+            <div className="absolute -bottom-7 left-0 w-2/4 h-1.5 bg-primary rounded-full" />
           </div>
-          <p className="text-xl">
+          <p className="text-[20px] font-outfit leading-relaxed">
             We're looking for passionate individuals ready to make a lasting
             difference
           </p>
@@ -203,13 +203,13 @@ const CommunityCollectives = () => {
             initial={{ opacity: 0, scale: 0.95 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
-            className="bg-white border border-primary rounded-lg p-10 space-y-8 flex flex-col items-start shadow-sm hover:shadow-md transition-all duration-300"
+            className="bg-white border border-primary rounded-lg p-10 space-y-8 flex flex-col items-start shadow-sm hover:shadow-md hover:bg-primary/5 transition-all duration-300"
           >
             <div className="mb-2">
               <Users size={40} />
             </div>
             <div className="space-y-4">
-              <h3 className="text-[20px] text-dark leading-tight">
+              <h3 className="text-[20px] text-dark font-outfit leading-tight">
                 We invite applications from
               </h3>
               <div className="w-14 h-1 bg-primary" />
@@ -229,13 +229,13 @@ const CommunityCollectives = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="bg-white border border-primary rounded-lg p-10 space-y-8 flex flex-col items-start shadow-sm hover:shadow-md transition-all duration-300"
+            className="bg-white border border-primary rounded-lg p-10 space-y-8 flex flex-col items-start shadow-sm hover:shadow-md hover:bg-primary/5 transition-all duration-300"
           >
             <div className="mb-2">
               <RefreshCw size={36} />
             </div>
             <div className="space-y-4">
-              <h3 className="text-[20px] text-dark leading-tight">
+              <h3 className="text-[20px] text-dark font-outfit leading-tight">
                 Eligibility & Expectations
               </h3>
               <div className="w-14 h-1 bg-primary" />
@@ -258,13 +258,13 @@ const CommunityCollectives = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.2 }}
-            className="bg-white border border-primary rounded-lg p-10 space-y-8 flex flex-col items-start shadow-sm hover:shadow-md transition-all duration-300"
+            className="bg-white border border-primary rounded-lg p-10 space-y-8 flex flex-col items-start shadow-sm hover:shadow-md hover:bg-primary/5 transition-all duration-300"
           >
             <div className="mb-2">
               <ShieldCheck size={36} />
             </div>
             <div className="space-y-4">
-              <h3 className="text-[20px] text-dark leading-tight">
+              <h3 className="text-[20px] text-dark font-outfit leading-tight">
                 For Ideation-Stage Applicants
               </h3>
               <div className="w-14 h-1 bg-primary" />
@@ -291,39 +291,39 @@ const CommunityCollectives = () => {
       <div className="py-24 container-custom">
         <div className="mb-16">
           <div className="relative inline-block mb-10">
-            <h2 className="text-[32px] p-4 text-dark tracking-tight">
+            <h2 className="text-[32px] font-semibold text-dark tracking-tight">
               Incubation Support Structure
             </h2>
-            <div className="absolute -bottom-3 left-0 w-1/4 h-1.5 bg-primary rounded-full" />
+            <div className="absolute -bottom-7 left-0 w-1/4 h-1.5 bg-primary rounded-full" />
           </div>
-          <p className="text-xl">
+          <p className="text-[20px] font-outfit leading-relaxed">
             Comprehensive support throughout your journey
           </p>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-          <div className="space-y-8">
+          <div className="space-y-8 flex flex-col h-full">
             <motion.div
               initial={{ opacity: 0, scale: 0.95 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
-              className="bg-white border border-gray-100 rounded-4xl p-10 shadow-sm hover:shadow-xl transition-all duration-500"
+              className="bg-white border border-gray-100 rounded-lg p-10 shadow-sm hover:shadow-xl transition-all duration-500"
             >
               <div className="w-12 h-12 bg-pink-100 text-pink-600 rounded-lg flex items-center justify-center text-2xl font-bold mb-8">
                 1
               </div>
-              <h3 className="text-[20px] text-dark font-bold mb-4">
+              <h3 className="text-[20px] text-dark font-semibold font-outfit mb-4">
                 Residential Training Workshops
               </h3>
-              <p className="text-pink-600 mb-8 uppercase tracking-wider text-sm">
+              <p className="text-pink-600 font-outfit mb-8 uppercase tracking-wider text-sm">
                 4 Residential Workshops of 4 Days Each
               </p>
-              <div className="space-y-6 text-lg leading-relaxed">
+              <div className="space-y-6 text-[20px] font-outfit leading-relaxed">
                 <p>
                   Through three fully-funded residential workshops, we dive deep
                   into the heart of building impactful learning spaces.
                 </p>
-                <p className="text-dark">These immersive sessions focus on:</p>
+                <p className="text-dark font-outfit font-semibold">These immersive sessions focus on:</p>
                 <ul className="space-y-3 list-disc pl-5">
                   <li>
                     Teaching-learning practices that truly connect with children
@@ -350,18 +350,18 @@ const CommunityCollectives = () => {
               initial={{ opacity: 0, scale: 0.95 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
-              className="bg-white border border-gray-100 rounded-[2rem] p-10 shadow-sm hover:shadow-xl transition-all duration-500"
+              className="bg-white border border-gray-100 rounded-lg p-10 shadow-sm hover:shadow-xl transition-all duration-500 h-full flex-grow"
             >
               <div className="w-12 h-12 bg-[#FFF3E0] text-[#D97706] rounded-lg flex items-center justify-center text-2xl font-bold mb-8">
                 4
               </div>
-              <h3 className="text-[20px] text-dark font-bold mb-4">
+              <h3 className="text-[20px] text-dark font-semibold font-outfit mb-4">
                 Networking & Resource Sharing
               </h3>
               <p className="text-[#D97706] mb-8 text-lg font-medium">
                 Be Part of a Growing Community
               </p>
-              <ul className="space-y-4 text-lg leading-relaxed list-disc pl-5">
+              <ul className="space-y-4 text-[20px] font-outfit leading-relaxed list-disc pl-5">
                 <li>
                   Connect with like-minded changemakers and gain access to a
                   larger ecosystem of partner organizations.
@@ -376,23 +376,23 @@ const CommunityCollectives = () => {
             </motion.div>
           </div>
 
-          <div className="space-y-8">
+          <div className="space-y-8 flex flex-col h-full">
             <motion.div
               initial={{ opacity: 0, scale: 0.95 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
-              className="bg-white border border-gray-100 rounded-4xl p-10 shadow-sm hover:shadow-xl transition-all duration-500"
+              className="bg-white border border-gray-100 rounded-lg p-10 shadow-sm hover:shadow-xl transition-all duration-500"
             >
               <div className="w-12 h-12 bg-indigo-100 text-indigo-600 rounded-lg flex items-center justify-center text-2xl font-bold mb-8">
                 2
               </div>
-              <h3 className="text-[20px] text-dark font-bold mb-4">
+              <h3 className="text-[20px] text-dark font-semibold font-outfit mb-4">
                 Field Visits
               </h3>
               <p className="text-indigo-600 mb-8 uppercase tracking-wider text-sm">
                 2 Field Visits of 3 Days Each
               </p>
-              <p className="text-lg leading-relaxed">
+              <p className="text-[20px] font-outfit leading-relaxed">
                 We provide on-ground support through two field visits during the
                 incubation year, offering hands-on guidance, feedback, and
                 mentoring to strengthen implementation and stay aligned with
@@ -404,16 +404,16 @@ const CommunityCollectives = () => {
               initial={{ opacity: 0, scale: 0.95 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
-              className="bg-white border border-gray-100 rounded-4xl p-10 shadow-sm hover:shadow-xl transition-all duration-500"
+              className="bg-white border border-gray-100 rounded-lg p-10 shadow-sm hover:shadow-xl transition-all duration-500"
             >
               <div className="w-12 h-12 bg-green-100 text-green-600 rounded-lg flex items-center justify-center text-2xl font-bold mb-8">
                 3
               </div>
-              <h3 className="text-[20px] text-dark font-bold mb-4">Webinars</h3>
+              <h3 className="text-[20px] text-dark font-semibold font-outfit mb-4">Webinars</h3>
               <p className="text-green-600 mb-8 uppercase tracking-wider text-sm">
                 8 Theme based webinars
               </p>
-              <p className="text-lg leading-relaxed">
+              <p className="text-[20px] font-outfit leading-relaxed">
                 Designed around the emerging needs of the cohort, these webinars
                 are led by senior leaders from diverse social
                 organizations—offering insights, strategies, and shared
@@ -425,15 +425,15 @@ const CommunityCollectives = () => {
               initial={{ opacity: 0, scale: 0.95 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
-              className="bg-white border border-gray-100 rounded-4xl p-10 shadow-sm hover:shadow-xl transition-all duration-500"
+              className="bg-white border border-gray-100 rounded-lg p-10 shadow-sm hover:shadow-xl transition-all duration-500 h-full flex-grow"
             >
               <div className="w-12 h-12 bg-blue-100 text-blue-600 rounded-lg flex items-center justify-center text-2xl font-bold mb-8">
                 5
               </div>
-              <h3 className="text-[20px] text-dark font-bold mb-4">
+              <h3 className="text-[20px] text-dark font-semibold font-outfit mb-4">
                 Monthly Support Calls
               </h3>
-              <p className="text-lg leading-relaxed">
+              <p className="text-[20px] font-outfit leading-relaxed">
                 Get personalized guidance through monthly check-ins with our
                 team—designed to strengthen your program and support you in
                 building a sustainable, long-term movement.
@@ -446,10 +446,10 @@ const CommunityCollectives = () => {
       {/* Post Incubation Support */}
       <div className="py-24 container-custom">
         <div className="relative inline-block mb-16">
-          <h2 className="text-[32px] p-4 text-dark tracking-tight">
+          <h2 className="text-[32px] font-semibold text-dark tracking-tight">
             Post Incubation Support
           </h2>
-          <div className="absolute -bottom-3 left-0 w-1/3 h-1.5 bg-primary rounded-full" />
+          <div className="absolute -bottom-7 left-0 w-1/3 h-1.5 bg-primary rounded-full" />
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-8">
@@ -475,14 +475,14 @@ const CommunityCollectives = () => {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="relative bg-white shadow-xl rounded-2xl p-8 pt-20 border border-gray-50 flex flex-col"
+              className="relative bg-white shadow-xl rounded-lg p-8 pt-20 border border-gray-50 flex flex-col"
             >
-              <div className="absolute top-0 left-0 right-10 h-16 bg-primary rounded-tl-2xl rounded-br-[3rem] p-4 flex items-center">
-                <h3 className="text-black font-medium leading-tight line-clamp-2 text-[20px]">
+              <div className="absolute top-0 left-0 right-10 h-16 bg-primary rounded-tl-lg rounded-br-[3rem] p-4 flex items-center">
+                <h3 className="text-black font-outfit font-semibold leading-tight line-clamp-2 text-[20px]">
                   {item.title}
                 </h3>
               </div>
-              <p className="text-dark/70 leading-relaxed mt-4">
+              <p className="text-dark/70 text-[20px] font-outfit leading-relaxed mt-4">
                 {item.description}
               </p>
             </motion.div>
@@ -507,14 +507,14 @@ const CommunityCollectives = () => {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="w-full md:w-[calc(50%-1rem)] lg:w-[31%] relative bg-white shadow-xl rounded-2xl p-8 pt-20 border border-gray-50"
+              className="w-full md:w-[calc(50%-1rem)] lg:w-[31%] relative bg-white shadow-xl rounded-lg p-8 pt-20 border border-gray-50"
             >
-              <div className="absolute top-0 left-0 right-10 h-16 bg-primary rounded-tl-2xl rounded-br-[3rem] p-4 flex items-center">
-                <h3 className="text-black font-medium leading-tight line-clamp-2 text-[20px]">
+              <div className="absolute top-0 left-0 right-10 h-16 bg-primary rounded-tl-lg rounded-br-[3rem] p-4 flex items-center">
+                <h3 className="text-black font-outfit font-semibold leading-tight line-clamp-2 text-[20px]">
                   {item.title}
                 </h3>
               </div>
-              <p className="text-dark/70 font-medium leading-relaxed mt-4">
+              <p className="text-dark/70 text-[20px] font-outfit leading-relaxed mt-4">
                 {item.description}
               </p>
             </motion.div>
@@ -525,14 +525,13 @@ const CommunityCollectives = () => {
       {/* Selection Process Section */}
       <div className="py-24 container-custom">
         <div className="relative inline-block mb-24">
-          <h2 className="text-[32px] p-4 text-dark tracking-tight">
+          <h2 className="text-[32px] font-semibold text-dark tracking-tight">
             Selection Process
           </h2>
-          <div className="absolute -bottom-6 left-0 w-1/3 h-1.5 bg-primary rounded-full" />
+          <div className="absolute -bottom-7 left-0 w-1/3 h-1.5 bg-primary rounded-full" />
         </div>
 
         <div className="space-y-0 relative">
-          <div className="absolute left-4 top-0 bottom-0  bg-gray-100 lg:left-6" />
           {[
             {
               title: "Application Form",
@@ -549,7 +548,7 @@ const CommunityCollectives = () => {
               status: "pending",
               text: "Here you will attain 2 day in-person selection round and where you will take part in group discussions and also complete a short problem solving activity, present your work in front of others. You will also have a hour-long personal interview with one of our team members.",
             },
-          ].map((step, idx) => (
+          ].map((step, idx, arr) => (
             <motion.div
               key={idx}
               initial={{ opacity: 0, x: -20 }}
@@ -557,12 +556,19 @@ const CommunityCollectives = () => {
               viewport={{ once: true }}
               className="relative pl-16 pb-20 last:pb-0"
             >
+              {/* Connector Line */}
+              {idx < arr.length - 1 && (
+                <div
+                  className={`absolute left-[19px] lg:left-[23px] top-10 bottom-0 w-0.5 ${arr[idx + 1].status === "checked" ? "bg-primary" : "bg-gray-200"
+                    }`}
+                />
+              )}
+
               <div
-                className={`absolute left-0 w-10 h-10 lg:w-12 lg:h-12 rounded-full border-4 border-white shadow-md flex items-center justify-center z-10 transition-colors duration-500 ${
-                  step.status === "checked"
-                    ? "bg-primary text-white"
-                    : "bg-gray-300 text-white"
-                }`}
+                className={`absolute left-0 w-10 h-10 lg:w-12 lg:h-12 rounded-full shadow-md flex items-center justify-center z-10 transition-colors duration-500 ${step.status === "checked"
+                  ? "bg-primary text-white"
+                  : "bg-gray-300 text-white"
+                  }`}
               >
                 {step.status === "checked" ? (
                   <Check size={24} strokeWidth={3} />
@@ -571,8 +577,8 @@ const CommunityCollectives = () => {
                 )}
               </div>
               <div className="space-y-4">
-                <h3 className="text-[20px] md:text-[20px] text-dark">{step.title}</h3>
-                <p className="text-lg md:text-xl text-dark/70 leading-relaxed">
+                <h3 className="text-[20px] md:text-[20px] font-semibold text-dark font-outfit">{step.title}</h3>
+                <p className="text-[20px] text-dark/70 font-outfit leading-relaxed">
                   {step.text}
                 </p>
               </div>
@@ -584,7 +590,7 @@ const CommunityCollectives = () => {
       {/* Collective Impact Section */}
       <div className="py-24 container-custom">
         <div className="relative inline-block mb-16">
-          <h2 className="text-[32px] p-4 text-dark tracking-tight">
+          <h2 className="text-[32px] text-dark font-semibold font-outfit tracking-tight">
             Collective Impact
           </h2>
           <div className="absolute -bottom-6 left-0 w-1/2 h-1 bg-primary rounded-full" />
@@ -606,18 +612,18 @@ const CommunityCollectives = () => {
           ].map((m, i) => (
             <div key={i} className="space-y-4">
               <div className="flex flex-col items-center">
-                <span className="text-4xl md:text-5xl text-primary">{m.val}</span>
-                <div className="w-10 h-1 bg-black mt-2" />
+                <p className="text-[40px] font-semibold md:text-[40px] text-primary">{m.val}</p>
+                <div className="w-10 h-1 bg-primary mt-2" />
               </div>
-              <p className="text-lg text-dark leading-tight">{m.label}</p>
+              <p className="text-[20px] font-outfit font-medium  text-dark leading-tight">{m.label}</p>
             </div>
           ))}
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
           {/* Geographic Spread */}
-          <div className="bg-white rounded-4xl p-10 border border-gray-100 shadow-xl flex flex-col items-center">
-            <h3 className="text-[20px] text-dark font-semibold mb-10 w-full text-center tracking-tight">
+          <div className="bg-white rounded-2xl p-10 border border-gray-100 shadow-xl flex flex-col items-center max-w-[420px] w-full mx-auto">
+            <h3 className="text-[32px] text-dark font-outfit font-semibold mb-10 w-full text-center tracking-tight">
               Geographic Spread
             </h3>
             <div className="relative w-72 h-72 mb-12 flex items-center justify-center">
@@ -671,7 +677,7 @@ const CommunityCollectives = () => {
                 />
               </svg>
             </div>
-            <div className="w-full max-w-[260px] space-y-5">
+            <div className="w-full max-w-[280px] space-y-6">
               {[
                 {
                   label: "Urban",
@@ -704,23 +710,23 @@ const CommunityCollectives = () => {
                 >
                   <div className="flex items-center gap-4">
                     <div
-                      className="w-5 h-5 rounded-full"
+                      className="w-3 h-3 rounded-full"
                       style={{ backgroundColor: l.color }}
                     />
-                    <span className="text-dark text-xl">{l.label}</span>
+                    <span className="text-dark/80 text-[20px] font-outfit font-medium">{l.label}</span>
                   </div>
-                  <span className="text-dark text-xl font-bold">{l.val}</span>
+                  <span className="text-dark text-[20px] font-outfit font-bold">{l.val}</span>
                 </motion.div>
               ))}
             </div>
           </div>
 
           {/* Gender Spread */}
-          <div className="bg-white rounded-4xl p-10 border border-gray-100 shadow-xl flex flex-col items-center">
-            <h3 className="text-[20px] text-dark font-semibold mb-10 w-full text-center">
+          <div className="bg-white rounded-2xl p-10 border border-gray-100 shadow-xl flex flex-col items-center max-w-[420px] w-full mx-auto">
+            <h3 className="text-[32px] text-dark font-outfit font-semibold mb-10 w-full text-center tracking-tight">
               Gender - Entrepreneurs
             </h3>
-            <div className="relative w-72 h-72 mb-10 flex items-center justify-center">
+            <div className="relative w-72 h-72 mb-12 flex items-center justify-center">
               <svg
                 viewBox="0 0 100 100"
                 className="w-full h-full transform -rotate-90 overflow-visible"
@@ -756,7 +762,7 @@ const CommunityCollectives = () => {
                 />
               </svg>
             </div>
-            <div className="space-y-6 w-full pt-6 px-10">
+            <div className="space-y-6 w-full max-w-[280px]">
               {[
                 {
                   label: "Male",
@@ -775,16 +781,16 @@ const CommunityCollectives = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: 1.2 + i * 0.2 }}
-                  className="flex items-center justify-between border-b border-gray-50 pb-4 last:border-0"
+                  className="flex items-center justify-between pb-2"
                 >
                   <div className="flex items-center gap-4">
                     <div
-                      className="w-5 h-5 rounded-full border border-gray-100"
+                      className="w-3 h-3 rounded-full border border-gray-100"
                       style={{ backgroundColor: l.color }}
                     />
-                    <span className="text-dark text-xl">{l.label}</span>
+                    <span className="text-dark/80 text-[20px] font-outfit font-medium">{l.label}</span>
                   </div>
-                  <span className="text-dark text-xl font-bold">{l.val}</span>
+                  <span className="text-dark text-[20px] font-outfit font-bold">{l.val}</span>
                 </motion.div>
               ))}
             </div>
@@ -800,10 +806,10 @@ const CommunityCollectives = () => {
           viewport={{ once: true }}
           className="bg-gray-100 rounded-lg p-12 lg:p-20 text-center space-y-8"
         >
-          <h2 className="text-[32px] p-4 font-semibold text-dark leading-tight">
+          <h2 className="text-[32px] font-outfit font-semibold text-dark leading-tight">
             Applications for the 2026 Cohort Are Now Closed
           </h2>
-          <div className="space-y-4 max-w-3xl mx-auto text-lg leading-relaxed">
+          <div className="space-y-4 max-w-3xl mx-auto text-[20px] font-outfit leading-relaxed">
             <p>
               The submission window for application to 2026 cohort is now
               closed.
@@ -822,10 +828,10 @@ const CommunityCollectives = () => {
       {/* Our Cohort Section */}
       <div className="py-24 container-custom">
         <div className="relative inline-block mb-10">
-          <h2 className="text-[32px] p-4 text-dark tracking-tight">
+          <h2 className="text-[32px] font-outfit font-semibold text-dark tracking-tight">
             Our Cohort
           </h2>
-          <div className="absolute -bottom-3 left-0 w-12 h-1.5 bg-primary rounded-full" />
+          <div className="absolute -bottom-6 left-0 w-12 h-1.5 bg-primary rounded-full" />
         </div>
 
         {/* Tabs - Pill container */}
@@ -896,7 +902,8 @@ const CommunityCollectives = () => {
                             key={idx}
                             src={getImageUrl(img)}
                             alt={`${member.name} ${idx + 1}`}
-                            className="w-1/2 h-full object-cover group-hover:scale-[1.1] transition-transform duration-700"
+                            containerClassName="w-1/2 h-full"
+                            className="w-full h-full object-cover group-hover:scale-[1.1] transition-transform duration-700"
                           />
                         ))}
                       </div>
