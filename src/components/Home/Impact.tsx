@@ -23,7 +23,7 @@ const Impact = () => {
             />
           </div>
 
-          <h2 className="text-3xl md:text-5xl text-dark mb-10 max-w-4xl relative z-10 leading-tight tracking-tighter">
+          <h2 className="text-dark mb-10 text-left font-semibold relative z-10 leading-tight tracking-wider">
             {title}
           </h2>
           <div className="w-16 h-1.5 bg-primary rounded-full relative z-10" />

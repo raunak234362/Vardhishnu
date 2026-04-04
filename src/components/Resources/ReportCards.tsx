@@ -8,7 +8,7 @@ const ReportCards = () => {
       icon: <PieChart className="w-10 h-10 text-black" />,
       description:
         "A comprehensive overview of our year—highlighting key initiatives, impact metrics, success stories, and financial transparency. It reflects our commitment to accountability and the progress we’ve made in empowering communities.",
-      link: "#",
+      link: "https://drive.google.com/file/d/1aFOvh4K12Fl3CpZc9x2jEcmaogbKOQGB/view?usp=drive_link",
     },
     {
       title: "Audit Reports",

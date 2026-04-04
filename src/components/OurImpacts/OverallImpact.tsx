@@ -43,7 +43,7 @@ const OverallImpact = () => {
     <section className="py-24 bg-white">
       <div className="container-custom px-6 lg:px-20">
         <div className="mb-20 text-left">
-          <h2 className="text-4xl md:text-5xl text-dark tracking-tighter inline-block relative">
+          <h2 className="text-dark tracking-tighter inline-block relative">
             Overall impact
             <div className="absolute -bottom-6 left-0 w-1/3 h-1.5 bg-primary rounded-full" />
           </h2>
@@ -59,12 +59,10 @@ const OverallImpact = () => {
               transition={{ delay: index * 0.05 }}
               className={`p-10 rounded-[2.5rem] border-2 border-dashed min-h-[220px] flex flex-col justify-center gap-4 transition-all duration-300 group ${item.color}`}
             >
-              <h3 className="text-4xl md:text-5xl tracking-tight leading-none group-hover:scale-105 transition-transform duration-300">
+              <h3 className="tracking-tight leading-none group-hover:scale-105 transition-transform duration-300">
                 {item.label}
               </h3>
-              <p className="text-dark/40 text-lg leading-snug">
-                {item.sub}
-              </p>
+              <p className="text-dark/40 text-lg leading-snug">{item.sub}</p>
             </motion.div>
           ))}
         </div>

@@ -332,7 +332,7 @@ const AnandgharApproach = () => {
                   containerClassName="w-full h-full"
                 />
                 <div className="absolute inset-0 bg-linear-to-t from-black/90 via-black/20 to-transparent flex items-end p-8 sm:p-12">
-                  <p className="text-primary font-handwritten text-4xl md:text-5xl leading-tight drop-shadow-2xl max-w-sm transition-transform duration-500 group-hover:-translate-y-2">
+                  <p className="text-primary font-handwritten text-4xl md:text- leading-tight drop-shadow-2xl max-w-sm transition-transform duration-500 group-hover:-translate-y-2">
                     {item.label}
                   </p>
                 </div>

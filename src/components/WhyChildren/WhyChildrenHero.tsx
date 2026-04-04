@@ -16,7 +16,7 @@ const WhyChildrenHero = () => {
             className="space-y-8"
           >
             <div>
-              <h2 className="text-4xl space-y-10 text-dark tracking-tighter inline-block relative">
+              <h2 className="space-y-10 text-dark tracking-tighter inline-block relative">
                 {title}
                 <div className="absolute -bottom-3 left-0 w-2/3 h-1 bg-primary rounded-full transition-all duration-300 " />
               </h2>
@@ -44,9 +44,9 @@ const WhyChildrenHero = () => {
             viewport={{ once: true }}
             className="relative rounded-[3rem] overflow-hidden aspect-square shadow-2xl z-10"
           >
-            <img 
-              src={getImageUrl("v1774764831/Vardhishnu_4_xag2oq.jpg")} 
-              alt="Landfill Child Documentary" 
+            <img
+              src={getImageUrl("v1774764831/Vardhishnu_4_xag2oq.jpg")}
+              alt="Landfill Child Documentary"
               className="w-full h-full object-cover"
             />
             {/* Overlay for aesthetic consistency */}

@@ -39,7 +39,7 @@ const Stats = () => {
     <section className="py-24 bg-white relative">
       <div className="container-custom">
         <div className="mb-20 text-left">
-          <h2 className="text-4xl text-dark tracking-tighter inline-block relative">
+          <h2 className="text-dark tracking-tighter inline-block relative">
             Statistics
             <div className="absolute -bottom-3 left-0 w-1/3 h-1 bg-primary rounded-full transition-all duration-300" />
           </h2>
@@ -55,7 +55,7 @@ const Stats = () => {
               transition={{ delay: index * 0.1 }}
               className={`p-10 rounded-[2.5rem] min-h-[280px] flex flex-col justify-center gap-6 shadow-sm hover:shadow-xl transition-all duration-500 group ${stat.bgColor}`}
             >
-              <h3 className="text-3xl text-dark leading-tight tracking-tighter group-hover:text-primary transition-colors duration-300">
+              <h3 className="text-dark leading-tight tracking-tighter group-hover:text-primary transition-colors duration-300">
                 {stat.value}
               </h3>
               <p className="text-dark/50 font-bold text-lg leading-snug">

@@ -73,9 +73,7 @@ const WhoWeAre = () => {
               viewport={{ once: true }}
             >
               <div className="relative inline-block mb-12">
-                <h2 className="text-4xl md:text-5xl text-dark tracking-tight">
-                  {data.about.title}
-                </h2>
+                <h2 className="text-dark tracking-tight">{data.about.title}</h2>
                 <div className="absolute -bottom-4 left-0 w-1/3 h-1.5 bg-primary rounded-full" />
               </div>
               <div className="space-y-6 text-lg text-dark leading-relaxed mb-8">

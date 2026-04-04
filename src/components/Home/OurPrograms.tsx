@@ -8,7 +8,7 @@ const OurPrograms = () => {
   return (
     <section className="py-24 bg-white">
       <div className="container-custom">
-        <h2 className="text-4xl md:text-5xl mb-16 text-dark tracking-tight">
+        <h2 className="mb-16 text-dark tracking-tight">
           {data.programs.title}
         </h2>
 
@@ -36,10 +36,8 @@ const OurPrograms = () => {
 
               {/* Content */}
               <div className="absolute inset-0 z-10 p-10 flex flex-col justify-end transition-transform duration-500 group-hover:translate-y-[-10px]">
-                <h3 className="text-primary text-3xl font-bold mb-3">
-                  {program.name}
-                </h3>
-                <p className="text-white/90 text-lg font-semibold leading-relaxed mb-6">
+                <h3 className="text-primary font-medium mb-3">{program.name}</h3>
+                <p className="text-white/90 text-[14px] font-semibold leading-relaxed mb-6">
                   {program.description}
                 </p>
                 <Link

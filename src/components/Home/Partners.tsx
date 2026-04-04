@@ -10,7 +10,7 @@ const Partners = () => {
   return (
     <section className="py-20 bg-white overflow-hidden">
       <div className="container-custom">
-        <h2 className="text-3xl md:text-4xl mb-16 text-dark tracking-tight text-center md:text-left">
+        <h2 className="mb-16 text-dark tracking-tight text-center md:text-left">
           Accredited & Supported By
         </h2>
       </div>

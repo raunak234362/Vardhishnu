@@ -28,7 +28,7 @@ const Philosophy = () => {
               className="bg-white p-8 md:p-12 rounded-3xl shadow-xl w-full lg:w-[75%] border border-black/5"
             >
               <div className="relative inline-block mb-6">
-                <h2 className="text-3xl md:text-5xl  text-dark tracking-tighter">
+                <h2 className="text-dark tracking-tighter">
                   Our Guiding Philosophy
                 </h2>
                 <div className="absolute -bottom-3 left-0 w-1/2 h-1 bg-primary rounded-full" />

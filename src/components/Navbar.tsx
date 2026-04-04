@@ -31,7 +31,7 @@ const Navbar = () => {
     <nav
       className={`z-50 w-full transition-all duration-300 ${
         isHomePage
-          ? "bg-black/5 "
+          ? "bg-black/5 backdrop-blur-sm"
           : "relative bg-black shadow-lg"
       }`}
     >
@@ -51,7 +51,7 @@ const Navbar = () => {
                 <Link
                   key={link.label}
                   to={link.url}
-                  className={`relative group nav-link transition-colors font-medium whitespace-nowrap pb-1 ${
+                  className={`relative text-[14px] group nav-link transition-colors font-medium whitespace-nowrap pb-1 ${
                     isActive
                       ? "text-primary! font-semibold"
                       : "text-white/80! hover:text-primary!"
@@ -70,7 +70,7 @@ const Navbar = () => {
           <div className="flex items-center gap-4">
             <button className="flex items-center gap-2">
               <Heart size={18} className="text-primary" />
-              <span className="text-primary">{data.header.cta}</span>
+              <span className="text-primary text-[14px]">{data.header.cta}</span>
             </button>
           </div>
         </div>

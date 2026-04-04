@@ -25,6 +25,14 @@
   body {
     @apply font-sans text-dark bg-white;
   }
+
+  h2 {
+    font-size: 32px;
+  }
+
+  h3 {
+    font-size: 24px;
+  }
 }
 
 @layer components {

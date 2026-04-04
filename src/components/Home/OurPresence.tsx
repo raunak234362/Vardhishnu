@@ -35,9 +35,7 @@ const OurPresence = () => {
             className="w-full lg:w-3/5"
           >
             <div className="">
-              
-                <img src={getImageUrl("v1774774560/Map_rhitgi.png")} alt="map" />
-              
+              <img src={getImageUrl("v1774774560/Map_rhitgi.png")} alt="map" />
             </div>
           </motion.div>
 
@@ -47,7 +45,7 @@ const OurPresence = () => {
             <motion.div
               initial={{ opacity: 0, x: 30 }}
               whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }} 
+              viewport={{ once: true }}
               className="space-y-6"
             >
               <div className="flex items-center gap-3">
@@ -55,9 +53,7 @@ const OurPresence = () => {
                   <MapPin size={32} fill="currentColor" />
                   <div className="absolute top-[7.5px] left-1/2 -translate-x-1/2 w-2.5 h-2.5 bg-white rounded-full" />
                 </div>
-                <h3 className="text-2xl text-dark">
-                  Vardhishnu Intervention Area
-                </h3>
+                <h3 className="text-dark">Vardhishnu Intervention Area</h3>
               </div>
               <ul className="pl-14 space-y-2">
                 {interventionAreas.map((city) => (
@@ -84,16 +80,12 @@ const OurPresence = () => {
                   <MapPin size={32} fill="currentColor" />
                   <div className="absolute top-[7.5px] left-1/2 -translate-x-1/2 w-2.5 h-2.5 bg-white rounded-full" />
                 </div>
-                <h3 className="text-2xl text-dark ">
-                  Partner Organizations
-                </h3>
+                <h3 className="text-dark ">Partner Organizations</h3>
               </div>
               <div className="pl-14 space-y-6">
                 {partnerOrgs.map((org) => (
                   <div key={org.state}>
-                    <span className="text-dark text-lg">
-                      {org.state} :{" "}
-                    </span>
+                    <span className="text-dark text-lg">{org.state} : </span>
                     <span className="text-dark/40 text-lg font-medium">
                       {org.cities}
                     </span>

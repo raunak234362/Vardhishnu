@@ -69,12 +69,12 @@ const Hero = () => {
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: -50 }}
             transition={{ duration: 0.5, ease: "easeOut" }}
-            className="flex flex-col justify-center items-center gap-5 pt-64"
+            className="flex flex-col justify-center items-center gap-2 pt-64"
           >
-            <h1 className="text-3xl md:text-5xl font-normal mb-1 tracking-tighter">
+            <h1 className="text-3xl md:text-[40px] font-normal tracking-tighter">
               {slides[currentSlide].headline}
             </h1>
-            <h2 className="text-3xl md:text-[140px] font-bold font-handwritten text-primary mb-8 drop-shadow-lg">
+            <h2 className="text-3xl md:text-[140px] font-bold font-handwritten text-primary drop-shadow-lg">
               {slides[currentSlide].subheadline}
             </h2>
             <div className="flex flex-wrap gap-4">
