@@ -1,6 +1,6 @@
 import impactData from "../../data/impact.json";
 import { motion } from "framer-motion";
-import { Trophy } from "lucide-react";
+import trophy from "../../assets/unknown.svg";
 
 const Felicitations = () => {
   return (
@@ -24,7 +24,7 @@ const Felicitations = () => {
               className="flex items-start gap-4 p-6 bg-white rounded-2xl border border-black/5 hover:border-primary/20 hover:shadow-xl hover:shadow-primary/5 transition-all group"
             >
               <div className="shrink-0 w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary group-hover:scale-110 transition-transform">
-                <Trophy className="w-5 h-5 fill-primary" />
+                <img src={trophy} alt="" />
               </div>
               <p className="text-dark/70 font-bold leading-relaxed pt-1 tracking-tight">
                 {text}

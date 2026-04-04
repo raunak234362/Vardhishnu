@@ -1,11 +1,11 @@
 import ResourcesHero from "../components/Resources/ResourcesHero";
-import ReportCards from "../components/Resources/ReportCards";
+import { Outlet } from "react-router-dom";
 
 const Resources = () => {
   return (
     <main className="bg-white">
       <ResourcesHero />
-      <ReportCards />
+      <Outlet />
     </main>
   );
 };
