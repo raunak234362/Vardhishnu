@@ -1,4 +1,4 @@
-import timeline from "../../assets/image.png";
+import timeline from "../../assets/unkno.svg";
 
 const JourneyTimeline = () => {
   return (
@@ -7,19 +7,19 @@ const JourneyTimeline = () => {
         {/* Heading */}
         <div className="mb-32">
           <div className="relative inline-block mb-14">
-            <h2 className="text-4xl md:text-5xl text-dark tracking-tighter">
+            <h2 className="text-[32px] text-dark tracking-tighter">
               Our Journey
             </h2>
-            <div className="absolute -bottom-7 left-0 w-2/3 h-1.5 bg-primary rounded-full transition-all duration-300" />
+            <div className="absolute -bottom-7 left-0 w-1/3 h-1 bg-primary rounded-full transition-all duration-300" />
           </div>
-          <p className="mt-2 text-dark/40 font-bold text-sm tracking-widest uppercase">
+          <p className=" text-dark/40 font-bold text-sm tracking-widest uppercase">
             Since 2013
           </p>
         </div>
 
         {/* Scrollable Container */}
         <div className="relative overflow-x-auto no-scrollbar pb-10">
-          <div className="flex items-center justify-start min-w-[1200px]">
+          <div className="flex items-center justify-start">
             <img
               src={timeline}
               alt="Vardhishnu Journey Timeline"

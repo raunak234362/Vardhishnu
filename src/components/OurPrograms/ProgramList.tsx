@@ -50,7 +50,7 @@ const ProgramList = () => {
     <section className="py-24 bg-white">
       <div className="container-custom">
         <div className="mb-20 text-left">
-          <h2 className="text-4xl text-dark tracking-tighter inline-block relative">
+          <h2 className=" text-dark tracking-tighter inline-block relative">
             Programs
             <div className="absolute -bottom-3 left-0 w-1/2 h-1 bg-primary rounded-full transition-all duration-300 group-hover:w-full" />
           </h2>
@@ -81,10 +81,10 @@ const ProgramList = () => {
                 {/* Content Section */}
                 <div className="p-10 lg:p-16 flex flex-col justify-center space-y-8">
                   <div>
-                    <h3 className="text-3xl md:text-4xl text-dark tracking-tighter mb-4 group-hover:text-primary transition-colors duration-300">
+                    <h2 className=" text-dark tracking-tighter mb-4 group-hover:text-primary transition-colors duration-300">
                       {program.title}
-                    </h3>
-                    <p className="text-dark/60 font-medium leading-relaxed max-w-xl">
+                    </h2>
+                    <p className="text-dark/50 font-medium leading-relaxed max-w-xl">
                       {program.description}
                     </p>
                   </div>
@@ -93,7 +93,7 @@ const ProgramList = () => {
                     {program.points.map((point, idx) => (
                       <li
                         key={idx}
-                        className="flex items-center gap-3 text-dark/80 font-bold tracking-tight"
+                        className="flex items-center gap-3 text-dark/80 font-regular tracking-tight"
                       >
                         <Heart className="w-5 h-5 text-red-500 fill-red-500" />
                         <span>{point}</span>

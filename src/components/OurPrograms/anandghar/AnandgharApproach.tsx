@@ -1,4 +1,4 @@
-import { motion, useScroll, useTransform, MotionValue } from "framer-motion";
+import { motion, useScroll } from "framer-motion";
 import { getImageUrl } from "../../../utils/imageUrl";
 import data from "../../../data/anandghar.json";
 import LazyImage from "../../common/LazyImage";
@@ -8,40 +8,30 @@ import { useRef } from "react";
 const StepCard = ({
   step,
   idx,
-  scrollYProgress,
 }: {
   step: { id: string; items: string[] };
   idx: number;
-  scrollYProgress: MotionValue<number>;
 }) => {
-  const scale = useTransform(
-    scrollYProgress,
-    [idx * 0.33, idx * 0.33 + 0.15, idx * 0.33 + 0.33],
-    [0.95, 1.05, 0.95],
-  );
-  const borderColor = useTransform(
-    scrollYProgress,
-    [idx * 0.33, idx * 0.33 + 0.15, idx * 0.33 + 0.33],
-    ["#f3f4f6", "#a6ce39", "#f3f4f6"],
-  );
+  const isFirst = idx === 0;
+  const isLast = idx === 2;
 
   return (
-    <motion.div
-      style={{ scale, borderColor }}
-      className="p-8 rounded-2xl h-full bg-gray-50/50 border-2 border-transparent transition-all duration-500 hover:bg-white hover:shadow-xl hover:border-primary/20"
+    <div
+      className={`p-10 h-full bg-[#f3f4f6] ${
+        isFirst ? "rounded-l-2xl" : isLast ? "rounded-r-2xl" : "rounded-none"
+      } border-r border-white/50 last:border-r-0`}
     >
-      <ul className="space-y-4">
+      <ul className="space-y-6">
         {step.items.map((item, i) => (
           <li
             key={i}
-            className="text-base text-dark/80 leading-relaxed flex items-start gap-3"
+            className="text-[16px] text-dark/80 leading-relaxed font-regular"
           >
-            <div className="mt-2.5 w-1 h-1 rounded-full bg-primary/40 shrink-0" />
             {item}
           </li>
         ))}
       </ul>
-    </motion.div>
+    </div>
   );
 };
 
@@ -51,21 +41,6 @@ const AnandgharApproach = () => {
     target: modelRef,
     offset: ["start center", "end center"],
   });
-
-  const xPosition = useTransform(
-    scrollYProgress,
-    [0, 0.5, 1],
-    ["0%", "100%", "200%"],
-  );
-
-  // Opacity for step labels
-  const step1Opacity = useTransform(scrollYProgress, [0, 0.2], [1, 0.5]);
-  const step2Opacity = useTransform(
-    scrollYProgress,
-    [0.3, 0.5, 0.7],
-    [0.5, 1, 0.5],
-  );
-  const step3Opacity = useTransform(scrollYProgress, [0.8, 1], [0.5, 1]);
 
   return (
     <section className="bg-white">
@@ -77,12 +52,12 @@ const AnandgharApproach = () => {
           className="w-full h-full object-cover"
           containerClassName="w-full h-full"
         />
-        <div className="absolute inset-0 bg-black/10 flex items-center justify-center lg:items-end lg:justify-start lg:p-20">
+        <div className="absolute inset-0 bg-linear-to-t from-black/50 via-black/5 to-transparent flex items-center justify-center lg:items-end lg:justify-start lg:px-20 py-10">
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-primary font-handwritten text-7xl md:text-9xl lg:text-[10rem] drop-shadow-2xl"
+            className="text-primary font-handwritten text-[80px] font-bold drop-shadow-2xl"
           >
             AnandGhar
           </motion.h1>
@@ -98,7 +73,7 @@ const AnandgharApproach = () => {
             className="w-full"
           >
             <div className="relative inline-block mb-10">
-              <h2 className="text-4xl md:text-5xl text-dark tracking-tight">
+              <h2 className="text-dark tracking-tight">
                 {data.approach.title}
               </h2>
               {/* <div className="absolute -bottom-3 left-0 w-1/2 h-1.5 bg-primary rounded-full" /> */}
@@ -108,7 +83,7 @@ const AnandgharApproach = () => {
               {data.approach.content.map((paragraph, index) => (
                 <p
                   key={index}
-                  className="text-xl text-dark/80 leading-relaxed max-w-4xl"
+                  className="text-[16px] text-dark/80 leading-relaxed max-w-4xl"
                 >
                   {paragraph}
                 </p>
@@ -143,15 +118,13 @@ const AnandgharApproach = () => {
           viewport={{ once: true }}
           className=""
         >
-          <h2 className="text-4xl md:text-5xl text-dark mb-16">
-            {data.whatWeDo.title}
-          </h2>
+          <h2 className=" text-dark mb-16">{data.whatWeDo.title}</h2>
 
           <div className="space-y-10 mb-16">
             {data.whatWeDo.items.map((item, index) => (
               <div key={index} className="flex items-start gap-6">
                 <div className="mt-2.5 w-3 h-3 rounded-full bg-primary shrink-0" />
-                <p className="text-xl text-dark/80 leading-relaxed">
+                <p className="text-[16px] text-dark/80 leading-relaxed">
                   <span className="text-dark">{item.title}:</span>{" "}
                   {item.description}
                 </p>
@@ -159,9 +132,7 @@ const AnandgharApproach = () => {
             ))}
           </div>
 
-          <p className="text-xl text-dark/60 italic">
-            {data.whatWeDo.footer}
-          </p>
+          <p className="text-[16px] text-dark/80">{data.whatWeDo.footer}</p>
         </motion.div>
       </div>
 
@@ -173,12 +144,12 @@ const AnandgharApproach = () => {
           viewport={{ once: true }}
         >
           <div className="relative inline-block mb-10">
-            <h2 className="text-4xl md:text-5xl text-dark tracking-tight">
+            <h2 className=" text-dark tracking-tight">
               {data.holisticModel.title}
             </h2>
             {/* <div className="absolute -bottom-3 left-0 w-1/3 h-1.5 bg-primary rounded-full" /> */}
           </div>
-          <p className="text-2xl text-dark/80 leading-relaxed max-w-5xl">
+          <p className="text-[16px] text-dark/80 leading-relaxed max-w-5xl">
             {data.holisticModel.description}
           </p>
         </motion.div>
@@ -192,82 +163,70 @@ const AnandgharApproach = () => {
           viewport={{ once: true }}
         >
           <div className="relative inline-block mb-10">
-            <h2 className="text-4xl md:text-5xl text-dark tracking-tight">
-              {data.ourModel.title}
-            </h2>
+            <h2 className=" text-dark tracking-tight">{data.ourModel.title}</h2>
             <div className="absolute -bottom-6 left-0 w-1/2 h-1.5 bg-primary rounded-full" />
           </div>
 
           {/* Progress Indicator Container */}
-          <div className="max-w-4xl mx-auto mb-16 px-4">
+          <div className="mx-auto mb-10 px-4">
             {/* Step Labels Above the Bar */}
-            <div className="flex mb-4 text-sm md:text-base font-medium tracking-wide">
-              {["Step 1", "Step 2", "Step 3"].map((label, i) => {
-                const opacities = [step1Opacity, step2Opacity, step3Opacity];
-                return (
-                  <div key={i} className="flex-1 text-center">
-                    <motion.span 
-                      style={{ 
-                        opacity: opacities[i],
-                        color: useTransform(opacities[i], [0.5, 1], ["#9ca3af", "#84cc16"]) 
-                      }}
-                    >
-                      {label}
-                    </motion.span>
-                  </div>
-                );
-              })}
+            <div className="flex mb-4 text-xs md:text-[14px] font-medium tracking-wide text-dark/40">
+              {["Step 1", "Step 2", "Step 3"].map((label, i) => (
+                <div key={i} className="flex-1 text-center">
+                  <span>{label}</span>
+                </div>
+              ))}
             </div>
 
             {/* Segmented Progress Bar */}
-            <div className="relative h-2 w-full bg-gray-100 rounded-full flex items-center overflow-hidden">
-              <div className="flex-1 h-full border-r border-white bg-gray-200/50" />
-              <div className="flex-1 h-full border-r border-white bg-gray-200/50" />
-              <div className="flex-1 h-full bg-gray-200/50" />
-              
-              {/* Moving Green Highlight */}
-              <motion.div
-                style={{ x: xPosition, width: "33.333%" }}
-                className="absolute inset-y-0 left-0 bg-primary rounded-full shadow-[0_0_15px_rgba(132,204,22,0.3)]"
-              />
+            <div className="grid grid-cols-3 gap-2 h-2.5 w-full">
+              <div className="bg-primary rounded-full relative flex items-center">
+                <div className="absolute -right-1 z-10 text-[10px] text-dark/20 font-bold">
+                  {" "}
+                  &gt;{" "}
+                </div>
+              </div>
+              <div className="bg-[#f0f2f5] rounded-full relative flex items-center">
+                <div className="absolute -right-1 z-10 text-[10px] text-dark/20 font-bold">
+                  {" "}
+                  &gt;{" "}
+                </div>
+              </div>
+              <div className="bg-[#f0f2f5] rounded-full" />
             </div>
           </div>
 
           {/* Model Steps Cards */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-5 overflow-hidden">
             {data.ourModel.steps.map((step, idx) => (
-              <StepCard
-                key={idx}
-                step={step}
-                idx={idx}
-                scrollYProgress={scrollYProgress}
-              />
+              <StepCard key={idx} step={step} idx={idx} />
             ))}
           </div>
         </motion.div>
       </div>
 
       {/* Our Values Section */}
-      <div className="container-custom py-24">
+      <div className="container-custom py-10">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
         >
           <div className="relative inline-block mb-16">
-            <h2 className="text-4xl md:text-5xl text-dark tracking-tight">
-              {data.values.title}
-            </h2>
+            <h2 className=" text-dark tracking-tight">{data.values.title}</h2>
             <div className="absolute -bottom-6 left-0 w-1/2 h-1.5 bg-primary rounded-full" />
           </div>
 
-          <div className="bg-white rounded-[4rem] border-2 border-gray-100 shadow-[0_20px_50px_rgba(0,0,0,0.05)] p-4 md:p-8 flex flex-wrap items-center justify-around gap-8 md:gap-4 max-w-5xl mx-auto">
+          <div className="bg-white rounded-[4rem] border-2 border-gray-100 shadow-[0_20px_50px_rgba(0,0,0,0.05)] p-4 md:p-8 flex flex-wrap items-center justify-around gap-8 md:gap-4 mx-auto">
             {data.values.items.map((value, idx) => {
               const iconName = value.icon
                 .split("-")
                 .map((s) => s.charAt(0).toUpperCase() + s.slice(1))
                 .join("") as keyof typeof icons;
-              const Icon = (icons as unknown as Record<string, React.ElementType>)[iconName] || icons.Heart;
+              const Icon =
+                (icons as unknown as Record<string, React.ElementType>)[
+                  iconName
+                ] || icons.Heart;
 
               const colors = [
                 "bg-orange-50 text-orange-600",
@@ -302,10 +261,10 @@ const AnandgharApproach = () => {
       <div className="container-custom py-24 px-4 sm:px-0 mt-24 relative overflow-hidden">
         {/* Design Background Section */}
         <div className="absolute inset-0 bg-primary/10 rounded-[4rem] -z-10" />
-        
-        <div className="p-8 md:p-16">
+
+        <div className="p-2">
           <div className="mb-20">
-            <h2 className="text-3xl md:text-5xl text-dark inline-block relative">
+            <h2 className="text-dark inline-block relative">
               {data.gallery.title}
               <div className="absolute -bottom-6 left-0 w-2/3 h-1.5 bg-primary rounded-full" />
             </h2>
@@ -331,8 +290,8 @@ const AnandgharApproach = () => {
                   className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
                   containerClassName="w-full h-full"
                 />
-                <div className="absolute inset-0 bg-linear-to-t from-black/90 via-black/20 to-transparent flex items-end p-8 sm:p-12">
-                  <p className="text-primary font-handwritten text-4xl md:text- leading-tight drop-shadow-2xl max-w-sm transition-transform duration-500 group-hover:-translate-y-2">
+                <div className="absolute justify-center inset-0 bg-linear-to-t from-black/90 via-black/20 to-transparent flex items-end p-8 sm:p-12">
+                  <p className="text-primary font-handwritten text-center text-[60px] leading-tight drop-shadow-2xl max-w-sm transition-transform duration-500 group-hover:-translate-y-2">
                     {item.label}
                   </p>
                 </div>

@@ -1,5 +1,4 @@
 import { motion } from "framer-motion";
-import Counter from "../common/Counter";
 
 const Stats = () => {
   const stats = [
@@ -54,12 +53,16 @@ const Stats = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.1 }}
-              className={`p-10 rounded-[2.5rem] min-h-[280px] flex flex-col justify-center gap-6 shadow-sm hover:shadow-xl transition-all duration-500 group ${stat.bgColor}`}
+              className={`p-10 rounded-2xl min-h-[260px] flex flex-col justify-between shadow-sm transition-all duration-500 group ${
+                stat.bgColor.includes("bg-white")
+                  ? "bg-white border border-red-50"
+                  : stat.bgColor
+              }`}
             >
-              <h3 className="text-dark leading-tight tracking-tighter group-hover:text-primary transition-colors duration-300">
-                <Counter value={stat.value} />
-              </h3>
-              <p className="text-dark/50 font-bold text-lg leading-snug">
+              <h2 className="text-dark leading-tight tracking-tight transition-colors duration-300 font-bold">
+                {stat.value}
+              </h2>
+              <p className="text-dark/40 font-regular text-[20px] leading-relaxed max-w-[90%]">
                 {stat.label}
               </p>
             </motion.div>

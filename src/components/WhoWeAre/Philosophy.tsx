@@ -19,45 +19,52 @@ const Philosophy = () => {
           </div>
 
           {/* Stepped Content Panels */}
-          <div className="relative z-10 w-full max-w-5xl mx-auto flex flex-col gap-0">
-            {/* Top Panel: Title & Main Text */}
+          <div className="relative z-10 w-full max-w-6xl mx-auto">
+            {/* 1. Heading Box (Top Left) */}
             <motion.div
-              initial={{ opacity: 0, x: -50 }}
+              initial={{ opacity: 0, y: -20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="bg-white px-18 py-2 rounded-t-xl relative z-30 inline-block"
+            >
+              <h2 className="text-[32px] text-dark font-semibold tracking-wide">
+                Our Guiding Philosophy
+              </h2>
+              <div className="w-16 h-1 bg-[#97BD3E]" />
+            </motion.div>
+
+            {/* 2. Main Description Box (Center overlapping) */}
+            <motion.div
+              initial={{ opacity: 0, x: -30 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              className="bg-white p-8 md:p-12 rounded-3xl shadow-xl w-full lg:w-[75%] border border-black/5"
+              transition={{ delay: 0.1 }}
+              className="bg-white p-10 md:p-14 rounded-xl shadow-xl w-full lg:w-[100%] -mt-6 relative z-20 ml-0"
             >
-              <div className="relative inline-block mb-6">
-                <h2 className="text-dark tracking-tighter">
-                  Our Guiding Philosophy
-                </h2>
-                <div className="absolute -bottom-3 left-0 w-1/2 h-1 bg-primary rounded-full" />
-              </div>
-
-              <div className="space-y-4">
-                <p className="text-lg md:text-xl text-dark leading-relaxed font-medium">
+              <div className="space-y-4 max-w-5xl">
+                <p className="text-[16px] text-dark leading-relaxed font-medium">
                   We are rooted in Ubuntu – "I am because we are."
                 </p>
-                <p className="text-lg md:text-xl text-dark leading-relaxed font-medium">
+                <p className="text-[16px] text-dark leading-relaxed">
                   Our mission is not just to protect vulnerable children, but to
                   transform entire communities into safe, nurturing, and
                   self-sustaining environments where children can learn, grow,
-                  and lead with confidence.
+                  and lead with confidence
                 </p>
               </div>
             </motion.div>
 
-            {/* Bottom Panel: Signature Quote */}
+            {/* 3. Quote Box (Bottom Right Overlapping) */}
             <motion.div
-              initial={{ opacity: 0, x: 50 }}
+              initial={{ opacity: 0, x: 30 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: 0.2 }}
-              className="bg-white p-8 md:p-10 rounded-3xl shadow-xl w-full lg:w-[65%] self-end -mt-8 md:-mt-12 border border-black/5 relative z-20"
+              transition={{ delay: 0.3 }}
+              className="bg-white p-4 md:p-10 rounded-2xl w-full lg:w-[55%] self-end -mt-16 relative z-30 ml-auto border-l-0"
             >
-              <p className="text-lg md:text-2xl text-dark text-center lg:text-right leading-tight">
-                "At Vardhishnu, we're not just changing lives—we're changing the
-                way the world sees every child."
+              <p className="text-[16px] text-dark text-center leading-tight font-medium">
+                At Vardhishnu, we're not just changing lives—we're changing the
+                way the world sees every child.
               </p>
             </motion.div>
           </div>
