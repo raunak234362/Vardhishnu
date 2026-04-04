@@ -3,7 +3,7 @@ import { Check, ChevronDown } from "lucide-react";
 import { useState, useRef, useEffect } from "react";
 import LazyImage from "../../common/LazyImage";
 import { getImageUrl } from "../../../utils/imageUrl";
-import { MapPin, X } from "lucide-react";
+import { MapPin } from "lucide-react";
 
 const AnandgharFellowship = () => {
   const [activeTab, setActiveTab] = useState<"current" | "alumni">("current");

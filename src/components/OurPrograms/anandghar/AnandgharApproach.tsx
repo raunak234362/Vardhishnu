@@ -1,4 +1,4 @@
-import { motion, useScroll } from "framer-motion";
+import { motion } from "framer-motion";
 import { getImageUrl } from "../../../utils/imageUrl";
 import data from "../../../data/anandghar.json";
 import LazyImage from "../../common/LazyImage";
@@ -37,10 +37,10 @@ const StepCard = ({
 
 const AnandgharApproach = () => {
   const modelRef = useRef<HTMLDivElement>(null);
-  const { scrollYProgress } = useScroll({
-    target: modelRef,
-    offset: ["start center", "end center"],
-  });
+  // const { scrollYProgress } = useScroll({
+  //   target: modelRef,
+  //   offset: ["start center", "end center"],
+  // });
 
   return (
     <section className="bg-white">
