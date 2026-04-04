@@ -30,8 +30,7 @@ const OurProgramHero = () => {
             transition={{ delay: 0.3, duration: 1 }}
             className="text-primary text-3xl md:text-[80.9px] font-bold italic leading-[1.2]! max-w-5xl mx-auto drop-shadow-2xl font-handwritten"
           >
-            Creating lasting impact through education, health, and community <br/>
-            programs
+            Creating lasting impact through education, health, and community programs
           </motion.p>
         </motion.div>
       </div>
