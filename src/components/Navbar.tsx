@@ -8,7 +8,6 @@ import Logo from "../assets/logo.svg";
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const location = useLocation();
-  const isHomePage = location.pathname === "/";
 
   // Prevent body scroll when menu is open
   useEffect(() => {
@@ -28,13 +27,7 @@ const Navbar = () => {
   }, [location.pathname]);
 
   return (
-    <nav
-      className={`z-50 w-full transition-all duration-300 ${
-        isHomePage
-          ? "bg-black/5 backdrop-blur-sm"
-          : "relative bg-black shadow-lg"
-      }`}
-    >
+    <nav className="w-full bg-transparent">
       <div className="container-custom py-3 flex justify-between items-center">
         <Link to="/" className="flex items-center gap-2">
           {/* Logo container */}
@@ -70,7 +63,9 @@ const Navbar = () => {
           <div className="flex items-center gap-4">
             <button className="flex items-center gap-2">
               <Heart size={18} className="text-primary" />
-              <span className="text-primary text-[14px]">{data.header.cta}</span>
+              <span className="text-primary text-[14px]">
+                {data.header.cta}
+              </span>
             </button>
           </div>
         </div>
@@ -80,7 +75,7 @@ const Navbar = () => {
             <Heart size={18} fill="currentColor" />
             <span>{data.header.cta}</span>
           </button>
-          <button 
+          <button
             className="p-2 text-white"
             onClick={() => setIsMenuOpen(true)}
           >
@@ -99,7 +94,7 @@ const Navbar = () => {
             transition={{ type: "spring", damping: 25, stiffness: 200 }}
             className="fixed inset-0 z-100 bg-black/80 backdrop-blur-xl lg:hidden flex flex-col pt-24 "
           >
-            <button 
+            <button
               className="absolute top-8 right-8 p-2 text-white/60 hover:text-white"
               onClick={() => setIsMenuOpen(false)}
             >

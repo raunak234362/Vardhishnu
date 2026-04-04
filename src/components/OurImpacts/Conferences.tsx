@@ -33,10 +33,10 @@ const Conferences = () => {
   ];
 
   return (
-    <section className="py-24 bg-white relative">
+    <section className="py-10 bg-white relative">
       <div className="container-custom px-6 lg:px-20">
         <div className="mb-16 text-left">
-          <h2 className="text-4xl md:text-5xl text-dark tracking-tighter inline-block relative mb-6">
+          <h2 className="text-dark font-semibold tracking-tighter inline-block relative mb-6">
             Conferences
             <div className="absolute -bottom-6 left-0 w-1/3 h-1.5 bg-primary rounded-full" />
           </h2>

@@ -90,7 +90,7 @@ const CommunityCollectives = () => {
             viewport={{ once: true }}
             className="w-full lg:w-1/2 space-y-10"
           >
-            <h2 className="text-5xl md:text-6xl lg:text-5xl text-dark tracking-tight leading-[1.1]">
+            <h2 className="text-[32px] p-4 text-dark tracking-tight leading-[1.1]">
               Community Collectives <br />
               Nurturing Grassroots <br />
               Changemakers
@@ -102,7 +102,7 @@ const CommunityCollectives = () => {
               and mentorship.
             </p>
 
-            <button className="bg-primary hover:bg-primary/90 text-white px-10 py-5 text-xl font-semibold rounded-xl shadow-xl shadow-primary/20 transition-all hover:-translate-y-1">
+            <button className="bg-primary hover:bg-primary/90 text-white px-10 py-5 text-lg font-semibold rounded-xl shadow-xl shadow-primary/20 transition-all hover:-translate-y-1">
               Register Interest
             </button>
           </motion.div>
@@ -124,21 +124,21 @@ const CommunityCollectives = () => {
         </div>
 
         {/* What we do */}
-        <div className="flex flex-col lg:flex-row items-center gap-16 lg:gap-24">
+        < div className="flex flex-col lg:flex-row items-center gap-16 lg:gap-24">
         <motion.div
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             className="w-full lg:w-1/2 relative min-h-[650px]"
           >
-            <div className="absolute top-0 right-4 w-[65%] aspect-4/5 rounded-2xl overflow-hidden shadow-2xl z-0">
+            <div className="absolute top-0 right-4 w-[55%] aspect-4/5 rounded-2xl overflow-hidden shadow-2xl z-0">
               <img
                 src={getImageUrl("v1774764800/IMG_0715_z4vkar.jpg")}
                 alt="Community Workshop"
                 className="w-full h-full object-cover"
               />
             </div>
-            <div className="absolute top-48 lg:top-56 left-4 w-[65%] aspect-4/5 rounded-2xl overflow-hidden shadow-2xl z-10 transition-transform hover:scale-[1.02] duration-500">
+            <div className="absolute top-48 lg:top-56 left-4 w-[50%] aspect-4/5 rounded-2xl overflow-hidden shadow-2xl z-10 transition-transform hover:scale-[1.02] duration-500">
               <img
                 src={getImageUrl("v1774764799/17_dpe7on.jpg")}
                 alt="Planning Session"
@@ -153,11 +153,11 @@ const CommunityCollectives = () => {
             viewport={{ once: true }}
             className="w-full lg:w-1/2 space-y-10"
           >
-            <h2 className="text-5xl md:text-6xl text-dark tracking-tight">
+            <h2 className="text-[32px] text-dark tracking-tight">
               What we do?
             </h2>
 
-            <div className="space-y-8 text-xl leading-relaxed">
+            <div className="space-y-8 text-[16px] leading-relaxed">
               <p>
                 Community Collectives is a one-year incubation program designed
                 to share our experience in building community learning spaces.
@@ -187,7 +187,7 @@ const CommunityCollectives = () => {
           className="mb-12"
         >
           <div className="relative inline-block mb-10 mt-40">
-            <h2 className="text-4xl md:text-5xl text-dark tracking-tight">
+            <h2 className="text-[32px] p-4 text-dark tracking-tight">
               Who can Apply?
             </h2>
             <div className="absolute -bottom-3 left-0 w-2/3 h-1.5 bg-primary rounded-full" />
@@ -209,7 +209,7 @@ const CommunityCollectives = () => {
               <Users size={40} />
             </div>
             <div className="space-y-4">
-              <h3 className="text-2xl text-dark leading-tight">
+              <h3 className="text-[20px] text-dark leading-tight">
                 We invite applications from
               </h3>
               <div className="w-14 h-1 bg-primary" />
@@ -235,7 +235,7 @@ const CommunityCollectives = () => {
               <RefreshCw size={36} />
             </div>
             <div className="space-y-4">
-              <h3 className="text-2xl text-dark leading-tight">
+              <h3 className="text-[20px] text-dark leading-tight">
                 Eligibility & Expectations
               </h3>
               <div className="w-14 h-1 bg-primary" />
@@ -264,7 +264,7 @@ const CommunityCollectives = () => {
               <ShieldCheck size={36} />
             </div>
             <div className="space-y-4">
-              <h3 className="text-2xl text-dark leading-tight">
+              <h3 className="text-[20px] text-dark leading-tight">
                 For Ideation-Stage Applicants
               </h3>
               <div className="w-14 h-1 bg-primary" />
@@ -291,7 +291,7 @@ const CommunityCollectives = () => {
       <div className="py-24 container-custom">
         <div className="mb-16">
           <div className="relative inline-block mb-10">
-            <h2 className="text-4xl md:text-5xl text-dark tracking-tight">
+            <h2 className="text-[32px] p-4 text-dark tracking-tight">
               Incubation Support Structure
             </h2>
             <div className="absolute -bottom-3 left-0 w-1/4 h-1.5 bg-primary rounded-full" />
@@ -312,7 +312,7 @@ const CommunityCollectives = () => {
               <div className="w-12 h-12 bg-pink-100 text-pink-600 rounded-lg flex items-center justify-center text-2xl font-bold mb-8">
                 1
               </div>
-              <h3 className="text-2xl text-dark font-bold mb-4">
+              <h3 className="text-[20px] text-dark font-bold mb-4">
                 Residential Training Workshops
               </h3>
               <p className="text-pink-600 mb-8 uppercase tracking-wider text-sm">
@@ -355,7 +355,7 @@ const CommunityCollectives = () => {
               <div className="w-12 h-12 bg-[#FFF3E0] text-[#D97706] rounded-lg flex items-center justify-center text-2xl font-bold mb-8">
                 4
               </div>
-              <h3 className="text-2xl text-dark font-bold mb-4">
+              <h3 className="text-[20px] text-dark font-bold mb-4">
                 Networking & Resource Sharing
               </h3>
               <p className="text-[#D97706] mb-8 text-lg font-medium">
@@ -386,7 +386,7 @@ const CommunityCollectives = () => {
               <div className="w-12 h-12 bg-indigo-100 text-indigo-600 rounded-lg flex items-center justify-center text-2xl font-bold mb-8">
                 2
               </div>
-              <h3 className="text-2xl text-dark font-bold mb-4">
+              <h3 className="text-[20px] text-dark font-bold mb-4">
                 Field Visits
               </h3>
               <p className="text-indigo-600 mb-8 uppercase tracking-wider text-sm">
@@ -409,7 +409,7 @@ const CommunityCollectives = () => {
               <div className="w-12 h-12 bg-green-100 text-green-600 rounded-lg flex items-center justify-center text-2xl font-bold mb-8">
                 3
               </div>
-              <h3 className="text-2xl text-dark font-bold mb-4">Webinars</h3>
+              <h3 className="text-[20px] text-dark font-bold mb-4">Webinars</h3>
               <p className="text-green-600 mb-8 uppercase tracking-wider text-sm">
                 8 Theme based webinars
               </p>
@@ -430,7 +430,7 @@ const CommunityCollectives = () => {
               <div className="w-12 h-12 bg-blue-100 text-blue-600 rounded-lg flex items-center justify-center text-2xl font-bold mb-8">
                 5
               </div>
-              <h3 className="text-2xl text-dark font-bold mb-4">
+              <h3 className="text-[20px] text-dark font-bold mb-4">
                 Monthly Support Calls
               </h3>
               <p className="text-lg leading-relaxed">
@@ -446,7 +446,7 @@ const CommunityCollectives = () => {
       {/* Post Incubation Support */}
       <div className="py-24 container-custom">
         <div className="relative inline-block mb-16">
-          <h2 className="text-4xl md:text-5xl text-dark tracking-tight">
+          <h2 className="text-[32px] p-4 text-dark tracking-tight">
             Post Incubation Support
           </h2>
           <div className="absolute -bottom-3 left-0 w-1/3 h-1.5 bg-primary rounded-full" />
@@ -478,7 +478,7 @@ const CommunityCollectives = () => {
               className="relative bg-white shadow-xl rounded-2xl p-8 pt-20 border border-gray-50 flex flex-col"
             >
               <div className="absolute top-0 left-0 right-10 h-16 bg-primary rounded-tl-2xl rounded-br-[3rem] p-4 flex items-center">
-                <h3 className="text-black font-medium leading-tight line-clamp-2">
+                <h3 className="text-black font-medium leading-tight line-clamp-2 text-[20px]">
                   {item.title}
                 </h3>
               </div>
@@ -510,7 +510,7 @@ const CommunityCollectives = () => {
               className="w-full md:w-[calc(50%-1rem)] lg:w-[31%] relative bg-white shadow-xl rounded-2xl p-8 pt-20 border border-gray-50"
             >
               <div className="absolute top-0 left-0 right-10 h-16 bg-primary rounded-tl-2xl rounded-br-[3rem] p-4 flex items-center">
-                <h3 className="text-black font-medium leading-tight line-clamp-2">
+                <h3 className="text-black font-medium leading-tight line-clamp-2 text-[20px]">
                   {item.title}
                 </h3>
               </div>
@@ -525,7 +525,7 @@ const CommunityCollectives = () => {
       {/* Selection Process Section */}
       <div className="py-24 container-custom">
         <div className="relative inline-block mb-24">
-          <h2 className="text-4xl md:text-5xl text-dark tracking-tight">
+          <h2 className="text-[32px] p-4 text-dark tracking-tight">
             Selection Process
           </h2>
           <div className="absolute -bottom-6 left-0 w-1/3 h-1.5 bg-primary rounded-full" />
@@ -571,7 +571,7 @@ const CommunityCollectives = () => {
                 )}
               </div>
               <div className="space-y-4">
-                <h3 className="text-2xl md:text-3xl text-dark">{step.title}</h3>
+                <h3 className="text-[20px] md:text-[20px] text-dark">{step.title}</h3>
                 <p className="text-lg md:text-xl text-dark/70 leading-relaxed">
                   {step.text}
                 </p>
@@ -584,7 +584,7 @@ const CommunityCollectives = () => {
       {/* Collective Impact Section */}
       <div className="py-24 container-custom">
         <div className="relative inline-block mb-16">
-          <h2 className="text-3xl md:text-5xl text-dark tracking-tight">
+          <h2 className="text-[32px] p-4 text-dark tracking-tight">
             Collective Impact
           </h2>
           <div className="absolute -bottom-6 left-0 w-1/2 h-1 bg-primary rounded-full" />
@@ -617,7 +617,7 @@ const CommunityCollectives = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
           {/* Geographic Spread */}
           <div className="bg-white rounded-4xl p-10 border border-gray-100 shadow-xl flex flex-col items-center">
-            <h3 className="text-3xl text-dark font-semibold mb-10 w-full text-center tracking-tight">
+            <h3 className="text-[20px] text-dark font-semibold mb-10 w-full text-center tracking-tight">
               Geographic Spread
             </h3>
             <div className="relative w-72 h-72 mb-12 flex items-center justify-center">
@@ -717,7 +717,7 @@ const CommunityCollectives = () => {
 
           {/* Gender Spread */}
           <div className="bg-white rounded-4xl p-10 border border-gray-100 shadow-xl flex flex-col items-center">
-            <h3 className="text-3xl text-dark font-semibold mb-10 w-full text-center">
+            <h3 className="text-[20px] text-dark font-semibold mb-10 w-full text-center">
               Gender - Entrepreneurs
             </h3>
             <div className="relative w-72 h-72 mb-10 flex items-center justify-center">
@@ -800,7 +800,7 @@ const CommunityCollectives = () => {
           viewport={{ once: true }}
           className="bg-gray-100 rounded-lg p-12 lg:p-20 text-center space-y-8"
         >
-          <h2 className="text-3xl md:text-4xl font-semibold text-dark leading-tight">
+          <h2 className="text-[32px] p-4 font-semibold text-dark leading-tight">
             Applications for the 2026 Cohort Are Now Closed
           </h2>
           <div className="space-y-4 max-w-3xl mx-auto text-lg leading-relaxed">
@@ -813,7 +813,7 @@ const CommunityCollectives = () => {
               your interest for next year here.
             </p>
           </div>
-          <button className="btn-primary mx-auto mt-4 px-15 py-4 text-xl rounded-lg shadow-xl shadow-primary/20">
+          <button className="btn-primary mx-auto mt-4 px-15 py-4 text-lg rounded-lg shadow-xl shadow-primary/20">
             Register Interest
           </button>
         </motion.div>
@@ -822,7 +822,7 @@ const CommunityCollectives = () => {
       {/* Our Cohort Section */}
       <div className="py-24 container-custom">
         <div className="relative inline-block mb-10">
-          <h2 className="text-4xl md:text-5xl text-dark tracking-tight">
+          <h2 className="text-[32px] p-4 text-dark tracking-tight">
             Our Cohort
           </h2>
           <div className="absolute -bottom-3 left-0 w-12 h-1.5 bg-primary rounded-full" />
@@ -913,7 +913,7 @@ const CommunityCollectives = () => {
 
               <div className="p-10 space-y-6 flex-grow flex flex-col">
                 <div>
-                  <h3 className="text-2xl font-bold text-dark mb-1">
+                  <h3 className="text-[20px] font-bold text-dark mb-1">
                     {member.name}
                   </h3>
                   <p className="text-dark/60 text-lg">{member.org}</p>
@@ -1000,7 +1000,7 @@ const CommunityCollectives = () => {
                     </div>
                     <div className="space-y-5 grow pt-2">
                       <div>
-                        <h2 className="text-4xl font-bold text-dark tracking-tight">
+                        <h2 className="text-[32px] p-4 font-bold text-dark tracking-tight">
                           {selectedMember.name}
                         </h2>
                         <p className="text-2xl text-dark/60 font-medium">
@@ -1031,7 +1031,7 @@ const CommunityCollectives = () => {
 
                   <div className="space-y-6">
                     <div className="relative inline-block">
-                      <h3 className="text-2xl font-bold text-dark">About</h3>
+                      <h3 className="text-[20px] font-bold text-dark">About</h3>
                       <div className="absolute -bottom-2 left-0 w-full h-1 bg-primary/20 rounded-full" />
                     </div>
                     <div className="text-lg text-dark/80 leading-relaxed font-medium space-y-4 pt-2">

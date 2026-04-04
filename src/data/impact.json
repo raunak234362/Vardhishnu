@@ -147,8 +147,20 @@
     }
   ],
   "featured_in": [
-    { "name": "YOURSTORY", "logo": "https://res.cloudinary.com/di7aduhjv/image/upload/q_auto/f_auto/v1775211639/YourStory_Red.6627801f141042.81152932_ef1vcc.webp" },
-    { "name": "the better india", "logo": "https://res.cloudinary.com/di7aduhjv/image/upload/q_auto/f_auto/v1775211673/Pasted_image_h54mxo.png" },
-    { "name": "THE LOGICAL INDIAN", "logo": "https://res.cloudinary.com/di7aduhjv/image/upload/q_auto/f_auto/v1775211642/the-logical-indian-logo_fw1l8g.webp" }
+    {
+      "name": "YOURSTORY",
+      "logo": "https://res.cloudinary.com/di7aduhjv/image/upload/q_auto/f_auto/v1775211639/YourStory_Red.6627801f141042.81152932_ef1vcc.webp",
+      "link": "https://yourstory.com/2017/04/adwait-dandwate-vardhishnu"
+    },
+    {
+      "name": "the better india",
+      "logo": "https://res.cloudinary.com/di7aduhjv/image/upload/q_auto/f_auto/v1775211673/Pasted_image_h54mxo.png",
+      "link": "https://www.thebetterindia.com/98248/vardhishnu-jalgaon-ngo/"
+    },
+    {
+      "name": "THE LOGICAL INDIAN",
+      "logo": "https://res.cloudinary.com/di7aduhjv/image/upload/q_auto/f_auto/v1775211642/the-logical-indian-logo_fw1l8g.webp",
+      "link": "https://thelogicalindian.com/my-social-responsibility/vardhishnu-clean-city-maharashtra/"
+    }
   ]
 }
