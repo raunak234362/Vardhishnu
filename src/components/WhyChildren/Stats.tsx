@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import Counter from "../common/Counter";
 
 const Stats = () => {
   const stats = [
@@ -56,7 +57,7 @@ const Stats = () => {
               className={`p-10 rounded-[2.5rem] min-h-[280px] flex flex-col justify-center gap-6 shadow-sm hover:shadow-xl transition-all duration-500 group ${stat.bgColor}`}
             >
               <h3 className="text-dark leading-tight tracking-tighter group-hover:text-primary transition-colors duration-300">
-                {stat.value}
+                <Counter value={stat.value} />
               </h3>
               <p className="text-dark/50 font-bold text-lg leading-snug">
                 {stat.label}

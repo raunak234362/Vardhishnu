@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import Counter from "../common/Counter";
 
 const OverallImpact = () => {
   const impacts = [
@@ -60,7 +61,7 @@ const OverallImpact = () => {
               className={`p-10 rounded-[2.5rem] border-2 border-dashed min-h-[220px] flex flex-col justify-center gap-4 transition-all duration-300 group ${item.color}`}
             >
               <h3 className="tracking-tight leading-none group-hover:scale-105 transition-transform duration-300">
-                {item.label}
+                <Counter value={item.label} />
               </h3>
               <p className="text-dark/40 text-lg leading-snug">{item.sub}</p>
             </motion.div>
