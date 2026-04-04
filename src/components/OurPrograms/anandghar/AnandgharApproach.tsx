@@ -1,46 +1,63 @@
-import { motion } from "framer-motion";
+import { motion, useScroll, useMotionValueEvent } from "framer-motion";
 import { getImageUrl } from "../../../utils/imageUrl";
 import data from "../../../data/anandghar.json";
 import LazyImage from "../../common/LazyImage";
 import * as icons from "lucide-react";
-import { useRef } from "react";
+import { useRef, useState } from "react";
 
 const StepCard = ({
   step,
   idx,
+  activeIdx,
 }: {
   step: { id: string; items: string[] };
   idx: number;
+  activeIdx: number;
 }) => {
-  const isFirst = idx === 0;
-  const isLast = idx === 2;
+  const isActive = idx === activeIdx;
 
   return (
-    <div
-      className={`p-10 h-full bg-[#f3f4f6] ${
-        isFirst ? "rounded-l-2xl" : isLast ? "rounded-r-2xl" : "rounded-none"
-      } border-r border-white/50 last:border-r-0`}
+    <motion.div
+      animate={{
+        scale: isActive ? 1.02 : 1,
+        backgroundColor: isActive ? "#ffffff" : "#f3f4f6",
+        borderColor: isActive ? "var(--color-primary)" : "transparent",
+      }}
+      className={`p-10 h-full border-2 rounded-2xl transition-all duration-500 ${
+        isActive ? "shadow-2xl z-20" : "shadow-none z-10"
+      }`}
     >
       <ul className="space-y-6">
         {step.items.map((item, i) => (
           <li
             key={i}
-            className="text-[16px] text-dark/80 leading-relaxed font-regular"
+            className={`text-[16px] leading-relaxed font-regular transition-colors duration-500 ${
+              isActive ? "text-dark" : "text-dark/40"
+            }`}
           >
             {item}
           </li>
         ))}
       </ul>
-    </div>
+    </motion.div>
   );
 };
 
 const AnandgharApproach = () => {
-  const modelRef = useRef<HTMLDivElement>(null);
-  // const { scrollYProgress } = useScroll({
-  //   target: modelRef,
-  //   offset: ["start center", "end center"],
-  // });
+  const sectionRef = useRef<HTMLDivElement>(null);
+  const { scrollYProgress } = useScroll({
+    target: sectionRef,
+    offset: ["start start", "end end"],
+  });
+
+  const [activeIdx, setActiveIdx] = useState(0);
+
+  useMotionValueEvent(scrollYProgress, "change", (latest) => {
+    if (latest < 0.33) setActiveIdx(0);
+    else if (latest < 0.66) setActiveIdx(1);
+    else setActiveIdx(2);
+  });
+
 
   return (
     <section className="bg-white">
@@ -155,54 +172,74 @@ const AnandgharApproach = () => {
         </motion.div>
       </div>
 
-      {/* Our Model Section */}
-      <div className="container-custom py-24" ref={modelRef}>
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-        >
-          <div className="relative inline-block mb-10">
-            <h2 className=" text-dark tracking-tight">{data.ourModel.title}</h2>
-            <div className="absolute -bottom-6 left-0 w-1/2 h-1.5 bg-primary rounded-full" />
-          </div>
+      {/* Our Model Section with Sticky Scroll */}
+      <div ref={sectionRef} className="relative h-[300vh]">
+        <div className="sticky top-0 h-screen flex flex-col justify-center overflow-hidden">
+          <div className="container-custom">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+            >
+              <div className="relative inline-block mb-10">
+                <h2 className=" text-dark tracking-tight">
+                  {data.ourModel.title}
+                </h2>
+                <div className="absolute -bottom-6 left-0 w-1/2 h-1.5 bg-primary rounded-full" />
+              </div>
 
-          {/* Progress Indicator Container */}
-          <div className="mx-auto mb-10 px-4">
-            {/* Step Labels Above the Bar */}
-            <div className="flex mb-4 text-xs md:text-[14px] font-medium tracking-wide text-dark/40">
-              {["Step 1", "Step 2", "Step 3"].map((label, i) => (
-                <div key={i} className="flex-1 text-center">
-                  <span>{label}</span>
+              {/* Progress Indicator Container */}
+              <div className="mx-auto mb-10 px-4">
+                {/* Step Labels Above the Bar */}
+                <div className="flex mb-4 text-xs md:text-[14px] font-medium tracking-wide text-dark/40">
+                  {["Step 1", "Step 2", "Step 3"].map((label, i) => (
+                    <div key={i} className="flex-1 text-center">
+                      <span
+                        className={`transition-colors duration-500 ${
+                          activeIdx === i ? "text-primary font-bold" : ""
+                        }`}
+                      >
+                        {label}
+                      </span>
+                    </div>
+                  ))}
                 </div>
-              ))}
-            </div>
-
-            {/* Segmented Progress Bar */}
-            <div className="grid grid-cols-3 gap-2 h-2.5 w-full">
-              <div className="bg-primary rounded-full relative flex items-center">
-                <div className="absolute -right-1 z-10 text-[10px] text-dark/20 font-bold">
-                  {" "}
-                  &gt;{" "}
+                {/* Segmented Progress Bar */}
+                <div className="grid grid-cols-3 gap-6 h-2 w-full px-2">
+                  {[0, 1, 2].map((idx) => (
+                    <motion.div
+                      key={idx}
+                      animate={{
+                        backgroundColor:
+                          activeIdx >= idx ? "var(--color-primary)" : "#f0f2f5",
+                      }}
+                      transition={{ duration: 0.3 }}
+                      className="rounded-full relative h-full"
+                    >
+                      {idx < 2 && (
+                        <div className="absolute -right-5 top-1/2 -translate-y-1/2 text-dark/20 font-bold text-[14px]">
+                          
+                        </div>
+                      )}
+                    </motion.div>
+                  ))}
                 </div>
               </div>
-              <div className="bg-[#f0f2f5] rounded-full relative flex items-center">
-                <div className="absolute -right-1 z-10 text-[10px] text-dark/20 font-bold">
-                  {" "}
-                  &gt;{" "}
-                </div>
-              </div>
-              <div className="bg-[#f0f2f5] rounded-full" />
-            </div>
-          </div>
 
-          {/* Model Steps Cards */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-5 overflow-hidden">
-            {data.ourModel.steps.map((step, idx) => (
-              <StepCard key={idx} step={step} idx={idx} />
-            ))}
+              {/* Model Steps Cards */}
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+                {data.ourModel.steps.map((step, idx) => (
+                  <StepCard
+                    key={idx}
+                    step={step}
+                    idx={idx}
+                    activeIdx={activeIdx}
+                  />
+                ))}
+              </div>
+            </motion.div>
           </div>
-        </motion.div>
+        </div>
       </div>
 
       {/* Our Values Section */}

@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 import data from "../../data/data.json";
 import { getImageUrl } from "../../utils/imageUrl";
 import LazyImage from "../common/LazyImage";
@@ -82,14 +83,20 @@ const WhoWeAre = () => {
                   Our journey began with a simple but powerful question: What
                   does it take to build a world where no child is left behind?
                 </p>
-                <button className="text-primary font-bold hover:underline">
+                <Link
+                  to="/who-we-are"
+                  className="text-primary font-bold hover:underline"
+                >
                   Read More
-                </button>
+                </Link>
               </div>
 
-              <button className="bg-primary hover:bg-primary/90 text-white px-10 py-4 rounded-md font-bold transition-all shadow-lg hover:shadow-primary/20 transform hover:-translate-y-1">
+              <Link
+                to="/who-we-are"
+                className="inline-block bg-primary hover:bg-primary/90 text-white px-10 py-4 rounded-md font-bold transition-all shadow-lg hover:shadow-primary/20 transform hover:-translate-y-1"
+              >
                 {data.about.cta}
-              </button>
+              </Link>
             </motion.div>
           </div>
         </div>

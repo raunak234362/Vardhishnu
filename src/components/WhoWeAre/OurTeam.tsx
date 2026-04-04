@@ -1,4 +1,4 @@
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import data from "../../data/data.json";
@@ -10,13 +10,24 @@ const OurTeam = () => {
   const teamData = data.team;
   const categories = Object.keys(teamData);
   const [activeTab, setActiveTab] = useState(categories[0]);
-  const [scrollIndex, setScrollIndex] = useState(0);
+  const [scrollInfo, setScrollInfo] = useState({ left: 0, width: 0 });
+
+  const members = teamData[activeTab as keyof typeof teamData] || [];
+  const shouldScroll = members.length > 3;
+
+  useEffect(() => {
+    if (scrollRef.current) {
+      scrollRef.current.scrollLeft = 0;
+      setScrollInfo({
+        left: 0,
+        width: scrollRef.current.clientWidth,
+      });
+    }
+  }, [activeTab, members.length]);
 
   const handleScroll = (e: React.UIEvent<HTMLDivElement>) => {
-    const scrollLeft = e.currentTarget.scrollLeft;
-    const itemWidth = 400 + 32;
-    const index = Math.round(scrollLeft / itemWidth);
-    setScrollIndex(index);
+    const { scrollLeft, clientWidth } = e.currentTarget;
+    setScrollInfo({ left: scrollLeft, width: clientWidth });
   };
 
   const handleWheel = (e: React.WheelEvent<HTMLDivElement>) => {
@@ -34,9 +45,6 @@ const OurTeam = () => {
       });
     }
   };
-
-  const members = teamData[activeTab as keyof typeof teamData] || [];
-  const shouldScroll = members.length > 3;
 
   return (
     <section className="py-24 bg-white">
@@ -57,7 +65,6 @@ const OurTeam = () => {
               key={tab}
               onClick={() => {
                 setActiveTab(tab);
-                setScrollIndex(0);
               }}
               className={`text-[16px] font-normal transition-all relative pb-2 ${
                 activeTab === tab ? "text-primary" : "text-dark"
@@ -124,15 +131,31 @@ const OurTeam = () => {
 
           {/* Scroll Indicator - Dynamic based on number of members */}
           {shouldScroll && (
-            <div className="flex justify-center gap-3 mt-4">
-              {members.map((_, idx) => (
-                <div
-                  key={idx}
-                  className={`h-1 rounded-full transition-all duration-300 ${
-                    idx === scrollIndex ? "w-12 bg-primary" : "w-12 bg-gray-200"
-                  }`}
-                />
-              ))}
+            <div className="flex justify-center gap-3 mt-8">
+              {members.map((_, idx) => {
+                const itemWidth = 400 + 32;
+                const itemStart = idx * itemWidth;
+                const itemEnd = itemStart + 400;
+                const isVisible =
+                  itemStart < scrollInfo.left + scrollInfo.width - 50 &&
+                  itemEnd > scrollInfo.left + 50;
+
+                return (
+                  <button
+                    key={idx}
+                    onClick={() => {
+                      scrollRef.current?.scrollTo({
+                        left: idx * itemWidth,
+                        behavior: "smooth",
+                      });
+                    }}
+                    className={`h-1.5 rounded-full transition-all duration-500 cursor-pointer ${
+                      isVisible ? "w-16 bg-primary" : "w-12 bg-gray-200"
+                    }`}
+                    aria-label={`Go to team member ${idx + 1}`}
+                  />
+                );
+              })}
             </div>
           )}
         </div>
@@ -154,7 +177,9 @@ const TeamCard = ({ member }: { member: TeamMember }) => {
   return (
     <div
       className="relative h-[600px] w-full perspective-1000 cursor-pointer"
-      onClick={() => setIsFlipped(!isFlipped)}
+      // onClick={() => setIsFlipped(!isFlipped)}
+      onMouseEnter={() => setIsFlipped(true)}
+      onMouseLeave={() => setIsFlipped(false)}
     >
       <motion.div
         className="relative w-full h-full preserve-3d"
@@ -169,7 +194,7 @@ const TeamCard = ({ member }: { member: TeamMember }) => {
           <LazyImage
             src={getImageUrl(member.image)}
             alt={member.name}
-            className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+            className="w-full h-full object-cover transition-transform duration-700 hover:scale-110"
             containerClassName="w-full h-full"
           />
           {/* Overlay Info */}
@@ -178,22 +203,6 @@ const TeamCard = ({ member }: { member: TeamMember }) => {
               {member.name}
             </h3>
             <p className="text-white mt-2 text-[14px]">{member.role}</p>
-            <div className="mt-4 flex items-center gap-2 text-white/70 text-sm uppercase tracking-wider">
-              <span>Click to read bio</span>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="16"
-                height="16"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              >
-                <path d="m9 18 6-6-6-6" />
-              </svg>
-            </div>
           </div>
         </div>
 

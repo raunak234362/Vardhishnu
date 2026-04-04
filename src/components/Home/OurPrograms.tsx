@@ -27,7 +27,7 @@ const OurPrograms = () => {
                 <LazyImage
                   src={getImageUrl(program.image)}
                   alt={program.name}
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                  className={`w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 ${index === 1 ? "object-[60%_20%]" : ""}`}
                   containerClassName="w-full h-full"
                 />
                 {/* Overlay */}
@@ -36,7 +36,9 @@ const OurPrograms = () => {
 
               {/* Content */}
               <div className="absolute inset-0 z-10 p-10 flex flex-col justify-end transition-transform duration-500 group-hover:translate-y-[-10px]">
-                <h3 className="text-primary font-medium mb-3">{program.name}</h3>
+                <h3 className="text-primary font-medium mb-3">
+                  {program.name}
+                </h3>
                 <p className="text-white/90 text-[14px] font-semibold leading-relaxed mb-6">
                   {program.description}
                 </p>

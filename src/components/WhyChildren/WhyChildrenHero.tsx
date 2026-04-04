@@ -20,16 +20,7 @@ const WhyChildrenHero = () => {
                 {title}
                 <div className="absolute -bottom-3 left-0 w-1/3 h-1 bg-primary rounded-full transition-all duration-300 " />
                 {/* Floating Pin on Heading */}
-                <div className="absolute -top-4 -right-4 w-10 h-10 rounded-full border-4 border-white shadow-lg overflow-hidden bg-white z-20">
-                  <img
-                    src={getImageUrl("v1774764839/Vinod_Chaudhari_scendr.jpg")}
-                    className="w-full h-full object-cover"
-                    alt="pin"
-                  />
-                  <div className="absolute inset-0 bg-black/40 flex items-center justify-center">
-                    <div className="w-1.5 h-1.5 rounded-full bg-white shadow-glow" />
-                  </div>
-                </div>
+              
               </h2>
             </div>
 
@@ -66,17 +57,7 @@ const WhyChildrenHero = () => {
             {/* Overlay for aesthetic consistency */}
             <div className="absolute inset-0 bg-dark/5 pointer-events-none" />
 
-            {/* Floating Pin on Image */}
-            <div className="absolute top-12 left-12 w-12 h-12 rounded-full border-4 border-white shadow-2xl overflow-hidden bg-white z-20">
-              <img
-                src={getImageUrl("v1774764839/Vinod_Chaudhari_scendr.jpg")}
-                className="w-full h-full object-cover"
-                alt="pin"
-              />
-              <div className="absolute inset-0 bg-black/40 flex items-center justify-center">
-                <div className="w-2 h-2 rounded-full bg-white shadow-glow" />
-              </div>
-            </div>
+          
           </motion.div>
         </div>
       </div>

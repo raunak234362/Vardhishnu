@@ -107,7 +107,7 @@ const Footer = () => {
             <h4 className="text-[20px] font-bold text-dark tracking-tight">
               About us
             </h4>
-            <ul className="space-y-5 text-lg text-gray-500 font-medium">
+            <ul className="space-y-5 text-[16px] text-gray-500 font-medium">
               <li>
                 <a href="#" className="hover:text-primary transition-colors">
                   How it work?

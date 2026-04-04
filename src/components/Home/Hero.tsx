@@ -36,7 +36,7 @@ const Hero = () => {
   };
 
   return (
-    <section className="relative h-screen flex items-center overflow-hidden bg-black">
+    <section className="relative h-screen flex items-center overflow-hidden">
       <AnimatePresence initial={false} custom={direction}>
         <motion.div
           key={currentSlide}
@@ -57,7 +57,7 @@ const Hero = () => {
             className="w-full h-full object-cover"
             containerClassName="w-full h-full"
           />
-          <div className="absolute inset-0 bg-linear-to-t from-black/10 via-black/30 to-black/90"></div>
+          <div className="absolute inset-0 bg-linear-to-t from-black/10 to-black/70"></div>
         </motion.div>
       </AnimatePresence>
 
@@ -78,7 +78,13 @@ const Hero = () => {
               {slides[currentSlide].subheadline}
             </h2>
             <div className="flex flex-wrap gap-4">
-              <button className="bg-black rounded-full px-8 py-4 text-[16px] group shadow-2xl flex items-center gap-3">
+              <button
+                className="bg-black rounded-full px-8 py-4 text-[16px] group shadow-2xl flex items-center gap-3 cursor-pointer"
+                onClick={() => {
+                  window.open("https://youtu.be/Q3a8twNH47Y", "_blank");
+                  return false;
+                }}
+              >
                 <Play
                   size={24}
                   className="group-hover:scale-110 transition-transform fill-current"

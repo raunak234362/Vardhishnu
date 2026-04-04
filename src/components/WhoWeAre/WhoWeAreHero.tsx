@@ -43,7 +43,7 @@ const WhoWeAreHero = () => {
               initial={{ opacity: 0, x: 50 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8 }}
-              className="relative w-full h-[60vh] rounded-xl overflow-hidden shadow-2xl"
+              className="relative w-full h-[65vh] rounded-xl overflow-hidden shadow-2xl"
             >
              <img src={getImageUrl("v1774765444/18_to8rpy.jpg")} alt="" className="w-full h-full object-cover"/>
             </motion.div>

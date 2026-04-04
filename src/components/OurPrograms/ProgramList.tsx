@@ -66,25 +66,25 @@ const ProgramList = () => {
               transition={{ delay: index * 0.1 }}
               className="group bg-white rounded-xl border border-black/5 hover:border-primary/20 hover:shadow-2xl hover:shadow-primary/5 transition-all duration-500 overflow-hidden"
             >
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-0 overflow-hidden">
+              <div className="grid grid-cols-1 lg:grid-cols-[30%_70%] p-5 gap-0 overflow-hidden">
                 {/* Image Section */}
-                <div className="relative h-[300px] lg:h-full overflow-hidden">
+                <div className="relative h-[300px] w-full lg:h-full overflow-hidden rounded-2xl">
                   <img
                     src={getImageUrl(program.image)}
                     alt={program.title}
-                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                    className={`w-full h-full rounded-2xl object-cover transition-transform duration-700 hover:scale-105 ${index === 1 ? "object-[60%_20%]" : ""}`}
                   />
                   {/* Overlay effect on hover */}
-                  <div className="absolute inset-0 bg-primary/0 group-hover:bg-primary/5 transition-colors duration-500" />
+                  <div className="absolute inset-0 bg-primary/0 hover:bg-primary/5 transition-colors duration-500" />
                 </div>
 
                 {/* Content Section */}
-                <div className="p-10 lg:p-16 flex flex-col justify-center space-y-8">
+                <div className="w-full p-10 lg:p-16 flex flex-col justify-center space-y-8">
                   <div>
                     <h2 className=" text-dark tracking-tighter mb-4 group-hover:text-primary transition-colors duration-300">
                       {program.title}
                     </h2>
-                    <p className="text-dark/50 font-medium leading-relaxed max-w-xl">
+                    <p className="text-dark/50 font-medium leading-relaxed">
                       {program.description}
                     </p>
                   </div>

@@ -1,18 +1,31 @@
 import { motion, AnimatePresence } from "framer-motion";
-import { Check, ChevronDown } from "lucide-react";
+import { Check, ChevronDown, ChevronLeft, ChevronRight, MapPin } from "lucide-react";
 import { useState, useRef, useEffect } from "react";
 import LazyImage from "../../common/LazyImage";
 import { getImageUrl } from "../../../utils/imageUrl";
-import { MapPin } from "lucide-react";
 
 const AnandgharFellowship = () => {
   const [activeTab, setActiveTab] = useState<"current" | "alumni">("current");
   const [selectedFellow, setSelectedFellow] = useState<any | null>(null);
   const [openFaq, setOpenFaq] = useState<number | null>(null);
   const scrollRef = useRef<HTMLDivElement>(null);
+  const [scrollInfo, setScrollInfo] = useState({ left: 0, width: 0 });
+
+  const handleScroll = (e: React.UIEvent<HTMLDivElement>) => {
+    const { scrollLeft, clientWidth } = e.currentTarget;
+    setScrollInfo({ left: scrollLeft, width: clientWidth });
+  };
 
   // Attach non-passive wheel listener for scroll hijacking
   useEffect(() => {
+    if (scrollRef.current) {
+      scrollRef.current.scrollLeft = 0;
+      setScrollInfo({
+        left: 0,
+        width: scrollRef.current.clientWidth,
+      });
+    }
+
     const container = scrollRef.current;
     if (!container) return;
 
@@ -33,6 +46,16 @@ const AnandgharFellowship = () => {
     return () => container.removeEventListener("wheel", handleWheel);
   }, [activeTab]);
 
+  const scroll = (direction: "left" | "right") => {
+    if (scrollRef.current) {
+      const itemWidth = 380 + 40; // card width + gap
+      scrollRef.current.scrollBy({
+        left: direction === "left" ? -itemWidth : itemWidth,
+        behavior: "smooth",
+      });
+    }
+  };
+
   // Scroll to top on mount
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -43,74 +66,116 @@ const AnandgharFellowship = () => {
       {
         name: "Vijaya Randhe",
         role: "Center Lead",
-        image: getImageUrl("v1774765808/Vijaya_Randhe_2_etlswt.jpg", "a_-90,c_fill,w_800,h_1000"),
+        image: getImageUrl(
+          "v1774765808/Vijaya_Randhe_2_etlswt.jpg",
+          "a_-90,c_fill,w_800,h_1000",
+        ),
       },
       {
         name: "Bhimsing Pawra",
         role: "Fellow - Educator",
-        image: getImageUrl("v1774764848/Bhimsing_zq6rl6.jpg", "c_fill,w_800,h_1000"),
+        image: getImageUrl(
+          "v1774764848/Bhimsing_zq6rl6.jpg",
+          "c_fill,w_800,h_1000",
+        ),
       },
       {
         name: "Lalita Mavaskar",
         role: "Fellow - Educator",
-        image: getImageUrl("v1774764849/Lalita_hlqs89.jpg", "c_fill,w_800,h_1000"),
+        image: getImageUrl(
+          "v1774764849/Lalita_hlqs89.jpg",
+          "c_fill,w_800,h_1000",
+        ),
       },
       {
         name: "Ashish Gajbhar",
         role: "Fellow - Educator",
-        image: getImageUrl("v1774764845/Ashish_Gajbhar_xnginz.jpg", "c_fill,w_800,h_1000"),
+        image: getImageUrl(
+          "v1774764845/Ashish_Gajbhar_xnginz.jpg",
+          "c_fill,w_800,h_1000",
+        ),
       },
       {
         name: "Sakshi Khure",
         role: "Fellow - Educator",
-        image: getImageUrl("v1774979844/Pasted_image_dml2tl.png", "c_fill,w_800,h_1000"),
+        image: getImageUrl(
+          "v1774979844/Pasted_image_dml2tl.png",
+          "c_fill,w_800,h_1000",
+        ),
       },
       {
         name: "Rutik Bhongade",
         role: "Fellow - Educator",
-        image: getImageUrl("v1774764850/Rutik_gkjdpf.jpg", "c_fill,w_800,h_1000"),
+        image: getImageUrl(
+          "v1774764850/Rutik_gkjdpf.jpg",
+          "c_fill,w_800,h_1000",
+        ),
       },
     ],
     alumni: [
       {
         name: "Monali Gedekar",
         role: "Working with Vardhishnu",
-        image: getImageUrl("v1774764851/Monali_Gedekar_2023-25_lnwruq.jpg", "c_fill,w_800,h_1000"),
+        image: getImageUrl(
+          "v1774764851/Monali_Gedekar_2023-25_lnwruq.jpg",
+          "c_fill,w_800,h_1000",
+        ),
       },
       {
         name: "Ritika Deote",
         role: "Working with Vardhishnu",
-        image: getImageUrl("v1774764855/Ritika_Deote_oxpwsk.jpg", "c_fill,w_800,h_1000"),
+        image: getImageUrl(
+          "v1774764855/Ritika_Deote_oxpwsk.jpg",
+          "c_fill,w_800,h_1000",
+        ),
       },
       {
         name: "Shital Raut",
         role: "Pursuing M.A. in Azim Premji University",
-        image: getImageUrl("v1774764850/Sheetal_b8etat.jpg", "c_fill,w_800,h_1000"),
+        image: getImageUrl(
+          "v1774764850/Sheetal_b8etat.jpg",
+          "c_fill,w_800,h_1000",
+        ),
       },
       {
         name: "Nisha Meshram",
         role: "Pursuing M.A. in Azim Premji University",
-        image: getImageUrl("v1774765803/Nisha_Masram_2021-23_mjf3wi.jpg", "c_fill,w_800,h_1000"),
+        image: getImageUrl(
+          "v1774765803/Nisha_Masram_2021-23_mjf3wi.jpg",
+          "c_fill,w_800,h_1000",
+        ),
       },
       {
         name: "Manisha Yawalkar",
         role: "Homemaker",
-        image: getImageUrl("v1774765804/Manisha_Yawalkar_2022-24_jv0wr3.jpg", "a_-90,c_fill,w_800,h_1000"),
+        image: getImageUrl(
+          "v1774765804/Manisha_Yawalkar_2022-24_jv0wr3.jpg",
+          "a_-90,c_fill,w_800,h_1000",
+        ),
       },
       {
         name: "Aditi Patil",
         role: "Pursuing M.A. in Azim Premji University",
-        image: getImageUrl("v1774765811/Aditi_Patil_2022-24_ukw69w.jpg", "c_fill,w_800,h_1000"),
+        image: getImageUrl(
+          "v1774765811/Aditi_Patil_2022-24_ukw69w.jpg",
+          "c_fill,w_800,h_1000",
+        ),
       },
       {
         name: "Savita Wagh",
         role: "Homemaker",
-        image: getImageUrl("v1774765809/Savita_Wagh_2022-23_zjv9hp.jpg", "c_fill,w_800,h_1000"),
+        image: getImageUrl(
+          "v1774765809/Savita_Wagh_2022-23_zjv9hp.jpg",
+          "c_fill,w_800,h_1000",
+        ),
       },
       {
         name: "Mangala Jadhav",
         role: "Homemaker",
-        image: getImageUrl("v1774765805/Mangala_Jadhav_202-22_wseyph.jpg", "a_-90,c_fill,w_800,h_1000"),
+        image: getImageUrl(
+          "v1774765805/Mangala_Jadhav_202-22_wseyph.jpg",
+          "a_-90,c_fill,w_800,h_1000",
+        ),
       },
     ],
   };
@@ -320,7 +385,9 @@ const AnandgharFellowship = () => {
 
         {/* As a Fellow Section */}
         <div className="mb-10">
-          <p className="text-[20px] text-dark/60 mb-12">As a Fellow, you will:</p>
+          <p className="text-[20px] text-dark/60 mb-12">
+            As a Fellow, you will:
+          </p>
           <div className="space-y-10 max-w-100%">
             {[
               {
@@ -423,13 +490,24 @@ const AnandgharFellowship = () => {
                 </div>
 
                 <div className="hidden lg:block absolute top-6 left-[-120%] w-[100%] h-[250px] pointer-events-none">
-                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 250" fill="none">
-                    <path d="M500 0.5 H 50.5 C 22.8858 0.5 0.5 22.8858 0.5 50.5 V 255.5" strokeWidth={3} stroke="#d1d5db" strokeDasharray="10 10" />
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 500 250"
+                    fill="none"
+                  >
+                    <path
+                      d="M500 0.5 H 50.5 C 22.8858 0.5 0.5 22.8858 0.5 50.5 V 255.5"
+                      strokeWidth={3}
+                      stroke="#d1d5db"
+                      strokeDasharray="10 10"
+                    />
                   </svg>
                 </div>
 
                 <div className="space-y-3">
-                  <h3 className="text-[32px] font-semibold text-dark font-outfit">The Application Form</h3>
+                  <h3 className="text-[32px] font-semibold text-dark font-outfit">
+                    The Application Form
+                  </h3>
                   <div className="w-16 h-1.5 bg-[#a3c639]" />
                   <p className="text-[20px] text-dark font-outfit leading-relaxed">
                     The application form helps us get to know you. Please be
@@ -457,13 +535,27 @@ const AnandgharFellowship = () => {
                 </div>
 
                 <div className="hidden lg:block absolute top-0 left-full w-[100%] h-[250px] pointer-events-none">
-                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 250" fill="none" version="1.1" xmlnsXlink="http://www.w3.org/1999/xlink" transform="matrix(-1,0,0,1,0,0)">
-                    <path d="M500 0.5 H 50.5 C 22.8858 0.5 0.5 22.8858 0.5 50.5 V 255.5" strokeWidth={3} stroke="#d1d5db" strokeDasharray="10 10"></path>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 500 250"
+                    fill="none"
+                    version="1.1"
+                    xmlnsXlink="http://www.w3.org/1999/xlink"
+                    transform="matrix(-1,0,0,1,0,0)"
+                  >
+                    <path
+                      d="M500 0.5 H 50.5 C 22.8858 0.5 0.5 22.8858 0.5 50.5 V 255.5"
+                      strokeWidth={3}
+                      stroke="#d1d5db"
+                      strokeDasharray="10 10"
+                    ></path>
                   </svg>
                 </div>
 
                 <div className="space-y-3">
-                  <h3 className="text-[32px] font-semibold text-dark font-outfit">The Phone Interview</h3>
+                  <h3 className="text-[32px] font-semibold text-dark font-outfit">
+                    The Phone Interview
+                  </h3>
                   <div className="w-16 h-1.5 bg-[#a3c639]" />
                   <p className="text-[20px] text-dark font-outfit leading-relaxed">
                     After reviewing your application, we may invite you for a
@@ -489,7 +581,9 @@ const AnandgharFellowship = () => {
                 </div>
 
                 <div className="space-y-3">
-                  <h3 className="text-[32px] font-semibold text-dark font-outfit">Final Panel Selection</h3>
+                  <h3 className="text-[32px] font-semibold text-dark font-outfit">
+                    Final Panel Selection
+                  </h3>
                   <div className="w-16 h-1.5 bg-[#a3c639]" />
                   <p className="text-[20px] text-dark font-outfit leading-relaxed">
                     In the final stage, you will attend a 2-day in-person
@@ -516,50 +610,50 @@ const AnandgharFellowship = () => {
           <div className="flex gap-12 mb-20">
             <button
               onClick={() => setActiveTab("current")}
-              className={`text-xl transition-all ${activeTab === "current"
-                ? "text-primary"
-                : "text-dark/40 hover:text-dark/60"
-                }`}
+              className={`text-xl transition-all ${
+                activeTab === "current"
+                  ? "text-primary"
+                  : "text-dark/40 hover:text-dark/60"
+              }`}
             >
               Current Cohort
             </button>
             <button
               onClick={() => setActiveTab("alumni")}
-              className={`text-xl transition-all ${activeTab === "alumni"
-                ? "text-primary"
-                : "text-dark/40 hover:text-dark/60"
-                }`}
+              className={`text-xl transition-all ${
+                activeTab === "alumni"
+                  ? "text-primary"
+                  : "text-dark/40 hover:text-dark/60"
+              }`}
             >
               Our Alumni
             </button>
           </div>
 
           {/* Horizontal Scroll Area */}
-          <div className="relative group">
+          <div className="relative group/scroll">
+            {/* Navigation Arrows */}
+            <div className="absolute top-[47%] -left-6 md:-left-8 -translate-y-1/2 z-20 hidden lg:block">
+              <button
+                onClick={() => scroll("left")}
+                className="w-14 h-14 rounded-full bg-white shadow-xl flex items-center justify-center hover:bg-gray-50 transition-all border border-gray-100 group/btn active:scale-95"
+              >
+                <ChevronLeft className="w-8 h-8 text-black" />
+              </button>
+            </div>
+            <div className="absolute top-[47%] -right-6 md:-right-8 -translate-y-1/2 z-20 hidden lg:block">
+              <button
+                onClick={() => scroll("right")}
+                className="w-14 h-14 rounded-full bg-white shadow-xl flex items-center justify-center hover:bg-gray-50 transition-all border border-gray-100 group/btn active:scale-95"
+              >
+                <ChevronRight className="w-8 h-8 text-black" />
+              </button>
+            </div>
+
             <div
               ref={scrollRef}
               className="overflow-x-auto pb-16 hide-scrollbar scroll-smooth"
-              onScroll={(e) => {
-                const target = e.currentTarget;
-                const scrollPercent =
-                  (target.scrollLeft /
-                    (target.scrollWidth - target.clientWidth)) *
-                  100;
-                const indicator = document.getElementById(
-                  "fellow-scroll-indicator",
-                );
-                if (indicator) {
-                  const segments = indicator.children;
-                  const activeIdx = Math.min(
-                    Math.floor((scrollPercent / 100) * segments.length),
-                    segments.length - 1,
-                  );
-                  Array.from(segments).forEach((seg, i) => {
-                    (seg as HTMLElement).style.backgroundColor =
-                      i === activeIdx ? "#a6ce39" : "#e5e7eb";
-                  });
-                }
-              }}
+              onScroll={handleScroll}
             >
               <div className="flex gap-10 w-max px-2 py-4">
                 {fellows[activeTab].map((fellow, idx) => (
@@ -575,7 +669,7 @@ const AnandgharFellowship = () => {
                       <LazyImage
                         src={fellow.image}
                         alt={fellow.name}
-                        className="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105"
+                        className="w-full h-full object-cover object-top transition-transform duration-700 hover:scale-105"
                         containerClassName="w-full h-full"
                       />
                     </div>
@@ -592,18 +686,35 @@ const AnandgharFellowship = () => {
               </div>
             </div>
 
-            {/* Custom Scroll Indicator (the 5 segments from ref image) */}
-            <div className="flex justify-center mt-8">
-              <div id="fellow-scroll-indicator" className="flex gap-2">
-                {[0, 1, 2, 3, 4].map((i) => (
-                  <div
-                    key={i}
-                    className="w-10 h-1.5 rounded-full transition-colors duration-300"
-                    style={{ backgroundColor: i === 0 ? "#a3c639" : "#e5e7eb" }}
-                  />
-                ))}
+            {/* Dynamic Scroll Indicator based on OurTeam pattern */}
+            {fellows[activeTab].length > 3 && (
+              <div className="flex justify-center gap-3 mt-8">
+                {fellows[activeTab].map((_, idx) => {
+                  const itemWidth = 380 + 40; // card width + gap
+                  const itemStart = idx * itemWidth;
+                  const itemEnd = itemStart + 380;
+                  const isVisible =
+                    itemStart < scrollInfo.left + scrollInfo.width - 50 &&
+                    itemEnd > scrollInfo.left + 50;
+
+                  return (
+                    <button
+                      key={idx}
+                      onClick={() => {
+                        scrollRef.current?.scrollTo({
+                          left: idx * itemWidth,
+                          behavior: "smooth",
+                        });
+                      }}
+                      className={`h-1.5 rounded-full transition-all duration-500 cursor-pointer ${
+                        isVisible ? "w-16 bg-primary" : "w-12 bg-gray-200"
+                      }`}
+                      aria-label={`Go to fellow ${idx + 1}`}
+                    />
+                  );
+                })}
               </div>
-            </div>
+            )}
           </div>
         </div>
 
@@ -658,9 +769,7 @@ const AnandgharFellowship = () => {
                             <div className="p-1.5 bg-primary/10 rounded-lg text-primary">
                               <MapPin size={20} />
                             </div>
-                            <span className="text-lg">
-                              Vardhishnu Center
-                            </span>
+                            <span className="text-lg">Vardhishnu Center</span>
                           </div>
                         </div>
                       </div>
@@ -711,8 +820,9 @@ const AnandgharFellowship = () => {
                     {faq.question}
                   </span>
                   <ChevronDown
-                    className={`w-6 h-6 text-dark/40 transition-transform duration-300 ${openFaq === idx ? "rotate-180 text-primary" : ""
-                      }`}
+                    className={`w-6 h-6 text-dark/40 transition-transform duration-300 ${
+                      openFaq === idx ? "rotate-180 text-primary" : ""
+                    }`}
                   />
                 </button>
                 <AnimatePresence>
@@ -723,7 +833,7 @@ const AnandgharFellowship = () => {
                       exit={{ height: 0, opacity: 0 }}
                       className="overflow-hidden"
                     >
-                      <p className="pb-8 text-lg text-dark/60 leading-relaxed font-medium">
+                      <p className="pb-8 text-lg text-dark/60 leading-relaxed font-regular">
                         {faq.answer}
                       </p>
                     </motion.div>

@@ -3,7 +3,7 @@ import timeline from "../../assets/unkno.svg";
 const JourneyTimeline = () => {
   return (
     <section className="py-24 bg-white overflow-hidden">
-      <div className="max-w-7xl mx-auto px-6">
+      <div className="container-custom">
         {/* Heading */}
         <div className="mb-32">
           <div className="relative inline-block mb-14">
@@ -19,11 +19,11 @@ const JourneyTimeline = () => {
 
         {/* Scrollable Container */}
         <div className="relative overflow-x-auto no-scrollbar pb-10">
-          <div className="flex items-center justify-start">
+          <div className="flex items-center justify-center">
             <img
               src={timeline}
               alt="Vardhishnu Journey Timeline"
-              className="w-full h-auto object-contain"
+              className="w-[80%] h-auto object-contain"
             />
           </div>
         </div>
