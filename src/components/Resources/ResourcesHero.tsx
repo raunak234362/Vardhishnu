@@ -10,14 +10,14 @@ const ResourcesHero = () => {
         <img src={getImageUrl("v1774765432/IMG_7970_xjrcnp.jpg")} alt="" />
       </div>
 
-      <div className="container-custom relative z-20 text-center px-6">
+      <div className="container-custom relative z-20 text-center px-6 mt-[15%]">
         <motion.div
           initial={{ opacity: 0, scale: 0.95 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.8 }}
           className="space-y-4"
         >
-          <h1 className="text-white text-5xl md:text-7xl font-black tracking-tight drop-shadow-2xl">
+          <h1 className="text-white text-[40px] font-medium tracking-tight drop-shadow-2xl">
             Resources
           </h1>
 
@@ -25,7 +25,7 @@ const ResourcesHero = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.3, duration: 1 }}
-            className="text-primary text-4xl md:text-6xl font-medium italic drop-shadow-2xl font-handwritten"
+            className="text-primary text-[80.9px] font-medium italic drop-shadow-2xl font-handwritten"
           >
             From Care to Change
           </motion.p>

@@ -17,10 +17,10 @@ const Footer = () => {
       <div className="container-custom mb-32">
         <div className="bg-gray-100 rounded-xl p-16 md:p-20 flex flex-col lg:row-span-1 lg:flex-row items-center justify-between gap-8 shadow-sm">
           <div className="max-w-md">
-            <h3 className="text-4xl font-semibold mb-3 text-dark tracking-tight">
+            <h2 className="text-4xl font-semibold mb-3 text-dark tracking-tight">
               Stay Updated With Us
-            </h3>
-            <p className="text-gray-500 text-xl font-medium">
+            </h2>
+            <p className="text-gray-500 font-medium">
               Get updates, stories to support our mission
             </p>
           </div>
@@ -45,7 +45,7 @@ const Footer = () => {
             <div className="flex items-center gap-3">
               <img src={Logo} alt="Vardhishnu Logo" className="w-24" />
             </div>
-            <p className="text-gray-500 text-lg leading-relaxed max-w-sm">
+            <p className="text-gray-500 text-[16px] leading-relaxed max-w-sm">
               Vardhishnu - Social Research & Development Society is a Jalgaon
               based not-for-profit organisation trying to provide a safe, secure
               and happy childhood to street children specially child waste
@@ -67,10 +67,10 @@ const Footer = () => {
 
           {/* Quick Links 1 */}
           <div className="lg:col-span-2 space-y-8 lg:pl-4">
-            <h4 className="text-2xl font-bold text-dark tracking-tight">
+            <h4 className="text-[20px] font-bold text-dark tracking-tight">
               Menu
             </h4>
-            <ul className="space-y-5 text-lg text-gray-500 font-medium">
+            <ul className="space-y-5 text-[16px] text-gray-500 font-medium">
               <li>
                 <a href="#" className="hover:text-primary transition-colors">
                   Who we are
@@ -104,7 +104,7 @@ const Footer = () => {
 
           {/* Quick Links 2 */}
           <div className="lg:col-span-2 space-y-8">
-            <h4 className="text-2xl font-bold text-dark tracking-tight">
+            <h4 className="text-[20px] font-bold text-dark tracking-tight">
               About us
             </h4>
             <ul className="space-y-5 text-lg text-gray-500 font-medium">
@@ -133,7 +133,7 @@ const Footer = () => {
 
           {/* Contact Info */}
           <div className="lg:col-span-4 space-y-8">
-            <h4 className="text-2xl font-bold text-dark tracking-tight">
+            <h4 className="text-[20px] font-bold text-dark tracking-tight">
               Contacts Info
             </h4>
             <div className="space-y-8">
@@ -142,10 +142,10 @@ const Footer = () => {
                   <PhoneIcon size={20} className="text-white" />
                 </div>
                 <div className="space-y-1">
-                  <div className="text-dark font-bold text-lg">Call us</div>
+                  <div className="text-dark font-bold text-[14px]">Call us</div>
                   <a
                     href={`tel:${data.footer.contact.phone}`}
-                    className="text-gray-500 font-medium hover:text-primary transition-colors"
+                    className="text-gray-500 font-medium text-[14px] hover:text-primary transition-colors"
                   >
                     {data.footer.contact.phone}
                   </a>
@@ -156,10 +156,10 @@ const Footer = () => {
                   <Mail size={20} className="text-white" />
                 </div>
                 <div className="space-y-1">
-                  <div className="text-dark font-bold text-lg">Mail Us</div>
+                  <div className="text-dark font-bold text-[14px]">Mail Us</div>
                   <a
                     href={`mailto:${data.footer.contact.email}`}
-                    className="text-gray-500 font-medium hover:text-primary transition-colors"
+                    className="text-gray-500 font-medium text-[14px] hover:text-primary transition-colors"
                   >
                     {data.footer.contact.email}
                   </a>
@@ -170,8 +170,8 @@ const Footer = () => {
                   <MapPin size={20} className="text-white" />
                 </div>
                 <div className="space-y-1">
-                  <div className="text-dark font-bold text-lg">Visit Us</div>
-                  <p className="text-gray-500 font-medium leading-snug">
+                  <div className="text-dark font-bold text-[14px]">Visit Us</div>
+                  <p className="text-gray-500 text-[14px] font-medium leading-snug">
                     {data.footer.address}
                   </p>
                 </div>

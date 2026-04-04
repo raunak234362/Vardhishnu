@@ -13,13 +13,13 @@ const WhoWeAreHero = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
             >
-              <span className="text-dark/40 font-medium tracking-wide uppercase text-lg">
+              <span className="text-dark/40 font-medium tracking-wide uppercase text-[20px]">
                 Who we are
               </span>
-              <h1 className="text-4xl md:text-6xl text-dark mt-4 leading-tight tracking-tighter">
+              <h1 className="text-[32px] text-dark mt-4 leading-tight tracking-tighter">
                 Creating hope, impacting lives globally
               </h1>
-              <p className="text-xl md:text-xl text-dark leading-relaxed mt-6 max-w-xl">
+              <p className="text-[16px] text-dark leading-relaxed mt-6 max-w-xl">
                 We work to make quality education accessible to every
                 child—empowering them with knowledge, skills, and opportunities
                 for a brighter future.
@@ -31,7 +31,7 @@ const WhoWeAreHero = () => {
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.8, delay: 0.2 }}
-              className="relative w-full aspect-video rounded-3xl bg-gray-100 overflow-hidden shadow-xl"
+              className="relative w-full aspect-video rounded-xl bg-gray-100 overflow-hidden shadow-xl"
             >
               <img src={getImageUrl("v1774765442/15_wwlmn7.jpg")} alt="" />
             </motion.div>
@@ -43,7 +43,7 @@ const WhoWeAreHero = () => {
               initial={{ opacity: 0, x: 50 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8 }}
-              className="relative w-full h-[80vh] rounded-[3rem] overflow-hidden shadow-2xl"
+              className="relative w-full h-[60vh] rounded-xl overflow-hidden shadow-2xl"
             >
              <img src={getImageUrl("v1774765444/18_to8rpy.jpg")} alt="" className="w-full h-full object-cover"/>
             </motion.div>

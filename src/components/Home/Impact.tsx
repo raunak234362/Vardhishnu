@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import data from "../../data/data.json";
 import HomePageWave from "../../assets/HomePageWave.svg";
+import Counter from "../common/Counter";
 
 const Impact = () => {
   const { title, metrics } = data.impact;
@@ -41,10 +42,10 @@ const Impact = () => {
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
-                className="flex flex-col items-center md:items-start text-center md:text-left"
+                className="flex flex-col items-center md:items-center text-center md:text-left"
               >
-                <div className="text-5xl md:text-6xl font-semibold text-white mb-2 tabular-nums">
-                  {metric.value}
+                <div className="text-[40px] md:text-[40px] font-semibold text-white mb-2 tabular-nums">
+                  <Counter value={metric.value} />
                 </div>
                 <div className="w-12 h-1 bg-black mb-4" />
                 <p className="text-white text-lg leading-snug">

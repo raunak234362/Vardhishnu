@@ -15,12 +15,12 @@ const WhatWeDo = () => {
               className="w-full lg:w-1/2 space-y-6"
             >
               <div className="relative inline-block mb-4">
-                <h2 className="text-4xl text-dark font-medium tracking-tighter">
+                <h2 className="text-[32px] text-dark font-medium tracking-tighter">
                   What We Do
                 </h2>
-                <div className="absolute -bottom-7 left-0 w-2/3 h-1.5 bg-primary rounded-full transition-all duration-300" />
+                <div className="absolute -bottom-7 left-0 w-1/3 h-1.5 bg-primary rounded-full transition-all duration-300" />
               </div>
-              <p className="text-xl text-dark leading-relaxed max-w-xl mt-10 ">
+              <p className="text-[16px] text-dark leading-relaxed max-w-xl mt-10 ">
                 Our core focus areas include education, child protection, and
                 community empowerment. We enable children to transition from
                 streets and exploitative labour into safe learning spaces and
@@ -35,8 +35,12 @@ const WhatWeDo = () => {
               viewport={{ once: true }}
               className="w-full lg:w-xl"
             >
-              <div className="aspect-video lg:aspect-4/3 rounded-3xl bg-gray-100 overflow-hidden shadow-xl">
-               <img src={getImageUrl("v1774764803/8_Our_story_vgsnnk.jpg")} alt="" />
+              <div className="aspect-video lg:aspect-5/3 rounded-3xl bg-gray-100 overflow-hidden shadow-xl">
+                <img
+                  src={getImageUrl("v1774764803/8_Our_story_vgsnnk.jpg")}
+                  alt=""
+                  className="object-cover object-bottom"
+                />
               </div>
             </motion.div>
           </div>
@@ -54,7 +58,13 @@ const WhatWeDo = () => {
               className="w-full lg:w-2xl"
             >
               <div className="rounded-3xl bg-gray-100 overflow-hidden shadow-xl">
-              <img src={getImageUrl("v1774764792/503506027_2982689175234089_6150840370846881877_n_fu8rvs.jpg")} alt="" className="object-contain scale-1.5"/>
+                <img
+                  src={getImageUrl(
+                    "v1774764792/503506027_2982689175234089_6150840370846881877_n_fu8rvs.jpg",
+                  )}
+                  alt=""
+                  className="object-contain scale-1.5"
+                />
               </div>
             </motion.div>
 
@@ -65,10 +75,10 @@ const WhatWeDo = () => {
               className="w-full lg:w-1/2 space-y-6"
             >
               <div className="relative inline-block mb-4">
-                <h2 className="text-4xl text-dark font-medium tracking-tighter">
+                <h2 className="text-[32px] text-dark font-medium tracking-tighter">
                   Through our programs, we
                 </h2>
-                <div className="absolute -bottom-7 left-0 w-2/3 h-1.5 bg-primary rounded-full transition-all duration-300" />
+                <div className="absolute -bottom-7 left-0 w-1/3 h-1.5 bg-primary rounded-full transition-all duration-300" />
               </div>
               <ul className="space-y-4 mt-10">
                 {[
@@ -79,7 +89,7 @@ const WhatWeDo = () => {
                 ].map((item, i) => (
                   <li
                     key={i}
-                    className="flex items-start gap-3 text-xl text-dark"
+                    className="flex items-start gap-3 text-[16px] text-dark"
                   >
                     <div className="h-2 w-2 rounded-full bg-primary mt-2.5 shrink-0" />
                     <span>{item}</span>

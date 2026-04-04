@@ -26,7 +26,7 @@ const OurPresence = () => {
           </h2>
         </div>
 
-        <div className="flex flex-col lg:flex-row items-start gap-16">
+        <div className="flex flex-col lg:flex-row items-start gap-16 w-full">
           {/* Map Column */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
@@ -34,8 +34,8 @@ const OurPresence = () => {
             viewport={{ once: true }}
             className="w-full lg:w-3/5"
           >
-            <div className="">
-              <img src={getImageUrl("v1774774560/Map_rhitgi.png")} alt="map" />
+            <div className="w-full">
+              <img src={getImageUrl("v1774774560/Map_rhitgi.png")} alt="map" className="scale-[105%]"/>
             </div>
           </motion.div>
 
@@ -53,7 +53,7 @@ const OurPresence = () => {
                   <MapPin size={32} fill="currentColor" />
                   <div className="absolute top-[7.5px] left-1/2 -translate-x-1/2 w-2.5 h-2.5 bg-white rounded-full" />
                 </div>
-                <h3 className="text-dark">Vardhishnu Intervention Area</h3>
+                <h3 className="text-dark text-[20px]">Vardhishnu Intervention Area</h3>
               </div>
               <ul className="pl-14 space-y-2">
                 {interventionAreas.map((city) => (
@@ -80,7 +80,7 @@ const OurPresence = () => {
                   <MapPin size={32} fill="currentColor" />
                   <div className="absolute top-[7.5px] left-1/2 -translate-x-1/2 w-2.5 h-2.5 bg-white rounded-full" />
                 </div>
-                <h3 className="text-dark ">Partner Organizations</h3>
+                <h3 className="text-dark text-[20px]">Partner Organizations</h3>
               </div>
               <div className="pl-14 space-y-6">
                 {partnerOrgs.map((org) => (

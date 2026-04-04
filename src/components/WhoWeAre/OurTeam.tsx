@@ -31,8 +31,8 @@ const OurTeam = () => {
     <section className="py-24 bg-white">
       <div className="container-custom">
         <div className="mb-12">
-          <div className="relative inline-block mb-10">
-            <h2 className="text-4xl md:text-5xl text-dark tracking-tighter font-medium">
+          <div className="relative inline-block mb-2">
+            <h2 className="text-[32px] text-dark tracking-tighter font-medium">
               Our Team
             </h2>
             <div className="absolute -bottom-4 left-0 w-24 h-1.5 bg-primary rounded-full transition-all duration-300" />
@@ -40,7 +40,7 @@ const OurTeam = () => {
         </div>
 
         {/* Tab Selection */}
-        <div className="flex gap-8 md:gap-12 mb-16 pb-4 overflow-x-auto hide-scrollbar whitespace-nowrap">
+        <div className="flex gap-8 md:gap-12 mb-5 pb-4 overflow-x-auto hide-scrollbar whitespace-nowrap">
           {categories.map((tab) => (
             <button
               key={tab}
@@ -48,7 +48,7 @@ const OurTeam = () => {
                 setActiveTab(tab);
                 setScrollIndex(0);
               }}
-              className={`text-xl font-normal transition-all relative pb-2 ${
+              className={`text-[16px] font-normal transition-all relative pb-2 ${
                 activeTab === tab ? "text-primary" : "text-dark"
               }`}
             >
@@ -59,7 +59,7 @@ const OurTeam = () => {
 
         {/* Horizontal Members Section - Only for active tab */}
         <div className="relative group">
-          <div 
+          <div
             ref={scrollRef}
             onScroll={handleScroll}
             onWheel={handleWheel}
@@ -77,7 +77,10 @@ const OurTeam = () => {
               >
                 {members.length > 0 ? (
                   members.map((member, idx) => (
-                    <div key={`${activeTab}-${idx}`} className="shrink-0 w-[85vw] md:w-[400px] snap-start">
+                    <div
+                      key={`${activeTab}-${idx}`}
+                      className="shrink-0 w-[85vw] md:w-[400px] snap-start"
+                    >
                       <TeamCard member={member} />
                     </div>
                   ))
@@ -133,7 +136,7 @@ const TeamCard = ({ member }: { member: TeamMember }) => {
         }}
       >
         {/* Front Side */}
-        <div className="absolute inset-0 backface-hidden rounded-[2.5rem] bg-gray-100 overflow-hidden shadow-2xl border-4 border-white group">
+        <div className="absolute inset-0 backface-hidden rounded-[2.5rem] bg-gray-100 overflow-hidden shadow-2xl  group">
           <LazyImage
             src={getImageUrl(member.image)}
             alt={member.name}
@@ -145,7 +148,7 @@ const TeamCard = ({ member }: { member: TeamMember }) => {
             <h3 className="text-2xl font-medium text-primary leading-none">
               {member.name}
             </h3>
-            <p className="text-white mt-2">{member.role}</p>
+            <p className="text-white mt-2 text-[14px]">{member.role}</p>
             <div className="mt-4 flex items-center gap-2 text-white/70 text-sm uppercase tracking-wider">
               <span>Click to read bio</span>
               <svg
@@ -182,9 +185,7 @@ const TeamCard = ({ member }: { member: TeamMember }) => {
 
             <div className="w-12 h-1 bg-primary rounded-full" />
 
-            <p className="text-lg text-dark/70 leading-relaxed">
-              {member.bio}
-            </p>
+            <p className="text-lg text-dark/70 leading-relaxed">{member.bio}</p>
 
             <button className="mt-auto text-primary text-sm uppercase tracking-widest flex items-center gap-2 hover:gap-3 transition-all pt-4">
               <svg

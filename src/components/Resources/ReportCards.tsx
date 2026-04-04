@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { FileText, PieChart } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const ReportCards = () => {
   const reports = [
@@ -15,7 +16,7 @@ const ReportCards = () => {
       icon: <FileText className="w-10 h-10 text-black" />,
       description:
         "Detailed financial reports that ensure transparency and compliance. These documents provide insights into our financial practices, reinforcing trust with our stakeholders and demonstrating responsible use of resources.",
-      link: "#",
+      link: "/resources/audit-reports",
     },
   ];
 
@@ -23,7 +24,7 @@ const ReportCards = () => {
     <section className="py-24 bg-white relative">
       <div className="container-custom px-6 lg:px-20">
         <div className="mb-20 text-left">
-          <h2 className="text-4xl text-dark tracking-tighter inline-block relative border-b-4 border-primary pb-2 rounded-sm mb-4">
+          <h2 className="text-[40px] text-dark tracking-tighter inline-block relative border-b-4 border-primary pb-2 rounded-sm mb-4">
             Explore all our resources
           </h2>
         </div>
@@ -45,21 +46,32 @@ const ReportCards = () => {
               </div>
 
               <div className="space-y-6">
-                <h3 className="text-3xl text-dark tracking-tighter">
+                <h3 className="text-[20px] font-semibold text-dark tracking-tighter">
                   {report.title}
                 </h3>
-                <p className="text-dark/60 font-medium text-lg leading-relaxed max-w-xl">
+                <p className="text-dark/60 font-medium text-[16px] leading-relaxed max-w-xl">
                   {report.description}
                 </p>
               </div>
 
               <div className="pt-4">
-                <a
-                  href={report.link}
-                  className="inline-block text-primary text-xl tracking-tight hover:border-primary transition-all duration-300 transform hover:translate-x-1"
-                >
-                  View Report
-                </a>
+                {report.link.startsWith("/") ? (
+                  <Link
+                    to={report.link}
+                    className="inline-block text-primary text-[18px] tracking-tight hover:border-primary transition-all duration-300 transform hover:translate-x-1"
+                  >
+                    View Report
+                  </Link>
+                ) : (
+                  <a
+                    href={report.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-block text-primary text-[18px] tracking-tight hover:border-primary transition-all duration-300 transform hover:translate-x-1"
+                  >
+                    View Report
+                  </a>
+                )}
               </div>
             </motion.div>
           ))}
