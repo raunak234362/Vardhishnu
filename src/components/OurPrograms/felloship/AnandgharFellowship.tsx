@@ -382,7 +382,7 @@ const AnandgharFellowship = () => {
           >
             <h2 className="text-[32px] md:text-4xl text-dark font-semibold font-outfit tracking-tight">
               Applications for the 2026 Cohort Are Now{" "}
-              <span className="text-primary font-bold">Open!</span>
+              <span className="text-primary font-bold">Open</span>!
             </h2>
             <div className="">
               <p className="text-xl text-dark/50 font-outfit leading-relaxed">
@@ -418,18 +418,18 @@ const AnandgharFellowship = () => {
                 viewport={{ once: true }}
                 className="lg:w-[45%] relative"
               >
-                <div className="absolute -left-16 lg:-left-20 top-2 w-10 h-10 rounded-full bg-[#3ac2ba] flex items-center justify-center text-white shadow-lg z-20 border-4 border-white">
+                <div className="absolute -left-16 lg:-left-20 top-2 w-10 h-10 rounded-full bg-[#3ac2ba] flex items-center justify-center text-white shadow-lg z-2">
                   <Check size={20} strokeWidth={3} />
                 </div>
 
-                <div className="hidden lg:block absolute top-6 right-full w-[100%] h-[250px] pointer-events-none">
+                <div className="hidden lg:block absolute top-6 left-[-120%] w-[100%] h-[250px] pointer-events-none">
                   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 250" fill="none">
                     <path d="M500 0.5 H 50.5 C 22.8858 0.5 0.5 22.8858 0.5 50.5 V 255.5" strokeWidth={3} stroke="#d1d5db" strokeDasharray="10 10" />
                   </svg>
                 </div>
 
                 <div className="space-y-3">
-                  <h3 className="text-[32px] text-dark font-outfit">The Application Form</h3>
+                  <h3 className="text-[32px] font-semibold text-dark font-outfit">The Application Form</h3>
                   <div className="w-16 h-1.5 bg-[#a3c639]" />
                   <p className="text-[20px] text-dark font-outfit leading-relaxed">
                     The application form helps us get to know you. Please be
@@ -452,7 +452,7 @@ const AnandgharFellowship = () => {
                 viewport={{ once: true }}
                 className="lg:w-[45%] relative"
               >
-                <div className="absolute -left-16 lg:-left-20 top-2 w-10 h-10 rounded-full bg-[#3ac2ba] flex items-center justify-center text-white shadow-lg z-20 border-4 border-white">
+                <div className="absolute -left-16 lg:-left-20 top-2 w-10 h-10 rounded-full bg-[#3ac2ba] flex items-center justify-center text-white shadow-lg z-20">
                   <Check size={20} strokeWidth={3} />
                 </div>
 
@@ -463,7 +463,7 @@ const AnandgharFellowship = () => {
                 </div>
 
                 <div className="space-y-3">
-                  <h3 className="text-[32px] text-dark font-outfit">The Phone Interview</h3>
+                  <h3 className="text-[32px] font-semibold text-dark font-outfit">The Phone Interview</h3>
                   <div className="w-16 h-1.5 bg-[#a3c639]" />
                   <p className="text-[20px] text-dark font-outfit leading-relaxed">
                     After reviewing your application, we may invite you for a
@@ -484,12 +484,12 @@ const AnandgharFellowship = () => {
                 viewport={{ once: true }}
                 className="lg:w-[45%] relative"
               >
-                <div className="absolute -left-16 lg:-left-20 top-2 w-10 h-10 rounded-full bg-[#3ac2ba] flex items-center justify-center text-white shadow-lg z-20 border-4 border-white">
+                <div className="absolute -left-16 lg:-left-20 top-2 w-10 h-10 rounded-full bg-[#3ac2ba] flex items-center justify-center text-white shadow-lg z-20">
                   <Check size={20} strokeWidth={3} />
                 </div>
 
                 <div className="space-y-3">
-                  <h3 className="text-[32px] text-dark font-outfit">Final Panel Selection</h3>
+                  <h3 className="text-[32px] font-semibold text-dark font-outfit">Final Panel Selection</h3>
                   <div className="w-16 h-1.5 bg-[#a3c639]" />
                   <p className="text-[20px] text-dark font-outfit leading-relaxed">
                     In the final stage, you will attend a 2-day in-person
@@ -571,11 +571,11 @@ const AnandgharFellowship = () => {
                     className="w-[380px] flex-shrink-0 bg-white rounded-xl overflow-hidden shadow-2xl shadow-dark/5 border border-gray-50 flex flex-col group hover:-translate-y-2 transition-all duration-500 cursor-pointer"
                     // onClick={() => setSelectedFellow(fellow)}
                   >
-                    <div className="aspect-5/4 overflow-hidden">
+                    <div className="aspect-[4/5] overflow-hidden">
                       <LazyImage
                         src={fellow.image}
                         alt={fellow.name}
-                        className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                        className="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105"
                         containerClassName="w-full h-full"
                       />
                     </div>
@@ -640,7 +640,7 @@ const AnandgharFellowship = () => {
                         <img
                           src={selectedFellow.image}
                           alt={selectedFellow.name}
-                          className="w-full h-full object-cover"
+                          className="w-full h-full object-cover object-top"
                         />
                       </div>
                       <div className="space-y-5 grow pt-2">
