@@ -4,10 +4,10 @@ import trophy from "../../assets/unknown.svg";
 
 const Felicitations = () => {
   return (
-    <section className="py-24 bg-gray-50/50">
+    <section className="py-20 bg-gray-50/50">
       <div className="container-custom px-6 lg:px-20">
-        <div className="mb-20 text-left">
-          <h2 className="text-4xl md:text-5xl text-dark tracking-tighter inline-block relative">
+        <div className="mb-10 text-left">
+          <h2 className="text-dark font-semibold tracking-tighter inline-block relative">
             Felicitations
             <div className="absolute -bottom-6 left-0 w-1/3 h-1.5 bg-primary rounded-full" />
           </h2>

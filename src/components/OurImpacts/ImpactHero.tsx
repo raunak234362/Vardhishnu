@@ -18,17 +18,17 @@ const ImpactHero = () => {
           animate={{ opacity: 1, y: 0 }}
           className="max-w-6xl mx-auto space-y-8 mb-16 px-4"
         >
-          <h1 className="text-4xl md:text-6xl text-dark leading-tight tracking-tight">
+          <h1 className="text-[40px] text-dark leading-tight tracking-tight">
             This is the impact{" "}
-            <span className="text-primary italic px-2 text-5xl md:text-7xl align-middle font-handwritten">
-              you
+            <span className="text-primary italic px-2 text-[40px] align-middle font-handwritten">
+              YOU
             </span>{" "}
             helped us achieve in 2024-25
           </h1>
 
           <div className="w-full h-1 bg-primary/40 rounded-full max-w-4xl mx-auto" />
 
-          <p className="text-dark/50 text-base md:text-lg font-medium max-w-2xl mx-auto leading-relaxed">
+          <p className="text-dark/50 text-[16px] font-medium max-w-2xl mx-auto leading-relaxed">
             We've been able to make a positive impact on the lives of so many
             children, all thanks to your unwavering support.
           </p>
@@ -45,7 +45,7 @@ const ImpactHero = () => {
                 initial={{ opacity: 0, scale: 0.8, y: 30 }}
                 animate={{ opacity: 1, scale: 1, y: 0 }}
                 transition={{ delay: index * 0.1 }}
-                className="relative w-36 h-48 md:w-64 md:h-56 rounded-2xl overflow-hidden shadow-2xl group bg-white"
+                className={`relative w-36 h-48 md:w-64 md:h-56 rounded-2xl overflow-hidden shadow-2xl group bg-white ${index === 4 ? "self-start" : ""}`}
                 style={{
                   marginTop: index % 2 === 0 ? "0" : "60px",
                   transform: `rotate(${index % 2 === 0 ? -2 : 2}deg)`,
@@ -54,7 +54,7 @@ const ImpactHero = () => {
                 <img
                   src={getImageUrl(img)}
                   alt={`Impact Photo ${index + 1}`}
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                  className={`w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 ${index === 4 ? "object-top" : ""}`}
                 />
                 <div className="absolute inset-0 bg-primary/5 group-hover:bg-transparent transition-colors duration-500" />
               </motion.div>
