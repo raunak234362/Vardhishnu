@@ -16,10 +16,13 @@ const OurPrograms = () => {
           {data.programs.items.map((program, index) => (
             <motion.div
               key={program.name}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: index * 0.2 }}
+              initial={{ opacity: 0, y: 70, scale: 0.95 }}
+              whileInView={{ opacity: 1, y: 0, scale: 1 }}
+              transition={{
+                duration: 0.7,
+                ease: "easeOut",
+              }}
               className="group relative h-[70vh] overflow-hidden rounded-[2.5rem] bg-gray-100 shadow-xl"
             >
               {/* Background Image */}

@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import data from "../../data/data.json";
 import { getImageUrl } from "../../utils/imageUrl";
 import LazyImage from "../common/LazyImage";
-
+import iconGrop from "../../assets/Groupicon.svg"
 const WhoWeAre = () => {
   return (
     <section className="py-24 bg-white overflow-hidden">
@@ -16,7 +16,7 @@ const WhoWeAre = () => {
               initial={{ opacity: 0, x: -50 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              className="rounded-xl bg-gray-100 overflow-hidden  shadow-2xl z-10"
+              className="rounded-xl bg-gray-100 overflow-hidden  z-10"
             >
               <div className="w-full h-full flex items-center justify-center text-gray-400 font-medium italic">
                 <LazyImage
@@ -29,33 +29,21 @@ const WhoWeAre = () => {
               </div>
 
               {/* Overlapping Icon/Badge */}
-              <div className="absolute top-8 left-8 w-16 h-16 bg-primary rounded-full flex items-center justify-center text-white shadow-xl z-30 ring-8 ring-white/20">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="32"
-                  height="32"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                >
-                  <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
-                  <circle cx="9" cy="7" r="4" />
-                  <path d="M22 21v-2a4 4 0 0 0-3-3.87" />
-                  <path d="M16 3.13a4 4 0 0 1 0 7.75" />
-                </svg>
+              <div className="absolute top-8 left-14 w-16 h-16 rounded-full flex items-center justify-center text-white z-30">
+               <img src={iconGrop} alt="" className="h-16"/>
               </div>
             </motion.div>
 
             {/* Overlapping Secondary Image */}
             <motion.div
-              initial={{ opacity: 0, y: 50 }}
-              whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: 0.3 }}
-              className="absolute -bottom-[12%] -right-4 w-[30%] aspect-3/4 rounded-xl overflow-hidden shadow-2xl z-20 bg-gray-200"
+              initial={{ opacity: 0, y: 50, scale: 0.95 }}
+              whileInView={{ opacity: 1, y: 0, scale: 1 }}
+              transition={{
+                duration: 0.7,
+                ease: "easeOut",
+              }}
+              className="absolute -bottom-[12%] -right-4 w-[30%] aspect-3/4 rounded-xl overflow-hidden z-20 bg-gray-200"
             >
               <LazyImage
                 src={getImageUrl("v1774765447/25_wekfwc.jpg")}
