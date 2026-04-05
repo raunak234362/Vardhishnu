@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 import type { HTMLMotionProps } from "framer-motion";
 
@@ -14,6 +14,16 @@ const LazyImage = ({
   ...props
 }: LazyImageProps) => {
   const [isLoaded, setIsLoaded] = useState(false);
+
+  const isFirstMount = useRef(true);
+
+  useEffect(() => {
+    if (isFirstMount.current) {
+      isFirstMount.current = false;
+      return;
+    }
+    setIsLoaded(false);
+  }, [src]);
 
   return (
     <div className={`relative overflow-hidden ${containerClassName || ""}`}>

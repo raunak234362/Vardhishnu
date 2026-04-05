@@ -1,18 +1,27 @@
 import {
-  Users,
-  RefreshCw,
-  ShieldCheck,
   Check,
   MapPin,
   ExternalLink,
   Repeat,
   X,
 } from "lucide-react";
-import { motion, AnimatePresence } from "framer-motion";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
+import {
+  motion,
+  AnimatePresence,
+  useScroll,
+  useTransform,
+  useMotionValue,
+  animate,
+  useInView,
+} from "framer-motion";
 import { getImageUrl } from "../../../utils/imageUrl";
 import communityData from "../../../data/community_collectives.json";
 import LazyImage from "../../common/LazyImage";
+import ccwhoarewe1 from "../../../assets/ccwhoarewe1.svg";
+import ccwhoarewe2 from "../../../assets/ccwhoarewe2.svg";
+import ccwhoarewe3 from "../../../assets/ccwhoarewe3.svg";
+import ccicon1 from "../../../assets/ccicon1.svg";
 
 interface Member {
   name: string;
@@ -23,9 +32,48 @@ interface Member {
   about?: string;
 }
 
+const Counter = ({
+  value,
+  duration = 2,
+}: {
+  value: string;
+  duration?: number;
+}) => {
+  const count = useMotionValue(0);
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true });
+  const [displayValue, setDisplayValue] = useState("0");
+
+  useEffect(() => {
+    if (isInView) {
+      const num = parseFloat(value.replace(/[^0-9.-]+/g, ""));
+      const controls = animate(count, num, {
+        duration: duration,
+        onUpdate: (latest) => {
+          const suffix = value.includes("+")
+            ? "+"
+            : value.includes("%")
+              ? "%"
+              : "";
+          const rounded = Math.round(latest);
+          setDisplayValue(rounded.toLocaleString() + suffix);
+        },
+      });
+      return controls.stop;
+    }
+  }, [isInView, value, duration]);
+
+  return <span ref={ref}>{displayValue}</span>;
+};
+
 const CommunityCollectives = () => {
   const [activeTab, setActiveTab] = useState("Current Cohort");
   const [selectedMember, setSelectedMember] = useState<Member | null>(null);
+  const selectionRef = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: selectionRef,
+    offset: ["start 60%", "end 60%"],
+  });
 
   const currentCohort =
     communityData.cohorts[activeTab as keyof typeof communityData.cohorts] ||
@@ -45,7 +93,7 @@ const CommunityCollectives = () => {
       "Semi-Urban": 10,
       Rural: 40,
       Tribal: 30,
-    }
+    },
   };
 
   // Scroll to top on mount
@@ -59,12 +107,12 @@ const CommunityCollectives = () => {
       <div className="relative h-[65vh] w-full overflow-hidden">
         {/* Placeholder for Hero Image */}
         <div className="absolute inset-0 bg-gray-100">
-            <LazyImage
-              src="https://res.cloudinary.com/di7aduhjv/image/upload/q_auto/f_auto/v1775153922/community_collection.jpg_rri4dw.jpg"
-              alt="Community Collectives Hero"
-              className="w-full h-full object-cover"
-              containerClassName="w-full h-full"
-            />
+          <LazyImage
+            src="https://res.cloudinary.com/di7aduhjv/image/upload/q_auto/f_auto/v1775153922/community_collection.jpg_rri4dw.jpg"
+            alt="Community Collectives Hero"
+            className="w-full h-full object-cover"
+            containerClassName="w-full h-full"
+          />
         </div>
         <div className="absolute inset-0 bg-black/10 z-10" />
         <div className="absolute inset-0 bg-linear-to-t from-black/80 via-black/30 to-transparent z-10" />
@@ -115,7 +163,10 @@ const CommunityCollectives = () => {
           >
             <div className="rounded-2xl overflow-hidden shadow-2xl">
               <LazyImage
-                src={getImageUrl("v1774764806/3._Home_k41tzn.jpg", "q_auto,f_auto")}
+                src={getImageUrl(
+                  "v1774764806/3._Home_k41tzn.jpg",
+                  "q_auto,f_auto",
+                )}
                 alt="Community Group"
                 className="w-full h-full object-cover scale-[1.1]"
               />
@@ -124,8 +175,8 @@ const CommunityCollectives = () => {
         </div>
 
         {/* What we do */}
-        < div className="flex flex-col lg:flex-row items-center gap-16 lg:gap-24">
-        <motion.div
+        <div className="flex flex-col lg:flex-row items-center gap-16 lg:gap-24">
+          <motion.div
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
@@ -179,7 +230,7 @@ const CommunityCollectives = () => {
       </div>
 
       {/* Who can Apply Section */}
-      <div className="py-24 container-custom">
+      <div className="py-15 container-custom">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -203,10 +254,10 @@ const CommunityCollectives = () => {
             initial={{ opacity: 0, scale: 0.95 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
-            className="bg-white border border-primary rounded-lg p-10 space-y-8 flex flex-col items-start shadow-sm hover:shadow-md hover:bg-primary/5 transition-all duration-300"
+            className="bg-white border border-primary rounded-lg p-10 space-y-8 flex flex-col items-start shadow-sm hover:shadow-md hover:bg-primary/10 transition-all duration-300"
           >
             <div className="mb-2">
-              <Users size={40} />
+              <img src={ccwhoarewe1} />
             </div>
             <div className="space-y-4">
               <h3 className="text-[20px] text-dark font-outfit leading-tight">
@@ -229,10 +280,10 @@ const CommunityCollectives = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="bg-white border border-primary rounded-lg p-10 space-y-8 flex flex-col items-start shadow-sm hover:shadow-md hover:bg-primary/5 transition-all duration-300"
+            className="bg-white border border-primary rounded-lg p-10 space-y-8 flex flex-col items-start shadow-sm hover:shadow-md hover:bg-primary/10 transition-all duration-300"
           >
             <div className="mb-2">
-              <RefreshCw size={36} />
+              <img src={ccwhoarewe2} />
             </div>
             <div className="space-y-4">
               <h3 className="text-[20px] text-dark font-outfit leading-tight">
@@ -258,10 +309,10 @@ const CommunityCollectives = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.2 }}
-            className="bg-white border border-primary rounded-lg p-10 space-y-8 flex flex-col items-start shadow-sm hover:shadow-md hover:bg-primary/5 transition-all duration-300"
+            className="bg-white border border-primary rounded-lg p-10 space-y-8 flex flex-col items-start shadow-sm hover:shadow-md hover:bg-primary/10 transition-all duration-300"
           >
             <div className="mb-2">
-              <ShieldCheck size={36} />
+              <img src={ccwhoarewe3} />
             </div>
             <div className="space-y-4">
               <h3 className="text-[20px] text-dark font-outfit leading-tight">
@@ -279,7 +330,8 @@ const CommunityCollectives = () => {
                   incubation (before the second residential workshop)
                 </li>
                 <li>
-                  Submit a detailed 6-month action plan as part of your onboarding
+                  Submit a detailed 6-month action plan as part of your
+                  onboarding
                 </li>
               </ul>
             </div>
@@ -309,7 +361,7 @@ const CommunityCollectives = () => {
               viewport={{ once: true }}
               className="bg-white border border-gray-100 rounded-lg p-10 shadow-sm hover:shadow-xl transition-all duration-500"
             >
-              <div className="w-12 h-12 bg-pink-100 text-pink-600 rounded-lg flex items-center justify-center text-2xl font-bold mb-8">
+              <div className="w-12 h-12 bg-pink-100 text-pink-600 flex items-center justify-center text-2xl font-bold mb-8">
                 1
               </div>
               <h3 className="text-[20px] text-dark font-semibold font-outfit mb-4">
@@ -323,7 +375,9 @@ const CommunityCollectives = () => {
                   Through three fully-funded residential workshops, we dive deep
                   into the heart of building impactful learning spaces.
                 </p>
-                <p className="text-dark font-outfit font-semibold">These immersive sessions focus on:</p>
+                <p className="text-dark font-outfit font-semibold">
+                  These immersive sessions focus on:
+                </p>
                 <ul className="space-y-3 list-disc pl-5">
                   <li>
                     Teaching-learning practices that truly connect with children
@@ -352,7 +406,7 @@ const CommunityCollectives = () => {
               viewport={{ once: true }}
               className="bg-white border border-gray-100 rounded-lg p-10 shadow-sm hover:shadow-xl transition-all duration-500 h-full flex-grow"
             >
-              <div className="w-12 h-12 bg-[#FFF3E0] text-[#D97706] rounded-lg flex items-center justify-center text-2xl font-bold mb-8">
+              <div className="w-12 h-12 bg-[#FFF3E0] text-[#D97706]/70 flex items-center justify-center text-2xl font-bold mb-8">
                 4
               </div>
               <h3 className="text-[20px] text-dark font-semibold font-outfit mb-4">
@@ -383,13 +437,13 @@ const CommunityCollectives = () => {
               viewport={{ once: true }}
               className="bg-white border border-gray-100 rounded-lg p-10 shadow-sm hover:shadow-xl transition-all duration-500"
             >
-              <div className="w-12 h-12 bg-indigo-100 text-indigo-600 rounded-lg flex items-center justify-center text-2xl font-bold mb-8">
+              <div className="w-12 h-12 bg-[#EAE9F0] text-[#534D6F] flex items-center justify-center text-2xl font-bold mb-8">
                 2
               </div>
               <h3 className="text-[20px] text-dark font-semibold font-outfit mb-4">
                 Field Visits
               </h3>
-              <p className="text-indigo-600 mb-8 uppercase tracking-wider text-sm">
+              <p className="text-[#534D6F] mb-8 uppercase tracking-wider text-sm">
                 2 Field Visits of 3 Days Each
               </p>
               <p className="text-[20px] font-outfit leading-relaxed">
@@ -406,10 +460,12 @@ const CommunityCollectives = () => {
               viewport={{ once: true }}
               className="bg-white border border-gray-100 rounded-lg p-10 shadow-sm hover:shadow-xl transition-all duration-500"
             >
-              <div className="w-12 h-12 bg-green-100 text-green-600 rounded-lg flex items-center justify-center text-2xl font-bold mb-8">
+              <div className="w-12 h-12 bg-green-50 text-green-600/70 flex items-center justify-center text-2xl font-bold mb-8">
                 3
               </div>
-              <h3 className="text-[20px] text-dark font-semibold font-outfit mb-4">Webinars</h3>
+              <h3 className="text-[20px] text-dark font-semibold font-outfit mb-4">
+                Webinars
+              </h3>
               <p className="text-green-600 mb-8 uppercase tracking-wider text-sm">
                 8 Theme based webinars
               </p>
@@ -427,7 +483,7 @@ const CommunityCollectives = () => {
               viewport={{ once: true }}
               className="bg-white border border-gray-100 rounded-lg p-10 shadow-sm hover:shadow-xl transition-all duration-500 h-full flex-grow"
             >
-              <div className="w-12 h-12 bg-blue-100 text-blue-600 rounded-lg flex items-center justify-center text-2xl font-bold mb-8">
+              <div className="w-12 h-12 bg-blue-50 text-blue-500/80 flex items-center justify-center text-2xl font-bold mb-8">
                 5
               </div>
               <h3 className="text-[20px] text-dark font-semibold font-outfit mb-4">
@@ -531,59 +587,89 @@ const CommunityCollectives = () => {
           <div className="absolute -bottom-7 left-0 w-1/3 h-1.5 bg-primary rounded-full" />
         </div>
 
-        <div className="space-y-0 relative">
+        <div ref={selectionRef} className="space-y-0 relative">
           {[
             {
               title: "Application Form",
-              status: "checked",
               text: "We start our application process in the month of March. Interested people can apply online through application form. The application form is an opportunity for us to get to know you. Through the application, we will understand your inspiration, why you want to join and why you would be a strong fit for the program.",
             },
             {
               title: "Telephonic Interview",
-              status: "checked",
               text: "Here we will ask some follow-up questions based on the information provided in the application form to gain further information about your initiative. This will helpful in our evaluation.",
             },
             {
               title: "Final Panel Selection",
-              status: "pending",
               text: "Here you will attain 2 day in-person selection round and where you will take part in group discussions and also complete a short problem solving activity, present your work in front of others. You will also have a hour-long personal interview with one of our team members.",
             },
-          ].map((step, idx, arr) => (
-            <motion.div
-              key={idx}
-              initial={{ opacity: 0, x: -20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              className="relative pl-16 pb-20 last:pb-0"
-            >
-              {/* Connector Line */}
-              {idx < arr.length - 1 && (
-                <div
-                  className={`absolute left-[19px] lg:left-[23px] top-10 bottom-0 w-0.5 ${arr[idx + 1].status === "checked" ? "bg-primary" : "bg-gray-200"
-                    }`}
-                />
-              )}
+          ].map((step, idx, arr) => {
+            const threshold = idx / (arr.length - 1);
+            const circleColor = useTransform(
+              scrollYProgress,
+              [threshold - 0.1, threshold],
+              ["#D1D5DB", "#a6ce39"],
+            );
+            const checkOpacity = useTransform(
+              scrollYProgress,
+              [threshold - 0.05, threshold],
+              [0, 1],
+            );
+            const dotOpacity = useTransform(
+              scrollYProgress,
+              [threshold - 0.05, threshold],
+              [1, 0],
+            );
+            const nextThreshold = (idx + 1) / (arr.length - 1);
+            const lineScaleY = useTransform(
+              scrollYProgress,
+              [threshold, nextThreshold],
+              [0, 1],
+            );
 
-              <div
-                className={`absolute left-0 w-10 h-10 lg:w-12 lg:h-12 rounded-full shadow-md flex items-center justify-center z-10 transition-colors duration-500 ${step.status === "checked"
-                  ? "bg-primary text-white"
-                  : "bg-gray-300 text-white"
-                  }`}
+            return (
+              <motion.div
+                key={idx}
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                className="relative pl-16 pb-20 last:pb-0"
               >
-                {step.status === "checked" ? (
-                  <Check size={24} strokeWidth={3} />
-                ) : (
-                  <div className="w-3 h-3 bg-white rounded-full" />
+                {idx < arr.length - 1 && (
+                  <div className="absolute left-[19px] lg:left-[23px] top-10 bottom-0 w-0.5 bg-gray-200" />
                 )}
-              </div>
-              <div className="space-y-4">
-                <h3 className="text-[20px] md:text-[20px] font-semibold text-dark font-outfit">{step.title}</h3>
-                <p className="text-[20px] text-dark/70 font-outfit leading-relaxed">
-                  {step.text}
-                </p>
-              </div>
-            </motion.div>
-          ))}
+                {idx < arr.length - 1 && (
+                  <motion.div
+                    style={{ scaleY: lineScaleY, originY: 0 }}
+                    className="absolute left-[19px] lg:left-[23px] top-10 bottom-0 w-0.5 bg-primary z-10"
+                  />
+                )}
+                <motion.div
+                  style={{ backgroundColor: circleColor }}
+                  className="absolute left-0 w-10 h-10 lg:w-12 lg:h-12 rounded-full shadow-md flex items-center justify-center z-20 text-white transition-colors duration-500"
+                >
+                  <div className="relative flex items-center justify-center w-full h-full">
+                    <motion.div
+                      style={{ opacity: dotOpacity }}
+                      className="absolute w-3 h-3 bg-white rounded-full"
+                    />
+                    <motion.div
+                      style={{ opacity: checkOpacity }}
+                      className="absolute flex items-center justify-center"
+                    >
+                      <Check size={24} strokeWidth={3} />
+                    </motion.div>
+                  </div>
+                </motion.div>
+                <div className="space-y-4">
+                  <h3 className="text-[20px] md:text-[20px] font-semibold text-dark font-outfit">
+                    {step.title}
+                  </h3>
+                  <p className="text-[20px] text-dark/70 font-outfit leading-relaxed">
+                    {step.text}
+                  </p>
+                </div>
+              </motion.div>
+            );
+          })}
         </div>
       </div>
 
@@ -612,10 +698,14 @@ const CommunityCollectives = () => {
           ].map((m, i) => (
             <div key={i} className="space-y-4">
               <div className="flex flex-col items-center">
-                <p className="text-[40px] font-semibold md:text-[40px] text-primary">{m.val}</p>
+                <p className="text-[40px] font-semibold md:text-[40px] text-primary">
+                  <Counter value={m.val} />
+                </p>
                 <div className="w-10 h-1 bg-primary mt-2" />
               </div>
-              <p className="text-[20px] font-outfit font-medium  text-dark leading-tight">{m.label}</p>
+              <p className="text-[20px] font-outfit font-medium  text-dark leading-tight">
+                {m.label}
+              </p>
             </div>
           ))}
         </div>
@@ -627,7 +717,10 @@ const CommunityCollectives = () => {
               Geographic Spread
             </h3>
             <div className="relative w-72 h-72 mb-12 flex items-center justify-center">
-              <svg viewBox="0 0 100 100" className="w-full h-full overflow-visible">
+              <svg
+                viewBox="0 0 100 100"
+                className="w-full h-full overflow-visible"
+              >
                 {[10, 20, 30, 40, 50].map((r) => (
                   <circle
                     key={r}
@@ -705,7 +798,7 @@ const CommunityCollectives = () => {
                   initial={{ opacity: 0, x: -20 }}
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
-                  transition={{ delay: 1 + i * 0.1 }}
+                  transition={{ delay: i * 0.1 }}
                   className="flex items-center justify-between"
                 >
                   <div className="flex items-center gap-4">
@@ -713,9 +806,13 @@ const CommunityCollectives = () => {
                       className="w-3 h-3 rounded-full"
                       style={{ backgroundColor: l.color }}
                     />
-                    <span className="text-dark/80 text-[20px] font-outfit font-medium">{l.label}</span>
+                    <span className="text-dark/80 text-[20px] font-outfit font-medium">
+                      {l.label}
+                    </span>
                   </div>
-                  <span className="text-dark text-[20px] font-outfit font-bold">{l.val}</span>
+                  <span className="text-dark text-[20px] font-outfit font-bold">
+                    <Counter value={l.val} />
+                  </span>
                 </motion.div>
               ))}
             </div>
@@ -780,7 +877,7 @@ const CommunityCollectives = () => {
                   initial={{ opacity: 0, y: 10 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
-                  transition={{ delay: 1.2 + i * 0.2 }}
+                  transition={{ delay: i * 0.3 }}
                   className="flex items-center justify-between pb-2"
                 >
                   <div className="flex items-center gap-4">
@@ -788,9 +885,13 @@ const CommunityCollectives = () => {
                       className="w-3 h-3 rounded-full border border-gray-100"
                       style={{ backgroundColor: l.color }}
                     />
-                    <span className="text-dark/80 text-[20px] font-outfit font-medium">{l.label}</span>
+                    <span className="text-dark/80 text-[20px] font-outfit font-medium">
+                      {l.label}
+                    </span>
                   </div>
-                  <span className="text-dark text-[20px] font-outfit font-bold">{l.val}</span>
+                  <span className="text-dark text-[20px] font-outfit font-bold">
+                    <Counter value={l.val} />
+                  </span>
                 </motion.div>
               ))}
             </div>
@@ -884,7 +985,7 @@ const CommunityCollectives = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-24">
           {currentCohort.map((member: Member, i: number) => (
             <motion.div
-              key={i}
+              key={`${activeTab}-${i}`}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -911,6 +1012,7 @@ const CommunityCollectives = () => {
                       <LazyImage
                         src={getImageUrl(member.image)}
                         alt={member.name}
+                        containerClassName="h-full w-full"
                         className="w-full h-full object-cover group-hover:scale-[1.1] transition-transform duration-700"
                       />
                     )}
@@ -928,7 +1030,7 @@ const CommunityCollectives = () => {
 
                 <div className="space-y-4 pt-2">
                   <div className="flex items-start gap-4 text-dark/70">
-                    <div className="mt-1.5 p-1 bg-primary/10 rounded-lg text-primary">
+                    <div className="mt-1.5 p-1  text-primary">
                       <MapPin size={18} />
                     </div>
                     <span className="text-lg leading-snug">
@@ -936,19 +1038,19 @@ const CommunityCollectives = () => {
                     </span>
                   </div>
                   <div className="flex items-start gap-4 text-dark/70">
-                    <div className="mt-1.5 p-1 bg-orange-50 rounded-lg text-orange-500">
-                      <Repeat size={18} />
+                    <div className="mt-1.5 p-1 rounded-lg text-orange-500">
+                      <img src={ccicon1} alt="" className="h-6" />
                     </div>
                     <span className="text-lg leading-snug">{member.focus}</span>
                   </div>
-                </div>
-
-                <div className="mt-auto pt-6 border-t border-gray-50">
-                  <button className="flex items-center gap-2 font-bold text-lg hover:gap-3 transition-all text-primary/80">
+                <div className="mt-auto border-t border-gray-50">
+                  <button className="flex cursor-pointer items-center gap-5 text-lg text-gray-800/80">
                     <ExternalLink size={20} />
                     <span>Learn more</span>
                   </button>
                 </div>
+                </div>
+
               </div>
             </motion.div>
           ))}
@@ -985,7 +1087,7 @@ const CommunityCollectives = () => {
               <div className="overflow-y-auto no-scrollbar">
                 <div className="p-8 md:p-12">
                   <div className="flex flex-col sm:flex-row gap-8 items-start mb-12">
-                    <div className="w-44 h-44 rounded-2xl overflow-hidden shadow-xl shrink-0 border-4 border-gray-50 bg-gray-50">
+                    <div className="w-44 h-44 rounded-2xl overflow-hidden shadow-xl">
                       {Array.isArray(selectedMember.image) ? (
                         <div className="flex h-full w-full">
                           {selectedMember.image.map((img, idx) => (
@@ -993,7 +1095,8 @@ const CommunityCollectives = () => {
                               key={idx}
                               src={getImageUrl(img)}
                               alt={`${selectedMember.name} ${idx + 1}`}
-                              className="w-1/2 h-full object-cover"
+                              containerClassName="w-1/2 h-full"
+                              className="w-full h-full object-cover"
                             />
                           ))}
                         </div>
@@ -1001,16 +1104,17 @@ const CommunityCollectives = () => {
                         <LazyImage
                           src={getImageUrl(selectedMember.image)}
                           alt={selectedMember.name}
+                          containerClassName="h-full w-full"
                           className="w-full h-full object-cover"
                         />
                       )}
                     </div>
                     <div className="space-y-5 grow pt-2">
                       <div>
-                        <h2 className="text-[32px] p-4 font-bold text-dark tracking-tight">
+                        <h2 className="text-[16px] font-bold text-dark tracking-tight">
                           {selectedMember.name}
                         </h2>
-                        <p className="text-2xl text-dark/60 font-medium">
+                        <p className="text-[16px] text-dark/60 font-medium">
                           {selectedMember.org}
                         </p>
                       </div>
@@ -1020,15 +1124,15 @@ const CommunityCollectives = () => {
                           <div className="p-1.5 bg-primary/10 rounded-lg text-primary">
                             <MapPin size={20} />
                           </div>
-                          <span className="text-lg">
+                          <span className="text-[14px]">
                             {selectedMember.location}
                           </span>
                         </div>
-                        <div className="flex items-start gap-3 text-dark/70 font-semibold">
+                        <div className="flex items-center gap-3 text-dark/70 font-semibold">
                           <div className="mt-1 p-1.5 bg-orange-50 rounded-lg text-orange-500 shrink-0">
                             <Repeat size={20} />
                           </div>
-                          <span className="text-lg leading-snug">
+                          <span className="text-[14px] leading-snug">
                             {selectedMember.focus}
                           </span>
                         </div>
@@ -1038,10 +1142,10 @@ const CommunityCollectives = () => {
 
                   <div className="space-y-6">
                     <div className="relative inline-block">
-                      <h3 className="text-[20px] font-bold text-dark">About</h3>
+                      <h3 className="text-[16px] font-bold text-dark">About</h3>
                       <div className="absolute -bottom-2 left-0 w-full h-1 bg-primary/20 rounded-full" />
                     </div>
-                    <div className="text-lg text-dark/80 leading-relaxed font-medium space-y-4 pt-2">
+                    <div className="text-[14px] text-dark/80 leading-relaxed font-medium space-y-4 pt-2">
                       {selectedMember.about
                         ?.split("\n")
                         .map((para: string, i: number) => (
