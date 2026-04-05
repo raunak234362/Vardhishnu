@@ -59,7 +59,7 @@ const Commitment = () => {
               <h3 className="text-[32px] text-semibold tracking-tighter uppercase inline-block relative border-b-4 border-primary pb-2 rounded-sm">
                 OUR MISSION
               </h3>
-              <p className="text-[20px] leading-snug">
+              <p className="text-[20px] leading-snug pb-20">
                 To create an eco-system of safe and joyful spaces of learning &
                 support for children by collaborating with individuals,
                 institutions & initiatives

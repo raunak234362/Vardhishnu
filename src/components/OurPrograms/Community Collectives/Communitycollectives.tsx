@@ -1,10 +1,4 @@
-import {
-  Check,
-  MapPin,
-  ExternalLink,
-  Repeat,
-  X,
-} from "lucide-react";
+import { Check, MapPin, ExternalLink, Repeat, X } from "lucide-react";
 import { useEffect, useState, useRef } from "react";
 import {
   motion,
@@ -968,15 +962,7 @@ const CommunityCollectives = () => {
             {activeTab === "Current Cohort" ? (
               "Current Cohort"
             ) : (
-              <>
-                Cohort -{" "}
-                {(() => {
-                  const year = activeTab;
-                  const startYear = parseInt(year.split("-")[0]);
-                  return startYear - 2020 + 1;
-                })()}{" "}
-                {activeTab}
-              </>
+              <>Cohort - {activeTab}</>
             )}
           </div>
         </div>
@@ -1013,7 +999,7 @@ const CommunityCollectives = () => {
                         src={getImageUrl(member.image)}
                         alt={member.name}
                         containerClassName="h-full w-full"
-                        className="w-full h-full object-cover group-hover:scale-[1.1] transition-transform duration-700"
+                        className="w-full h-full object-cover group-hover:scale-[1.1] transition-transform duration-700 object-top"
                       />
                     )}
                   </>
@@ -1043,14 +1029,13 @@ const CommunityCollectives = () => {
                     </div>
                     <span className="text-lg leading-snug">{member.focus}</span>
                   </div>
-                <div className="mt-auto border-t border-gray-50">
-                  <button className="flex cursor-pointer items-center gap-5 text-lg text-gray-800/80">
-                    <ExternalLink size={20} />
-                    <span>Learn more</span>
-                  </button>
+                  <div className="mt-auto border-t border-gray-50">
+                    <button className="flex cursor-pointer items-center gap-5 text-lg text-gray-800/80">
+                      <ExternalLink size={20} />
+                      <span>Learn more</span>
+                    </button>
+                  </div>
                 </div>
-                </div>
-
               </div>
             </motion.div>
           ))}
@@ -1105,7 +1090,7 @@ const CommunityCollectives = () => {
                           src={getImageUrl(selectedMember.image)}
                           alt={selectedMember.name}
                           containerClassName="h-full w-full"
-                          className="w-full h-full object-cover"
+                          className="w-full h-full object-cover object-top"
                         />
                       )}
                     </div>

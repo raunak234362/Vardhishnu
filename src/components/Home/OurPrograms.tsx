@@ -44,7 +44,7 @@ const OurPrograms = () => {
                 </p>
                 <Link
                   to={program.link}
-                  className="self-end text-primary font-bold hover:underline flex items-center text-right gap-2 group-hover:gap-3 text-lg transition-all"
+                  className="self-end text-primary font-semibold hover:underline flex items-center text-right gap-2 group-hover:gap-3 text-lg transition-all"
                 >
                   Read More
                 </Link>

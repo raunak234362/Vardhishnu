@@ -177,9 +177,9 @@ const TeamCard = ({ member }: { member: TeamMember }) => {
   return (
     <div
       className="relative h-[600px] w-full perspective-1000 cursor-pointer"
-      // onClick={() => setIsFlipped(!isFlipped)}
-      onMouseEnter={() => setIsFlipped(true)}
-      onMouseLeave={() => setIsFlipped(false)}
+      onClick={() => setIsFlipped(!isFlipped)}
+      // onMouseEnter={() => setIsFlipped(true)}
+      // onMouseLeave={() => setIsFlipped(false)}
     >
       <motion.div
         className="relative w-full h-full preserve-3d"
