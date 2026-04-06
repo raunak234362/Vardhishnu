@@ -42,12 +42,12 @@ const OurPrograms = () => {
                 <h3 className="text-primary font-medium mb-3">
                   {program.name}
                 </h3>
-                <p className="text-white/90 text-[14px] font-semibold leading-relaxed mb-6">
+                <p className="text-white/90 text-[14px] font-medium leading-relaxed mb-6">
                   {program.description}
                 </p>
                 <Link
                   to={program.link}
-                  className="self-end text-primary font-semibold hover:underline flex items-center text-right gap-2 group-hover:gap-3 text-lg transition-all"
+                  className="self-end text-primary font-medium hover:underline flex items-center text-right gap-2 group-hover:gap-3 text-lg transition-all"
                 >
                   Read More
                 </Link>
