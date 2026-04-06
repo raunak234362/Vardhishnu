@@ -1,7 +1,7 @@
 import { MapPin } from "lucide-react";
 import { motion } from "framer-motion";
 import { getImageUrl } from "../../utils/imageUrl";
-
+import Mapp from "../../assets/Mapp.svg";
 const OurPresence = () => {
   const interventionAreas = ["Jalgaon", "Chopda", "Amalner"];
   const partnerOrgs = [
@@ -26,21 +26,25 @@ const OurPresence = () => {
           </h2>
         </div>
 
-        <div className="flex flex-col lg:flex-row items-start gap-16 w-full">
+        <div className="flex flex-col lg:flex-row items-center gap-10 w-full mb-24">
           {/* Map Column */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            className="w-full lg:w-3/5"
+            className="w-full"
           >
-            <div className="w-full">
-              <img src={getImageUrl("v1774774560/Map_rhitgi.png")} alt="map" className="scale-[105%]"/>
+            <div className="w-full bg-white rounded-[4rem] p-12 shadow-[0_20px_60px_-15px_rgba(0,0,0,0.08)] border border-gray-50 flex items-center justify-center overflow-hidden">
+              <img
+                src={Mapp}
+                alt="map"
+                className="w-[85%] h-full object-contain"
+              />
             </div>
           </motion.div>
 
           {/* Location Details Column */}
-          <div className="w-full lg:w-2/5 space-y-12">
+          <div className="w-full lg:w-[40%] space-y-16 pl-0 lg:pl-10">
             {/* Intervention Areas */}
             <motion.div
               initial={{ opacity: 0, x: 30 }}
@@ -50,10 +54,12 @@ const OurPresence = () => {
             >
               <div className="flex items-center gap-3">
                 <div className="relative text-[#1A3C00] w-fit">
-                  <MapPin size={32} fill="currentColor" />
+                  <MapPin size={32} fill="#070707" color="070707" />
                   <div className="absolute top-[7.5px] left-1/2 -translate-x-1/2 w-2.5 h-2.5 bg-white rounded-full" />
                 </div>
-                <h3 className="text-dark text-[20px]">Vardhishnu Intervention Area</h3>
+                <h3 className="text-dark text-[20px]">
+                  Vardhishnu Intervention Area
+                </h3>
               </div>
               <ul className="pl-14 space-y-2">
                 {interventionAreas.map((city) => (
@@ -77,7 +83,7 @@ const OurPresence = () => {
             >
               <div className="flex items-center gap-3">
                 <div className="relative text-[#1A3C00] w-fit">
-                  <MapPin size={32} fill="currentColor" />
+                  <MapPin size={32} color="#2E5600" fill="#2E5600" />
                   <div className="absolute top-[7.5px] left-1/2 -translate-x-1/2 w-2.5 h-2.5 bg-white rounded-full" />
                 </div>
                 <h3 className="text-dark text-[20px]">Partner Organizations</h3>
