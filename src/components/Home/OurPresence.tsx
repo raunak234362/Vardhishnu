@@ -1,6 +1,5 @@
 import { MapPin } from "lucide-react";
 import { motion } from "framer-motion";
-import { getImageUrl } from "../../utils/imageUrl";
 import Mapp from "../../assets/Mapp.svg";
 const OurPresence = () => {
   const interventionAreas = ["Jalgaon", "Chopda", "Amalner"];
