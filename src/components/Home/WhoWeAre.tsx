@@ -8,9 +8,15 @@ const WhoWeAre = () => {
   return (
     <section className="py-24 bg-white overflow-hidden">
       <div className="container-custom">
-        <div className="flex flex-col lg:flex-row items-center gap-16">
+        {/* Mobile Title */}
+        <div className="relative inline-block mb-12 lg:hidden">
+          <h2 className="text-dark tracking-tight">{data.about.title}</h2>
+          <div className="absolute -bottom-4 left-0 w-1/3 h-1.5 bg-primary rounded-full" />
+        </div>
+
+        <div className="flex flex-col lg:flex-row items-center gap-16 lg:gap-24">
           {/* Images Section */}
-          <div className="relative w-full lg:w-1/2 flex justify-center">
+           <div className="relative w-full lg:w-1/2 flex justify-center">
             {/* Main Image */}
             <motion.div
               initial={{ opacity: 0, x: -50 }}
@@ -24,7 +30,7 @@ const WhoWeAre = () => {
                     "v1774764793/504814787_2982689451900728_4503794757455454996_n_v8c686.jpg",
                   )}
                   alt="Who We Are - Vardhishnu"
-                  className="w-[30vw] h-[60vh] object-cover object-right"
+                  className="w-[90vw] md:w-[30vw] h-[40vh] md:h-[60vh] object-cover object-right"
                 />
               </div>
 
@@ -43,7 +49,7 @@ const WhoWeAre = () => {
                 duration: 0.7,
                 ease: "easeOut",
               }}
-              className="absolute -bottom-[12%] -right-4 w-[30%] aspect-3/4 rounded-xl overflow-hidden z-20 bg-gray-200"
+              className="absolute -bottom-[12%] -right-4 w-[40%               ] md:w-[30%] aspect-3/4 rounded-xl overflow-hidden z-20 bg-gray-200"
             >
               <LazyImage
                 src={getImageUrl("v1774765447/25_wekfwc.jpg")}
@@ -53,19 +59,20 @@ const WhoWeAre = () => {
               />
             </motion.div>
           </div>
-
           {/* Content Section */}
           <div className="w-full lg:w-1/2">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
+              className="flex flex-col items-center lg:items-start text-center lg:text-left"
             >
-              <div className="relative inline-block mb-12">
+              {/* Desktop Title */}
+              <div className="relative hidden lg:inline-block mb-12">
                 <h2 className="text-dark tracking-tight">{data.about.title}</h2>
                 <div className="absolute -bottom-4 left-0 w-1/3 h-1.5 bg-primary rounded-full" />
               </div>
-              <div className="space-y-6 text-[16px] text-dark leading-relaxed mb-8">
+              <div className="space-y-6 text-[16px] sm:text-[18px] text-dark leading-relaxed mb-10 max-w-2xl">
                 <p>{data.about.description}</p>
                 <p>
                   Our journey began with a simple but powerful question: What
@@ -73,7 +80,7 @@ const WhoWeAre = () => {
                 </p>
                 <Link
                   to="/who-we-are"
-                  className="text-primary font-bold hover:underline"
+                  className="inline-block text-primary font-bold hover:underline"
                 >
                   Read More
                 </Link>
@@ -81,7 +88,7 @@ const WhoWeAre = () => {
 
               <Link
                 to="/who-we-are"
-                className="inline-block bg-primary hover:bg-primary/90 text-white px-10 py-4 rounded-md font-bold transition-all shadow-lg hover:shadow-primary/20 transform hover:-translate-y-1"
+                className="inline-block bg-primary hover:bg-primary/90 text-white px-12 py-4 rounded-xl font-bold transition-all shadow-xl hover:shadow-primary/30 transform hover:-translate-y-1 w-full sm:w-auto text-center"
               >
                 {data.about.cta}
               </Link>

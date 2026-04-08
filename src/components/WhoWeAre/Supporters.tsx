@@ -36,9 +36,9 @@ const Supporters = () => {
   ];
 
   return (
-    <section className="py-24 bg-white">
+    <section className="py-12 md:py-24 bg-white">
       <div className="container-custom">
-        <div className="mb-20">
+        <div className="mb-10 md:mb-20">
           <div className="relative inline-block mb-14">
             <h2 className="text-[32px] text-dark tracking-tighter">
               Supported & Accredited By
@@ -47,7 +47,7 @@ const Supporters = () => {
           </div>
         </div>
 
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-12 items-center justify-items-center">
+        <div className="grid grid-cols-4 md:grid-cols-4 gap-x-8 gap-y-2 md:gap-y-12 items-center justify-items-center">
           {supporters.map((item, index) => (
             <motion.div
               key={item.name}
@@ -55,7 +55,7 @@ const Supporters = () => {
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.05 }}
-              className="w-full h-44 flex items-center justify-center p-4 hover:bg-gray-50/50 rounded-2xl transition-all duration-300 group"
+              className="w-full h-24 md:h-44 flex items-center justify-center p-0 md:p-4 hover:bg-gray-50/50 rounded-2xl transition-all duration-300 group"
             >
               <img
                 src={
@@ -64,7 +64,7 @@ const Supporters = () => {
                     : getImageUrl(item.logo)
                 }
                 alt={item.name}
-                className="max-w-[85%] max-h-[85%] object-contain transition-all duration-500 group-hover:scale-110"
+                className="max-w-[100%] md:max-w-[85%] max-h-[85%] object-contain transition-all duration-500 group-hover:scale-110"
               />
             </motion.div>
           ))}

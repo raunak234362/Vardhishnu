@@ -75,13 +75,13 @@ const Navbar = () => {
           </div>
         </div>
 
-        <div className="lg:hidden flex items-center gap-4">
-          <button className="btn-primary scale-90">
+        <div className="lg:hidden flex items-center gap-1 sm:gap-4 flex-shrink-0">
+          <button className="btn-primary scale-75 sm:scale-90 px-3 sm:px-6 flex-shrink-0 whitespace-nowrap">
             <Heart size={18} fill="currentColor" />
-            <span>{data.header.cta}</span>
+            <span className="text-[12px] sm:text-[14px]">{data.header.cta}</span>
           </button>
           <button 
-            className="p-2 text-white"
+            className="p-1.5 text-white flex-shrink-0"
             onClick={() => setIsMenuOpen(true)}
           >
             <Menu size={24} />

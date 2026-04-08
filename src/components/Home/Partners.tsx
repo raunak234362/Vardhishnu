@@ -31,7 +31,7 @@ const Partners = () => {
           {marqueeItems.map((partner, index) => (
             <div
               key={`${partner.name}-${index}`}
-              className="shrink-0 flex items-center justify-center w-40 md:w-80 h-48 p-4 hover:scale-110 transition-transform duration-300 cursor-pointer"
+              className="shrink-0 flex items-center justify-center w-60 md:w-80 h-48 p-4 hover:scale-110 transition-transform duration-300 cursor-pointer"
             >
               <LazyImage
                 src={getImageUrl(partner.logo)}

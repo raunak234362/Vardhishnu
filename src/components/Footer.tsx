@@ -15,9 +15,9 @@ const Footer = () => {
     <footer className="bg-white pt-24 font-sans">
       {/* Newsletter Section */}
       <div className="container-custom mb-32">
-        <div className="bg-gray-100 rounded-xl p-16 md:p-20 flex flex-col lg:row-span-1 lg:flex-row items-center justify-between gap-8 shadow-sm">
+        <div className="bg-gray-100 rounded-xl p-4 md:p-20 flex flex-col lg:row-span-1 lg:flex-row items-center justify-between gap-8 shadow-sm">
           <div className="max-w-md">
-            <h2 className="text-4xl font-semibold mb-3 text-dark tracking-tight">
+            <h2 className="text-[24px] md:text-4xl font-semibold mb-3 text-dark tracking-tight">
               Stay Updated With Us
             </h2>
             <p className="text-gray-500 font-medium">

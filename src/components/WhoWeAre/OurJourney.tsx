@@ -3,17 +3,17 @@ import { getImageUrl } from "../../utils/imageUrl";
 
 const OurJourney = () => {
   return (
-    <section className="py-10 overflow-hidden">
+    <section className="py-20 lg:py-24 overflow-hidden">
       <div className="container-custom">
-        <div className="flex flex-col lg:flex-row items-center gap-20">
+        <div className="flex flex-col-reverse lg:flex-row items-center gap-16 lg:gap-24">
           {/* Overlapping Images Column */}
-          <div className="w-full lg:w-1/2 relative min-h-[500px] flex items-start justify-end pr-10">
+          <div className="w-full lg:w-1/2 relative min-h-[400px] sm:min-h-[500px] flex items-start justify-end md:pr-10">
             {/* Top Right Back Image */}
             <motion.div
               initial={{ opacity: 0, scale: 0.9, x: 20 }}
               whileInView={{ opacity: 1, scale: 1, x: 0 }}
               viewport={{ once: true }}
-              className="relative w-[85%] aspect-square rounded-[2.5rem] bg-gray-200 overflow-hidden shadow-2xl z-10"
+              className="relative w-[85%] sm:w-[85%] aspect-square rounded-[2rem] sm:rounded-[2.5rem] bg-gray-200 overflow-hidden shadow-2xl z-10"
             >
               <img
                 src={getImageUrl("v1774777352/Pasted_image_uq8vhz.png")}
@@ -28,7 +28,7 @@ const OurJourney = () => {
               whileInView={{ opacity: 1, y: 0, x: -30 }}
               viewport={{ once: true }}
               transition={{ delay: 0.2 }}
-              className="absolute -bottom-10 left-0 lg:-left-6 w-[50%] aspect-square rounded-[2.5rem] bg-gray-300 overflow-hidden shadow-2xl z-20 "
+              className="absolute -bottom-6 sm:-bottom-10 left-0 lg:-left-6 w-[55%] sm:w-[50%] aspect-square rounded-[2rem] sm:rounded-[2.5rem] bg-gray-300 overflow-hidden shadow-2xl z-20"
             >
               <img
                 src={getImageUrl("v1774777319/Pasted_image_uvedgk.png")}
@@ -39,21 +39,21 @@ const OurJourney = () => {
           </div>
 
           {/* Text Content Column */}
-          <div className="w-full lg:w-1/2 mt-12 lg:mt-0">
+          <div className="w-full lg:w-1/2">
             <motion.div
               initial={{ opacity: 0, x: 50 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              className="space-y-8"
+              className="space-y-6 sm:space-y-8"
             >
-              <div className="relative inline-block">
-                <h2 className="text-[32px] text-dark tracking-tighter ">
+              <div className="relative inline-block mb-8 lg:mb-0">
+                <h2 className="text-[28px] sm:text-[32px] text-dark tracking-tighter font-semibold lg:font-normal">
                   Our Journey
                 </h2>
-                <div className="absolute -bottom-7 left-0 w-2/3 h-1.5 bg-primary rounded-full transition-all duration-300 hover:w-full mt-4" />
+                <div className="absolute -bottom-4 left-0 w-1/2 h-1.5 bg-primary rounded-full" />
               </div>
 
-              <div className="space-y-6 mt-10 text-[16px] text-dark leading-relaxed ">
+              <div className="space-y-6 text-[16px] text-dark leading-relaxed">
                 <p>
                   Founded in the heart of Jalgaon, Maharashtra, Vardhishnu is
                   more than just a non-profit. We are a movement of hope—a

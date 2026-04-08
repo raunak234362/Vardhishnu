@@ -23,7 +23,7 @@ const OurPrograms = () => {
                 duration: 0.7,
                 ease: "easeOut",
               }}
-              className="group relative h-[70vh] overflow-hidden rounded-[2.5rem] bg-gray-100 shadow-xl"
+              className="group relative h-[50vh] md:h-[70vh] overflow-hidden rounded-[2.5rem] bg-gray-100 shadow-xl"
             >
               {/* Background Image */}
               <div className="absolute inset-0 z-0">

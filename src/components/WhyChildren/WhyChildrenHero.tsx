@@ -16,7 +16,7 @@ const WhyChildrenHero = () => {
             className="space-y-8"
           >
             <div>
-              <h2 className="space-y-10 text-dark tracking-tighter inline-block relative pr-10">
+              <h2 className="space-y-10 text-dark md:font-regular font-semibold tracking-tighter inline-block relative pr-10">
                 {title}
                 <div className="absolute -bottom-3 left-0 w-1/3 h-1 bg-primary rounded-full transition-all duration-300 " />
                 {/* Floating Pin on Heading */}
@@ -47,7 +47,7 @@ const WhyChildrenHero = () => {
             initial={{ opacity: 0, scale: 0.9 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
-            className="relative rounded-[3rem] overflow-hidden shadow-2xl z-10"
+            className="relative rounded-xl overflow-hidden shadow-2xl z-10"
           >
             <img
               src={getImageUrl("v1774764831/Vardhishnu_4_xag2oq.jpg")}

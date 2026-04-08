@@ -16,7 +16,7 @@ const WhoWeAreHero = () => {
               <span className="text-dark/40 font-medium tracking-wide uppercase text-[20px]">
                 Who we are
               </span>
-              <h1 className="text-[32px] text-dark mt-4 leading-tight tracking-tighter">
+              <h1 className="text-[32px] text-dark md:font-normal font-semibold mt-4 leading-tight tracking-tighter">
                 Creating hope, impacting lives globally
               </h1>
               <p className="text-[16px] text-dark leading-relaxed mt-6 max-w-xl">
@@ -45,7 +45,7 @@ const WhoWeAreHero = () => {
               transition={{ duration: 0.8 }}
               className="relative w-full h-[65vh] rounded-xl overflow-hidden shadow-2xl"
             >
-             <img src={getImageUrl("v1774765444/18_to8rpy.jpg")} alt="" className="w-full h-full object-cover"/>
+              <img src={getImageUrl("v1774765444/18_to8rpy.jpg")} alt="" className="w-full h-full object-cover" />
             </motion.div>
           </div>
         </div>
