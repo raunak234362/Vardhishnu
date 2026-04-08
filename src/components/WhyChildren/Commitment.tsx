@@ -11,14 +11,14 @@ const Commitment = () => {
           className=" mx-auto text-center space-y-12"
         >
           <div className="space-y-8">
-            <h2 className="text-[32px] text-regular leading-[1.15] tracking-tight">
+            <h2 className="text-[24px] md:text-[32px] text-regular md:leading-[1.15] tracking-tight">
               At Vardhishnu, we believe that every{" "}
               <span className="text-primary">child</span> deserves a
               safe, secure, and happy childhood, regardless of the
               socio-economic conditions they are born into.
             </h2>
 
-            <h2 className="text-[32px] text-regular leading-[1.15] tracking-tight">
+            <h2 className="text-[24px] md:text-[32px] text-regular md:leading-[1.15] tracking-tight">
               We are <span className="text-primary">committed</span> to
               giving every child a fair chance to stand up, take control of
               their life, and live with dignity.
@@ -33,7 +33,7 @@ const Commitment = () => {
             />
           </div> */}
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-16 md:gap-32 pt-20 text-left relative">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-16 md:gap-32 pt-10 text-left relative">
             {/* Vision */}
             <motion.div
               initial={{ opacity: 0, x: -30 }}
@@ -41,10 +41,10 @@ const Commitment = () => {
               viewport={{ once: true }}
               className="space-y-6"
             >
-              <h3 className="text-[32px] text-semibold tracking-tighter uppercase inline-block relative border-b-4 border-primary pb-2 rounded-sm">
+              <h3 className="text-[24px] md:text-[32px] text-semibold tracking-tighter uppercase inline-block relative border-b-4 border-primary pb-2 rounded-sm">
                 OUR VISION
               </h3>
-              <p className="text-[20px] leading-snug">
+              <p className="text-[16px] md:text-[20px] leading-snug">
                 Every child will have a safe, secure and happy childhood
               </p>
             </motion.div>
@@ -56,10 +56,10 @@ const Commitment = () => {
               viewport={{ once: true }}
               className="space-y-6 md:mt-32"
             >
-              <h3 className="text-[32px] text-semibold tracking-tighter uppercase inline-block relative border-b-4 border-primary pb-2 rounded-sm">
+              <h3 className="text-[24px] md:text-[32px] text-semibold tracking-tighter uppercase inline-block relative border-b-4 border-primary pb-2 rounded-sm">
                 OUR MISSION
               </h3>
-              <p className="text-[20px] leading-snug pb-20">
+              <p className="text-[16px] md:text-[20px] leading-snug pb-20">
                 To create an eco-system of safe and joyful spaces of learning &
                 support for children by collaborating with individuals,
                 institutions & initiatives

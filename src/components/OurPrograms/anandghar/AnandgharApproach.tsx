@@ -90,10 +90,10 @@ const AnandgharApproach = () => {
             className="w-full"
           >
             <div className="relative inline-block mb-10">
-              <h2 className="text-dark tracking-tight">
+              <h2 className="text-dark md:text-[32px] text-[24px] tracking-tight">
                 {data.approach.title}
               </h2>
-              {/* <div className="absolute -bottom-3 left-0 w-1/2 h-1.5 bg-primary rounded-full" /> */}
+              <div className="absolute -bottom-3 left-0 w-1/2 h-1.5 bg-primary rounded-full" />
             </div>
 
             <div className="space-y-8">
@@ -135,7 +135,7 @@ const AnandgharApproach = () => {
           viewport={{ once: true }}
           className=""
         >
-          <h2 className=" text-dark mb-16">{data.whatWeDo.title}</h2>
+          <h2 className=" text-dark md:text-[32px] text-[24px] mb-16">{data.whatWeDo.title}</h2>
 
           <div className="space-y-10 mb-16">
             {data.whatWeDo.items.map((item, index) => (
