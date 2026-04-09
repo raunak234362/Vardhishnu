@@ -2,23 +2,21 @@ import impactData from "../../data/impact.json";
 import { motion } from "framer-motion";
 
 const DateBlock = ({ date, month, location, color }: { date: string; month?: string; location: string; color: string }) => (
-  <div className="flex items-center gap-4">
-    <span className="text-3xl md:text-4xl text-dark tracking-tight font-medium min-w-[3rem]">
+  <div className="flex flex-col select-none">
+    <span className="text-4xl md:text-5xl font-bold text-dark tracking-tight leading-none">
       {date}
     </span>
-    <div className="flex flex-col select-none">
-      {month && (
-        <span className="text-xs text-dark/60 whitespace-nowrap">
-          {month}
-        </span>
-      )}
-      <span 
-        className="text-[10px] md:text-xs font-bold tracking-tight uppercase"
-        style={{ color }}
-      >
-        {location}
+    {month && (
+      <span className="text-sm md:text-base text-dark/50 font-medium mt-1">
+        {month}
       </span>
-    </div>
+    )}
+    <span 
+      className="text-xs md:text-sm font-bold uppercase mt-1"
+      style={{ color }}
+    >
+      {location}
+    </span>
   </div>
 );
 
@@ -60,29 +58,30 @@ const Conferences = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.05 }}
-                className="p-6 md:p-8 bg-white border border-gray-100 rounded-sm hover:border-primary/20 transition-all duration-300"
+                className="p-6 md:p-10 bg-white border border-gray-100 rounded-sm hover:border-primary/20 transition-all duration-300 shadow-sm hover:shadow-md"
               >
-                <div className="flex flex-col lg:flex-row items-start lg:items-center gap-8 lg:gap-16">
+                <div className={`flex flex-col ${isDualDate ? 'lg:flex-col' : 'lg:flex-row'} items-start gap-8 lg:gap-16`}>
                   {/* Left Side: Ring & Dates */}
-                  <div className="flex items-center gap-6 shrink-0 lg:w-[450px]">
+                  <div className="flex items-start gap-6 shrink-0">
                     <div 
-                      className="w-3 h-3 rounded-full border-2 bg-transparent shrink-0" 
+                      className={`w-4 h-4 rounded-full border-4 bg-white shrink-0 mt-2 ${isDualDate ? 'translate-y-20' : ''}`} 
                       style={{ borderColor: color }}
                     />
                     
                     {isDualDate ? (
-                      <div className="flex items-center gap-6">
+                      <div className="flex flex-col gap-4">
                         {dualDates.map((d, i) => {
-                          const [dPart, ...mPart] = d.split(" ");
+                          const parts = d.trim().split(" ");
+                          const dPart = parts[0];
+                          const mPart = parts.slice(1).join(" ");
                           return (
-                            <div key={i} className="flex items-center gap-6">
-                              <DateBlock 
-                                date={dPart}
-                                month={mPart.join(" ")}
-                                location={conf.location}
-                                color={color}
-                              />
-                              {i === 0 && <span className="text-4xl text-dark/30 font-light">&ndash;</span>}
+                            <div key={i} className="flex flex-col">
+                              {i === 1 && <span className="text-3xl font-bold text-dark my-1">—</span>}
+                              <div className="flex flex-col">
+                                <span className="text-4xl md:text-5xl font-bold text-dark leading-none">{dPart}</span>
+                                <span className="text-sm md:text-base text-dark/50 font-medium mt-1">{mPart}</span>
+                                <span className="text-xs md:text-sm font-bold uppercase mt-1" style={{ color }}>{conf.location}</span>
+                              </div>
                             </div>
                           );
                         })}
@@ -98,13 +97,13 @@ const Conferences = () => {
                   </div>
 
                   {/* Right Side: Content */}
-                  <div className="flex-1 lg:pl-24">
+                  <div className={`flex-1 ${isDualDate ? 'lg:pl-0' : 'lg:pl-12 lg:pt-1'}`}>
                     <p 
-                      className="text-base md:text-lg leading-relaxed font-medium"
+                      className="text-lg md:text-xl leading-relaxed font-medium"
                       style={{ color }}
                     >
-                      <span>‘{conf.title}’</span>
-                      <span className="opacity-80 font-normal ml-2">
+                      <span className="font-semibold">{conf.title}</span>
+                      <span className="opacity-80 font-normal ml-3">
                         {conf.org}
                       </span>
                     </p>

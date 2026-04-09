@@ -49,7 +49,7 @@ const WhoWeAre = () => {
                 duration: 0.7,
                 ease: "easeOut",
               }}
-              className="absolute -bottom-[12%] -right-4 w-[40%               ] md:w-[30%] aspect-3/4 rounded-xl overflow-hidden z-20 bg-gray-200"
+              className="absolute -bottom-[12%] -right-4 w-[40%] md:w-[30%] aspect-3/4 rounded-xl overflow-hidden z-20 bg-gray-200"
             >
               <LazyImage
                 src={getImageUrl("v1774765447/25_wekfwc.jpg")}

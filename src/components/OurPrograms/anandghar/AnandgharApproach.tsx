@@ -23,16 +23,16 @@ const StepCard = ({
         backgroundColor: isActive ? "#ffffff" : "#f3f4f6",
         borderColor: isActive ? "var(--color-primary)" : "transparent",
       }}
-      className={`p-10 h-full border-2 rounded-2xl transition-all duration-500 ${
-        isActive ? "shadow-2xl z-20" : "shadow-none z-10"
+      className={`p-8 md:p-10 h-full rounded-2xl transition-all duration-500 ${
+        isActive ? "lg:shadow-xl rounded-lg lg:border-2 z-20" : "shadow-none border-0 lg:border-2 z-10"
       }`}
     >
-      <ul className="space-y-6">
+      <ul className="space-y-4 md:space-y-6">
         {step.items.map((item, i) => (
           <li
             key={i}
-            className={`text-[16px] leading-relaxed font-regular transition-colors duration-500 ${
-              isActive ? "text-dark" : "text-dark/40"
+            className={`text-[14px] md:text-[16px] leading-relaxed font-regular transition-colors duration-500 ${
+              isActive ? "text-dark" : "text-dark lg:text-dark/40"
             }`}
           >
             {item}
@@ -53,8 +53,8 @@ const AnandgharApproach = () => {
   const [activeIdx, setActiveIdx] = useState(0);
 
   useMotionValueEvent(scrollYProgress, "change", (latest) => {
-    if (latest < 0.33) setActiveIdx(0);
-    else if (latest < 0.66) setActiveIdx(1);
+    if (latest < 0.15) setActiveIdx(0);
+    else if (latest < 0.45) setActiveIdx(1);
     else setActiveIdx(2);
   });
 
@@ -154,17 +154,16 @@ const AnandgharApproach = () => {
       </div>
 
       {/* Holistic Model Section */}
-      <div className="container-custom py-24">
+      <div className="container-custom py-12 md:py-16">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
         >
-          <div className="relative inline-block mb-10">
-            <h2 className=" text-dark tracking-tight">
+          <div className="relative inline-block mb-8">
+            <h2 className=" text-dark text-[24px] md:text-[32px] tracking-tight">
               {data.holisticModel.title}
             </h2>
-            {/* <div className="absolute -bottom-3 left-0 w-1/3 h-1.5 bg-primary rounded-full" /> */}
           </div>
           <p className="text-[16px] text-dark/80 leading-relaxed max-w-5xl">
             {data.holisticModel.description}
@@ -172,26 +171,28 @@ const AnandgharApproach = () => {
         </motion.div>
       </div>
 
-      {/* Our Model Section with Sticky Scroll */}
-      <div ref={sectionRef} className="relative h-[300vh]">
-        <div className="sticky top-0 h-screen flex flex-col justify-center overflow-hidden">
+      {/* Our Model Section - Responsive Layout */}
+      <div 
+        ref={sectionRef} 
+        className="relative md:h-[100vh] h-auto"
+      >
+        <div className="lg:sticky lg:top-0 lg:h-screen flex flex-col justify-center overflow-hidden py-3 lg:py-0">
           <div className="container-custom">
             <motion.div
-              initial={{ opacity: 0, y: 30 }}
+              initial={{ opacity: 0, y: 10 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
             >
               <div className="relative inline-block mb-10">
-                <h2 className=" text-dark tracking-tight">
+                <h2 className="text-dark text-[24px] md:text-[32px] tracking-tight">
                   {data.ourModel.title}
                 </h2>
                 <div className="absolute -bottom-6 left-0 w-1/2 h-1.5 bg-primary rounded-full" />
               </div>
 
-              {/* Progress Indicator Container */}
-              <div className="mx-auto mb-10 px-4">
-                {/* Step Labels Above the Bar */}
-                <div className="flex mb-4 text-xs md:text-[14px] font-medium tracking-wide text-dark/40">
+              {/* Progress Indicator Container - Desktop Only */}
+              <div className="hidden lg:block mx-auto mb-12 px-4">
+                <div className="flex mb-4 text-[14px] font-medium tracking-wide text-dark/40">
                   {["Step 1", "Step 2", "Step 3"].map((label, i) => (
                     <div key={i} className="flex-1 text-center">
                       <span
@@ -205,7 +206,7 @@ const AnandgharApproach = () => {
                   ))}
                 </div>
                 {/* Segmented Progress Bar */}
-                <div className="grid grid-cols-3 gap-6 h-2 w-full px-2">
+                <div className="grid grid-cols-3 gap-6 h-1 w-full px-2">
                   {[0, 1, 2].map((idx) => (
                     <motion.div
                       key={idx}
@@ -213,29 +214,32 @@ const AnandgharApproach = () => {
                         backgroundColor:
                           activeIdx >= idx ? "var(--color-primary)" : "#f0f2f5",
                       }}
-                      transition={{ duration: 0.3 }}
-                      className="rounded-full relative h-full"
-                    >
-                      {idx < 2 && (
-                        <div className="absolute -right-5 top-1/2 -translate-y-1/2 text-dark/20 font-bold text-[14px]">
-                          
-                        </div>
-                      )}
-                    </motion.div>
+                      className="rounded-full h-full"
+                    />
                   ))}
                 </div>
               </div>
 
-              {/* Model Steps Cards */}
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
-                {data.ourModel.steps.map((step, idx) => (
-                  <StepCard
-                    key={idx}
-                    step={step}
-                    idx={idx}
-                    activeIdx={activeIdx}
-                  />
-                ))}
+              {/* Model Steps Cards - Responsive Grid */}
+              <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-8">
+                {data.ourModel.steps.map((step, idx) => {
+                  const isMobile = typeof window !== 'undefined' && window.innerWidth < 1024;
+                  return (
+                    <div key={idx} className="h-auto mb-16 lg:mb-0">
+                      {/* Mobile Only: Simple Centered Step Label */}
+                      <div className={`lg:hidden mb-8 text-center ${idx > 0 ? 'mt-16' : 'mt-4'}`}>
+                        <span className="text-dark/40 font-medium text-[14px] uppercase tracking-wider">
+                          Step {idx + 1}
+                        </span>
+                      </div>
+                      <StepCard
+                        step={step}
+                        idx={idx}
+                        activeIdx={isMobile ? -1 : activeIdx}
+                      />
+                    </div>
+                  );
+                })}
               </div>
             </motion.div>
           </div>
@@ -243,18 +247,18 @@ const AnandgharApproach = () => {
       </div>
 
       {/* Our Values Section */}
-      <div className="container-custom py-10">
+      <div className="container-custom pt-16 pb-16">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
         >
           <div className="relative inline-block mb-16">
-            <h2 className=" text-dark tracking-tight">{data.values.title}</h2>
+            <h2 className=" text-dark tracking-tight text-[24px] md:text-[32px]">{data.values.title}</h2>
             <div className="absolute -bottom-6 left-0 w-1/2 h-1.5 bg-primary rounded-full" />
           </div>
 
-          <div className="bg-white rounded-[4rem] border-2 border-gray-100 shadow-[0_20px_50px_rgba(0,0,0,0.05)] p-4 md:p-8 flex flex-wrap items-center justify-around gap-8 md:gap-4 mx-auto">
+          <div className="bg-white md:rounded-3xl rounded-xl border border-gray-100 shadow-[0_20px_50px_rgba(0,0,0,0.05)] p-6 md:p-10 flex flex-col md:flex-row md:items-center justify-around gap-10 md:gap-4 max-w-sm md:max-w-none mx-auto">
             {data.values.items.map((value, idx) => {
               const iconName = value.icon
                 .split("-")
@@ -262,7 +266,7 @@ const AnandgharApproach = () => {
                 .join("") as keyof typeof icons;
               const Icon =
                 (icons as unknown as Record<string, React.ElementType>)[
-                  iconName
+                iconName
                 ] || icons.Heart;
 
               const colors = [
@@ -272,17 +276,16 @@ const AnandgharApproach = () => {
                 "bg-green-50 text-green-600",
               ];
               return (
-                <div key={idx} className="flex items-center gap-4 group">
+                <div key={idx} className="flex items-center gap-6 group">
                   <div
-                    className={`p-4 rounded-2xl rotate-45 group-hover:rotate-0 transition-transform duration-500 shadow-sm ${
-                      colors[idx % colors.length]
-                    }`}
+                    className={`p-4 rounded-2xl rotate-45 group-hover:rotate-0 transition-transform duration-500 shadow-sm ${colors[idx % colors.length]
+                      }`}
                   >
                     <div className="-rotate-45 group-hover:rotate-0 transition-transform duration-500">
-                      <Icon size={28} strokeWidth={2.5} />
+                      <Icon size={30} strokeWidth={2.5} />
                     </div>
                   </div>
-                  <span className="text-3xl text-dark tracking-tighter">
+                  <span className="text-[26px] md:text-3xl text-dark tracking-tight">
                     {value.name}
                   </span>
                   {idx < data.values.items.length - 1 && (
@@ -295,7 +298,7 @@ const AnandgharApproach = () => {
         </motion.div>
       </div>
 
-      <div className="container-custom py-24 px-4 sm:px-0 mt-24 relative overflow-hidden">
+      <div className="container-custom py-24 px-4 sm:px-0 relative overflow-hidden">
         {/* Design Background Section */}
         <div className="absolute inset-0 bg-primary/10 rounded-[4rem] -z-10" />
 
@@ -315,11 +318,10 @@ const AnandgharApproach = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: idx * 0.1, duration: 0.6 }}
-                className={`relative overflow-hidden rounded-xl group shadow-2xl ${
-                  idx === 0 || idx === 5
+                className={`relative overflow-hidden rounded-xl group shadow-2xl ${idx === 0 || idx === 5
                     ? "h-[600px] md:h-[800px] md:row-span-2"
                     : "h-[300px] md:h-[380px]"
-                }`}
+                  }`}
               >
                 <LazyImage
                   src={getImageUrl(item.image)}
@@ -328,7 +330,7 @@ const AnandgharApproach = () => {
                   containerClassName="w-full h-full"
                 />
                 <div className="absolute justify-center inset-0 bg-linear-to-t from-black/90 via-black/20 to-transparent flex items-end p-8 sm:p-12">
-                  <p className="text-primary font-handwritten text-center text-[60px] leading-tight drop-shadow-2xl max-w-sm transition-transform duration-500 group-hover:-translate-y-2">
+                  <p className="text-primary font-handwritten text-center text-[40px] md:text-[60px] leading-tight drop-shadow-2xl max-w-sm transition-transform duration-500 group-hover:-translate-y-2">
                     {item.label}
                   </p>
                 </div>

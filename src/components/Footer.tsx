@@ -12,7 +12,7 @@ import Logo from "../assets/Logo_Vardhishnu.jpg";
 
 const Footer = () => {
   return (
-    <footer className="bg-white pt-24 font-sans">
+    <footer className="bg-white pt-10 md:pt-24 font-sans">
       {/* Newsletter Section */}
       <div className="container-custom mb-32">
         <div className="bg-gray-100 rounded-xl p-4 md:p-20 flex flex-col lg:row-span-1 lg:flex-row items-center justify-between gap-8 shadow-sm">
