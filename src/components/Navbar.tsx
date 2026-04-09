@@ -6,9 +6,8 @@ import data from "../data/data.json";
 import Logo from "../assets/logo.svg";
 
 const Navbar = () => {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
   const location = useLocation();
-  const isHomePage = location.pathname === "/";
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   // Prevent body scroll when menu is open
   useEffect(() => {
@@ -27,11 +26,16 @@ const Navbar = () => {
     setIsMenuOpen(false);
   }, [location.pathname]);
 
+  const overlayPages = ["/", "anandghar", "communitycollectives", "fellowship", "resources", "our-programs"];
+  const isOverlayPage = overlayPages.some(p => 
+    location.pathname === "/" ? p === "/" : (location.pathname.includes(p) && p !== "/")
+  );
+
   return (
     <nav
       className={`z-50 w-full transition-all duration-300 ${
-        isHomePage
-          ? "bg-black/10"
+        location.pathname === "/" || (typeof window !== "undefined" && window.innerWidth < 1024 && isOverlayPage)
+          ? "absolute top-0 left-0 bg-black/10"
           : "relative bg-black/5 shadow-lg"
       }`}
     >
