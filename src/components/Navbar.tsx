@@ -8,6 +8,13 @@ import Logo from "../assets/logo.svg";
 const Navbar = () => {
   const location = useLocation();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [windowWidth, setWindowWidth] = useState(typeof window !== "undefined" ? window.innerWidth : 1200);
+
+  useEffect(() => {
+    const handleResize = () => setWindowWidth(window.innerWidth);
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   // Prevent body scroll when menu is open
   useEffect(() => {
@@ -31,11 +38,14 @@ const Navbar = () => {
     location.pathname === "/" ? p === "/" : (location.pathname.includes(p) && p !== "/")
   );
 
+  const isDesktop = windowWidth >= 1024;
+  const isSticky = location.pathname === "/" || (!isDesktop && isOverlayPage);
+
   return (
     <nav
       className={`z-50 w-full transition-all duration-300 ${
-        location.pathname === "/" || (typeof window !== "undefined" && window.innerWidth < 1024 && isOverlayPage)
-          ? "absolute top-0 left-0 bg-black/10"
+        isSticky
+          ? "absolute top-0 md:top-2 left-0 bg-black/10"
           : "relative bg-black/5 shadow-lg"
       }`}
     >
