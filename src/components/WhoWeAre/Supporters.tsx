@@ -43,7 +43,7 @@ const Supporters = () => {
             <h2 className="text-[32px] text-dark tracking-tighter">
               Supported & Accredited By
             </h2>
-            <div className="absolute -bottom-7 left-0 w-1/3 h-1.5 bg-primary rounded-full transition-all duration-300" />
+            <div className="absolute -bottom-7 left-0 w-1/3 h-0.5 md:h-1 bg-primary rounded-full transition-all duration-300" />
           </div>
         </div>
 

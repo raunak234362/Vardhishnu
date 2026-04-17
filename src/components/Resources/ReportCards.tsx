@@ -26,7 +26,7 @@ const ReportCards = () => {
         <div className="mb-20 text-left">
           <h2 className="text-[32px] font-semibold text-dark tracking-tighter inline-block relative">
             Explore all our resources
-            <div className="absolute -bottom-6 left-0 w-1/3 h-1.5 bg-primary rounded-full" />
+            <div className="absolute -bottom-6 left-0 w-1/3 h-0.5 md:h-1 bg-primary rounded-full" />
           </h2>
         </div>
 

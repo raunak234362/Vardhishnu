@@ -103,7 +103,7 @@ const Footer = () => {
           </div>
 
           {/* Quick Links 2 */}
-          <div className="lg:col-span-2 space-y-8">
+          {/* <div className="lg:col-span-2 space-y-8">
             <h4 className="text-[20px] font-bold text-dark tracking-tight">
               About us
             </h4>
@@ -129,7 +129,7 @@ const Footer = () => {
                 </a>
               </li>
             </ul>
-          </div>
+          </div> */}
 
           {/* Contact Info */}
           <div className="lg:col-span-4 space-y-8">

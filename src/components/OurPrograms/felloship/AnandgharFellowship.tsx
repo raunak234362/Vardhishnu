@@ -333,7 +333,7 @@ const AnandgharFellowship = () => {
               <LazyImage
                 src={getImageUrl("v1774764806/4._Home_td2lvq.jpg")}
                 alt="Our approach image"
-                className="w-full h-full object-cover"
+                className="w-full h-full object-cover object-right"
                 containerClassName="w-full h-full"
               />
             </div>
@@ -461,9 +461,14 @@ const AnandgharFellowship = () => {
                 register your interest for next year here.
               </p>
             </div>
-            <button className="btn-primary mx-auto px-20 flex items-center justify-center py-4 font-[600] text-xl rounded-lg shadow-xl shadow-primary/20 cursor-pointer">
+            <a
+              href="https://docs.google.com/forms/d/1otKnuaVdILxOjVk4N4IGYsxUUmFdA8NVywRxx0ZJ4DI/viewform?edit_requested=true&pli=1"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-primary mx-auto w-fit px-20 flex items-center justify-center py-4 font-[600] text-xl rounded-lg shadow-xl shadow-primary/20 cursor-pointer"
+            >
               Register
-            </button>
+            </a>
           </motion.div>
         </div>
 

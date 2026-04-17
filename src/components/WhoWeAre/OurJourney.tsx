@@ -50,7 +50,7 @@ const OurJourney = () => {
                 <h2 className="text-[28px] sm:text-[32px] text-dark tracking-tighter font-semibold lg:font-normal">
                   Our Journey
                 </h2>
-                <div className="absolute -bottom-4 left-0 w-1/2 h-1.5 bg-primary rounded-full" />
+                <div className=" my-5 left-0 w-1/2 h-0.5 md:h-1  bg-primary rounded-full" />
               </div>
 
               <div className="space-y-6 text-[16px] text-dark leading-relaxed">

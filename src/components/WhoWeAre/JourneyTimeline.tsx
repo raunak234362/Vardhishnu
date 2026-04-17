@@ -10,7 +10,7 @@ const JourneyTimeline = () => {
             <h2 className="text-[32px] text-dark tracking-tighter font-semibold lg:font-normal">
               Our Journey
             </h2>
-            <div className="absolute -bottom-4 left-0 w-2/3 h-1.5 bg-primary rounded-full transition-all duration-300" />
+            <div className="absolute -bottom-4 left-0 w-2/3 h-0.5 md:h-1 bg-primary rounded-full transition-all duration-300" />
           </div>
           <p className="text-dark/40 font-bold text-sm tracking-widest uppercase mb-10">
             Since 2013

@@ -28,7 +28,7 @@ const Philosophy = () => {
                 <h2 className="md:text-[32px] text-[24px] text-dark font-bold md:font-semibold tracking-tight">
                   Our Guiding Philosophy
                 </h2>
-                <div className="w-16 h-1.5 bg-primary mt-3 md:mt-1 rounded-full" />
+                <div className="w-16 h-0.5 md:h-1 bg-primary mt-3 md:mt-1 rounded-full" />
               </div>
 
               {/* 2. Main Description Box */}
