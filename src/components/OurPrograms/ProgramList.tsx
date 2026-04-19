@@ -10,9 +10,9 @@ const ProgramList = () => {
       description:
         "Community learning centers for children from vulnerable backgrounds to connect, share and reflect.",
       points: [
-        "Nurturing academic skills",
-        "School Enrolment & sustenance",
-        "Hygiene & Physical well-being",
+        "Rooted in Dignity",
+        "Learning beyond classroom",
+        "Nurturing young lives",
       ],
       link: "/our-programs/anandghar-approach",
       image:
@@ -23,9 +23,9 @@ const ProgramList = () => {
       description:
         "The idea is to create spaces of learning & support for street children specially child waste pickers and child labors. It is achieved through community learning centers; known as 'Anandghar (A Home of Happiness)'.",
       points: [
-        "Nurturing academic skills",
-        "School Enrolment & sustenance",
-        "Hygiene & Physical well-being",
+        "Fellows For Change ",
+        "Hope in Action  ",
+        "Serve. Learn. Lead",
       ],
       link: "/our-programs/anandghar-fellowship",
       image:
@@ -36,9 +36,9 @@ const ProgramList = () => {
       description:
         "One year unique support program for grass-root initiatives with limited or no exposure of changing developmental landscape.",
       points: [
-        "Nurturing academic skills",
-        "School Enrolment & sustenance",
-        "Hygiene & Physical well-being",
+        "Nurturing grassroot changemakerss",
+        "Bringing change from grounds up",
+        "Together we thrive",
       ],
       link: "/our-programs/community-collectives",
       image:

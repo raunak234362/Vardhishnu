@@ -18,7 +18,7 @@ const WhatWeDo = () => {
                 <h2 className="text-[32px] text-dark font-medium tracking-tighter">
                   What We Do
                 </h2>
-                <div className="absolute -bottom-7 left-0 w-1/3 h-1.5 bg-primary rounded-full transition-all duration-300" />
+                <div className="absolute -bottom-7 left-0 w-1/3 h-0.5 md:h-1 bg-primary rounded-full transition-all duration-300" />
               </div>
               <p className="text-[16px] text-dark leading-relaxed max-w-xl mt-10 ">
                 Our core focus areas include education, child protection, and

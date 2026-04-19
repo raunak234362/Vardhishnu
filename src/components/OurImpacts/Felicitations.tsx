@@ -21,7 +21,7 @@ const Felicitations = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.05 }}
-              className="flex items-start gap-4 p-6 bg-white rounded-2xl border border-black/5 hover:border-primary/20 hover:shadow-xl hover:shadow-primary/5 transition-all group"
+              className="flex items-start gap-4 p-0 md:p-6 bg-white rounded-2xl border border-black/5 hover:border-primary/20 hover:shadow-xl hover:shadow-primary/5 transition-all group"
             >
               <div className="shrink-0 w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary group-hover:scale-110 transition-transform">
                 <img src={trophy} alt="" />

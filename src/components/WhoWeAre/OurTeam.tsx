@@ -54,7 +54,7 @@ const OurTeam = () => {
             <h2 className="text-[32px] text-dark tracking-tighter font-medium">
               Our Team
             </h2>
-            <div className="absolute -bottom-6 left-0 w-1/3 h-1.5 bg-primary rounded-full transition-all duration-300" />
+            <div className="absolute -bottom-6 left-0 w-1/3 h-0.5 md:h-1 bg-primary rounded-full transition-all duration-300" />
           </div>
         </div>
 
@@ -149,7 +149,7 @@ const OurTeam = () => {
                         behavior: "smooth",
                       });
                     }}
-                    className={`h-1.5 rounded-full transition-all duration-500 cursor-pointer ${
+                    className={`h-0.5 md:h-1 rounded-full transition-all duration-500 cursor-pointer ${
                       isVisible ? "w-16 bg-primary" : "w-12 bg-gray-200"
                     }`}
                     aria-label={`Go to team member ${idx + 1}`}

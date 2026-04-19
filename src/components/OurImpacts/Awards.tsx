@@ -6,7 +6,7 @@ const Awards = () => {
     <section className="py-4 bg-white">
       <div className="container-custom px-6 lg:px-20">
         <div className="mb-20 text-left">
-          <h2 className="text-dark font-semibold tracking-tighter inline-block relative">
+          <h2 className="text-[24px] md:text-[32px] text-dark font-semibold tracking-tighter inline-block relative">
             Awards
             <div className="absolute -bottom-6 left-0 w-1/3 h-1.5 bg-primary rounded-full" />
           </h2>
@@ -28,10 +28,10 @@ const Awards = () => {
                 </h4>
               </div>
               <div className="md:col-span-6">
-                <p className="text-dark/40 text-center font-medium text-[16px]">{award.by}</p>
+                <p className="text-dark/40 text-left md:text-center font-medium text-[16px]">{award.by}</p>
               </div>
               <div className="md:col-span-1 text-left">
-                <span className="text-dark tracking-tight bg-primary/10 px-3 py-1 rounded-full text-[16px]">
+                <span className="text-dark tracking-tight bg-primary/10 px-0 md:px-3 py-1 rounded-full text-[16px]">
                   {award.year}
                 </span>
               </div>

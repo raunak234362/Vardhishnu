@@ -16,9 +16,9 @@ const ImpactHero = () => {
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          className="max-w-6xl mx-auto space-y-8 mb-16 px-4"
+          className="max-w-7xl md:max-w-6xl mx-auto space-y-8 mb-16 px-2 md:px-4"
         >
-          <h1 className="text-[32px] text-dark font-outfit font-semibold leading-tight tracking-tight">
+          <h1 className="text-[32px] text-dark font-outfit md:text-center text-left font-semibold leading-tight tracking-tight">
             This is the impact{" "}
             <span className="text-primary italic px-2 text-[40px] align-middle font-handwritten">
               YOU
@@ -28,7 +28,7 @@ const ImpactHero = () => {
 
           <div className="w-full h-1 bg-primary/40 rounded-full max-w-4xl mx-auto" />
 
-          <p className="text-dark/50 text-[20px] font-outfit font-medium max-w-2xl mx-auto leading-relaxed">
+          <p className="md:text-center text-left text-dark/50 text-[16px] md:text-[20px] font-outfit font-medium max-w-2xl mx-auto leading-relaxed">
             We've been able to make a positive impact on the lives of so many
             children, all thanks to your unwavering support.
           </p>
@@ -38,14 +38,16 @@ const ImpactHero = () => {
           {/* Light green/yellow curved background decoration */}
           <div className="absolute inset-0 bg-primary/20 rounded-[100%] scale-x-150 translate-y-32 z-0" />
 
-          <div className="relative z-10 grid grid-cols-5 justify-center items-center gap-4 md:gap-8 px-4">
+          <div className="relative z-10 grid grid-cols-3 md:grid-cols-5 justify-center items-center gap-8 md:gap-8 px-4">
             {images.map((img, index) => (
               <motion.div
                 key={index}
                 initial={{ opacity: 0, scale: 0.8, y: 30 }}
                 animate={{ opacity: 1, scale: 1, y: 0 }}
                 transition={{ delay: index * 0.1 }}
-                className={`relative w-36 h-48 md:w-64 md:h-56 rounded-2xl overflow-hidden shadow-2xl group bg-white ${index === 4 ? "self-start" : ""}`}
+                className={`relative w-38 h-28 md:w-64 md:h-56 rounded-2xl overflow-hidden shadow-2xl group bg-white ${
+                  index === 0 || index === 4 ? "hidden md:block" : ""
+                } ${index === 4 ? "self-start" : ""}`}
                 style={{
                   marginTop: index % 2 === 0 ? "0" : "60px",
                   transform: `rotate(${index % 2 === 0 ? -2 : 2}deg)`,

@@ -124,9 +124,8 @@ const Hero = () => {
               setDirection(i > currentSlide ? 1 : -1);
               setCurrentSlide(i);
             }}
-            className={`h-1.5 transition-all duration-500 rounded-full ${
-              currentSlide === i ? "w-12 bg-primary" : "w-12 bg-white/30"
-            }`}
+            className={`h-1.5 transition-all duration-500 rounded-full ${currentSlide === i ? "w-12 bg-primary" : "w-12 bg-white/30"
+              }`}
           />
         ))}
       </div>

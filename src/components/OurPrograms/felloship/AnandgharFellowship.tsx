@@ -244,19 +244,19 @@ const AnandgharFellowship = () => {
         </div>
         <div className="absolute inset-0 bg-black/10 z-10" />
         <div className="absolute inset-0 bg-linear-to-t from-black/80 via-black/30 to-transparent z-10" />
-        <div className="absolute inset-0 flex items-center justify-center lg:items-end lg:justify-start lg:p-20 z-20">
+        <div className="absolute inset-0 flex items-end justify-center lg:items-end lg:justify-start lg:p-20 z-20">
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-primary px-30 font-handwritten font-bold text-80px md:text-9xl lg:text-8xl drop-shadow-2xl"
+            className="text-primary px-30 font-handwritten font-bold text-[80px] md:text-9xl lg:text-8xl drop-shadow-2xl"
           >
             AnandGhar Fellowship
           </motion.h1>
         </div>
       </div>
 
-      <div className="container-custom py-24">
+      <div className="container-custom py-10 md:py-24">
         {/* Our Approach Section */}
         <div className="flex flex-col lg:flex-row items-start gap-16 lg:gap-24 relative mb-40">
           <motion.div
@@ -266,19 +266,19 @@ const AnandgharFellowship = () => {
             className="w-full lg:w-3/5"
           >
             <div className="relative inline-block mb-10">
-              <h2 className="text-32px font-semibold md:text-5xl tracking-tight">
+              <h2 className="text-[24px] font-semibold md:text-5xl tracking-tight">
                 Our Approach
               </h2>
               {/* <div className="absolute -bottom-3 left-0 w-1/2 h-1.5 bg-primary rounded-full" /> */}
             </div>
 
             <div className="space-y-8">
-              <p className="text-[20px] text-dark font-outfit leading-relaxed max-w-2xl py-2">
+              <p className="text-[16px] md:text-[20px] text-dark font-outfit leading-relaxed max-w-2xl py-2">
                 "If we want to reach real peace in the world, we should start
                 educating our children." – Mahatma Gandhi
               </p>
 
-              <p className="text-[20px] text-dark leading-relaxed font-outfit max-w-2xl">
+              <p className="text-[16px] md:text-[20px] text-dark leading-relaxed font-outfit max-w-2xl">
                 In India, UNICEF estimates there are nearly 11 million street
                 children. Many of them live and work on the streets, struggling
                 to survive while facing exploitation and abuse. Solving this
@@ -286,7 +286,7 @@ const AnandgharFellowship = () => {
                 action.
               </p>
 
-              <p className="text-[20px] text-dark leading-relaxed font-outfit max-w-2xl">
+              <p className="text-[16px] md:text-[20px] text-dark leading-relaxed font-outfit max-w-2xl">
                 The Anandghar Fellowship invites young graduates who are:
               </p>
 
@@ -298,7 +298,7 @@ const AnandgharFellowship = () => {
                 ].map((point, idx) => (
                   <li key={idx} className="flex gap-4 items-start">
                     <div className="mt-2 w-3 h-3 rounded-full bg-primary shrink-0" />
-                    <p className="text-[20px] text-dark font-outfit leading-relaxed">
+                    <p className="text-[16px] md:text-[20px] text-dark font-outfit leading-relaxed">
                       {point}
                     </p>
                   </li>
@@ -306,14 +306,14 @@ const AnandgharFellowship = () => {
               </ul>
 
               <div className="space-y-4">
-                <p className="text-[20px] text-dark leading-relaxed font-outfit max-w-2xl">
+                <p className="text-[16px] md:text-[20px] text-dark leading-relaxed font-outfit max-w-2xl">
                   This is your chance to embark on a two-year journey that is as
                   challenging as it is rewarding—a journey where you'll use your
                   knowledge and skills to transform the lives of some of the
                   poorest and most vulnerable children.
                 </p>
 
-                <p className="text-[20px] text-dark leading-relaxed font-outfit max-w-2xl">
+                <p className="text-[16px] md:text-[20px] text-dark leading-relaxed font-outfit max-w-2xl">
                   Join us, and help build a future where every child has the
                   chance to learn, grow, and live with dignity.
                 </p>
@@ -341,7 +341,7 @@ const AnandgharFellowship = () => {
         </div>
 
         {/* What is Fellowship Section */}
-        <div className="flex flex-col lg:flex-row-reverse items-start h-[70vh] gap-16 lg:gap-24">
+        <div className="flex flex-col lg:flex-row-reverse items-start lg:h-[70vh] h-auto gap-16 lg:gap-24">
           <motion.div
             initial={{ opacity: 0, x: 50 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -349,13 +349,13 @@ const AnandgharFellowship = () => {
             className="w-full lg:w-3/5"
           >
             <div className="relative inline-block mb-10">
-              <h2 className="text-[80px] md:text-5xl text-dark font-semibold tracking-tight leading-tight">
+              <h2 className="text-[24px] md:text-5xl text-dark font-semibold tracking-tight leading-tight">
                 What is the Anandghar Fellowship?
               </h2>
-              <div className="absolute -bottom-18 left-0 w-1/5 h-1.5 bg-primary rounded-full" />
+              <div className="absolute md:-bottom-18 -bottom-10 left-0 w-1/5 h-0.5 md:h-1 bg-primary rounded-full" />
             </div>
 
-            <p className="text-[20px] text-dark leading-relaxed font-outfit py-20">
+            <p className="text-[14px] md:text-[20px] text-dark leading-relaxed font-outfit lg:py-20 py-8">
               The Anandghar Fellowship is not just a program—it's a two-year,
               life-changing journey into the heart of India's grassroots.
               Through our Community Learning Centers, you'll create safe, joyful
@@ -369,7 +369,7 @@ const AnandgharFellowship = () => {
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            className="w-full lg:w-[35%]"
+            className="hidden lg:block w-full lg:w-[35%]"
           >
             <div className="aspect-square rounded-xl bg-gray-100 overflow-hidden shadow-2xl ">
               {/* Left Image Placeholder */}
@@ -384,8 +384,8 @@ const AnandgharFellowship = () => {
         </div>
 
         {/* As a Fellow Section */}
-        <div className="mb-10">
-          <p className="text-[20px] text-dark/60 mb-12">
+        <div className="lg:mb-20 mb-10">
+          <p className="text-[14px] md:text-[20px] text-dark/60 mb-8">
             As a Fellow, you will:
           </p>
           <div className="space-y-10 max-w-100%">
@@ -425,14 +425,14 @@ const AnandgharFellowship = () => {
                 className="flex gap-6 items-start"
               >
                 <div className="w-4 h-4 rounded-full bg-primary mt-2 shrink-0" />
-                <p className="text-[18px] text-dark/70 font-outfit leading-relaxed">
+                <p className="text-[14px] md:text-[18px] text-dark/70 font-outfit leading-relaxed">
                   <span className="text-dark font-semibold">{duty.title}</span>{" "}
                   — {duty.description}
                 </p>
               </motion.div>
             ))}
           </div>
-          <p className="mt-16 text-[20px] text-dark font-outfit  max-w-100%">
+          <p className="mt-16 text-[14px] md:text-[20px] text-dark font-outfit  max-w-100%">
             This isn't just about teaching—it's about building futures, breaking
             cycles of injustice, and becoming part of something bigger than
             yourself.
@@ -447,33 +447,38 @@ const AnandgharFellowship = () => {
             viewport={{ once: true }}
             className="max-w-4xl mx-auto space-y-8"
           >
-            <h2 className="text-[32px] md:text-4xl text-dark font-semibold font-outfit tracking-tight">
+            <h2 className="text-[24px] md:text-[32px] md:text-4xl text-dark font-semibold font-outfit tracking-tight">
               Applications for the 2026 Cohort Are Now{" "}
               <span className="text-primary font-bold">Open</span>!
             </h2>
             <div className="">
-              <p className="text-xl text-dark/50 font-outfit leading-relaxed">
+              <p className="text-[14px] md:text-xl text-dark/50 font-outfit leading-relaxed">
                 The submission window for application to 2026 cohort are now
                 open.
               </p>
-              <p className="text-xl text-dark/60 font-outfit leading-relaxed">
+              <p className="text-[14px] md:text-xl text-dark/60 font-outfit leading-relaxed">
                 If you are interested in applying for the program, kindly
                 register your interest for next year here.
               </p>
             </div>
-            <button className="btn-primary mx-auto px-20 flex items-center justify-center py-4 text-xl rounded-lg shadow-xl shadow-primary/20 cursor-pointer">
+            <a
+              href="https://docs.google.com/forms/d/1otKnuaVdILxOjVk4N4IGYsxUUmFdA8NVywRxx0ZJ4DI/viewform?edit_requested=true&pli=1"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-primary mx-auto w-fit px-20 flex items-center justify-center py-4 font-[600] text-xl rounded-lg shadow-xl shadow-primary/20 cursor-pointer"
+            >
               Register
-            </button>
+            </a>
           </motion.div>
         </div>
 
         {/* Selection Process Section */}
         <div className="relative mb-15 lg:mb-40 px-10 lg:px-0 max-w-100% mx-auto">
           <div className="relative inline-block mb-20">
-            <h2 className="text-[32px] md:text-5xl font-semibold font-outfit tracking-tight">
+            <h2 className="text-[24px] md:text-5xl font-semibold font-outfit tracking-tight">
               Our Selection Process
             </h2>
-            <div className="absolute -bottom-8 left-0 w-1/4 h-2 bg-primary" />
+            <div className="absolute -bottom-8 left-0 w-1/4 h-0.5 md:h-1 bg-primary" />
           </div>
 
           <div className="flex flex-col">
@@ -485,8 +490,8 @@ const AnandgharFellowship = () => {
                 viewport={{ once: true }}
                 className="lg:w-[45%] relative"
               >
-                <div className="absolute -left-16 lg:-left-20 top-2 w-10 h-10 rounded-full bg-[#3ac2ba] flex items-center justify-center text-white shadow-lg z-2">
-                  <Check size={20} strokeWidth={3} />
+                <div className="absolute -left-12 lg:-left-20 top-2 lg:w-10 lg:h-10 w-8 h-8 rounded-full bg-[#3ac2ba] flex items-center justify-center text-white shadow-lg z-2">
+                  <Check size={typeof window !== "undefined" && window.innerWidth < 1024 ? 13 : 20} strokeWidth={3} />
                 </div>
 
                 <div className="hidden lg:block absolute top-6 left-[-120%] w-[100%] h-[250px] pointer-events-none">
@@ -505,11 +510,11 @@ const AnandgharFellowship = () => {
                 </div>
 
                 <div className="space-y-3">
-                  <h3 className="text-[32px] font-semibold text-dark font-outfit">
+                  <h3 className="text-[24px] md:text-[32px] font-semibold text-dark font-outfit">
                     The Application Form
                   </h3>
-                  <div className="w-16 h-1.5 bg-[#a3c639]" />
-                  <p className="text-[20px] text-dark font-outfit leading-relaxed">
+                  <div className="w-16 h-0.5 md:h-1 bg-[#a3c639]" />
+                  <p className="text-[16px] md:text-[20px] text-dark font-outfit leading-relaxed">
                     The application form helps us get to know you. Please be
                     specific, clear, and honest in your responses. It should
                     reflect why you want to join Vardhishnu and why you'd be a
@@ -520,7 +525,7 @@ const AnandgharFellowship = () => {
               </motion.div>
             </div>
 
-            <div className="h-[250px]" />
+            <div className="lg:h-[200px] h-12" />
 
             {/* Step 2: The Phone Interview */}
             <div className="flex justify-start lg:pl-12 relative">
@@ -530,8 +535,8 @@ const AnandgharFellowship = () => {
                 viewport={{ once: true }}
                 className="lg:w-[45%] relative"
               >
-                <div className="absolute -left-16 lg:-left-20 top-2 w-10 h-10 rounded-full bg-[#3ac2ba] flex items-center justify-center text-white shadow-lg z-20">
-                  <Check size={20} strokeWidth={3} />
+                <div className="absolute -left-12 lg:-left-20 top-2 lg:w-10 lg:h-10 w-8 h-8 rounded-full bg-[#3ac2ba] flex items-center justify-center text-white shadow-lg z-20">
+                  <Check size={typeof window !== "undefined" && window.innerWidth < 1024 ? 13 : 20} strokeWidth={3} />
                 </div>
 
                 <div className="hidden lg:block absolute top-0 left-full w-[100%] h-[250px] pointer-events-none">
@@ -553,11 +558,11 @@ const AnandgharFellowship = () => {
                 </div>
 
                 <div className="space-y-3">
-                  <h3 className="text-[32px] font-semibold text-dark font-outfit">
+                  <h3 className="text-[24px] md:text-[32px] font-semibold text-dark font-outfit">
                     The Phone Interview
                   </h3>
-                  <div className="w-16 h-1.5 bg-[#a3c639]" />
-                  <p className="text-[20px] text-dark font-outfit leading-relaxed">
+                  <div className="w-16 h-0.5 md:h-1 bg-[#a3c639]" />
+                  <p className="text-[16px] md:text-[20px] text-dark font-outfit leading-relaxed">
                     After reviewing your application, we may invite you for a
                     one-hour phone interview to clarify details and gather
                     additional information for our evaluation.
@@ -566,7 +571,7 @@ const AnandgharFellowship = () => {
               </motion.div>
             </div>
 
-            <div className="h-32 lg:h-40" />
+            <div className="lg:h-40 h-12" />
 
             {/* Step 3: Final Panel Selection */}
             <div className="flex justify-end lg:pr-12 relative">
@@ -576,16 +581,16 @@ const AnandgharFellowship = () => {
                 viewport={{ once: true }}
                 className="lg:w-[45%] relative"
               >
-                <div className="absolute -left-16 lg:-left-20 top-2 w-10 h-10 rounded-full bg-[#3ac2ba] flex items-center justify-center text-white shadow-lg z-20">
-                  <Check size={20} strokeWidth={3} />
+                <div className="absolute -left-12 lg:-left-20 top-2 lg:w-10 lg:h-10 w-8 h-8 rounded-full bg-[#3ac2ba] flex items-center justify-center text-white shadow-lg z-20">
+                  <Check size={typeof window !== "undefined" && window.innerWidth < 1024 ? 13 : 20} strokeWidth={3} />
                 </div>
 
                 <div className="space-y-3">
-                  <h3 className="text-[32px] font-semibold text-dark font-outfit">
+                  <h3 className="text-[24px] md:text-[32px] font-semibold text-dark font-outfit">
                     Final Panel Selection
                   </h3>
-                  <div className="w-16 h-1.5 bg-[#a3c639]" />
-                  <p className="text-[20px] text-dark font-outfit leading-relaxed">
+                  <div className="w-16 h-0.5 md:h-1 bg-[#a3c639]" />
+                  <p className="text-[16px] md:text-[20px] text-dark font-outfit leading-relaxed">
                     In the final stage, you will attend a 2-day in-person
                     selection round. This includes group discussions, a short
                     problem-solving activity with a presentation, and a one-hour
@@ -600,17 +605,17 @@ const AnandgharFellowship = () => {
         {/* Anandghar Fellows Section */}
         <div className="mb-40 ">
           <div className="inline-block relative mb-12">
-            <h2 className="text-[32px] md:text-5xl text-dark tracking-tight">
+            <h2 className="text-[24px] md:text-[32px] text-dark tracking-tight">
               Anandghar Fellows
             </h2>
-            <div className="absolute -bottom-7 left-0 w-1/4 h-1 bg-primary rounded-full" />
+            <div className="absolute -bottom-7 left-0 md:w-1/4 md:h-1 h-0.5 w-1/2 bg-primary rounded-full" />
           </div>
 
           {/* Tabs */}
           <div className="flex gap-12 mb-20">
             <button
               onClick={() => setActiveTab("current")}
-              className={`text-xl transition-all ${
+              className={`text-[12px] md:text-[20px] transition-all ${
                 activeTab === "current"
                   ? "text-primary"
                   : "text-dark/40 hover:text-dark/60"
@@ -620,7 +625,7 @@ const AnandgharFellowship = () => {
             </button>
             <button
               onClick={() => setActiveTab("alumni")}
-              className={`text-xl transition-all ${
+              className={`text-[12px] md:text-[20px] transition-all ${
                 activeTab === "alumni"
                   ? "text-primary"
                   : "text-dark/40 hover:text-dark/60"
@@ -662,10 +667,10 @@ const AnandgharFellowship = () => {
                     initial={{ opacity: 0, y: 30 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: idx * 0.1, duration: 0.6 }}
-                    className="w-[380px] flex-shrink-0 bg-white rounded-xl overflow-hidden shadow-2xl shadow-dark/5 border border-gray-50 flex flex-col group hover:-translate-y-2 transition-all duration-500 cursor-pointer"
-                    // onClick={() => setSelectedFellow(fellow)}
+                    className="w-[250px] md:w-[380px] shrink-0 bg-white rounded-xl overflow-hidden shadow-2xl shadow-dark/5 border border-gray-50 flex flex-col group hover:-translate-y-2 transition-all duration-500 cursor-pointer"
+                    onClick={() => setSelectedFellow(fellow)}
                   >
-                    <div className="aspect-[4/5] overflow-hidden">
+                    <div className="md:aspect-4/5 aspect-4/3 overflow-hidden">
                       <LazyImage
                         src={fellow.image}
                         alt={fellow.name}
@@ -673,11 +678,11 @@ const AnandgharFellowship = () => {
                         containerClassName="w-full h-full"
                       />
                     </div>
-                    <div className="p-10 space-y-2">
-                      <h4 className="text-[20px] font-semibold font-outfit text-dark/90 tracking-tight">
+                    <div className="p-0 md:p-10 space-y-2">
+                      <h4 className="md:text-[20px] text-[16px] font-semibold font-outfit text-dark/90 tracking-tight">
                         {fellow.name}
                       </h4>
-                      <p className="text-[16px] text-dark/40 font-outfit font-medium tracking-wide">
+                      <p className="md:text-[16px] text-[14px] text-dark/40 font-outfit font-medium tracking-wide">
                         {fellow.role}
                       </p>
                     </div>
@@ -803,10 +808,10 @@ const AnandgharFellowship = () => {
         {/* FAQ Section */}
         <div className="">
           <div className="inline-block relative mb-16">
-            <h2 className="text-[32px] md:text-5xl text-dark tracking-tight">
+            <h2 className="text-[24px] md:text-[32px] text-dark tracking-tight">
               Frequently asked Questions
             </h2>
-            <div className="absolute -bottom-7 left-0 w-1/5 h-1 bg-primary rounded-full" />
+            <div className="absolute -bottom-7 left-0 w-1/5 md:w-1/4 h-0.5 md:h-1 bg-primary rounded-full" />
           </div>
 
           <div className="space-y-4">
@@ -816,7 +821,7 @@ const AnandgharFellowship = () => {
                   onClick={() => setOpenFaq(openFaq === idx ? null : idx)}
                   className="w-full py-6 flex items-center justify-between text-left group"
                 >
-                  <span className="text-[20px] font-outfit font-semibold text-dark/80 group-hover:text-primary transition-colors">
+                  <span className="text-[16px] md:text-[20px] font-outfit font-semibold text-dark/80 group-hover:text-primary transition-colors">
                     {faq.question}
                   </span>
                   <ChevronDown
@@ -833,7 +838,7 @@ const AnandgharFellowship = () => {
                       exit={{ height: 0, opacity: 0 }}
                       className="overflow-hidden"
                     >
-                      <p className="pb-8 text-lg text-dark/60 leading-relaxed font-regular">
+                      <p className="pb-8 text-[14px] md:text-[16px] text-dark/60 leading-relaxed font-regular">
                         {faq.answer}
                       </p>
                     </motion.div>

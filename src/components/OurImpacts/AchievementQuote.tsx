@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 const AchievementQuote = () => {
   return (
     <section className="py-15 bg-white text-center">
-      <div className="container-custom px-6 max-w-5xl">
+      <div className="container-custom px-6 md:px-6 max-w-5xl">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}

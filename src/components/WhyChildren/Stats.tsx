@@ -39,7 +39,7 @@ const Stats = () => {
     <section className="py-24 bg-white relative">
       <div className="container-custom">
         <div className="mb-20 text-left">
-          <h2 className="text-dark tracking-tighter inline-block relative">
+          <h2 className="text-dark tracking-tighter md:font-regular font-semibold inline-block relative">
             Statistics
             <div className="absolute -bottom-3 left-0 w-1/3 h-1 bg-primary rounded-full transition-all duration-300" />
           </h2>
@@ -53,7 +53,7 @@ const Stats = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.1 }}
-              className={`p-10 rounded-2xl min-h-[260px] flex flex-col justify-between shadow-sm transition-all duration-500 group ${
+              className={`p-4 md:p-10 rounded-2xl min-h-[260px] flex flex-col justify-between shadow-sm transition-all duration-500 group ${
                 stat.bgColor.includes("bg-white")
                   ? "bg-white border border-red-50"
                   : stat.bgColor
