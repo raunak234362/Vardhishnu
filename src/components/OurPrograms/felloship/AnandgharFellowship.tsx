@@ -333,7 +333,7 @@ const AnandgharFellowship = () => {
               <LazyImage
                 src={getImageUrl("v1774764806/4._Home_td2lvq.jpg")}
                 alt="Our approach image"
-                className="w-full h-full object-cover"
+                className="w-full h-full object-cover object-[80%_20%]"
                 containerClassName="w-full h-full"
               />
             </div>

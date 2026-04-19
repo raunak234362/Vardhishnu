@@ -30,7 +30,7 @@ const OurPrograms = () => {
                 <LazyImage
                   src={getImageUrl(program.image)}
                   alt={program.name}
-                  className={`w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 ${index === 1 ? "object-[60%_20%]" : ""}`}
+                  className={`w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 ${index === 1 ? "object-[80%_20%]" : ""}`}
                   containerClassName="w-full h-full"
                 />
                 {/* Overlay */}
