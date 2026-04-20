@@ -182,12 +182,14 @@ const Footer = () => {
       </div>
 
       {/* Bottom Bar */}
-      <div className="bg-black flex flex-row py-10">
-        <div className=" text-center text-white/40 text-lg font-medium  container-custom">
+      <div className="bg-black py-10">
+        <div className="container-custom  flex flex-row justify-between">
+        <div className=" text-center text-white/40 text-lg font-medium">
           Vardhishnu © 2026 All Rights Reserved.
         </div>
-        <div className=" text-center text-white/40 text-lg font-medium container-custom">
+        <div className=" text-center text-white/40 text-lg font-medium">
           Designed with love ❤️ from Inside Dynamics
+        </div>
         </div>
       </div>
     </footer>
