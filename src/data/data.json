@@ -117,7 +117,7 @@
     },
     {
       "name": "Esmech 4C",
-      "logo": "q_auto/f_auto/v1774764878/15._Esmech_4C_negativ_kr8lly.tiff"
+      "logo": "v1776691561/15._Esmech_4C_negativ_kr8lly_so1sli.webp"
     },
     {
       "name": "Palakniti",
@@ -284,6 +284,12 @@
       {
         "image": "q_auto/f_auto/v1774764834/Suvarna_Didwani_ipewlu.png",
         "name": "Suvarna Didwani",
+        "role": "Office Maintenance",
+        "bio": ""
+      },
+      {
+        "image": "v1776691561/15._Esmech_4C_negativ_kr8lly_so1sli.webp",
+        "name": "Ajay Pandit",
         "role": "Office Maintenance",
         "bio": ""
       }
