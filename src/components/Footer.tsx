@@ -5,7 +5,7 @@ import {
   Instagram,
   Facebook,
   Youtube,
-  PhoneIcon,
+  PhoneIcon
 } from "lucide-react";
 import data from "../data/data.json";
 import Logo from "../assets/Logo_Vardhishnu.jpg";

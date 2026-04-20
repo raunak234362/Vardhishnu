@@ -949,11 +949,10 @@ const CommunityCollectives = () => {
               <button
                 key={tab}
                 onClick={() => setActiveTab(tab)}
-                className={`flex-1 px-8 py-3 rounded-full text-[16px] md:text-lg transition-all whitespace-nowrap ${
-                  activeTab === tab
+                className={`flex-1 px-8 py-3 rounded-full text-[16px] md:text-lg transition-all whitespace-nowrap ${activeTab === tab
                     ? "bg-primary text-white font-medium shadow-md"
                     : "text-dark hover:bg-gray-100"
-                }`}
+                  }`}
               >
                 {tab}
               </button>
