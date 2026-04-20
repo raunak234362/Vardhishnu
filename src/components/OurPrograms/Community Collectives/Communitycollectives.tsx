@@ -150,9 +150,14 @@ const CommunityCollectives = () => {
               and mentorship.
             </p>
 
-            <button className="bg-primary hover:bg-primary/90 text-white px-8 py-2 md:py-4 text-[16px] md:text-lg font-semibold rounded-lg md:rounded-xl shadow-xl shadow-primary/20 transition-all hover:-translate-y-1">
+            <a
+              href="https://docs.google.com/forms/d/e/1FAIpQLSf6JqbCKybGdM1uRtraycJGnoxwog2wzFT8sFFg1RB3jBVOhA/viewform"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-primary hover:bg-primary/90 text-white px-8 py-2 md:py-4 text-[16px] md:text-lg font-semibold rounded-lg md:rounded-xl shadow-xl shadow-primary/20 transition-all hover:-translate-y-1 inline-block text-center"
+            >
               Register Interest
-            </button>
+            </a>
           </motion.div>
 
           <motion.div
@@ -920,9 +925,14 @@ const CommunityCollectives = () => {
               your interest for next year here.
             </p>
           </div>
-          <button className="btn-primary mx-auto mt-4 px-15 py-4 text-lg rounded-lg shadow-xl shadow-primary/20">
+          <a
+            href="https://docs.google.com/forms/d/e/1FAIpQLSf6JqbCKybGdM1uRtraycJGnoxwog2wzFT8sFFg1RB3jBVOhA/viewform"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn-primary mx-auto mt-4 px-15 py-4 text-lg rounded-lg shadow-xl shadow-primary/20 inline-block text-center flex items-center justify-center"
+          >
             Register Interest
-          </button>
+          </a>
         </motion.div>
       </div>
 
