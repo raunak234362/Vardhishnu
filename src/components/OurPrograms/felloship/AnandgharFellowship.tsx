@@ -462,7 +462,7 @@ const AnandgharFellowship = () => {
               </p>
             </div>
             <a
-              href="https://docs.google.com/forms/d/1otKnuaVdILxOjVk4N4IGYsxUUmFdA8NVywRxx0ZJ4DI/viewform?edit_requested=true&pli=1"
+              href="https://docs.google.com/forms/d/e/1FAIpQLSf6JqbCKybGdM1uRtraycJGnoxwog2wzFT8sFFg1RB3jBVOhA/viewform"
               target="_blank"
               rel="noopener noreferrer"
               className="btn-primary mx-auto w-fit px-20 flex items-center justify-center py-4 font-[600] text-xl rounded-lg shadow-xl shadow-primary/20 cursor-pointer"

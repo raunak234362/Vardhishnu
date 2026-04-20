@@ -151,7 +151,7 @@ const CommunityCollectives = () => {
             </p>
 
             <a
-              href="https://docs.google.com/forms/d/e/1FAIpQLSf6JqbCKybGdM1uRtraycJGnoxwog2wzFT8sFFg1RB3jBVOhA/viewform"
+              href="https://docs.google.com/forms/d/1otKnuaVdILxOjVk4N4IGYsxUUmFdA8NVywRxx0ZJ4DI/viewform?edit_requested=true&urp=gmail_link"
               target="_blank"
               rel="noopener noreferrer"
               className="bg-primary hover:bg-primary/90 text-white px-8 py-2 md:py-4 text-[16px] md:text-lg font-semibold rounded-lg md:rounded-xl shadow-xl shadow-primary/20 transition-all hover:-translate-y-1 inline-block text-center"
