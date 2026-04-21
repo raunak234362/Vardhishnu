@@ -118,7 +118,7 @@
     },
     {
       "name": "Esmech 4C",
-      "logo": "q_auto/f_auto/v1774764878/15._Esmech_4C_negativ_kr8lly.tiff"
+      "logo": "v1776691561/15._Esmech_4C_negativ_kr8lly_so1sli.webp"
     },
     {
       "name": "Palakniti",
@@ -147,6 +147,10 @@
     {
       "name": "Wipro",
       "logo": "v1774764884/1_Wipro_aobbu1.png"
+    },
+    {
+      "name": "inside Dynamics",
+      "logo": "v1776612045/3ea01b8aaec254a5c47fc6107b1b049bbd769d3f_hs2l7g.jpg"
     }
     
   ],
@@ -285,6 +289,12 @@
       {
         "image": "q_auto/f_auto/v1774764834/Suvarna_Didwani_ipewlu.png",
         "name": "Suvarna Didwani",
+        "role": "Office Maintenance",
+        "bio": ""
+      },
+      {
+        "image": "v1776697075/72c3b3fb41871d69fc0d02a40eb1ecebdf3cb888_tjvxz2.png",
+        "name": "Ajay Pandit",
         "role": "Office Maintenance",
         "bio": ""
       }
