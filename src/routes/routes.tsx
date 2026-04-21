@@ -10,6 +10,7 @@ import AuditReportsGrid from "../components/Resources/AuditReportsGrid";
 import AnandgharApproach from "../components/OurPrograms/anandghar/AnandgharApproach";
 import AnandgharFellowship from "../components/OurPrograms/felloship/AnandgharFellowship";
 import CommunityCollectives from "../components/OurPrograms/Community Collectives/Communitycollectives";
+import DonateNow from "../layout/DonateNow";
 
 const routes = [
   {
@@ -47,6 +48,10 @@ const routes = [
       {
         path: "/our-impacts",
         element: <OurImpacts />,
+      },
+      {
+        path: "/donate-now",
+        element: <DonateNow />,
       },
       {
         path: "/resources",

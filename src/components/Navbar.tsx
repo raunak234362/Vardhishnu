@@ -82,10 +82,15 @@ const Navbar = () => {
             })}
           </div>
           <div className="flex items-center gap-4">
-            <button className="flex items-center gap-2">
+            <Link
+              to={data.header.ctaLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2"
+            >
               <Heart size={14} className="text-primary" />
               <span className="text-[14px] text-primary">{data.header.cta}</span>
-            </button>
+            </Link>
           </div>
         </div>
 
@@ -151,10 +156,15 @@ const Navbar = () => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: data.header.navLinks.length * 0.05 }}
               >
-                <button className="flex items-center gap-3 text-primary text-[16px] font-semibold tracking-tight hover:opacity-80 transition-opacity">
+                <Link
+                  to={data.header.ctaLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-3 text-primary text-[16px] font-semibold tracking-tight hover:opacity-80 transition-opacity"
+                >
                   <Heart size={24} />
                   <span>{data.header.cta}</span>
-                </button>
+                </Link>
               </motion.div>
             </div>
           </motion.div>

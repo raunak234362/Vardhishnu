@@ -17,7 +17,8 @@
       { "label": "Our Impact", "url": "/our-impacts" },
       { "label": "Resources", "url": "/resources" }
     ],
-    "cta": "Donate Now"
+    "cta": "Donate Now",
+    "ctaLink": "https://vardhishnu.danamojo.org/"
   },
   "hero": {
     "slides": [
