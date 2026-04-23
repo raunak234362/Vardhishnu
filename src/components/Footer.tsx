@@ -9,6 +9,8 @@ import {
 } from "lucide-react";
 import data from "../data/data.json";
 import Logo from "../assets/Logo_Vardhishnu.jpg";
+import { Link } from "react-router-dom";
+
 
 const Footer = () => {
   return (
@@ -94,12 +96,14 @@ const Footer = () => {
                 </a>
               </li>
               <li>
-                <a
-                  href="#"
+                <Link
+                  to={data.header.ctaLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="text-primary hover:underline transition-all"
                 >
                   Donate Now
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
