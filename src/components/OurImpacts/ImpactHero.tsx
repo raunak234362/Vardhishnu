@@ -18,12 +18,17 @@ const ImpactHero = () => {
           animate={{ opacity: 1, y: 0 }}
           className="max-w-7xl md:max-w-6xl mx-auto space-y-8 mb-16 px-2 md:px-4"
         >
-          <h1 className="text-[32px] text-dark font-outfit md:text-center text-left font-semibold leading-tight tracking-tight">
+          {/* <h1 className="text-[32px] text-dark font-outfit md:text-center text-left font-semibold leading-tight tracking-tight">
             This is the impact{" "}
             <span className="text-primary italic px-2 text-[40px] align-middle font-handwritten">
               YOU
             </span>{" "}
             helped us achieve in 2024-25
+          </h1> */}
+          <h1 className="text-[32px] text-dark font-outfit md:text-center text-left font-semibold leading-tight tracking-tight">
+          Impact created <span className="text-primary italic px-2 text-[40px] align-middle font-handwritten">
+              TILL
+            </span>{" "} date
           </h1>
 
           <div className="w-full h-1 bg-primary/40 rounded-full max-w-4xl mx-auto" />

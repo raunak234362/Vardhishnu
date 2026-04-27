@@ -43,11 +43,11 @@ const Footer = () => {
       <div className="container-custom pb-20">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-16 lg:gap-8">
           {/* Organization Info */}
-          <div className="lg:col-span-4 space-y-10">
+          <div className="lg:col-span-6 space-y-10">
             <div className="flex items-center gap-3">
               <img src={Logo} alt="Vardhishnu Logo" className="w-24" />
             </div>
-            <p className="text-gray-500 text-[16px] leading-relaxed max-w-sm">
+            <p className="text-gray-500 text-[16px] leading-relaxed max-w-lg">
               Vardhishnu - Social Research & Development Society is a Jalgaon
               based not-for-profit organisation trying to provide a safe, secure
               and happy childhood to street children specially child waste
