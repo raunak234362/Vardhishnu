@@ -5,10 +5,16 @@
       "email": "contact@vardhishnu.org"
     },
     "socials": [
-      { "platform": "Twitter", "url": "https://twitter.com/vardhishnu" },
-      { "platform": "Instagram", "url": "https://instagram.com/vardhishnu" },
-      { "platform": "Facebook", "url": "https://facebook.com/vardhishnu" },
-      { "platform": "YouTube", "url": "https://youtube.com/vardhishnu" }
+      { "platform": "Twitter", "url": "https://x.com/vardhishnu13" },
+      {
+        "platform": "Instagram",
+        "url": "https://www.instagram.com/vardhishnu_srds/"
+      },
+      {
+        "platform": "Facebook",
+        "url": "https://www.facebook.com/Vardhishnuanandghar"
+      },
+      { "platform": "YouTube", "url": "https://www.youtube.com/@vardhishnu" }
     ],
     "navLinks": [
       { "label": "Who we are", "url": "/who-we-are" },
@@ -107,7 +113,7 @@
       "name": "Gratitude Network",
       "logo": "v1774764880/4_Gratitude_Network_ebpqg3.png"
     },
-   
+
     {
       "name": "Change Engine",
       "logo": "v1774764879/5.1_Change_Engine_p1lwmz.webp"
@@ -152,7 +158,6 @@
       "name": "inside Dynamics",
       "logo": "v1776612045/3ea01b8aaec254a5c47fc6107b1b049bbd769d3f_hs2l7g.jpg"
     }
-    
   ],
   "footer": {
     "about": "Work with local community for better future of their children",

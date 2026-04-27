@@ -5,7 +5,7 @@ import {
   Instagram,
   Facebook,
   Youtube,
-  PhoneIcon
+  PhoneIcon,
 } from "lucide-react";
 import data from "../data/data.json";
 import Logo from "../assets/Logo_Vardhishnu.jpg";
@@ -58,7 +58,9 @@ const Footer = () => {
               {[Twitter, Instagram, Facebook, Youtube].map((Icon, i) => (
                 <a
                   key={i}
-                  href="#"
+                  href={data.header.socials[i]?.url || "#"}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="w-10 h-10 rounded-full border border-gray-100 flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-all transform hover:-translate-y-1"
                 >
                   <Icon size={18} />
@@ -174,7 +176,9 @@ const Footer = () => {
                   <MapPin size={20} className="text-white" />
                 </div>
                 <div className="space-y-1">
-                  <div className="text-dark font-bold text-[14px]">Visit Us</div>
+                  <div className="text-dark font-bold text-[14px]">
+                    Visit Us
+                  </div>
                   <p className="text-gray-500 text-[14px] font-medium leading-snug">
                     {data.footer.address}
                   </p>
@@ -188,12 +192,12 @@ const Footer = () => {
       {/* Bottom Bar */}
       <div className="bg-black py-10">
         <div className="container-custom  flex flex-row justify-between">
-        <div className=" text-center text-white/40 text-lg font-medium">
-          Vardhishnu © 2026 All Rights Reserved.
-        </div>
-        <div className=" text-center text-white/40 text-lg font-medium">
-          Designed with love ❤️ from Inside Dynamics
-        </div>
+          <div className=" text-center text-white/40 text-lg font-medium">
+            Vardhishnu © 2026 All Rights Reserved.
+          </div>
+          <div className=" text-center text-white/40 text-lg font-medium">
+            Designed with love ❤️ from Inside Dynamics
+          </div>
         </div>
       </div>
     </footer>
