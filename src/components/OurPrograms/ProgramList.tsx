@@ -21,7 +21,7 @@ const ProgramList = () => {
     {
       title: "Anandghar Fellowship",
       description:
-        "The idea is to create spaces of learning & support for street children specially child waste pickers and child labors. It is achieved through community learning centers; known as 'Anandghar (A Home of Happiness)'.",
+        "Two year teaching fellowship where fellows are placed in community learning center where they work closely with children, parents, community and the schools.",
       points: [
         "Fellows For Change ",
         "Hope in Action  ",
